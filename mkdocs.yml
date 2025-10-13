@@ -71,8 +71,6 @@ plugins:
       version_selector: false
   - drawio:
       toolbar: false
-      format: svg
-      embed: true
 
 extra_css:
   - 'assets/stylesheets/color-slate.css'
