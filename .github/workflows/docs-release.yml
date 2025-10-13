@@ -27,6 +27,7 @@ jobs:
       - name: Create/Update docs branch from the tag
         run: |
           git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           BR="version/${{ steps.ver.outputs.v }}"
           # Create or fast-forward the version branch to the tag’s commit
           git branch -f "$BR" "${GITHUB_SHA}"
