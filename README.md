@@ -9,8 +9,8 @@ You can find the documentation at https://ingrid-oss.eu
 
 ## Edit documentation
 The documentation is organized in versions. Each version has its branch.
-* The "latest" branch always contains the latest version.
-  * See mkdocs.yml to check which version it currently represents.
+* The "draft" branch always contains the newest changes.
+  * See `.docs-version` to check which version it currently represents.
 * Go to folder `docs` and edit the markdowns.
 * Commit and push your changes.
 * Deployment is automated with a GitLab CI pipeline.

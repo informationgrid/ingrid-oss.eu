@@ -1,0 +1,45 @@
+name: Docs (release from tag)
+
+on:
+  push:
+    tags:
+      - 'v*'    # e.g., v8.0.0
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+
+      - name: Compute version strings
+        id: ver
+        run: |
+          FULL="${GITHUB_REF_NAME#v}"         # 8.0.0
+          if ! echo "$FULL" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "Tag must be v<semver>, got: ${GITHUB_REF_NAME}"; exit 1
+          fi
+          echo "v=$FULL" >> "$GITHUB_OUTPUT"
+
+      - name: Create/Update docs branch from the tag
+        run: |
+          git config user.name "github-actions[bot]"
+          BR="version/${{ steps.ver.outputs.v }}"
+          # Create or fast-forward the version branch to the tag’s commit
+          git branch -f "$BR" "${GITHUB_SHA}"
+          git push -u origin "$BR" --force
+
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.13' }
+      - run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Publish release + move alias 'latest'
+        run: |
+          git config user.name "github-actions[bot]"
+          mike deploy --push --update-aliases "${{ steps.ver.outputs.v }}" latest
+          mike set-default --push latest
