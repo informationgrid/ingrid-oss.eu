@@ -1,0 +1,12 @@
+
+venv
+.venv
+
+# Caches and logs
+material
+*.cpuprofile
+*.log
+*.tsbuildinfo
+.cache
+.eslintcache
+__pycache__

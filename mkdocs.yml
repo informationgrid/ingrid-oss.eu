@@ -1,0 +1,201 @@
+version: 8.0.0
+site_name: InGrid
+site_url: https://ingrid-oss.eu
+site_author: wemove digital solution GmbH
+site_description: >-
+  InGrid - Werkzeuge für Ihre OpenData Strategie!
+  Entdecken Sie die Vorzüge einer standardkonformen Erfassung und Recherche von Metadaten.
+repo_name: informationgrid.github.io
+repo_url: https://github.com/informationgrid
+copyright: Copyright © wemove digital solutions 2024
+
+theme:
+  language: de
+  name: material
+  custom_dir: theme
+  features:
+    - announce.dismiss
+    # - content.action.edit
+    # - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.code.select
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    # - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  palette:
+    - scheme: default
+      primary: green
+      accent: green
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to dark mode
+    - scheme: slate
+      primary: green
+      accent: green
+      toggle:
+        icon: material//toggle-switch
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.ico
+  logo: assets/logo.svg
+  icon:
+    logo: logo
+
+plugins:
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+  - mike:
+      alias_type: redirect
+      canonical_version: 'latest'
+      version_selector: false
+  - drawio:
+      toolbar: false
+      format: svg
+      embed: true
+
+extra_css:
+  - 'assets/stylesheets/color-slate.css'
+  - 'assets/stylesheets/color-default.css'
+  - 'assets/stylesheets/custom.css'
+  - 'assets/stylesheets/header.css'
+  - 'assets/libraries/splide.min.css'
+  - 'assets/libraries/glightbox.min.css'
+
+extra_javascript:
+  - 'assets/javascripts/version-select.js'
+  - 'assets/javascripts/external-links.js'
+  - 'assets/libraries/splide.min.js'
+  - 'assets/libraries/glightbox.min.js'
+
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - News:
+    - changelog/index.md
+  - Jetzt starten:
+    - start/index.md
+    - Anwendungen:
+      - Einsatzmöglichkeiten: start/applications.md
+      - Bedienungsanleitungen: start/user-manuals.md
+    - Leitfaden:
+      # - Portal im Überblick: guides/portal.md
+      # - Portal für UVP: guides/portal-uvp.md
+      - Portal:
+        - Webmap Client Frontend: guides/webmap-client-frontend.md
+        - Webmap Client Admin GUI: guides/webmap-client-admin-gui.md
+      - Editor:
+        # - Benutzeroberfläche: guides/ige-user-guide.md
+        - 'API: OGC Records': guides/ige-api-ogc.md
+        - 'API: CSW-T': guides/ige-api-cswt.md
+      - Harvester:
+        - Benutzeroberfläche: guides/harvester-user-guide.md
+        - Einrichten: guides/harvester-setup.md
+        - CSW Harvester: guides/harvester-csw.md
+      - Web Crawler:
+        - Benutzeroberfläche: guides/iplug-se-setup.md
+      - Barrierefreiheit: guides/accessibility.md
+      # - InGrid Query Syntax: guides/querySyntax.md
+  - Docs:
+    - Überblick: components/overview.md
+    - Installation: components/installation.md
+    - Architektur: components/architecture.md
+    - Lizensierung: components/license.md
+    - Komponenten:
+      - Portal:
+        - InGrid Portal: components/portal.md
+        - Webmap Client: components/webmap-client.md
+      - Editor:
+        - InGrid Editor: components/ige.md
+      - APIs:
+        - Such-Schnittstelle: components/interface_search.md
+        - CSW Schnittstelle: components/interface_csw.md
+        - InGrid Editor Schnittstelle: components/interface_ige.md
+        - InGrid-API: components/api.md
+      - Datenanbindung:
+        - Harvester: components/harvester.md
+        - iPlug SE (Search Engine): components/iplug_se.md
+      - Infrastruktur:
+        - iBus: components/ibus.md
+        - Codelist Repository: components/codelist_repository.md
+        - Keycloak: components/keycloak.md
+  - Mitwirken:
+    - Entwicklungsmodell: contributing/overview.md
+    - Projektorganisation: contributing/organisation.md
+    - Partner: contributing/partner.md
+    - Entwicklung:
+      - Beitragen: contributing/development-contribute.md
+      - Bug melden: contributing/reporting-a-bug.md
+      - Dokumentationsproblem melden: contributing/reporting-a-docs-issue.md
+  - Kontakt:
+    - Impressum: about/impressum.md
