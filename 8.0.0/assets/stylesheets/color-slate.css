@@ -1,0 +1,126 @@
+/* ------------------------------------
+   Light Mode Theme Overrides (Slate)
+   ------------------------------------ */
+
+[data-md-color-scheme="slate"] {
+  --ingrid-animation-color: #6ad171;
+  --ingrid-background: hsla(225deg, 15%, 14%, 1);
+  --ingrid-illustration-path: var(--ingrid-animation-color);
+  --ingrid-illustration-path-inverted: hsla(225deg, 15%, 14%, 1);
+  --md-default-fg-color: var(--text-white);
+  --md-default-fg-color--light: var(--headline-white);
+  --feature-section: #262a35;
+  --animation-main-color: var(--ingrid-animation-color);
+  --headline-black: white;
+  --animation-fill-primary-color: #0967f6;
+}
+
+[data-md-color-scheme="slate"] .split-animation-file svg image {
+  /* convert color to filter: https://codepen.io/sosuke/pen/Pjoqqp */
+  filter: invert(67%) sepia(89%) saturate(280%) hue-rotate(72deg) brightness(95%) contrast(82%);
+}
+
+[data-md-color-scheme="slate"] .accordion hr {
+  border-top: 1px solid white;
+}
+
+[data-md-color-scheme="slate"] .accordion button span {
+  color: var(--headline-white);
+}
+
+/* Draw.io / SVG fills */
+[data-md-color-scheme="slate"] .animation-fill-primary-color path,
+[data-md-color-scheme="slate"] .animation-fill-primary-color-dark path,
+[data-md-color-scheme="slate"] .animation-fill-highlight-color path {
+  fill: var(--ingrid-background) !important;
+}
+
+[data-md-color-scheme="slate"] #intro-section .animation-fill-highlight-color path {
+  fill: var(--ingrid-animation-color) !important;
+}
+
+[data-md-color-scheme="slate"] .usp-counter {
+  opacity: 0.4;
+  color: var(--ingrid-animation-color);
+}
+
+[data-md-color-scheme="slate"] .usp-card-content {
+  background-color: var(--animation-main-color) !important;
+}
+
+[data-md-color-scheme="slate"] .animation-stroke-primary-color path {
+  stroke: var(--ingrid-background) !important;
+}
+
+[data-md-color-scheme="slate"] .animated-bullet-table {
+  color: black;
+}
+
+[data-md-color-scheme="slate"] .usp-active {
+  background-color: var(--animation-main-color);
+  border-color: var(--animation-main-color);
+  color: var(--animation-main-color);
+}
+
+[data-md-color-scheme="slate"] .custom-git-icon {
+  fill: white;
+}
+
+/* Pictograms and animations */
+[data-md-color-scheme="slate"] .pictogram,
+[data-md-color-scheme="slate"] .lottie-animation {
+  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(254deg) brightness(108%) contrast(101%);
+}
+
+[data-md-color-scheme="slate"] .mxgraph {
+  /* border-radius: 10px; */
+  filter: invert(100%) hue-rotate(180deg);
+}
+
+[data-md-color-scheme="slate"] .grid-pictogram {
+  filter: invert(100%);
+}
+
+/* Typography */
+[data-md-color-scheme="slate"] .main-content h1,
+[data-md-color-scheme="slate"] .main-content h2,
+[data-md-color-scheme="slate"] .main-content h3,
+[data-md-color-scheme="slate"] .main-content h4,
+[data-md-color-scheme="slate"] .main-content h5,
+[data-md-color-scheme="slate"] .main-content h6,
+[data-md-color-scheme="slate"] .main-content b,
+[data-md-color-scheme="slate"] .main-content strong {
+  color: var(--headline-white);
+}
+
+/* Links */
+[data-md-color-scheme="slate"] a {
+  color: white;
+}
+
+[data-md-color-scheme="slate"] a:hover {
+  color: var(--md-accent-fg-color);
+}
+
+/* Hero section */
+[data-md-color-scheme="slate"] .mdx-hero {
+  color: white;
+}
+
+/* Header & Tabs (global) */
+.md-header {
+  background-color: hsl(225, 15%, 10%);
+}
+
+.md-tabs {
+  color: hsl(225, 15%, 10%);
+}
+
+.md-tabs__item--active {
+  font-weight: 700;
+  color: var(--headline-white);
+}
+
+.md-tabs__item--active:hover {
+  color: var(--headline-white);
+}
