@@ -5,7 +5,7 @@ social:
     title: Das Werkzeug für Ihre Daten und Metadaten
 language: de
 intro:
-  title: Erfassen.<br>Verwalten.<br>Entdecken.
+  title: Erfassen.<br>Verwalten.<br>Entdecken. Test
   subtitle: <b>Das Werkzeug für Ihre Daten und Metadaten</b>
   button_text: Jetzt starten
   button_link: ./start/
