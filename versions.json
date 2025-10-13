@@ -1,5 +1,12 @@
 [
   {
+    "version": "8.0.3",
+    "title": "8.0.3",
+    "aliases": [
+      "draft"
+    ]
+  },
+  {
     "version": "8.0.2",
     "title": "8.0.2",
     "aliases": [
@@ -9,9 +16,7 @@
   {
     "version": "8.0.1",
     "title": "8.0.1",
-    "aliases": [
-      "draft"
-    ]
+    "aliases": []
   },
   {
     "version": "8.0.0",
