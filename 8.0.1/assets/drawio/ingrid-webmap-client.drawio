@@ -1,0 +1,54 @@
+<mxfile host="65bd71144e">
+    <diagram name="Seite-1" id="4UVButH17yrCxIi93USr">
+        <mxGraphModel dx="849" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="760" pageHeight="560" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="70" width="320" height="380" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="210" width="320" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Webmap Client" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fontStyle=1;fillColor=#d5e8d4;fontSize=16;strokeColor=#00C753;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="110" width="240" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="CSW API" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fontStyle=1;fontColor=#000000;fillColor=none;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="370" width="240" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;OpenSearch API&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fontStyle=1;fontColor=#000000;fillColor=none;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="250" width="240" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="ATOM Download Services" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fontStyle=1;fontColor=#000000;fillColor=none;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="459.43000000000006" y="310" width="240.57" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Portal" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;dashed=1;fontStyle=1;fillColor=none;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="40" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" style="edgeStyle=none;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="21">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="350" y="195" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="Interfaces" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;dashed=1;fontStyle=1;fillColor=none;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="180" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fontStyle=1;fillColor=#d5e8d4;fontSize=16;strokeColor=#00C753;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="150" width="240" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="Mapfish" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fontStyle=1;fillColor=#d5e8d4;fontSize=16;strokeColor=#00C753;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="330" width="200" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;URL-Shortener&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fontStyle=1;fillColor=#d5e8d4;fontSize=16;strokeColor=#00C753;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="210" width="200" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="QR-Code" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fontStyle=1;fillColor=#d5e8d4;fontSize=16;strokeColor=#00C753;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="270" width="200" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="Interfaces" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;dashed=1;fontStyle=1;fillColor=none;fontSize=16;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="115" y="170" width="130" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
