@@ -54,3 +54,34 @@ pip install -r requirements.txt
 mkdocs serve --watch-theme
 ```
 Visit http://localhost:8000/
+
+
+
+## Release new version
+
+A new version is released based on the `draft` version/branch. 
+
+1. Checkout branch `draft`
+2. Make sure everything is checked in and pushed.
+3. Get the version of the draft from file `.docs-version`
+4. Create new tag (e.g. `git tag v8.1.0`)
+5. Push tag (e.g. `git push origin v8.1.0`)
+6. Update file `.docs-version` with the upcoming version
+
+
+This triggers the following workflows: 
+1. Workflow `.github/workflows/docs-release.yml`
+   * This workflow creates a new branch e.g. `version/8.1.0`
+   * Docs version `8.1.0` is marked as `latest`
+2. Workflow `.github/workflows/docs-version.yml`
+   * This workflow deploys MkDocs & updates files on branch `gh-pages`
+
+
+## Delete a version
+
+Run `git push --delete origin v8.0.0`
+
+By removing the tag is triggers the workflow `.github/workflows/docs-delete.yml`.
+
+* It deletes the version branch `version/8.0.0`.
+* Removes the version from branch `gh-pages`
