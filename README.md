@@ -87,4 +87,12 @@ By removing the tag is triggers the workflow `.github/workflows/docs-delete.yml`
 * Removes the version from branch `gh-pages`
 
 Alternatively delete version on branch `gh-pages` manual:
+* Run `git fetch` 
 * Run in python env `mike delete --push 8.0.0`
+
+## Define aliases (draft, latest)
+Add alias `latest` to version `8.0.0`:
+* `mike alias 8.0.0 latest --push`
+
+Add alias `draft` to version `8.0.0`:
+* `mike alias 8.0.0 draft --push`
