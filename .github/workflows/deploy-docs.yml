@@ -1,0 +1,81 @@
+name: Deploy docs from docs/* branch
+
+on:
+  push:
+    branches:
+      - 'docs/*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to deploy'
+        required: false
+      aliases:
+        description: 'Comma-separated aliases to update (e.g. latest, draft)'
+        required: false
+        default: 'latest'      # change to '' if you never want aliases
+
+permissions:
+  contents: write              # needed to push to gh-pages
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0       # mike needs history
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Configure git author
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Determine version & aliases
+        id: meta
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ inputs.version }}" ]; then
+            VERSION="${{ inputs.version }}"
+          else
+            VERSION="${GITHUB_REF_NAME#docs/}"   # branch docs/1.6 -> 1.6
+          fi
+          ALIASES="${{ inputs.aliases }}"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "aliases=$ALIASES" >> "$GITHUB_OUTPUT"
+          echo "Version=$VERSION"
+          echo "Aliases=$ALIASES"
+
+      - name: Deploy with mike
+        env:
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: github-actions[bot]@users.noreply.github.com
+        shell: bash
+        run: |
+          VERSION="${{ steps.meta.outputs.version }}"
+          ALIASES="${{ steps.meta.outputs.aliases }}"
+
+          if [ -n "$ALIASES" ]; then
+            IFS=',' read -ra arr <<< "$ALIASES"
+            mike deploy --push --update-aliases "$VERSION" "${arr[@]}"
+            # Set default to first alias (optional)
+            mike set-default --push "${arr[0]}"
+          else
+            mike deploy --push "$VERSION"
+          fi
