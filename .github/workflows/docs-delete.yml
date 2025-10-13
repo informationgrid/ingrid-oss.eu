@@ -37,15 +37,15 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Delete matching docs branch (version/X.Y.Z) if it exists
-        run: |
-          BR="version/${{ steps.ver.outputs.v }}"
-          if git ls-remote --heads origin "$BR" | grep -q "$BR"; then
-            echo "Deleting branch $BR"
-            git push origin --delete "$BR"
-          else
-            echo "Branch $BR not found. Skipping."
-          fi
+      # - name: Delete matching docs branch (version/X.Y.Z) if it exists
+      #   run: |
+      #     BR="version/${{ steps.ver.outputs.v }}"
+      #     if git ls-remote --heads origin "$BR" | grep -q "$BR"; then
+      #       echo "Deleting branch $BR"
+      #       git push origin --delete "$BR"
+      #     else
+      #       echo "Branch $BR not found. Skipping."
+      #     fi
 
       - name: Remove version from gh-pages with mike
         run: |
