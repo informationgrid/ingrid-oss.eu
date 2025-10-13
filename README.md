@@ -85,3 +85,6 @@ By removing the tag is triggers the workflow `.github/workflows/docs-delete.yml`
 
 * It deletes the version branch `version/8.0.0`.
 * Removes the version from branch `gh-pages`
+
+Alternatively delete version on branch `gh-pages` manual:
+* Run in python env `mike delete --push 8.0.0`
