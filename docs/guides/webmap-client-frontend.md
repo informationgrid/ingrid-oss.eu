@@ -18,7 +18,7 @@ Der Webmap Client hat zahlreiche Funktionen mit dem Umgang von Geodaten, von Dar
     
     Informationen zur Komponente können Sie der Dokumentation entnehmen.
 
-    [Webmap Client Dokumentation](../../components/webmap-client/){ .md-button }
+    [Webmap Client Dokumentation]({{ fix_url('components/webmap-client.md') }}){ .md-button }
 
 </div>
 
@@ -66,7 +66,7 @@ Haben Sie eine eigene Webseite und möchten Sie Ihre Karte dort integrieren? So 
 
 ![Webmap Client - Einbetten](../assets/components/mapclient/frontend/mapclient_share_preview.png "Webmap Client Einbetten")
 
-Die URL Ihres Kartenzustandes wird dabei immer durch ein URL-Shortener verkürzt. Mehr Informationen finden Sie [hier](#url-shortener).
+Die URL Ihres Kartenzustandes wird dabei immer durch ein URL-Shortener verkürzt. Mehr Informationen finden Sie [hier]({{ fix_url('components/webmap-client.md/#url-shortener') }}).
 
 ## Karten drucken
 
@@ -78,7 +78,7 @@ Zusätzlich können Sie dem PDF neben dem Kartenausschnitt einen Titel, eine Bes
 
 ![Webmap Client - Drucken](../assets/components/mapclient/frontend/mapclient_print.png "Webmap Client Drucken")
 
-In dem generierten PDF wird neben Ihrem Kartenausschnitt anhand eines [URL-Shorteners](#url-shortener) die URL Ihres Kartenzustandes sowie ein [QR-Code](#qr-code) hinterlegt.
+In dem generierten PDF wird neben Ihrem Kartenausschnitt anhand eines [URL-Shorteners]({{ fix_url('components/webmap-client.md/#url-shortener') }}) die URL Ihres Kartenzustandes sowie ein [QR-Code](#qr-code) hinterlegt.
 
 ## Zeichnen & Messen
 

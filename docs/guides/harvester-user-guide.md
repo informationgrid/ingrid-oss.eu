@@ -18,7 +18,7 @@ Diese Seite bietet einen Überblick über Bediehnung und Benutzeroberfläche vom
     
     Informationen zur Komponente können Sie der Dokumentation entnehmen.
 
-    [Harvester Dokumentation](../../components/harvester){ .md-button }
+    [Harvester Dokumentation]({{ fix_url('components/harvester.md') }}){ .md-button }
 
 </div>
 
@@ -98,7 +98,7 @@ Durch einen Klick auf den Titel des Harvesters wird dieser aufgeklappt und Sie e
         1. Wählen Sie zunächst den Typ der Datenquelle aus. 
         - Die verfügbaren Typen sind vom Profil abhängig.
         1. Füllen Sie die entsprechenden Felder aus. 
-        - Ausfüllhilfen finden sie im Abschnitt [Harvester Ausfüllhilfe](#harvester-ausfüllhilfe). 
+        - Ausfüllhilfen finden sie im Abschnitt [Harvester Ausfüllhilfe]({{ fix_url('guides/harvester-csw.md/#ausfullhilfe') }}). 
         1. Klicken Sie auf `ANLEGEN`, um den Prozess abzuschließen. 
 
         Nach dem Sie einen Harvester angelegt haben, ist dieser in der Liste zu finden. Über den Schieberegler auf der rechten Seite kann ein Harvester aktiviert oder deaktiviert werden.
@@ -133,7 +133,7 @@ Durch einen Klick auf den Titel des Harvesters wird dieser aufgeklappt und Sie e
 
 ![](../assets/components/harvester/harvester-gui-config.jpg "Harvester Benutzeroberfläche Konfiguration")
 
-Unter **Konfiguration** werden die Basis-Konfigurationen gesetzt. Detailierte Informationen zur Konfiguration finden Sie in der Dokumentation unter [Harvester](../../components/harvester#einrichten).
+Unter **Konfiguration** werden die Basis-Konfigurationen gesetzt. Detailierte Informationen zur Konfiguration finden Sie in der Dokumentation unter [Harvester]({{ fix_url('guides/harvester-setup.md') }}).
 
 ### Katalogverwaltung
 

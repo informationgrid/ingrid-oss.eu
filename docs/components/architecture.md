@@ -45,4 +45,4 @@ Dies ermöglicht, dass iPlugs und Schnittstellen hinter Firewalls versteckt werd
 ![](../assets/drawio/ingrid-communication.drawio)
 
 ## Installation
-Informationen zur Inbetriebnahme von InGrid finden Sie unter **[Installation](../start/installation.md)**.
+Informationen zur Inbetriebnahme von InGrid finden Sie unter **[Installation]({{ fix_url('start/index.md') }})**.

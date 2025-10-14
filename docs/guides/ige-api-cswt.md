@@ -4,7 +4,7 @@ description: Der InGrid Editor ermöglicht die Erfassung von beliebiger Formular
 ---
 # Editor API: CSW-T
 
-Der [InGrid Editor](/components/ige) verfügt über eine **CSW-T-Schnittstelle** (Catalogue Service for the Web – transactional profile), die es ermöglicht, mehrere Dokumentanfragen **transaktional** zu verarbeiten. Dabei werden die Operationen **Insert**, **Update** und **Delete** unterstützt, sodass neue Metadatensätze eingefügt, bestehende aktualisiert oder entfernt werden können – und das alles innerhalb eines konsistenten Transaktionsvorgangs. Dies erlaubt eine effiziente und gebündelte Bearbeitung von Metadaten über standardisierte OGC-konforme Mechanismen.
+Der [InGrid Editor]({{ fix_url('components/ige.md') }}) verfügt über eine **CSW-T-Schnittstelle** (Catalogue Service for the Web – transactional profile), die es ermöglicht, mehrere Dokumentanfragen **transaktional** zu verarbeiten. Dabei werden die Operationen **Insert**, **Update** und **Delete** unterstützt, sodass neue Metadatensätze eingefügt, bestehende aktualisiert oder entfernt werden können – und das alles innerhalb eines konsistenten Transaktionsvorgangs. Dies erlaubt eine effiziente und gebündelte Bearbeitung von Metadaten über standardisierte OGC-konforme Mechanismen.
 
 <div class="grid cards" markdown>
 
@@ -18,7 +18,7 @@ Der [InGrid Editor](/components/ige) verfügt über eine **CSW-T-Schnittstelle**
     
     Informationen zur Konfiguration der Editor Schnittstelle können Sie der Dokumentation entnehmen.
 
-    [Editor Schnittstelle](../../components/interface_ige/){ .md-button }
+    [Editor Schnittstelle]({{ fix_url('components/interface_ige.md') }}){ .md-button }
 
 </div>
 
@@ -67,7 +67,7 @@ In dem Tag `<csw:Transaction>` können mehrere Dokument-Anfragen gesammelt werde
 
 ### Authentifizierung
 
-Details bzgl. Bearer-Token-Abfrage finden Sie unter [Editor API Authentifizierung](/components/interface_ige/#authentifizierung).
+Details bzgl. Bearer-Token-Abfrage finden Sie unter [Editor API Authentifizierung]({{ fix_url('components/interface_ige.md/#authentifizierung') }}).
 
 
 ## Endpunkt

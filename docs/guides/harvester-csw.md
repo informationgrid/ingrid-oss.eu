@@ -17,7 +17,7 @@ In diesem Leitfaden finden Sie Ausfüllhilfen und Beschreibungen, um einen CSW H
     
     Informationen zur Komponente können Sie der Dokumentation entnehmen.
 
-    [Harvester Dokumentation](../../components/harvester){ .md-button }
+    [Harvester Dokumentation]({{ fix_url('components/harvester.md') }}){ .md-button }
 
 </div>
 

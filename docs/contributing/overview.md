@@ -4,7 +4,7 @@ description: "Indexieren, Recherchieren, Visualisieren, Teilen"
 ---
 
 
-Die Entwicklung der Software erfolgt partnerschaftlich durch eine Anzahl **[beteiligter Institutionen](../start/partner.md)**. Sie können gerne zu dem Projekt beitragen. Jeder Beitrag, ob groß oder klein, ist uns sehr willkommen. Bevor Sie beginnen, nehmen Sie sich bitte einen Moment Zeit, um dieses Dokument zu lesen. Es enthält wichtige Informationen, die den Beitragsprozess für alle Beteiligten reibungsloser gestalten.
+Die Entwicklung der Software erfolgt partnerschaftlich durch eine Anzahl **[beteiligter Institutionen]({{ fix_url('contributing/partner.md') }})**. Sie können gerne zu dem Projekt beitragen. Jeder Beitrag, ob groß oder klein, ist uns sehr willkommen. Bevor Sie beginnen, nehmen Sie sich bitte einen Moment Zeit, um dieses Dokument zu lesen. Es enthält wichtige Informationen, die den Beitragsprozess für alle Beteiligten reibungsloser gestalten.
 
 ## Releasezyklus
 

@@ -37,6 +37,7 @@ Details zur Schritt-für-Schritt Installation finden Sie hier:  <https://github.
 
     Details zur **Installation** und **Konfiguration** der einzelnen Komponenten können Sie den Docs entnehmen. 
 
-    [Komponenten im Überblick](../components/overview/){ .md-button }
+    [Komponenten im Überblick]({{ fix_url('components/overview.md') }}){ .md-button }
+
 
 </div>

@@ -23,12 +23,12 @@ Kernkomponenten sind:
 
 **INSPIRE und GDI-DE konform**
 
-InGrid wurde u.a. entlang der Vorgaben und Empfehlungen der [Geodateninfrastruktur Deutschland](http://www.geoportal.de/) (GDI-DE) entwickelt und eignet sich daher auch zum Aufbau INSPIRE- und GDI-DE-konformer Geodateninfrastrukturen. Die Entwicklung der Software erfolgt partnerschaftlich durch eine große Anzahl **[beteiligter Institutionen](../start/partner.md)**.
+InGrid wurde u.a. entlang der Vorgaben und Empfehlungen der [Geodateninfrastruktur Deutschland](http://www.geoportal.de/) (GDI-DE) entwickelt und eignet sich daher auch zum Aufbau INSPIRE- und GDI-DE-konformer Geodateninfrastrukturen. Die Entwicklung der Software erfolgt partnerschaftlich durch eine große Anzahl **[beteiligter Institutionen]({{ fix_url('contributing/partner.md') }})**.
 
 **Standard­basierte Softwareplattform**
 
 Die Softwareplattform ist vielseiten anwendbar und weiste durch die Einteilung in Kompontenten hohe Flexiblität auf. 
-Informieren Sie sich über technischen Aufbau & Modularität unter **[Architektur](../start/architecture.md)** und die vielseitigen **[Einsatzmöglichkeiten](../start/applications.md)**.
+Informieren Sie sich über technischen Aufbau & Modularität unter **[Architektur]({{ fix_url('components/architecture.md') }})** und die vielseitigen **[Einsatzmöglichkeiten]({{ fix_url('start/applications.md') }})**.
 
 ### Über diese Dokumentation
 
@@ -46,7 +46,7 @@ Je nachdem, ob Sie **direkt mit der Installation starten** oder sich zunächst �
 
     Sie wollen sich über **Setup & Installation** von **InGrid** informieren? Dann starten Sie jetzt mit einem schnellen Einstieg.
 
-    [Installation](../../start/installation/){ .md-button }
+    [Installation]({{ fix_url('components/installation.md') }}){ .md-button }
 
 -   :material-book-open-variant-outline: __Architektur__
 
@@ -54,7 +54,8 @@ Je nachdem, ob Sie **direkt mit der Installation starten** oder sich zunächst �
 
     Möchten Sie mehr über die **Architektur** von **InGrid** erfahren? Dann lesen Sie unseren Artikel zum technischen Aufbau.
 
-    [Architektur](../../start/architecture/){ .md-button }
+    [Architektur]({{ fix_url('components/architecture.md') }}){ .md-button }
+
 
 </div>
 
@@ -75,7 +76,7 @@ Jede Komponente wird in einem eigenen Kapitel beschrieben und enthält eine deta
 
     Komfortables Interface zur Suche über den InGrid Datenraum für Benutzerinnen
 
-    [:octicons-arrow-right-24: InGrid Portal](../portal/)
+    [:octicons-arrow-right-24: InGrid Portal]({{ fix_url('components/portal.md') }})
 
 -   :material-map-outline:{ .lg .middle } __Karten__
 
@@ -83,15 +84,15 @@ Jede Komponente wird in einem eigenen Kapitel beschrieben und enthält eine deta
 
     Darstellung von Karten im InGrid Portal
 
-    [:octicons-arrow-right-24: Karten](../webmap_client_admin/)
+    [:octicons-arrow-right-24: Karten]({{ fix_url('components/webmap-client.md') }})
 
--   :material-chart-line:{ .lg .middle } __Messdaten__
+<!-- -   :material-chart-line:{ .lg .middle } __Messdaten__
 
     ---
 
     Darstellung von Messdaten im InGrid Portal
 
-    [:octicons-arrow-right-24: Messdaten](../time_series_client/)
+    [:octicons-arrow-right-24: Messdaten]({{ fix_url('components/time_series_client.md') }}) -->
 
 </div>
 
@@ -105,7 +106,7 @@ Jede Komponente wird in einem eigenen Kapitel beschrieben und enthält eine deta
 
     Erfassung, Verwalten und Publizierung von Metadaten mit dem **InGrid Editor**
 
-    [:octicons-arrow-right-24: InGrid Editor](../ige/)
+    [:octicons-arrow-right-24: InGrid Editor]({{ fix_url('components/ige.md') }})
 </div>
 
 
@@ -119,7 +120,7 @@ Jede Komponente wird in einem eigenen Kapitel beschrieben und enthält eine deta
     
     Lesen und Schreiben von Metadaten über die OGC-API Records Schnittstelle.
     
-    [:octicons-arrow-right-24: OGC-API Records](../interface_ogc_api_records/)
+    [:octicons-arrow-right-24: OGC-API Records]({{ fix_url('components/interface_ige.md') }})
 
 -   :material-lan:{ .lg .middle } __CSW-Schnittstelle__
 
@@ -127,7 +128,7 @@ Jede Komponente wird in einem eigenen Kapitel beschrieben und enthält eine deta
 
     Direkter Zugang zur InGrid-Suche über die [OGC CSW 2.0.2 AP ISO 1.0](http://www.opengeospatial.org/standards/cat) Schnittstellenspezifikation
 
-    [:octicons-arrow-right-24: CSW-Schnittstelle](../interface_csw/)
+    [:octicons-arrow-right-24: CSW-Schnittstelle]({{ fix_url('components/interface_csw.md') }})
 
 -   :material-lan:{ .lg .middle } __Opensearch Schnittstelle__
 
@@ -135,8 +136,7 @@ Jede Komponente wird in einem eigenen Kapitel beschrieben und enthält eine deta
 
     Die Opensearch-Schnittstelle bietet lesenden Zugriff auf den InGrid Datenraum.
 
-    [:octicons-arrow-right-24: Such-Schnittstelle](../interface_open_search/)
-
+    [:octicons-arrow-right-24: Such-Schnittstelle]({{ fix_url('components/interface_search.md') }})
 
 
 -   :material-lan:{ .lg .middle } __Atom Download Service__
@@ -145,7 +145,7 @@ Jede Komponente wird in einem eigenen Kapitel beschrieben und enthält eine deta
 
     Die Atom Download Schnittstelle bietet einen INSPIRE-kompatiblen Zugriff auf Datensätze.
 
-    [:octicons-arrow-right-24: Opensearch Server](../interface_atom_download_service/)
+    [:octicons-arrow-right-24: Opensearch Server]({{ fix_url('components/interface_search.md') }})
 
 </div>
 
@@ -160,7 +160,7 @@ Jede Komponente wird in einem eigenen Kapitel beschrieben und enthält eine deta
 
     Sammeln von Transformation von Daten aus unterschiedlichen Schnittstellen (CSW, WFS, CKAN, REST, OAI-MPH).
 
-    [:octicons-arrow-right-24: InGrid Harvester](../harvester/)
+    [:octicons-arrow-right-24: InGrid Harvester]({{ fix_url('components/harvester.md') }})
 
 -   :material-power-plug:{ .lg .middle } __iPlug SE (Search Engine)__
 
@@ -168,7 +168,7 @@ Jede Komponente wird in einem eigenen Kapitel beschrieben und enthält eine deta
 
     Indexieren von Webseiten über eine komfortable Administrationsoberfläche.
 
-    [:octicons-arrow-right-24: iPlug SE (Search Engine)](../iplug_se/)
+    [:octicons-arrow-right-24: iPlug SE (Search Engine)]({{ fix_url('components/iplug_se.md') }})
 
 </div>
 
@@ -179,13 +179,13 @@ Jede Komponente wird in einem eigenen Kapitel beschrieben und enthält eine deta
 
 <div class="grid cards" markdown>
 
--   :simple-keycloak:{ .lg .middle } __Keycloak__
+-   :fontawesome-solid-down-left-and-up-right-to-center:{ .lg .middle } __iBus__
 
     ---
 
-    Authentifizierung zur Absicherung der Anwendungen
+    Zentrale Verteilungsstation zwischen Datenquellen und Suchanfragen
 
-    [:octicons-arrow-right-24: Keycloak](../keycloak/)
+    [:octicons-arrow-right-24: iBus]({{ fix_url('components/ibus.md') }})
 
 -   :material-format-list-bulleted:{ .lg .middle } __Codelist Repository__
 
@@ -193,22 +193,14 @@ Jede Komponente wird in einem eigenen Kapitel beschrieben und enthält eine deta
 
     Verwalten von Codelisten für die Konsistenz der Daten
 
-    [:octicons-arrow-right-24: Codelist Repository](../codelist_repository/)
+    [:octicons-arrow-right-24: Codelist Repository]({{ fix_url('components/codelist_repository.md') }})
 
--   :fontawesome-solid-down-left-and-up-right-to-center:{ .lg .middle } __iBus__
-
-    ---
-
-    Zentrale Verteilungsstation zwischen Datenquellen und Suchanfragen
-
-    [:octicons-arrow-right-24: iBus](../ibus/)
-
--   :material-power-plug:{ .lg .middle } __iPlug SNS__
+-   :simple-keycloak:{ .lg .middle } __Keycloak__
 
     ---
 
-    Der SNS-iPlug bietet eine Schnittstelle zum [Semantischen Netzwerk Service (SNS) des Umweltbundesamtes](http://sns.uba.de/umthes/)
+    Authentifizierung zur Absicherung der Anwendungen
 
-    [:octicons-arrow-right-24: iPlug SNS](../iplug_sns/)
+    [:octicons-arrow-right-24: Keycloak]({{ fix_url('components/keycloak.md') }})
 
 </div>

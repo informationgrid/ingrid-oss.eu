@@ -26,7 +26,7 @@ Sie haben die Installation bereits abgeschlossen? Diese Leitfaden könnten Sie i
 
     Dieser Leitfaden begleitet Sie beim finalen Einrichtungsprozess.
 
-    [Harvester einrichten](../../guides/harvester-setup/){ .md-button }
+    [Harvester einrichten]({{ fix_url('guides/harvester-setup.md') }}){ .md-button }
 
 -   :material-book-open-variant-outline: __CSW Harvester Beispiel__
 
@@ -36,7 +36,8 @@ Sie haben die Installation bereits abgeschlossen? Diese Leitfaden könnten Sie i
 
     Dieser Leitfaden begleitet Sie bei dem Aufsetzen eines **CSW** Harvesters.
 
-    [CSW Harvester aufsetzen](../../guides/harvester-csw/){ .md-button }
+    [CSW Harvester aufsetzen]({{ fix_url('guides/harvester-csw.md') }}){ .md-button }
+
 
 </div>
 
@@ -52,7 +53,7 @@ Sie haben die Installation bereits abgeschlossen? Diese Leitfaden könnten Sie i
 
     Dieser Leitfaden bietet Einblicke in Bediehnung und Überwachung von Harvester-Prozessen.
 
-    [Benutzeroberfläche](../../guides/harvester-user-guide){ .md-button }
+    [Benutzeroberfläche]({{ fix_url('guides/harvester-user-guide.md') }}){ .md-button }
 
 </div>
 
@@ -296,14 +297,15 @@ Einige allgemeine Einstellungen können auch über Umgebungsvariablen konfigurie
 
 ??? question "Wie richte ich den Harvester final ein, wenn die Installation abgeschlossen ist?"
 
-    Siehe Leitfaden [Harvester einrichten](../../guides/harvester-setup/)
+    Siehe Leitfaden [Harvester einrichten]({{ fix_url('guides/harvester-setup.md') }})
 
 ??? question "Wie setze ich einen CSW Harvester auf?"
 
-    Siehe Leitfaden [CSW Harvester](../../guides/harvester-csw/)
+    Siehe Leitfaden [CSW Harvester]({{ fix_url('guides/harvester-csw.md') }})
+    
 
 ??? question "Werde ich benachrichtigt wenn ein Harvester Process fehl schlägt?"
 
     Diese Verhalten kann eingerichtet werden.
 
-    Im Abschnitt [E-Mail Einstellungen](../../guides/harvester-setup/#e-mail-einstellungen/) vom Leitfaden "Harvester einrichten" können Benachrichtigungen eingerichtet werden.
+    Im Abschnitt [E-Mail Einstellungen]({{ fix_url('guides/harvester-setup.md/#e-mail-einstellungen') }}) vom Leitfaden "Harvester einrichten" können Benachrichtigungen eingerichtet werden.

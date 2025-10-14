@@ -30,7 +30,7 @@ Sie haben die Installation bereits abgeschlossen? Dieser Leitfaden könnte Sie i
 
     Dieser Leitfaden bietet Einblicke in die Bedienung vom **InGrid Editor**.
 
-    [Benutzeroberfläche](../../guides/ige-user-guide/){ .md-button }
+    [Benutzeroberfläche]({{ fix_url('guides/ige-user-guide.md') }}){ .md-button }
 
 </div>
 

@@ -18,7 +18,7 @@ Dieser Abschnitt begleitet Sie beim Einrichten vom Harvester. Eine abgeschlossen
     
     Informationen zur Komponente können Sie der Dokumentation entnehmen.
 
-    [Harvester Dokumentation](../../components/harvester/){ .md-button }
+    [Harvester Dokumentation]({{ fix_url('components/harvester.md') }}){ .md-button }
 
 </div>
 

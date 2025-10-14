@@ -26,7 +26,7 @@ Dieses Verzeichnis benutzt das iPlug, um Dateien für seinen Betrieb abzulegen.
 
 **Menü "Angaben zu Betreiber und Datenquelle"**
 
-Der Anbieter des iPlugs wird durch die Auswahl von Partner und Anbieter definiert. Diese Listen werden vom [Codelist Repository](codelist_repository.md) zentral bereitgestellt.
+Der Anbieter des iPlugs wird durch die Auswahl von Partner und Anbieter definiert. Diese Listen werden vom [Codelist Repository]({{ fix_url('components/codelist_repository.md') }}) zentral bereitgestellt.
 
 Der Ansprechpartner für das iPlug kann frei definiert werden, ebenso der Name und die Beschreibung der Datenquelle.
 

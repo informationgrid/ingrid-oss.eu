@@ -1,4 +1,4 @@
-Vielen Dank, dass Sie sich die Zeit nehmen, uns auf Probleme in unserer [Dokumentation](../../) hinzuweisen. Ihre Rückmeldung ist uns sehr wichtig, um die Qualität und Verständlichkeit der InGrid-Dokumentation kontinuierlich zu verbessern.
+Vielen Dank, dass Sie sich die Zeit nehmen, uns auf Probleme in unserer [Dokumentation]({{ fix_url('index.md') }}) hinzuweisen. Ihre Rückmeldung ist uns sehr wichtig, um die Qualität und Verständlichkeit der InGrid-Dokumentation kontinuierlich zu verbessern.
 
 ## Bevor Sie beginnen
 

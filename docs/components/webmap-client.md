@@ -34,7 +34,7 @@ Sie haben die Installation bereits abgeschlossen? Diese Leitfäden könnten Sie 
 
     Dieser Leitfaden bietet Einblicke in die **Benutzeroberfläche**.
 
-    [Benutzeroberfläche](../../guides/webmap-client-frontend/){ .md-button }
+    [Benutzeroberfläche]({{ fix_url('guides/webmap-client-frontend.md') }}){ .md-button }
 
 -   :material-book-open-variant-outline: __Admin GUI vom Webmap Client__
 
@@ -44,7 +44,7 @@ Sie haben die Installation bereits abgeschlossen? Diese Leitfäden könnten Sie 
 
     Dieser Leitfaden bietet Einblicke in das **Admin GUI**.
 
-    [Admin GUI](../../guides/webmap-client-admin-gui/){ .md-button }
+    [Admin GUI]({{ fix_url('guides/webmap-client-admin-gui.md') }}){ .md-button }
 
 </div>
 
@@ -138,7 +138,7 @@ Folgende Dateien sind relevant:
 
     | Einstellung  | Beschreibung                                                              | Wert-Typ       | Defaul-Wert                          |
     |-----------------------------------|---------------------------------------------------------------------------|----------------|--------------------------------------|
-    | config.dir                        | Verzeichnis zum Laden der JS Konfiguration für's [Frontend](#konfiguration-frontend) | String         | *./webapps/ingrid-webmap-client/frontend/* |
+    | config.dir                        | Verzeichnis zum Laden der JS Konfiguration für's Frontend | String         | *./webapps/ingrid-webmap-client/frontend/* |
     | **Feedback aus dem Map Client (mail server settings):** | | |
     | feedback.from                     | Absender E-Mail                                                           | String         |  |
     | feedback.to                       | Empfänger E-Mail                                                          | String         |  |
@@ -179,7 +179,7 @@ Folgende Dateien sind relevant:
 
 ### URL-Shortener
 
-Da der Zustand der Karte in der URL abgebildet wird, kann die URL sehr lang werden. Der URL-Shortener verkürzt hierfür die URL der Karte und wird bei den Funktionen [Teilen](#teilen) und [Drucken](#drucken) verwendet.
+Da der Zustand der Karte in der URL abgebildet wird, kann die URL sehr lang werden. Der URL-Shortener verkürzt hierfür die URL der Karte und wird bei den Funktionen [Teilen]({{ fix_url('guides/webmap-client-frontend.md/#karten-teilen') }}) und [Drucken]({{ fix_url('guides/webmap-client-frontend.md/#karten-drucken') }}) verwendet.
 
 Per Default wird im Mapclient der öffentlich Dienst [https://is.gd/](https://is.gd/) verwendet. Über diesen Dienst kann eine URL folgendermaßen verkürzt werden:
 
@@ -229,7 +229,7 @@ Rufen Sie anschließend die YOURLS-Adminoberfläche mit **YOURL-URL/admin/** auf
 <a name="qr-code"></a>
 ### QR-Code
 
-Für die Funktionen [Teilen](#teilen), [Koordinatenanzeige](#koordinatenanzeige) (Maus-Rechts-Klick auf der Karte) und [Drucken](#drucken) wird ein QR-Code dargestellt.
+Für die Funktionen [QR-Code Teilen]({{ fix_url('guides/webmap-client-frontend.md/#karten-teilen') }}), [Koordinatenanzeige]({{ fix_url('guides/webmap-client-frontend.md/#koordinatenanzeige') }}) (Maus-Rechts-Klick auf der Karte) und [QR-Code Drucken]({{ fix_url('guides/webmap-client-frontend.md/#karten-drucken') }}) wird ein QR-Code dargestellt.
 Für die Generierung des QR-Codes bietet der Webmap Client eine eigene Rest-Schnittstelle:
 
 ```
@@ -242,25 +242,27 @@ Für die QR-Code Generierung wird die JAVA-Bibliothek com.google.zxing.core in d
 
 ### Mapfish
 
-Für die Funktion [Drucken](#drucken) wird im Webmap Client die JAVA-Bibliothek org.mapfish.print.print-lib in der Version 2.1.2 verwendet.
+Für die Funktion [Drucken]({{ fix_url('guides/webmap-client-frontend.md/#karten-drucken') }}) wird im Webmap Client die `JAVA-Bibliothek org.mapfish.print.print-lib` in der Version 2.1.2 verwendet.
 
 ## FAQ
 
 ??? question "Kann man die Projektion des Webmap Clients anpassen?"
 
-    Die Projektion und weitere Einstellungen können über die Admin-GUI unter Akkordeon [Einstellungen](#einstellungen) auf Ihre Bedürfnisse angepasst werden.
+    Die Projektion und weitere Einstellungen können über die Admin-GUI unter Akkordeon [Einstellungen]({{ fix_url('guides/webmap-client-admin-gui.md/#einstellungen') }}) auf Ihre Bedürfnisse angepasst werden.
 
     !!! info "Hinweis"
         Möglicherweise funktioniert das Drucken des Hintergrund-Layers OSM (OpenStreetMap) nicht korrekt bzw. es wird eine Karte an falscher Position ausgedruckt, da der OSM-Layer die Projektion nicht korrekt unterstützt.
 
 ??? question "Kann man die Themen-Bilder unter "Thema wechseln" anpassen?"
 
+    #### Kann man die Themen-Bilder unter "Thema wechseln" anpassen?
+
     !!! info inline end "Hinweis"
-        Per Default ist in der Admin-GUI unter Akkordeon [Style](#style) ein Beispiel mit der Kategorie "Themen" vorhanden.
+        Per Default ist in der Admin-GUI unter Akkordeon [Style]({{ fix_url('guides/webmap-client-admin-gui.md/#style') }}) ein Beispiel mit der Kategorie "Themen" vorhanden.
 
     Ja, die Bilder sind als CSS definiert und liegen als PNG Dateien in den Maßen 140 x 60 vor.
 
-    Fügen Sie in der Admin-GUI hierzu unter Akkordeon [Style](#style) ein CSS-Eintrag mit folgender Syntax:
+    Fügen Sie in der Admin-GUI hierzu unter Akkordeon [Style]({{ fix_url('guides/webmap-client-admin-gui.md/#style') }}) ein CSS-Eintrag mit folgender Syntax:
 
     ```
     [ga-topic] .ga-topics-sprite-<KATEGORIE-ID> {
@@ -271,13 +273,15 @@ Für die Funktion [Drucken](#drucken) wird im Webmap Client die JAVA-Bibliothek 
 
 ??? question "Kann man die Reihenfolge der Hintergrundkarten-Auswahl anpassen?"
 
+    #### Kann man die Reihenfolge der Hintergrundkarten-Auswahl anpassen?
+
     Ja, die Reihenfolge der Hintergrundkarte kann man auch per CSS beeinflussen.
 
     !!! info "Hinweis"
         - Per Default wird die Reihenfolge von der Kategorie vorgegeben, d.h. die festgelegte Reihenfolge in der Kategorie wird im Webmap Client von Rechts nach Links bzw. in der mobilen Ansicht von Unten nach Oben dargestellt.
-        - Die ersten sechs Hintergrundkarten werden in der Auswahlbox vom Webmap Client in der Reihenfolge korrekt dargestellt. Bei jedem weiterem muss unter Akkordeon [Style](#style) jeweils CSS-Einträge ( für Desktop und Mobil) hinzugefügen werden.
+        - Die ersten sechs Hintergrundkarten werden in der Auswahlbox vom Webmap Client in der Reihenfolge korrekt dargestellt. Bei jedem weiterem muss unter Akkordeon [Style]({{ fix_url('guides/webmap-client-admin-gui.md/#style') }}) jeweils CSS-Einträge ( für Desktop und Mobil) hinzugefügen werden.
 
-    Fügen Sie in der Admin-GUI hierzu unter Akkordeon [Style](#style) CSS-Eintäge mit folgender Syntax:
+    Fügen Sie in der Admin-GUI hierzu unter Akkordeon [Style]({{ fix_url('guides/webmap-client-admin-gui.md/#style') }}) CSS-Eintäge mit folgender Syntax:
 
     ```
     ...
@@ -302,9 +306,11 @@ Für die Funktion [Drucken](#drucken) wird im Webmap Client die JAVA-Bibliothek 
     ```
 
     !!! info "Hinweis"
-        Per Default ist in der Admin-GUI unter Akkordeon [Style](#style) ein Beispiel mit der Kategorie "Themen" vorhanden.
+        Per Default ist in der Admin-GUI unter Akkordeon [Style]({{ fix_url('guides/webmap-client-admin-gui.md/#style') }}) ein Beispiel mit der Kategorie "Themen" vorhanden.
 
 ??? question "Kann man die Bilder für die Hintergrundkarten-Auswahl anpassen?"
+
+    #### Kann man die Bilder für die Hintergrundkarten-Auswahl anpassen?
 
     Ja, die Bilder für die Hintergrundkarten werden per CSS definiert.
 
@@ -312,7 +318,7 @@ Für die Funktion [Drucken](#drucken) wird im Webmap Client die JAVA-Bibliothek 
     - Mobile in 38px x 38px
     - Desktop in 90px x 58px
 
-    Fügen Sie in der Admin-GUI hierzu unter Akkordeon [Style](#style) CSS-Eintäge mit folgender Syntax:
+    Fügen Sie in der Admin-GUI hierzu unter Akkordeon [Style]({{ fix_url('guides/webmap-client-admin-gui.md/#style') }}) CSS-Eintäge mit folgender Syntax:
 
     ```
     ...
@@ -343,7 +349,7 @@ Für die Funktion [Drucken](#drucken) wird im Webmap Client die JAVA-Bibliothek 
     Sie können unter `WebmapClientData/img/category/` entweder per Git, wenn eingerichtet, oder per Hochladen direkt auf den Server ein PNG hinterlegen.
     Dieses PNG sollten Sie dann per `https://<IHRE-DOMAIN>/ingrid-webmap-client/rest/admin/image/category/<DATEINAME-OHNE-DATEIENDUNG>` aufrufen können.
 
-    Per Admin-GUI können Sie dann unter Akkordeon [Style](#style) einen neuen CSS-Eintrag hinzufügen, z.B.:
+    Per Admin-GUI können Sie dann unter Akkordeon [Style]({{ fix_url('guides/webmap-client-admin-gui.md/#style') }}) einen neuen CSS-Eintrag hinzufügen, z.B.:
 
     ```
     [ga-background-selector] .ga-bg-layer, [ga-background-selector] .ga-bg-layer-bt, [ga-background-selector] .ga-bg-layer-bt-close {
@@ -358,8 +364,9 @@ Für die Funktion [Drucken](#drucken) wird im Webmap Client die JAVA-Bibliothek 
 
     Der per Default eingestellte URL-Shortner (https://is.gd/create.php?format=json) verkürzt nur URL's mit einer Domain und keine mit einer IP-Adresse. Hier liefert der URL-Shortener einen Fehler und vom Webmap Client wird die ungekürzte URL zurückgeliefert.
 
-??? question "Können passwortgeschützte Karten/Dienste verwenden werden?"
+??? question "Können passwortgeschützte Karten/Dienste verwenden werden?" 
 
+    #### Passwortgeschützte Karten/Dienste
     Über die Admin-GUI können auch Karten von passwortgeschützten Diensten eingepflegt werden.
 
     Laden Sie hierbei über den Reiter "Karten" und den Button "Dienst laden" die Dienst-URL indem Sie zusätzlich über die Checkbox "Login verwenden" den Benutzername und das Passwort angeben.
@@ -374,6 +381,8 @@ Für die Funktion [Drucken](#drucken) wird im Webmap Client die JAVA-Bibliothek 
 
 ??? question "Fehlerhafte Karten"
 
+    #### Fehlerhafte Karten
+
     Je nach Einstellung läuft (per Default: täglich um 3:00 Uhr) ein Job, welches diverse Einstellungen (Extent, Legend-URL, Scales, etc.) zur Ihren eingepflegten Karten (nicht bei kombinierten Karten) automatisch aktualisiert.
 
     Hierbei wird auch geprüft, ob der Dienst noch erreichbar und die Karte in der GetCapabilities des Dienstes noch vorhanden ist. Ist der Dienst nicht mehr erreichbar, z.B. durch https-Umstellung, wird der eingepflegten Karten ein Status "Dienst existiert nicht mehr" und bei nicht vorhandsein der Karte in der GetCapabilities der Status "Karte existiert nicht mehr" hinzugefügt.
@@ -386,7 +395,7 @@ Für die Funktion [Drucken](#drucken) wird im Webmap Client die JAVA-Bibliothek 
 
     Zudem werden bei dem Job die eingepflegte Karten, die keine Zuordnung zu einer Kategorie haben, entfernt.
 
-    Möchten Sie eine E-Mail-Benachrichtigung, falls eingepflegte Karten nicht mehr erreichbar sind und einen Fehler aufweisen, so setzen Sie die Einstellung "scheduler.layer.update.mail" auf true. Gehen Sie hier wie unter [Einstellungen im Backend](#einstellungen-im-backend) beschrieben vor. Bei Änderung muss das Portal neugestartet werden.
+    Möchten Sie eine E-Mail-Benachrichtigung, falls eingepflegte Karten nicht mehr erreichbar sind und einen Fehler aufweisen, so setzen Sie die Einstellung `scheduler.layer.update.mail` auf `true`. Gehen Sie hier wie unter [Konfiguration]({{ fix_url('#konfiguration') }}) beschrieben vor. Bei Änderung muss das Portal neugestartet werden.
     Ein SMTP-Server (Einstellung "feedback.host") muss eingestellt sein und die E-Mail geht an die Adresse unter Einstellung "feedback.to".
 
 
@@ -399,8 +408,8 @@ Für die Funktion [Drucken](#drucken) wird im Webmap Client die JAVA-Bibliothek 
     !!! info inline end "Hinweis"
         Die Zeitstempeln der eingepflegten Karten werden nicht automatisch aktualisiert.
 
-    * [Zeitregler](#karteninteraktionen): Der Regler bleibt immer auf dem Jahr und lässt sich nicht verschieben. Ein Abspielen der Zeitperioden ist nicht möglich.
-    * [Zeitabhängige Darstellung der Karte](#dargestellte-karten): Bei Klick auf die Jahreszahl würden alle Zeitperioden nur mit dem Jahr angezeigt werden. Hier kann man zwar die einzelnen Zeitstempeln auswählen und die Karte ändert sich auch, aber man weiß nicht wirklich, welcher Zeitstempel z.Zt. aktiv ist.
+    * [Zeitregler]({{ fix_url('guides/webmap-client-frontend.md/#zeitregler') }}): Der Regler bleibt immer auf dem Jahr und lässt sich nicht verschieben. Ein Abspielen der Zeitperioden ist nicht möglich.
+    * [Zeitabhängige Darstellung der Karte]({{ fix_url('guides/webmap-client-frontend.md/#dargestellte-karten') }}): Bei Klick auf die Jahreszahl würden alle Zeitperioden nur mit dem Jahr angezeigt werden. Hier kann man zwar die einzelnen Zeitstempeln auswählen und die Karte ändert sich auch, aber man weiß nicht wirklich, welcher Zeitstempel z.Zt. aktiv ist.
 
 ??? question "Warum ist der Wert des "layers"-Parameters in der URL so kryptisch?"
 

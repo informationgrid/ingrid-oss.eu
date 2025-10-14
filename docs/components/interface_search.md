@@ -336,7 +336,7 @@ Folgende Parameter sind zulässig:
 | Methode | Parameter | Beschreibung |
 | --- | --- | --- |
 | descriptor |   | Keine Parameter, liefert den OpenSearch Descriptor, der die Such-Anfrage Syntax beschreibt |
-| query | q | Die Query entspricht dem Query-String im Portal (siehe Beschreibung der [Ingrid-Querysyntax](../gettingStarted/querySyntax.md)). |
+| query | q | Die Query entspricht dem Query-String im Portal. |
 | | p | angeforderte Seite der Suchergebnisse; Standard: 1 |
 | | h | Treffer pro Seite; Standard: 10 |
 | | t | Timeout für die Such-Anfragen an das InGrid System.<br><br>Dieses Timeout beeinflusst nur die Such-Anfragen an die iPlugs, welche nur einen Teil der Kommunikation darstellen. Die eigentliche Dauer eines OpenSearch Aufrufen ist etwas länger, dennoch kann die Ausführungszeit, evtl. auf Kosten der Ergebnismenge, beeinflusst werden. Das max. Timeout wird über die Einstellung `ibus.search.max.timeout` in der `ingrid-opensearch.properties` gesetzt. Über den Parameter `t` kann kein Timeout definiert werden, was höher als das maximale Timeout ist. Wird der Parameter nicht angegeben, wird als Timeout immer das maximale Timeout verwendet. |
@@ -646,7 +646,7 @@ Bsp: [https://dev.informationgrid.eu/interface-search/opensearch/query?format=rd
 
 Der Export ist Kompatibel zur DCAT-AP.de Version 2.0. Die Paginierung erfolgt über die `PagedCollection` aus dem Hydra-Namespace des W3C (https://www.w3.org/ns/hydra/spec/latest/core/) die Einstellmöglichkeiten der Datensätze pro Seite entspricht den Möglichkeiten der Items pro Seite im OpenSearch-Schnittstelle.
 
-Der Export der Opendata-Metadaten erfolgt aus den IDF-Daten auf Basis der [Mapping-Tabelle für GDI-DE, Stand 16.02.2022](../assets/components/images/20220216_Mapping_ISO_DCAT-AP-DE_konsolidiert_Aenderungen.xlsx).
+Der Export der Opendata-Metadaten erfolgt aus den IDF-Daten auf Basis der [Mapping-Tabelle für GDI-DE, Stand 16.02.2022](../assets/components/20220216_Mapping_ISO_DCAT-AP-DE_konsolidiert_Aenderungen.xlsx).
 
 Lizenzen werden gemäß der Tabelle unter https://www.dcat-ap.de/def/licenses/ (Stand 20210721) auf DCAT-AP.de URIs gemapped. Sollte keine Lizenz URL gefunden werden oder keine Abbildung auf eine URI möglich sein wird eine Default-Lizenz angegeben (Sofern nicht anders konfiguriert http://dcat-ap.de/def/licenses/other-open).
 

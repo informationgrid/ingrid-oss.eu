@@ -12,15 +12,15 @@ Bevor Sie mit der Installation starten, sollten Sie die folgenden Fragen klären
 
 Eine Basis Installation enthält mind. folgende Komponenten:
 
-- [Elasticsearch](../components/elasticsearch.md)
-- [iBus](../components/ibus.md)
-- [Portal](../components/portal.md)
-- [iPlug IGE / InGrid Catalog](../components/iplug_ige.md)
-- [Codelist Repository](../components/codelist_repository.md)
+- Elasticsearch
+- [iBus]({{ fix_url('components/ibus.md') }})
+- [Portal]({{ fix_url('components/portal.md') }})
+- iPlug IGE / InGrid Catalog
+- [Codelist Repository]({{ fix_url('components/codelist_repository.md') }})
 
 
 
-Genauere Informationen zur Installation der einzelnen Komponenten können bei der Dokumentation der einzelnen [Komponenten](../components/index.md) eingesehen werden.
+Genauere Informationen zur Installation der einzelnen Komponenten können bei der Dokumentation der einzelnen Komponenten eingesehen werden.
 
 ### Welche Datenbank wird verwendet?
 
@@ -100,7 +100,7 @@ Wenn mehrere Installer aus dem selben Verzeichnis heraus aufgerufen werden, soll
 
 Bei der Installation ist auf die nötigen Schreibrechte für die Installationsverzeichnisse zu achten.
 
-Viele [Komponenten](../components/index.md) besitzen eine Administrations GUI, über die die Komponente konfiguriert werden kann. Das InGrid System lässt sich sowohl unter Linux, als auch unter Windows installieren.
+Viele Komponenten besitzen eine Administrations GUI, über die die Komponente konfiguriert werden kann. Das InGrid System lässt sich sowohl unter Linux, als auch unter Windows installieren.
 
 <hr>
 

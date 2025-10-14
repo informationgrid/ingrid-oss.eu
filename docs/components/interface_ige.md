@@ -31,7 +31,7 @@ Sie haben die Konfiguration bereits abgeschlossen? Diese Leitfaden könnten Sie 
 
     Dieser Leitfaden begleitet Sie bei der Bediehnung der **OGC Records Schnittstelle**. 
 
-    [OGC Records Schnittstelle](../../guides/ige-api-ogc/){ .md-button }
+    [OGC Records Schnittstelle]({{ fix_url('guides/ige-api-ogc.md') }}){ .md-button }
 
 -   :material-book-open-variant-outline: __CSW-T Schnittstelle__
 
@@ -39,7 +39,7 @@ Sie haben die Konfiguration bereits abgeschlossen? Diese Leitfaden könnten Sie 
 
     Dieser Leitfaden begleitet Sie bei der Bediehnung der **CSW-T Schnittstelle**. 
 
-    [CSW-T Schnittstelle](../../guides/ige-api-cswt/){ .md-button }
+    [CSW-T Schnittstelle]({{ fix_url('guides/ige-api-cswt.md') }}){ .md-button }
 
 </div>
 
@@ -76,7 +76,7 @@ Folgende Profile stehen zur Verfügung und können je nach Bedarf aktiviert werd
     
     Informationen zur Komponente können Sie der Dokumentation entnehmen.
 
-    [Editor Dokumentation](../../components/ige/){ .md-button }
+    [Editor Dokumentation]({{ fix_url('components/ige.md') }}){ .md-button }
 
 </div>
 
@@ -142,8 +142,9 @@ Sobald Sie einen gültigen `access_token` erhalten haben, können Sie die Schnit
 
 ??? question "Wie bediene ich die OGC Records Schnittstelle?"
 
-    Siehe Leitfaden [Editor API: OGC Records](../../guides/ige-api-ogc/)
+    Siehe Leitfaden [Editor API: OGC Records]({{ fix_url('guides/ige-api-ogc.md') }})
+    
 
 ??? question "Wie bediene ich die CSW-T Schnittstelle?"
 
-    Siehe Leitfaden [Editor API: CSW-T](../../guides/ige-api-cswt/)
+    Siehe Leitfaden [Editor API: CSW-T]({{ fix_url('guides/ige-api-cswt.md') }})

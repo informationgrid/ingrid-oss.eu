@@ -19,7 +19,7 @@ Die **Admin-GUI** verwaltet die Karten, Kategorien, Einstellungen, Hilfe und den
     
     Informationen zur Komponente können Sie der Dokumentation entnehmen.
 
-    [Webmap Client Dokumentation](../../components/webmap-client/){ .md-button }
+    [Webmap Client Dokumentation]({{ fix_url('components/webmap-client.md') }}){ .md-button }
 
 </div>
 
@@ -45,7 +45,7 @@ Prüfen Sie auch die Liste der eingepflegten Karten nach fehlerhaften Karten (z.
 
     > Hinweis: Bei WMS werden automatisch die URL-Parameter "SERVICE=WMS", "VERSION=1.3.0" und/oder "REQUEST=GetCapabilities" der Dienst-URL hinzugefügt, falls diese Parameter nicht vorhanden sind.
 
-- Handelt es sich bei Ihrem geladenen Dienst um einen passwortgeschützten Dienst, so wählen Sie die Checkbox "Login verwenden" aus und tragen hier Benutzername und Passwort ein. (siehe [Passwortgeschützte Karten](#können-passwortgeschützte-kartendienste-verwenden-werden))
+- Handelt es sich bei Ihrem geladenen Dienst um einen passwortgeschützten Dienst, so wählen Sie die Checkbox "Login verwenden" aus und tragen hier Benutzername und Passwort ein. (siehe [Passwortgeschützte Karten]({{ fix_url('components/webmap-client.md/#passwortgeschutzte-kartendienste') }}))
 
     - Mit der Checkbox "Login ersetzen" können Sie bereits eingetragene Login-Daten für einen Dienst ersetzen.
 
@@ -127,7 +127,7 @@ Prüfen Sie auch die Liste der eingepflegten Karten nach fehlerhaften Karten (z.
 
     Ist eine Karte fehlerhaft so wird dies in der Liste der eingepflegten Karte anhand eines "i"-Symbol angemerkt.
 
-    (siehe [Fehlerhafte Karten](#fehlerhafte-karten) )
+    (siehe [Fehlerhafte Karten]({{ fix_url('components/webmap-client.md/#fehlerhafte-karten') }}))
 
 ### Karten bearbeiten
 
@@ -236,7 +236,7 @@ Haben Sie eine Kategorie in der Liste ausgewählt, so können Sie über den Butt
 
     > Hinweis:
     > Im Akkordion [Style](#style) müssen ggf. weitere Anpassungen durchgeführt
-    > - wenn man der Kategorie im Webmap Client in der Auswahl "Thema wechseln" ein anderes Bild vergeben möchte. [siehe auch](#kann-man-die-themen-bilder-unter-thema-wechseln-anpassen)
+    > - wenn man der Kategorie im Webmap Client in der Auswahl "Thema wechseln" ein anderes Bild vergeben möchte. [siehe auch]({{ fix_url('components/webmap-client.md/#kann-man-die-themen-bilder-unter-thema-wechseln-anpassen') }})
 
 - Ändern Sie Ihren Titel über den Eintrag "Label".
 
@@ -255,7 +255,7 @@ Haben Sie eine Kategorie in der Liste ausgewählt, so können Sie über den Butt
     > - In der Liste der Karte, werden nur Karten mit der Eigenschaft "Hintergrundkarte" aufgelistet.
     > - "osmLayer" ist ein OpenLayers-Layer und funktioniert nur in der Projektion "EPSG:3857" einwandfrei.
     > - "kein Hintergrund" wird immer im Webmap Client als Hintergrund-Auswahl hinzugefügt
-    > - Im Akkordion [Style](#style) müssen ggf. weitere Anpassungen durchgeführt werden, wenn man der Hintergrundkarte eine [Reihenfolge](#kann-man-die-reihenfolge-der-hintergrundkarten-auswahl-anpassen) oder ein anderes [Bild](#kann-man-die-bilder-für-die-hintergrundkarten-auswahl-anpassen) vergeben möchte.
+    > - Im Akkordion [Style](#style) müssen ggf. weitere Anpassungen durchgeführt werden, wenn man der Hintergrundkarte eine [Reihenfolge]({{ fix_url('components/webmap-client.md/#kann-man-die-reihenfolge-der-hintergrundkarten-auswahl-anpassen') }}) oder ein anderes [Bild]({{ fix_url('components/webmap-client.md/#kann-man-die-bilder-fur-die-hintergrundkarten-auswahl-anpassen') }}) vergeben möchte.
 
 - Setzen Sie hier aus der Liste "Hintergrundkarte" Ihre Default-Hintergrundkarte fest.
 
