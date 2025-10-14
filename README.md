@@ -38,8 +38,9 @@ To preview your local changes, install python and pip. It is recommended to use 
 * Open repo in VS Code
 * Install VS Code extension `Dev Containers`
 * Press `F1` and run the command `Dev Containers: Reopen in container`
-* Open new terminal and run `mkdocs serve --watch-theme`
-* Visit http://localhost:8000
+* Open new terminal and run `mkdocs serve`
+
+> **Edit Theme:** Run `mkdocs serve --watch-theme` to edit files in theme folder.
 
 ### Option B - Python Environment 
 Install Python 3.13
@@ -51,10 +52,8 @@ source ./.venv/bin/activate
 # Install requirements
 pip install -r requirements.txt
 # Start MkDocs
-mkdocs serve --watch-theme
+mkdocs serve
 ```
-Visit http://localhost:8000/
-
 
 
 ## Release new version
