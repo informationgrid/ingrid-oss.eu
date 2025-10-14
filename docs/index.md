@@ -141,22 +141,22 @@ development:
       <li><b>Effiziente Such- und Filtermöglichkeiten:</b><br>Nutzer können gezielt nach Vorhaben suchen, Filteroptionen nutzen oder sich relevante Projekte auf einer interaktiven Karte anzeigen lassen.</li>
       <li><b>Nachnutzung:</b><br>Schnittstellen ermöglichen die Nutzung der Datenbasis und ermöglichen die Integration in andere Systeme.</li>
       </ul>"
-    - title: Umwelt Navi Niedersachen
+    - title: UmweltNAVI Niedersachen, Rheinland-Pfalz und Schleswig-Holstein
       website: https://umwelt-navi.info/
       demo_url: https://umwelt-navi.info/
       logo: ./assets/logos/logo-umweltnavi.png
       text: "<p>
-      Mit UmweltNAVI hast du aktuelle Umweltdaten und Informationen immer griffbereit – ob zu Hause oder unterwegs. Die App liefert dir Daten aus Niedersachsen, ergänzt durch frei verfügbare Informationen aus ganz Deutschland. Erhalte wertvolle Einblicke in Themen wie Naturschutz, Hochwasser, Lärm und Energie oder verfolge in Echtzeit Messwerte zu Luftqualität, Pegelständen und Radioaktivität.
+      Mit UmweltNAVI hast du aktuelle Umweltdaten und Informationen immer griffbereit – ob zu Hause oder unterwegs. Die App liefert dir Daten aus Niedersachsen, Rheinland-Pfalz und Schleswig-Holstein, ergänzt durch frei verfügbare Informationen aus ganz Deutschland. Erhalte wertvolle Einblicke in Themen wie Naturschutz, Hochwasser, Lärm und Energie oder verfolge in Echtzeit Messwerte zu Luftqualität, Pegelständen und Radioaktivität.
       </p>
       <ul>
       <li><b>Live-Umweltdaten</b> aus verschiedenen Fachbereichen</li>
   	  <li><b>Messstationen & aktuelle Werte</b> jederzeit abrufbar</li>
       <li><b>Interaktive Funktionen & Quizfragen</b> mit regionalem Bezug</li>
-      <li><b>Pressemitteilungen & Neuigkeiten</b> direkt aus dem Umweltministerium</li>
+      <li><b>Pressemitteilungen & Neuigkeiten</b> direkt aus den Umweltministerien</li>
       </ul>
       <p>Erkunde deine Umgebung interaktiv und entdecke, was es in deiner Nähe zu wissen gibt!</p>
       <p><b>InGrid – Die technologische Basis vom UmweltNAVI</b></p>
-      <p>Die UmweltNAVI-App basiert auf der leistungsfähigen InGrid-Plattform, die eine strukturierte, flexible und standardkonforme Verwaltung von Umweltdaten ermöglicht. Durch die nahtlose Integration verschiedener Datenquellen werden Informationen aus Niedersachsen mit deutschlandweiten Umweltdaten vernetzt und benutzerfreundlich aufbereitet. Dank der modularen Architektur von InGrid lässt sich die App dynamisch erweitern, neue Datenquellen einbinden und auf spezifische Anforderungen anpassen – eine zukunftssichere Lösung für digitale Umweltinformationen.</p>
+      <p>Die UmweltNAVI-App basiert auf der leistungsfähigen InGrid-Plattform, die eine strukturierte, flexible und standardkonforme Verwaltung von Umweltdaten ermöglicht. Durch die nahtlose Integration verschiedener Datenquellen werden Informationen aus den Bundesländern mit deutschlandweiten Umweltdaten vernetzt und benutzerfreundlich aufbereitet. Dank der modularen Architektur von InGrid lässt sich die App dynamisch erweitern, neue Datenquellen einbinden und auf spezifische Anforderungen anpassen – eine zukunftssichere Lösung für digitale Umweltinformationen.</p>
       "
     - title: Open Data Erfassungstool für Bundesbehörden
       website: https://editor.opendata.bund.de
