@@ -9,7 +9,6 @@ InGrid ist eine **modulare Softwareplattform**, die sich flexibel an Ihre Anford
 
 
 ![](../assets/drawio/ingrid-overview.drawio)
-<figcaption class="figcaption">Schematische Darstellung eines InGrid-Systems</figcaption>
 
 
 Kernkomponenten sind: 

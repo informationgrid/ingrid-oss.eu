@@ -7,8 +7,7 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 Das iPlug dient dem Indexieren von Webseiten. Die zu indexierenden Webseiten werden über eine komfortable Administration gepflegt. Die Webseiten werden zeitgesteuert über einen Crawler heruntergeladen, analysiert und indexiert. Dabei kommt für den Web Crawler die OpenSource Software [Apache Nutch](https://nutch.apache.org/) zum Einsatz.
 
-![InGrid Komponente iPlugs SE Web Crawler](../assets/drawio/ingrid-iplug-se.drawio "InGrid Komponente iPlugs SE Web Crawler")
-<figcaption>InGrid Komponente iPlugs SE Web Crawler</figcaption>
+![](../assets/drawio/ingrid-iplug-se.drawio)
 
 Es können mehrere Instanzen mit jeweils unterschiedlicher Konfiguration und unterschiedlichen URL Räumen, die durch Start- Limit und Exclude-URL Muster definiert werden, konfiguriert werden. Jede Instanz kann unabhängig gestartet und indexiert werden.
 

@@ -12,7 +12,7 @@ abgelegt ist. Es kann auch ein iPlug angeschlossen sein, das seine Daten nicht i
 separat angefragt wird. Dabei wird dann die Suchanfrage auf dem iPlug durchgeführt und das Ergebnis über den iBus zum
 Aufrufer (z.B. das Portal) weitergeleitet.
 
-![InGrid-iBus](../assets/drawio/ingrid-ibus.drawio)
+![](../assets/drawio/ingrid-ibus.drawio)
 
 ## Systemvoraussetzungen
 

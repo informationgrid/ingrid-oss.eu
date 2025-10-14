@@ -8,8 +8,6 @@ Die grundlegende Software-Architektur besteht aus Komponenten, die über eine Ko
 InGrid basiert auf dem Komponenten-Konzept, das im Bereich der Software-Entwicklung bereits seit längerem erfolgreich eingesetzt wird. Bei diesem Konzept werden Arbeitsaufgaben in Teilaufgaben unterteilt und parallel bearbeitet. Dadurch ergibt sich ein erweiterbares, flexibles und damit auch skalierbares System, mit dem hohe Flexibilität und Performanz gewährleistet werden können. InGrid besteht aus unterschiedlichen Modulen. Die wichtigsten sind der Informationsbroker (iBus), die Schnittstellen zu den Datenquellen (iPlugs), standardisierte Schnittstellen zur Portaloberfläche, offene Schnittstellen zur Weitergabe von Informationen an andere Systeme (CSW und OpenSearch), die Portaloberfläche sowie der InGridCatalog.
 
 ![](../assets/drawio/ingrid-components.drawio)
-<figcaption class="figcaption">Komponenten eines InGrid-Systems</figcaption>
-
 
 ### iBus
 Der iBus (“Information Bus”) bildet in einem InGrid-System das zentrale, verbindende Element. Er arbeitet als Verteilungsstation zwischen den InGrid Komponenten.
@@ -44,7 +42,7 @@ Die Kommunikation zwischen den InGrid-Komponenten basiert auf TCP-Sockets. Der i
 
 Dies ermöglicht, dass iPlugs und Schnittstellen hinter Firewalls versteckt werden können. Es muss keine von außen erreichbare Verbindung existieren, so dass keine sicherheitskritischen Verbindungen zu den Komponenten benötigt werden. Die einzige von außen erreichbare Komponente ist der iBus. Firewalls zwischen iPlugs/Schnittstellen und dem iBus müssen nur eine ausgehende TCP-Verbindung zum iBus erlauben. Dies ermöglicht den Einsatz von iPlugs/Schnittstellen in Bereichen mit hohen IT-Sicherheitsanforderungen.
 
-![InGrid Communication](../assets/drawio/ingrid-communication.drawio "InGrid Communication")
+![](../assets/drawio/ingrid-communication.drawio)
 
 ## Installation
 Informationen zur Inbetriebnahme von InGrid finden Sie unter **[Installation](../start/installation.md)**.

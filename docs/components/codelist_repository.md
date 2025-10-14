@@ -18,7 +18,7 @@ Eine direkte Kommunikation zum Codelist-Repository geschieht von allen Komponent
 sind, wie zum Beispiel der InGrid-Editor. Da der iBus auch an das Codelist-Repository angeschlossenen ist, können
 Komponenten auch über den iBus zu aktuellen Codelisten gelangen.
 
-![InGrid-iBus](../assets/drawio/ingrid-codelist-repository.drawio)
+![](../assets/drawio/ingrid-codelist-repository.drawio)
 
 Beim Verändern einer Codeliste, werden die Daten in XML-Dateien abgespeichert. Diese Dateien haben das folgende
 Namensschema: "data/codelist_<codelist-id>.xml"

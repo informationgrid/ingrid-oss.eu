@@ -9,7 +9,7 @@ Die CSW-Schnittstelle bietet Zugang zur InGrid-Suche über die [OGC CSW 2.0.2 AP
 
 Die Schnittstelle bietet die Möglichkeit bestimmte Einschränkungen in der Anfrage vorzunehmen, um z.B. ausschließlich Anbieter-spezifische Daten auszuliefern.
 
-![InGrid Komponente CSW Schnittstelle](../assets/drawio/ingrid-interface-csw.drawio "InGrid Komponente CSW Schnittstelle")
+![](../assets/drawio/ingrid-interface-csw.drawio)
 
 <figcaption>InGrid Komponente CSW Schnittstelle</figcaption>
 

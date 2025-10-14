@@ -13,7 +13,7 @@ Unterstützte Schnittstellen:
 - ATOM Download Service
 - GOVDATA Schnittstelle
 
-![InGrid Komponente REST Schnittstelle](../assets/drawio/ingrid-interface-search.drawio "InGrid Komponente REST Schnittstelle")
+![](../assets/drawio/ingrid-interface-search.drawio)
 
 <figcaption class="figcaption">InGrid Komponente REST-Schnittstelle</figcaption>
 

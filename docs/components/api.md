@@ -11,7 +11,7 @@ wird derzeit nur vom InGrid Portal verwendet.
 Die InGrid-API liefert die Ergebnisse aus verschiedenen Datenquellen aufgearbeitet zurück, so dass diese vom Portal dargestellt werden können.
 Den kompletten Funktionsumfang erfahren Sie weiter unten.
 
-![](../assets/drawio/ingrid-api.drawio "InGrid Komponente iBus")
+![](../assets/drawio/ingrid-api.drawio)
 
 ## Systemvoraussetzungen
 
