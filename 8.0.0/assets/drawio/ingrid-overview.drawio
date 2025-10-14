@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram name="Seite-1" id="4UVButH17yrCxIi93USr">
-        <mxGraphModel dx="764" dy="701" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="760" pageHeight="490" math="0" shadow="0">
+        <mxGraphModel dx="357" dy="167" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="760" pageHeight="490" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -22,8 +22,8 @@
                 <mxCell id="QvCXJFdDLyR9ekbHcDe3-6" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;rounded=0;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#000000;fontStyle=1;fillColor=none;" parent="QvCXJFdDLyR9ekbHcDe3-5" vertex="1">
                     <mxGeometry width="40" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="QvCXJFdDLyR9ekbHcDe3-7" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-map-128.png;rounded=0;strokeColor=default;strokeWidth=2;align=center;fontFamily=Helvetica;fontSize=12;fontColor=#000000;fontStyle=1;fillColor=default;" parent="QvCXJFdDLyR9ekbHcDe3-5" vertex="1">
-                    <mxGeometry x="6" y="6" width="28" height="28" as="geometry"/>
+                <mxCell id="3" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#000000;shadow=0;dashed=0;shape=mxgraph.ios7.icons.map;fillColor=none;" vertex="1" parent="QvCXJFdDLyR9ekbHcDe3-5">
+                    <mxGeometry x="10" y="10" width="20" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="QvCXJFdDLyR9ekbHcDe3-8" value="Research" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=21;fontColor=#000000;fontStyle=1;" parent="1" vertex="1">
                     <mxGeometry x="610" y="21.5" width="108" height="37" as="geometry"/>
@@ -61,8 +61,8 @@
                 <mxCell id="QvCXJFdDLyR9ekbHcDe3-19" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;rounded=0;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#000000;fontStyle=1;fillColor=none;" parent="QvCXJFdDLyR9ekbHcDe3-18" vertex="1">
                     <mxGeometry width="40" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="QvCXJFdDLyR9ekbHcDe3-20" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/science-technology-outline-24-px/24/Magnifier_magnifying_glass_search_search_web_searching_glass-128.png;rounded=0;strokeColor=default;strokeWidth=2;align=center;fontFamily=Helvetica;fontSize=12;fontColor=#000000;fontStyle=1;fillColor=default;" parent="QvCXJFdDLyR9ekbHcDe3-18" vertex="1">
-                    <mxGeometry x="7" y="7" width="26" height="26" as="geometry"/>
+                <mxCell id="2" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#000000;shadow=0;dashed=0;shape=mxgraph.ios7.icons.looking_glass;fillColor=none;" vertex="1" parent="QvCXJFdDLyR9ekbHcDe3-18">
+                    <mxGeometry x="10" y="10" width="20" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="QvCXJFdDLyR9ekbHcDe3-21" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#00C753;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#000000;fontStyle=1;labelBackgroundColor=default;endArrow=none;endFill=0;flowAnimation=0;" parent="1" source="QvCXJFdDLyR9ekbHcDe3-22" target="QvCXJFdDLyR9ekbHcDe3-39" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -96,7 +96,7 @@
                 <mxCell id="QvCXJFdDLyR9ekbHcDe3-30" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;rounded=0;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#000000;fontStyle=1;fillColor=none;" parent="QvCXJFdDLyR9ekbHcDe3-28" vertex="1">
                     <mxGeometry x="-30" width="40" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="QvCXJFdDLyR9ekbHcDe3-31" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#1E2129;shadow=0;dashed=0;shape=mxgraph.ios7.icons.globe;fillColor=none;" parent="1" vertex="1">
+                <mxCell id="QvCXJFdDLyR9ekbHcDe3-31" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#000000;shadow=0;dashed=0;shape=mxgraph.ios7.icons.globe;fillColor=none;" parent="1" vertex="1">
                     <mxGeometry x="20" y="125" width="40" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="QvCXJFdDLyR9ekbHcDe3-32" value="Harvest" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=21;fontColor=#000000;fontStyle=1;" parent="1" vertex="1">
