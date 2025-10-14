@@ -9,29 +9,26 @@ You can find the documentation at https://ingrid-oss.eu
 
 ## Edit documentation
 The documentation is organized in versions. Each version has its branch.
-* The "draft" branch always contains the newest changes.
-  * See `.docs-version` to check which version it currently represents.
-* Go to folder `docs` and edit the markdowns.
+
+* Branches starting with `version/` contain version specific documentation. 
+* The default branch `draft` contains unreleased changes and is long lived.
+* See [.docs-version](.docs-version) to check which version the branch represents.
+
+Once you found the correct branch, you can start to edit the documentation.
+* Go to folder [docs](docs) and edit the markdowns.
 * Commit and push your changes.
-* Deployment is automated with a GitLab CI pipeline.
+* Deployment is automated with GitHub workflows.
 
-### Edit older documentations
-* Checkout the branch version that you want to update (e.g. `git checkout 0.1`)
-* Commit and push your changes
+> **HINT:** If you wish to add new markdown files you need to include them in [mkdocs.yml](mkdocs.yml) at field `nav`.
 
-## Development
 
-There is no need to install any dependencies if you want to make basic edits of existing markdowns. However, if you wish to add more complex changes (e.g. add new markdowns, edit navigation), you might want to preview your changes.
+## Local Preview & Development
 
-> **HINT: Navigation/Menu** 
-> 
-> If you wish to add new markdown files you need to include it in `mkdocs.yml` at field `nav`.
+If you wish to add more complex changes (e.g. add new markdowns, edit navigation), you might want to preview your changes.
 
-> **HINT Layout/Theme** 
-> 
-> To edit layout files go to folder `theme` .
+If you wish to edit the **layout** go to folder [theme](theme).
 
-To preview your local changes, install python and pip. It is recommended to use a python environment.
+Here are 2 options how you can develop and preview this documentation locally: 
 
 ### Option A - VS Code devcontainer
 
@@ -43,7 +40,8 @@ To preview your local changes, install python and pip. It is recommended to use 
 > **Edit Theme:** Run `mkdocs serve --watch-theme` to edit files in theme folder.
 
 ### Option B - Python Environment 
-Install Python 3.13
+
+Install python and pip. It is recommended to use a python environment. Recommended Python version is `3.13`.
 ``` sh
 # Create a virtual env
 python3 -m venv ./.venv
@@ -53,6 +51,8 @@ source ./.venv/bin/activate
 pip install -r requirements.txt
 # Start MkDocs
 mkdocs serve
+# If you wish to edit the theme run
+mkdocs serve --watch-theme
 ```
 
 
@@ -77,21 +77,22 @@ This triggers the following workflows:
 
 
 ## Delete a version
+If you wish to delete a version from branch `gh-pages` you can delete the version tag. 
 
-Run `git push --delete origin v8.0.0`
+* Delete tag with command `git push --delete origin v8.0.0`
+* By removing the tag it triggers the workflow `.github/workflows/docs-delete.yml`.
+* This removes the version from branch `gh-pages`. 
+* The branch `version/8.0.0` will NOT be deleted.
 
-By removing the tag is triggers the workflow `.github/workflows/docs-delete.yml`.
-
-* It deletes the version branch `version/8.0.0`.
-* Removes the version from branch `gh-pages`
-
-Alternatively delete version on branch `gh-pages` manual:
-* Run `git fetch` 
-* Run in python env `mike delete --push 8.0.0`
-
-## Define aliases (draft, latest)
-Add alias `latest` to version `8.0.0`:
+## Helpful commands and examples
+### Add alias `latest` to version `8.0.0`:
+* `git fetch` 
 * `mike alias 8.0.0 latest --push`
 
-Add alias `draft` to version `8.0.0`:
+### Add alias `draft` to version `8.0.0`:
+* `git fetch` 
 * `mike alias 8.0.0 draft --push`
+
+### Remove version published files on server
+* `git fetch` 
+* `mike delete --push 8.0.0`
