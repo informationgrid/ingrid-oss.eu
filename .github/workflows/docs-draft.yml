@@ -41,5 +41,4 @@ jobs:
 
       - name: Deploy draft (versioned) + alias 'draft'
         run: |
-          mike deploy --push --update-aliases "${{ steps.ver.outputs.v }}" draft
-          # Do NOT set default here; default should stay on 'latest'
+          mike deploy --push --update-aliases --prop-set hidden=true "${{ steps.ver.outputs.v }}" draft
