@@ -5,10 +5,28 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 ## Version 8.1.0 <small>10.10.2025</small> { id="8.1.0" data-toc-label="8.1.0"}
 
+
+### Hinweise für die Aktualisierung&nbsp;⚠️
+
+#### Interface-Search
+
+Durch die Aktualisierung der Interface-Search Komponenten muss die Konfiguration angepasst werden.
+Aus der Datei `interface-search.properties`  muss das Zeichen '/' vor dem `?` aus den folgenden Einträgen entfernt werden:
+
+* atom.download.opensearch.describe.spatial.dataset.template
+* atom.download.opensearch.get.spatial.dataset.template
+
+Ein korrekter Eintrag sieht bspw. so aus:
+
+```
+atom.download.opensearch.describe.spatial.dataset.template=/dataset/{servicefeed-uuid}?spatial_dataset_identifier_code=...
+```
+
+
+
+
 ### Allgemein { id="8.1.0_changes_allgemein" }
 
-* :material-star:{ title="Support" } Capabilities-Assistent in Diensten, auf denen jemand nur Leserechte hat, ausblenden <br>[:octicons-link-external-16: REDMINE-8038](https://redmine.informationgrid.eu/issues/8038)
-* :material-star:{ title="Support" } Harvester auf ESM umstellen <br>[:octicons-link-external-16: REDMINE-8138](https://redmine.informationgrid.eu/issues/8138)
 * :material-star:{ title="Feature" } Fehlerbehebung der ATOM Download Service Schnittstelle <br>[:octicons-link-external-16: REDMINE-4771](https://redmine.informationgrid.eu/issues/4771)
 * :material-star:{ title="Feature" } Stacktraces aus Fehlerresponses entfernen <br>[:octicons-link-external-16: REDMINE-5773](https://redmine.informationgrid.eu/issues/5773)
 * :material-star:{ title="Feature" } Person, die Import durchführt als "Verantwortlich" setzen <br>[:octicons-link-external-16: REDMINE-6265](https://redmine.informationgrid.eu/issues/6265)
@@ -86,10 +104,10 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 ### Profil KRZN { id="8.1.0_changes_profil_krzn" }
 
-* :material-star:{ title="Support" } Zeilenumbrüche in der Beschreibung im Portal anzeigen <br>[:octicons-link-external-16: REDMINE-8126](https://redmine.informationgrid.eu/issues/8126)
 * :material-star:{ title="Feature" } KRZN: Umstellung Portal auf neue Portal-Technologie (erste Umsetzung) <br>[:octicons-link-external-16: REDMINE-8022](https://redmine.informationgrid.eu/issues/8022)
 * :material-star:{ title="Feature" } Anpassung Hilfe aufgrund von Änderungen in der Suchergebnisseite mit 7.5.0 <br>[:octicons-link-external-16: REDMINE-8228](https://redmine.informationgrid.eu/issues/8228)
 * :material-star:{ title="Feature" } Update Text auf Portal-Startseite für Erkrath <br>[:octicons-link-external-16: REDMINE-8229](https://redmine.informationgrid.eu/issues/8229)
+* :octicons-bug-16:{ title="Bug Fix" } Zeilenumbrüche in der Beschreibung im Portal anzeigen <br>[:octicons-link-external-16: REDMINE-8126](https://redmine.informationgrid.eu/issues/8126)
 
 ### Profil LfU Bayern { id="8.1.0_changes_profil_lfu_bayern" }
 
