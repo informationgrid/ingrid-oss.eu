@@ -185,7 +185,7 @@ nav:
         - CSW Harvester: guides/harvester-csw.md
       - Web Crawler:
         - Benutzeroberfläche: guides/iplug-se-setup.md
-      - Barrierefreiheit: guides/accessibility.md
+      # - Barrierefreiheit: guides/accessibility.md
       # - InGrid Query Syntax: guides/querySyntax.md
   - Docs:
     - Überblick: components/overview.md
