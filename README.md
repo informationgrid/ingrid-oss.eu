@@ -43,7 +43,7 @@ git checkout your-branch-name
 git add .
 git commit -m "Describe what you changed"
 
-# 3) Push your commit
+# 4) Push your commit
 git push
 ```
 
