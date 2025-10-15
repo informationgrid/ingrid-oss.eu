@@ -5,8 +5,8 @@ site_description: >-
   InGrid - Werkzeuge für Ihre OpenData Strategie!
   Entdecken Sie die Vorzüge einer standardkonformen Erfassung und Recherche von Metadaten.
 repo_name: informationgrid.github.io
-repo_url: https://github.com/informationgrid
-copyright: Copyright © wemove digital solutions 2024
+repo_url: https://github.com/informationgrid/ingrid-oss.eu
+copyright: Copyright © wemove digital solutions 2025
 
 theme:
   language: de
@@ -102,6 +102,13 @@ extra_javascript:
   - 'assets/javascripts/external-links.js'
   - 'assets/libraries/splide.min.js'
   - 'assets/libraries/glightbox.min.js'
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/informationgrid
+    # - icon: fontawesome/brands/docker
+    #   link: 
 
 
 markdown_extensions:
