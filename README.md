@@ -8,18 +8,44 @@ Website: https://ingrid-oss.eu
 
 
 ## Edit documentation
-The documentation is organized in versions. Each version has its branch.
+The documentation is organized in versions. Each version has its branch. 
 
 * Branches starting with `version/` contain version specific documentation. 
 * The default branch `draft` contains unreleased changes and is long lived.
 * See [.docs-version](.docs-version) to check which version the branch represents.
-
-Once you found the correct branch, you can start to edit the documentation.
-* Go to folder [docs](docs) and edit the markdowns.
-* Commit and push your changes.
 * Deployment is automated with GitHub workflows.
 
-> **HINT:** If you wish to add new markdown files you need to include them in [mkdocs.yml](mkdocs.yml) at field `nav`.
+Once you found the correct branch, you can start to edit the documentation.
+
+> Tip: If you wish to add new markdown files you need to include them in [mkdocs.yml](mkdocs.yml) at field `nav`.
+> 
+### Edit in the GitHub Web UI
+
+1. Sign in and go to folder [docs](docs). Open the markdown you want to edit.
+2. Click ✏️ **Edit** (top-right of the file view).
+3. Make your changes in the editor.
+4. Press `Commit changes`. 
+5. Add a commit message and press `Commit changes` in the bottom-right on the dialog box.
+
+> Tip: If you don’t see the edit button, you likely don’t have write access — fork the repo and open a PR instead.
+
+### Edit Locally with Git
+
+```sh
+# 1) Clone repo
+git clone https://github.com/informationgrid/ingrid-oss.eu.git
+cd ingrid-oss.eu
+
+# 2) Checkout the branch that contains the version you want to edit
+git checkout your-branch-name
+
+# 3) Edit docs files in folder "docs" with your editor, then:
+git add .
+git commit -m "Describe what you changed"
+
+# 3) Push your commit
+git push
+```
 
 
 ## Local Preview & Development
