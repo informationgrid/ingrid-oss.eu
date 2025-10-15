@@ -4,7 +4,10 @@
     "title": "8.1.0",
     "aliases": [
       "draft"
-    ]
+    ],
+    "properties": {
+      "hidden": true
+    }
   },
   {
     "version": "8.0.0",
