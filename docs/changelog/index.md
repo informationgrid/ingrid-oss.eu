@@ -22,7 +22,68 @@ Ein korrekter Eintrag sieht bspw. so aus:
 atom.download.opensearch.describe.spatial.dataset.template=/dataset/{servicefeed-uuid}?spatial_dataset_identifier_code=...
 ```
 
+### Wichtige Änderungen&nbsp;⚠️
 
+#### Das Neue Portal
+
+Sowohl Rheinland-Pfalz als auch der Hamburger Metadatenkatalog profitieren ab Version 8.1.0 vom neuen Portal. Hinweise und Informationen zum neuen Portal können in den Release Notes zu Version 8.0.0 eingesehen oder in der Dokumentation nachgelesen werden.
+
+[:octicons-link-external-16: REDMINE-7968](https://redmine.informationgrid.eu/issues/7968)
+[:octicons-link-external-16: REDMINE-7971](https://redmine.informationgrid.eu/issues/7971)
+
+
+#### Kontexthilfen für Harvester Formulare
+
+Mit dieser Version kommen Kontexthilfen hinzu. Zwar existiert bereits eine allgemeine Ausfüllhilfe für den CSW-Harvester in der InGrid-Dokumentation, jedoch muss diese vom Benutzer aktiv aufgerufen werden und keinen direkten Bezug zum konkreten Kontext bietet. Damit wird die Usabillity des Harvesters deutlisch verbessert.
+
+![InGrid Harvester: "Harvester bearbeiten"](../assets/changelog/810_harvester_edit-harvester_context-helpers_1.png "InGrid Harvester: "Harvester bearbeiten"")
+<figcaption class="figcaption">InGrid Harvester: "Harvester bearbeiten"</figcaption>
+
+![InGrid Harvester: "Harvester Kontexthilfen"](../assets/changelog/810_harvester_edit-harvester_context-helpers_2.png "InGrid Harvester: "Harvester Kontexthilfen"")
+<figcaption class="figcaption">InGrid Harvester: "Harvester Kontexthilfen"</figcaption>
+
+[:octicons-link-external-16: REDMINE-5686](https://redmine.informationgrid.eu/issues/5686)
+
+
+#### Ablöse WFS iPlug durch InGrid Harvester
+
+Die Integration der Harvester-IPlugs geht voran. Im Zuge der Vereinheitlichung der Harvesting Komponenten ist mit dieser Version auch das WFS-IPlug im Harvester integriert.
+
+![InGrid Harvester: "Ablöse WFS iPlug durch InGrid Harvester"](../assets/changelog/810_harvester_configure-harvester_integration-of-wfs.png "InGrid Harvester: "Ablöse WFS iPlug durch InGrid Harvester"")
+<figcaption class="figcaption">InGrid Harvester: "Ablöse WFS iPlug durch InGrid Harvester"</figcaption>
+
+[:octicons-link-external-16: REDMINE-7456](https://redmine.informationgrid.eu/issues/7456)
+
+#### Passwortgeschützte Dienste über Capabilites-Assistent anlegen
+
+Zur Prüfung der Capabilities einer CSW-Schnittstelle kann der GetCapabilities-Assistent des InGrid-Editors verwendet werden. Bisher war es nicht möglich, passwortgeschützte Capabilities zu analysieren. Mit InGrid Update 8.1.0 öffnet sich bei Betätigung des Analyse-Buttons eine Anmeldemaske, falls Anmeldedaten erforderlich sind.
+
+![InGrid Editor: "GetCapabilities Assistent"](../assets/changelog/810_ingrid_editor_getcapabilities-assistent_ask-for-credentials_1.png "InGrid Editor: "GetCapabilities Assistent"")
+<figcaption class="figcaption">InGrid Editor: "GetCapabilities Assistent"</figcaption>
+
+![InGrid Editor: "GetCapabilities Anmeldedaten"](../assets/changelog/810_ingrid_editor_getcapabilities-assistent_ask-for-credentials_2.png "InGrid Editor: "GetCapabilities Anmeldedaten"")
+<figcaption class="figcaption">InGrid Editor: "GetCapabilities Anmeldedaten"</figcaption>
+
+[:octicons-link-external-16: REDMINE-7750](https://redmine.informationgrid.eu/issues/7750)
+
+#### Sortierung der Verweise im Portal: Reihenfolge aus Editor übernehmen
+
+Bisher wurden die Verweise im Portal alphabetisch sortiert, auch wenn eine andere, frei gewählte Sortierung im Editor gespeichert wurde. Um den Nutzer*innen die Möglichkeit zur Visuellen-Schwerpunktsetzung zu geben, wurde hier die Kontinuität zwischen Editor und Portal umgesetzt.
+
+![InGrid Editor: "Sortierung Verweise"](../assets/changelog/810_ingrid-editor_catalogue_edit_sort-links.png "InGrid Editor: "Sortierung Verweise"")
+<figcaption class="figcaption">InGrid Editor: "Sortierung Verweise"</figcaption>
+
+[:octicons-link-external-16: REDMINE-7194](https://redmine.informationgrid.eu/issues/7194)
+
+#### Person, die Import durchführt als "Verantwortlich" setzen
+
+Diese neue Funktion erleichtert den Importprozess, da Autoren nicht mehr auf die Unterstützung von Metadaten- oder Katalogadministratoren angewiesen sind.
+
+Bisher war es so, dass bei einem XML-Import keine verantwortliche Person gesetzt wurde, was zu fehlenden Benachrichtigungen führte. Die Verantwortlichkeit konnte nur manuell von einem Metadaten- oder Katalogadministrator für jeden Datensatz geändert werden, was besonders bei Massenimports umständlich war. Die Datenbankebene bot zwar eine einfache Lösung, erfordert jedoch ein separates Support-Ticket.
+
+Mit der neuen Funktion wird die Verantwortlichkeit direkt der erstellenden Person zugewiesen, was den Prozess erheblich vereinfacht.
+
+[:octicons-link-external-16: REDMINE-6265](https://redmine.informationgrid.eu/issues/6265)
 
 
 ### Allgemein { id="8.1.0_changes_allgemein" }
