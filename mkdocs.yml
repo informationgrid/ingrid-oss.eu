@@ -52,6 +52,18 @@ theme:
       toggle:
         icon: material//toggle-switch
         name: Switch to light mode
+    # - scheme: ingrid_white
+    #   primary: green
+    #   accent: green
+    #   toggle:
+    #     icon: material/radiobox-blank
+    #     name: Switch to InGrid mode
+    # - scheme: ingrid_green
+    #   primary: green
+    #   accent: green
+    #   toggle:
+    #     icon: material/blur
+    #     name: Switch to light mode
   font:
     text: Roboto
     code: Roboto Mono
@@ -78,6 +90,8 @@ plugins:
 extra_css:
   - 'assets/stylesheets/color-slate.css'
   - 'assets/stylesheets/color-default.css'
+  - 'assets/stylesheets/color-white.css'
+  - 'assets/stylesheets/color-green.css'
   - 'assets/stylesheets/custom.css'
   - 'assets/stylesheets/header.css'
   - 'assets/libraries/splide.min.css'

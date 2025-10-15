@@ -1,0 +1,61 @@
+/* ------------------------------------
+   Light Mode Theme Overrides (InGrid)
+   ------------------------------------ */
+
+[data-md-color-scheme="ingrid_white"] svg image {
+  display: none;
+}
+
+[data-md-color-scheme="ingrid_white"] {
+  /* Color tokens */
+  --ingrid-background: white;
+  --ingrid-illustration-path: black;
+  --ingrid-illustration-path-inverted: black;
+  --feature-section: #f7f7fc;
+  --animation-main-color: rgb(255, 255, 255);
+  /* Uncomment if needed:
+     --md-default-fg-color: var(--text-black);
+     --md-default-fg-color--light: var(--headline-black);
+  */
+}
+
+[data-md-color-scheme="ingrid_white"] .animation-fill-primary-color path,
+[data-md-color-scheme="ingrid_white"] .animation-fill-primary-color-dark path {
+  fill: var(--ingrid-background) !important;
+}
+
+[data-md-color-scheme="ingrid_white"] .usp-card-content {
+  background-color: var(--animation-main-color) !important;
+}
+
+[data-md-color-scheme="ingrid_white"] .animation-stroke-primary-color path {
+  stroke: var(--ingrid-background) !important;
+}
+
+/* Header */
+[data-md-color-scheme="ingrid_white"] .md-header {
+  color: black;
+  background-color: white;
+}
+
+/* Search bar */
+[data-md-color-scheme="ingrid_white"] .md-search__form {
+  color: var(--text-black) !important;
+  background-color: hsl(0 0% 0% / 0.07);
+}
+
+[data-md-color-scheme="ingrid_white"] .md-search__form:hover {
+  background-color: hsl(0 0% 0% / 0.32);
+  /* Alternative: background-color: var(--md-accent-fg-color--transparent); */
+}
+
+/* Typography */
+[data-md-color-scheme="ingrid_white"] .main-content b,
+[data-md-color-scheme="ingrid_white"] .main-content strong {
+  color: var(--headline-black);
+}
+
+/* Hero section */
+[data-md-color-scheme="ingrid_white"] .mdx-hero {
+  color: black;
+}
