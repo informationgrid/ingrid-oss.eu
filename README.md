@@ -1,10 +1,10 @@
-# Official documentation of **InformationGrid.eu**
+# Official documentation of [InformationGrid.eu](https://www.ingrid-oss.eu)
 
 <img src="docs/assets/components/ingrid-plattform.png" alt="InformationGrid illustration" width="480" align="right">
 
 InGrid is a modular software programme that can be used in a variety of ways: The core components are a web portal, a search engine, a metadata catalogue with profiles for recording INSPIRE-compliant metadata, open data and EIA projects, a visualisation component for OGC Web Map Services, a client for visualising time series and various access and query interfaces that are responsible for researching the connected components, but also for forwarding the results to external systems.
 
-Website: https://ingrid-oss.eu
+Website: https://www.ingrid-oss.eu
 
 
 ## Edit documentation
