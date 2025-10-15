@@ -42,5 +42,5 @@ jobs:
       - name: Publish release + move alias 'latest'
         run: |
           git config user.name "github-actions[bot]"
-          mike deploy --push --update-aliases "${{ steps.ver.outputs.v }}" latest
+          mike deploy --push --update-aliases --prop-set hidden=false "${{ steps.ver.outputs.v }}" latest
           mike set-default --push latest
