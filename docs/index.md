@@ -42,7 +42,7 @@ usp:
   - title: Open Source
     animation: ./assets/lottie/opensource.json
     color: rgb(198, 153, 245)
-    link: ./start/license/
+    link: ./components/license/
     description: <b>InGrid</b> ist eine freie und lizenzkostenfreie Software, die unter der <b>European Union Public Licence (EUPL Version 1.2)</b> veröffentlicht ist. Dies ermöglicht eine nachhaltige und gemeinschaftsgetriebene Weiterentwicklung.<br><br><b>Gemeinsam. Nachhaltig. Sicher.</b>
   - title: Support & Pflege
     animation: ./assets/lottie/support.json
@@ -52,7 +52,7 @@ usp:
   - title: Modular & Anpassbar
     animation: ./assets/lottie/modularity.json
     color: rgb(254, 85, 88)
-    link: ./start/architecture/
+    link: ./components/architecture/
     description: Dank einer modularen Architektur lässt sich <b>InGrid</b> flexibel an unterschiedlichste Anforderungen anpassen. Die Software kann als <b>Geo-Portal</b>, <b>Open-Data-Plattform</b> oder <b>Verwaltungsportal</b> genutzt werden und wächst mit den individuellen Anforderungen mit.<br><br><b>Nahtlos Integration in bestehende Systeme.</b>
   - title: Barrierefreiheit
     animation: ./assets/lottie/accessibility.json
