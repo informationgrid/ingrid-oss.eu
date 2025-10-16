@@ -1,4 +1,4 @@
-# Official documentation of [InformationGrid.eu](https://www.ingrid-oss.eu)
+# Official documentation of [InGrid](https://www.ingrid-oss.eu)
 
 <img src="docs/assets/components/ingrid-plattform.png" alt="InformationGrid illustration" width="480" align="right">
 
