@@ -57,7 +57,7 @@ usp:
   - title: Barrierefreiheit
     animation: ./assets/lottie/accessibility.json
     color: rgb(246, 132, 225)
-    # link: ./guides/accessibility/
+    link: ./guides/accessibility/
     description: <b>InGrid</b> bietet Screen Reader Funktionen, einfache Navigation und kontrastreiches Design für optimale Nutzerunterstützung.<br><br><b>Von Barrierefreiheit kann jeder profitieren.</b>
     # Erfahren Sie, wie Sie die Erfassung und Recherche von Daten barrierefrei nutzen.
   # - title: Recherche
