@@ -72,7 +72,7 @@ usp:
 solutions:
   title: Solutions
   color: rgb(29, 219, 0)
-  description: <b>InGrid</b> ermöglicht maßgeschneiderte Lösungen für Metadaten. Durch offene Standards und flexible Schnittstellen lassen sich Datenquellen effizient vernetzen und integrieren. Im Folgenden erfahren Sie, wie vielseitig <b>InGrid</b> eingesetzt werden kann.
+  description: <b>InGrid</b> ermöglicht maßgeschneiderte Lösungen für Daten und Metadaten. Durch offene Standards und flexible Schnittstellen lassen sich Datenquellen effizient vernetzen und integrieren. Im Folgenden erfahren Sie, wie vielseitig <b>InGrid</b> eingesetzt werden kann.
   accordion:
     - title: Einsatz als Umweltinformationportal
       text: "<p>InGrid wird für den Aufbau verschiedener Landesumweltportale eingesetzt. Seine Daten- und Modulstrukturen ermöglichen den Einsatz auf lokaler, regionaler, nationaler und internationaler Ebene.</p>
@@ -108,7 +108,7 @@ development:
   title: Gemeinsam weiterentwickelt
   subtitle: "In <b>16</b> <nobr>Bundesländern</nobr> vertreten"
   color: rgb(28, 118, 255)
-  description: "<b>InGrid</b> wird von Bund und Ländern kontinuierlich gepflegt und weiterentwickelt. Diese Kooperation für moderne Umweltinformationssysteme garantiert leistungsfähige und zukunftssichere Lösungen. Im Folgenden finden Sie eine Auswahl von Anwendungen, die auf InGrid basieren."
+  description: "<b>InGrid</b> wird von Institutionen des Bundes und aller Länder kontinuierlich gepflegt und weiterentwickelt. Diese Kooperation für moderne Umweltinformationssysteme garantiert leistungsfähige und zukunftssichere Lösungen. Im Folgenden finden Sie eine Auswahl von Anwendungen, die auf InGrid basieren."
   accordion:
     - title: METAVER Metadatenverbund
       website: https://metaver.de/
