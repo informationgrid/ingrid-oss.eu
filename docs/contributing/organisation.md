@@ -1,6 +1,6 @@
 Die InGrid-Softwarekomponenten werden im Rahmen des Projekts "InGrid - Pflege und Weiterentwicklung der InGrid-Softwarekomponenten zum Betrieb von Internetportalen und Metadatenkatalogen" unter dem Dach der [Vereinbarung über die Kooperation bei Konzeptionen und Entwicklungen von Software für Umweltinformationssysteme](https://www.blag-udig.de/KoopUIS.html) (VKoopUIS) gepflegt und weiter entwickelt.
 
-Aus der öffentlichen Verwaltung sind zahlreiche [Partner]({{ fix_url('contributing/partner.md') }}) aus Bund und Ländern beteiligt. Die Federführung liegt beim **Niedersächsischen Ministerium für Umwelt, Energie und Klimaschutz**.
+Aus der öffentlichen Verwaltung sind zahlreiche **[Partner]({{ fix_url('contributing/partner.md') }})** aus Bund und Ländern beteiligt. Die Federführung liegt beim **Niedersächsischen Ministerium für Umwelt, Energie und Klimaschutz**.
 
 Die Firma [wemove digital solutions GmbH](http://www.wemove.com/) betreut als Partner aus der Wirtschaft die technische Projekt-Infrastruktur.
 
