@@ -89,13 +89,13 @@ Alle APIs sind mit OAuth 2.0 über Keycloak gesichert. Um mit Endpunkten zu inte
 Überblick über die erforderlichen Variablen und Berechtigungsnachweise:
 
 | Variable          | Description                                                                                                                          |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------|
 | *$KEYCLOAK_HOST*  | Keycloak Host e.g. `https://keycloak.informationgrid.eu`                                                                             |
 | *$REALM*          | Legen Sie den Keycloak-Realm fest, der eine Reihe von Benutzern, Anmeldeinformationen, Rollen und Gruppen verwaltet (e.g. "InGrid"). |
 | *$CLIENTID*       | Keycloak client ID  (e.g. "ige-ng-frontend")                                                                                         |
 | *$CLIENTSECRET*   | Keycloak client secret (e.g. "admin")                                                                                                |
 | *$USERNAME*       | Benutzername (InGird Editor Login)                                                                                                   |
-| *$PASSWORD*       | Passwort (InGrid Editor Login)                                                                                                       |
+| *$PASSWORD*       | Passwort (InGrid Editor Login) Dieses muss URL-kodiert werden, um Sonderzeichen korrekt zu übertragen!                               |
 | Grant type        | Type: Password Credential                                                                                                            |
 | Access Token URL  | `KEYCLOAK_HOST`/realms/`$REALM`/protocol/openid-connect/token                                                                        |
 | Refresh Token URL | `KEYCLOAK_HOST`/realms/`$REALM`/protocol/openid-connect/token                                                                        |
