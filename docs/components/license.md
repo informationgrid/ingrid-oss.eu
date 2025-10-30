@@ -5,7 +5,7 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 # Lizenz
 
-Der [Sourcecode](https://github.com/informationgrid) des InGrid Projektes wird unter der [European Union Public Licence (EUPL v.1.1)](https://joinup.ec.europa.eu/software/page/eupl) veröffentlicht.
+Der [Sourcecode](https://github.com/informationgrid) des InGrid Projektes wird unter der [European Union Public Licence (EUPL v.1.2)](https://joinup.ec.europa.eu/software/page/eupl) veröffentlicht.
 
 Für GPL lizensierte Komponenten existieren Ausnahmeregelungen, die die Verwendung innerhalb der EUPL Lizenz gestatten.
 

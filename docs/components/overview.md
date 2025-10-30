@@ -27,8 +27,8 @@ InGrid wurde u.a. entlang der Vorgaben und Empfehlungen der [Geodateninfrastrukt
 
 **Standard­basierte Softwareplattform**
 
-Die Softwareplattform ist vielseiten anwendbar und weiste durch die Einteilung in Kompontenten hohe Flexiblität auf. 
-Informieren Sie sich über technischen Aufbau & Modularität unter **[Architektur]({{ fix_url('components/architecture.md') }})** und die vielseitigen **[Einsatzmöglichkeiten]({{ fix_url('start/applications.md') }})**.
+Die Softwareplattform ist vielseitig anwendbar und weist durch die Einteilung in Komponenten eine hohe Flexibilität auf. 
+Informieren Sie sich über den technischen Aufbau und die Modularität unter **[Architektur]({{ fix_url('components/architecture.md') }})** und über die vielseitigen **[Einsatzmöglichkeiten]({{ fix_url('start/applications.md') }})**.
 
 ### Über diese Dokumentation
 
@@ -104,7 +104,7 @@ Jede Komponente wird in einem eigenen Kapitel beschrieben und enthält eine deta
 
     ---
 
-    Erfassung, Verwalten und Publizierung von Metadaten mit dem **InGrid Editor**
+    Erfassen, Verwalten und Publizieren von Metadaten mit dem **InGrid Editor**
 
     [:octicons-arrow-right-24: InGrid Editor]({{ fix_url('components/ige.md') }})
 </div>
@@ -118,7 +118,7 @@ Jede Komponente wird in einem eigenen Kapitel beschrieben und enthält eine deta
     
     ---
     
-    Lesen und Schreiben von Metadaten über die OGC-API Records Schnittstelle.
+    Lesen und Schreiben von Metadaten über die OGC API - Records Schnittstelle.
     
     [:octicons-arrow-right-24: OGC-API Records]({{ fix_url('components/interface_ige.md') }})
 
@@ -158,7 +158,7 @@ Jede Komponente wird in einem eigenen Kapitel beschrieben und enthält eine deta
 
     ---
 
-    Sammeln von Transformation von Daten aus unterschiedlichen Schnittstellen (CSW, WFS, CKAN, REST, OAI-MPH).
+    Sammeln und Transformieren von Daten aus unterschiedlichen Schnittstellen (CSW, WFS, CKAN, REST, OAI-PMH).
 
     [:octicons-arrow-right-24: InGrid Harvester]({{ fix_url('components/harvester.md') }})
 

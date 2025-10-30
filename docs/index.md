@@ -53,7 +53,7 @@ usp:
     animation: ./assets/lottie/modularity.json
     color: rgb(254, 85, 88)
     link: ./components/architecture/
-    description: Dank einer modularen Architektur lässt sich <b>InGrid</b> flexibel an unterschiedlichste Anforderungen anpassen. Die Software kann als <b>Geo-Portal</b>, <b>Open Data Plattform</b> oder <b>Verwaltungsportal</b> genutzt werden und wächst mit den individuellen Anforderungen mit.<br><br><b>Nahtlos Integration in bestehende Systeme.</b>
+    description: Dank einer modularen Architektur lässt sich <b>InGrid</b> flexibel an unterschiedlichste Anforderungen anpassen. Die Software kann als <b>Geo-Portal</b>, <b>Open Data Plattform</b> oder <b>Verwaltungsportal</b> genutzt werden und wächst mit den individuellen Anforderungen mit.<br><br><b>Nahtlose Integration in bestehende Systeme.</b>
   - title: Barrierefreiheit
     animation: ./assets/lottie/accessibility.json
     color: rgb(246, 132, 225)

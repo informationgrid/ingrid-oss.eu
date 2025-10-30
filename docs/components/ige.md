@@ -6,7 +6,7 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 ## Allgemeines
 
 Der [**InGrid Editor**](https://github.com/informationgrid/ingrid-editor) ermöglicht die Erfassung von Metadaten über vielseitige
-Formulare und bietet einen umfangreichen Workflow, der den Import sowie Export von beliebigen Formaten erlaubt.
+Formulare und bietet einen umfangreichen Workflow, der den Import sowie den Export verschiedener Formate erlaubt.
 
 Insbesondere wird die Erfassung und Publizierung von **ISO 19115/19119**, **OGC** und **INSPIRE** konformen Metadaten unterstützt.
 
@@ -170,7 +170,7 @@ services:
         networks:
           - informationgrid-network
     ```
-In einer weiteren Datei `.env` werden die Variablen für die docker-compose.yml Datei gesetzt.
+In einer weiteren Datei `.env` werden die Variablen für die `docker-compose.yml` Datei gesetzt.
 
 ### :material-github: From Source
 

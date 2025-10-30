@@ -28,7 +28,7 @@ Dieser Abschnitt begleitet Sie beim Einrichten vom Harvester. Eine abgeschlossen
 
     Um die Konfiguration zu vereinfachen stehen in der GUI praktische **Kontexthilfen** zur Verfügung. Klicken Sie dafür auf die Überschift des Abschnitts (z. B. "Datenbank").
 
-Nach der Installation können Sie über die Benutzeroberfläche unter dem Menupunkt **Konfiguration** der Harvester eingerichten.
+Nach der Installation können Sie über die Benutzeroberfläche unter dem Menüpunkt **Konfiguration** verschiedene Harvester einrichten.
 
 Achten Sie darauf, nach der Konfiguration auf **`SPEICHERN`** zu klicken, um die Änderungen zu übernehmen.
 
@@ -38,7 +38,7 @@ Achten Sie darauf, nach der Konfiguration auf **`SPEICHERN`** zu klicken, um die
 !!! info inline end
     Um die Verbindung zur Datenbank zu prüfen, klicken Sie auf den Button `VERBINDUNG TESTEN`.
 
-Für den zuverlässigen Betrieb des InGrid Harvesters ist eine angebundene relationale Datenbank erforderlich. Diese dient vor allem der Deduplizierung von Dokumenten, also der Erkennung und Vermeidung doppelter Einträge innerhalb der erfassten Daten.
+Für den Betrieb des InGrid Harvesters ist eine angebundene relationale Datenbank erforderlich. Diese dient vor allem der Deduplizierung von Dokumenten, also der Erkennung und Vermeidung doppelter Einträge innerhalb der erfassten Daten.
 
 
 ### Elasticsearch
@@ -46,7 +46,7 @@ Für den zuverlässigen Betrieb des InGrid Harvesters ist eine angebundene relat
 !!! info inline end
     Um die Verbindung zu Elasticsearch zu prüfen, klicken Sie auf den Button `VERBINDUNG TESTEN`.
 
-Elasticsearch bildet das zentrale Zielsystem für die von InGrid Harvester verarbeiteten Daten. Jeder Harvester-Prozess schreibt seine Ergebnisse in einen eigenen Index, der auf der angebundenen Elasticsearch-Instanz verwaltet wird. Diese Struktur ermöglicht eine klare Trennung und gezielte Verarbeitung der Daten je nach Quelle oder Konfiguration.
+Elasticsearch bildet das zentrale Zielsystem für die vom InGrid Harvester verarbeiteten Daten. Jeder Harvester-Prozess schreibt seine Ergebnisse in einen eigenen Index, der auf der angebundenen Elasticsearch-Instanz verwaltet wird. Diese Struktur ermöglicht eine klare Trennung und gezielte Verarbeitung der Daten je nach Quelle oder Konfiguration.
 
 
 
@@ -76,23 +76,23 @@ Dieser Bereich ermöglicht die zeitgesteuerte Sicherung von Elasticsearch-Indize
 
 
 ### Harvesting Differenzen
-Wenn bereits bestehende Datensätze im laufenden Harvesting nicht vorhanden sind, dann kann eine Differenz (in Prozent) definiert werden, um eine Benachrichtigung per E-Mail zu verschicken bzw. das Harvesting abzubrechen. Aktivieren/deaktivieren Sie dafür die entsprechende Option und definieren Sie einen Prozentwert wann die Aktion ausgeführt werden soll.
+Wenn bereits bestehende Datensätze im laufenden Harvesting nicht vorhanden sind, dann kann eine Differenz (in Prozent) definiert werden, um eine Benachrichtigung per E-Mail zu verschicken bzw. das Harvesting abzubrechen. Aktivieren/deaktivieren Sie dafür die entsprechende Option und definieren Sie einen Prozentwert, ab dem die Aktion ausgeführt werden soll.
 
 
 ### E-Mail-Einstellungen
-Im Abschnit **E-Mail-Einstellungen** kann eine E-Mail-Benachrichtigung eingerichtet werden. Wenn Sie die **E-Mail-Einstellungen** aktivieren, dann wird eine Mail versendet, wenn die Ergebnismenge unter der eingestellten Schwelle gegenüber dem letzten Import liegt oder gar keine Ergebnisse importiert wurden.
+Im Abschnitt **E-Mail-Einstellungen** kann eine E-Mail-Benachrichtigung eingerichtet werden. Wenn Sie die **E-Mail-Einstellungen** aktivieren, dann wird eine Mail versendet, falls die Ergebnismenge unter der eingestellten Schwelle gegenüber dem letzten Import liegt oder gar keine Ergebnisse importiert wurden.
 
 **Folgende Informationen werden geliefert:**
 
 - **Number of records**: Anzahl der Datensätze, die von der Schnittstelle geliefert werden.
-- **Skipped records**: Anzahl Datensätze, die Aufgrund von Filtereinstellungen nicht übernommen wurden.
-- **Record-Errors**: Anzahl Datensätze, bei deren Konvertierung ein Fehler aufgetreten ist (beispielsweise durch Format-Fehler, fehlende Details etc.), diese Datensätze werden nicht übernommen.
-- **Warnings**: Anzahl Warnungen die beim konvertieren der Datensätze aufgetreten sind (insbesondere fehlende Lizenzen und unbekanntes Format der Resource), die betroffenen Datensätze werden übernommen.
+- **Skipped records**: Anzahl der Datensätze, die aufgrund von Filtereinstellungen nicht übernommen wurden.
+- **Record-Errors**: Anzahl der Datensätze, bei deren Konvertierung ein Fehler aufgetreten ist (beispielsweise durch Format-Fehler, fehlende Details etc.), diese Datensätze werden nicht übernommen.
+- **Warnings**: Anzahl der Warnungen die beim Konvertieren der Datensätze aufgetreten sind (insbesondere fehlende Lizenzen und unbekanntes Format der Ressource), die betroffenen Datensätze werden übernommen.
 - **App-Errors**: Allgemeine Fehler beim Abfragen des Datenanbieters die sich nicht auf einen einzelnen Datensatz beziehen (beispielsweise Probleme in der Kommunikation).
 - **Elasticsearch-Errors**: Fehler bei der Kommunikation mit dem Elasticsearch-Server.
 
 Sofern vorhanden werden zusätzlich die Daten aus dem vorherigen Lauf mit angegeben.
-Wenn beim Import *App-Errors* oder *Elasticseach-Errors* auftreten, so wird der neue Index verworfen und ein gegebenenfalls vorhandener, alter Index bleibt erhalten.
+Wenn beim Import *App-Errors* oder *Elasticsearch-Errors* auftreten, so wird der neue Index verworfen und ein gegebenenfalls vorhandener, alter Index bleibt erhalten.
 Bei 0 Ergebnissen wird der neue Index verworfen und der alte Index beibehalten (bei CSW und CKAN).
 
 **Beispiel Betreff:**
