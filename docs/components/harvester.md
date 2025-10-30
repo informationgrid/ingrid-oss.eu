@@ -119,12 +119,12 @@ services:
      - DB_PASSWORD=admin
     volumes:
        - /etc/localtime:/etc/localtime:ro
-       - ./harvester/config/config.json:/opt/ingrid/harvester/server/config.json
-       - ./harvester/config/client_config.json:/opt/ingrid/harvester/server/app/webapp/assets/config.json
-       - ./harvester/logs:/opt/ingrid/harvester/server/logs
+       - ./harvester/config/config.json:/opt/ingrid/harvester/config.json
+       - ./harvester/config/client_config.json:/opt/ingrid/harvester/app/webapp/assets/config.json
+       - ./harvester/logs:/opt/ingrid/harvester/logs
     ports:
       - 8090:8090
-    working_dir: /opt/ingrid/harvester/server
+    working_dir: /opt/ingrid/harvester
     command: node app/index.js
     networks:
       - ingrid-network
@@ -201,7 +201,7 @@ npm run prod
 mkdir -p /opt/ingrid/harvester
 cp server/package*.json /opt/ingrid/harvester/
 cp -r server/build/* /opt/ingrid/harvester/
-cp -r client/dist/webapp /opt/ingrid/harvester/server/app/webapp
+cp -r client/dist/webapp /opt/ingrid/harvester/app/webapp
 cd /opt/ingrid/harvester
 npm run install-production
 ```
@@ -251,11 +251,11 @@ In einem Docker-Setup sollten diese Dateien vom Hostsystem in den Container gema
 
     | Speicherort der Konfigurationsdatei (Projekt) | Speicherort der Konfigurationsdatei (Docker-Container)     | Zweck                                                   |
     | --------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------- |
-    | server/users.json                             | /opt/ingrid/harvester/server/users.json                    | Konfiguration von Benutzer und Passwort                 |
-    | server/config.json                            | /opt/ingrid/harvester/server/config.json                   | Konfiguration des Harvester                             |
-    | server/config-general.json                    | /opt/ingrid/harvester/server/config-general.json           | Allgemeine Einstellungen (Elasticsearch, Postgres, ...) |
-    | server/mappings.json                          | /opt/ingrid/harvester/server/mappings.json                 | Mapping der Datenformate                                |
-    | client/src/assets/config.json                 | /opt/ingrid/harvester/server/app/webapp/assets/config.json | Einstellungen des Clients                               |
+    | server/users.json                             | /opt/ingrid/harvester/users.json                    | Konfiguration von Benutzer und Passwort                 |
+    | server/config.json                            | /opt/ingrid/harvester/config.json                   | Konfiguration des Harvester                             |
+    | server/config-general.json                    | /opt/ingrid/harvester/config-general.json           | Allgemeine Einstellungen (Elasticsearch, Postgres, ...) |
+    | server/mappings.json                          | /opt/ingrid/harvester/mappings.json                 | Mapping der Datenformate                                |
+    | client/src/assets/config.json                 | /opt/ingrid/harvester/app/webapp/assets/config.json | Einstellungen des Clients                               |
 
 ### Umgebungsvariablen
 
