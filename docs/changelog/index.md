@@ -3,6 +3,57 @@ title: News
 description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 ---
 
+## Version 8.1.1 <small>31.10.2025</small> { id="8.1.1" data-toc-label="8.1.1"}
+
+### Allgemein { id="8.1.1_changes_allgemein" }
+
+* :octicons-bug-16:{ title="Bug Fix" } OPENSEARCH Links zum Portal stimmen nicht <br>[:octicons-link-external-16: REDMINE-8295](https://redmine.informationgrid.eu/issues/8295)
+* :octicons-bug-16:{ title="Bug Fix" } Formular kann nicht seitlich gescrollt werden <br>[:octicons-link-external-16: REDMINE-8348](https://redmine.informationgrid.eu/issues/8348)
+
+### Profil BASt { id="8.1.1_changes_profil_bast" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Portal-NG: Korrekturen internes Portal <br>[:octicons-link-external-16: REDMINE-8320](https://redmine.informationgrid.eu/issues/8320)
+
+### Profil BAW MIS { id="8.1.1_changes_profil_baw_mis" }
+
+* :material-star:{ title="Feature" } Benutzerhandbuch Editor erstellen <br>[:octicons-link-external-16: REDMINE-8253](https://redmine.informationgrid.eu/issues/8253)
+* :octicons-bug-16:{ title="Bug Fix" } Automatisierte Rollenzuweisung im Keycloak funktioniert nicht <br>[:octicons-link-external-16: REDMINE-8300](https://redmine.informationgrid.eu/issues/8300)
+* :octicons-bug-16:{ title="Bug Fix" } Probleme mit dem CSW-T Import <br>[:octicons-link-external-16: REDMINE-8353](https://redmine.informationgrid.eu/issues/8353)
+
+### Profil BKG { id="8.1.1_changes_profil_bkg" }
+
+* :material-star:{ title="Feature" } Portal-NG: Weitere Anpassungen und Korrekturen für AdV-MIS <br>[:octicons-link-external-16: REDMINE-8325](https://redmine.informationgrid.eu/issues/8325)
+* :material-star:{ title="Feature" } Portal-NG: Weitere Anpassungen und Korrekturen für BKG-MIS <br>[:octicons-link-external-16: REDMINE-8326](https://redmine.informationgrid.eu/issues/8326)
+
+### Profil HMDK { id="8.1.1_changes_profil_hmdk" }
+
+* :octicons-bug-16:{ title="Bug Fix" } INSPIRE Datensätze markiert mit "nicht konform" in JSON Schema Validierung aufnehmen <br>[:octicons-link-external-16: REDMINE-8407](https://redmine.informationgrid.eu/issues/8407)
+
+### Profil LUBW { id="8.1.1_changes_profil_lubw" }
+
+* :material-star:{ title="Feature" } Beschreibungsfeld bei Sachattributen und Geometrien bitte dynamisch skalierbar machen <br>[:octicons-link-external-16: REDMINE-8310](https://redmine.informationgrid.eu/issues/8310)
+
+### Profil LfU Bayern { id="8.1.1_changes_profil_lfu_bayern" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Editor: dateStamp in der ISO-Ansicht korrigieren <br>[:octicons-link-external-16: REDMINE-8405](https://redmine.informationgrid.eu/issues/8405)
+
+### Profil UVP { id="8.1.1_changes_profil_uvp" }
+
+* :material-star:{ title="Feature" } Verbesserung der Fehlerbehandlung bei der Synchronisation mit UVP Monitoring <br>[:octicons-link-external-16: REDMINE-6709](https://redmine.informationgrid.eu/issues/6709)
+* :octicons-bug-16:{ title="Bug Fix" } Download von Dokumenten als ZIP unvollständig <br>[:octicons-link-external-16: REDMINE-8351](https://redmine.informationgrid.eu/issues/8351)
+* :octicons-bug-16:{ title="Bug Fix" } Zabbix-Aufräumjob erzeugt Fehler bei ungültiger Email <br>[:octicons-link-external-16: REDMINE-8412](https://redmine.informationgrid.eu/issues/8412)
+
+### Komponenten
+
+<div class="ingrid-component-list" markdown>
+
+- INTERFACE-SEARCH [:material-download: Download](https://distributions.informationgrid.eu/ingrid-interface-search/8.1.1/)
+
+</div>
+
+<hr>
+
+
 ## Version 8.1.0 <small>10.10.2025</small> { id="8.1.0" data-toc-label="8.1.0"}
 
 
