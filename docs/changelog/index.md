@@ -30,7 +30,6 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 ### Profil UVP { id="8.1.1_changes_profil_uvp" }
 
 * :material-star:{ title="Feature" } Verbesserung der Fehlerbehandlung bei der Synchronisation mit UVP Monitoring <br>[:octicons-link-external-16: REDMINE-6709](https://redmine.informationgrid.eu/issues/6709)
-* :octicons-bug-16:{ title="Bug Fix" } Download von Dokumenten als ZIP unvollständig <br>[:octicons-link-external-16: REDMINE-8351](https://redmine.informationgrid.eu/issues/8351)
 * :octicons-bug-16:{ title="Bug Fix" } Zabbix-Aufräumjob erzeugt Fehler bei ungültiger Email <br>[:octicons-link-external-16: REDMINE-8412](https://redmine.informationgrid.eu/issues/8412)
 
 ### Komponenten
