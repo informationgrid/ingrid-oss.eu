@@ -46,11 +46,11 @@ und Anleitungen dazu aufgelistet.
 
 - :material-docker:{ .lg .middle } __Docker-Image__
 
-  ---
+    ---
 
-  Zur Installation kann das folgende Docker-Image verwendet werden:
+    Zur Installation kann das folgende Docker-Image verwendet werden:
 
-  [:octicons-arrow-right-24: docker-registry.wemove.com/ingrid-codelist-repository](https://docker-registry.wemove.com/ingrid-ibus)
+    [:octicons-arrow-right-24: docker-registry.wemove.com/ingrid-codelist-repository](https://docker-registry.wemove.com/ingrid-ibus)
 
 </div>
 
