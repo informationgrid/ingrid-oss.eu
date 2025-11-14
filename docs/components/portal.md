@@ -318,3 +318,7 @@ Einige allgemeine Einstellungen können auch über Umgebungsvariablen konfigurie
     Um nun den Hinweis-Text zu platzieren, muss nun zum Pages-Bereich navigiert werden und dort `Startseite` > `Hinweis` (admin/pages/home/_warning) ausgewählt werden. Es steht nun ein Textfeld bereit, womit man nun sein Hinweis-Text (in Markdown, HTML) platzieren kann.
 
     Nachdem speichern der Hinweis-Seite wird die Änderung auf der Startseite angezeigt.
+
+??? question "Welche Felder werden bei der Suche im Portal berücksichtigt?"
+
+    Die Suche über die Eingabe eines Begriffs im Suchschlitz berücksichtigt vorrangig den Titel eines Datensatzes, als zweites die Beschreibung und als drittes das Indexfeld "content". In diesem Feld werden derzeit die uuid des Datensatzes, die uuid des referenzierten Ansprechpartners für die Metadaten, dessen E-Mail-Adresse sowie alle Schlagwörter abgelegt.
