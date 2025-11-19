@@ -3,6 +3,34 @@ title: News
 description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 ---
 
+
+## Version 8.1.2 <small>19.11.2025</small> { id="8.1.2" data-toc-label="8.1.2"}
+
+### Allgemein { id="8.1.2_changes_allgemein" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Weitere Anpassungen neues Portal (allgemeingültig) <br>[:octicons-link-external-16: REDMINE-8383](https://redmine.informationgrid.eu/issues/8383)
+* :octicons-bug-16:{ title="Bug Fix" } Portal zeigt englische Codelistenwerte an <br>[:octicons-link-external-16: REDMINE-8471](https://redmine.informationgrid.eu/issues/8471)
+
+### Profil BASt { id="8.1.2_changes_profil_bast" }
+
+* :material-star:{ title="Feature" } "Amtsintern" als default Einstellung für neue Datensätze <br>[:octicons-link-external-16: REDMINE-6352](https://redmine.informationgrid.eu/issues/6352)
+* :material-star:{ title="Feature" } Anzeige von Projektnummer und Projekttitel im Portal <br>[:octicons-link-external-16: REDMINE-6713](https://redmine.informationgrid.eu/issues/6713)
+* :material-star:{ title="Feature" } Portal-NG: weitere Anpassungen, externes Portal <br>[:octicons-link-external-16: REDMINE-8409](https://redmine.informationgrid.eu/issues/8409)
+* :octicons-bug-16:{ title="Bug Fix" } Portal-NG: Korrekturen internes Portal <br>[:octicons-link-external-16: REDMINE-8320](https://redmine.informationgrid.eu/issues/8320)
+
+### Profil BAW MIS { id="8.1.2_changes_profil_baw_mis" }
+
+* :material-star:{ title="Feature" } Validierungsregel aus dem BAW-Profil vom IGE-Classic löschen <br>[:octicons-link-external-16: REDMINE-8448](https://redmine.informationgrid.eu/issues/8448)
+
+### Profil KRZN { id="8.1.2_changes_profil_krzn" }
+
+* :material-star:{ title="Feature" } Portal-NG: weitere Anpassungen <br>[:octicons-link-external-16: REDMINE-8321](https://redmine.informationgrid.eu/issues/8321)
+
+### Profil RLP { id="8.1.2_changes_profil_rlp" }
+
+* :material-star:{ title="Feature" } Portal-NG: Abnahme <br>[:octicons-link-external-16: REDMINE-8327](https://redmine.informationgrid.eu/issues/8327)
+
+
 ## Version 8.1.1 <small>31.10.2025</small> { id="8.1.1" data-toc-label="8.1.1"}
 
 ### Allgemein { id="8.1.1_changes_allgemein" }
