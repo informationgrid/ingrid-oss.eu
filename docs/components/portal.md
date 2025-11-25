@@ -265,6 +265,9 @@ Einige allgemeine Einstellungen können auch über Umgebungsvariablen konfigurie
     | Variable                    | Hinweis                                                                                      |
     | --------------------------- | -------------------------------------------------------------------------------------------- |
     | GRAV_FOLDER                 | Verzeichnis unterhalb von `/var/www/`in dem GRAV installiert ist, z.B. `portal`. Default: `html` |
+    | ADMIN_EMAIL                 | Admin E-Mail Adresse                                                                         |
+    | ADMIN_FULL_NAME             | Admin vollständiger Name                                                                     |
+    | ADMIN_PASSWORD              | Admin Passwort im Klartext                                                                   |
     | ENABLE_CACHE                | Aktiviert den Cache (`true`/`false`). Default: `true`                                        |
     | THEME_COPY_PAGES_INIT       | Kopiert die initialen Pages aus dem Profil/Theme in das `user/pages`-Verzeichnis (`true`/`false`). Achtung: Bei `true` werden geändert Seiten über die Admin-GUI überschrieben. Default: `false` |
     | MARKDOWN_AUTO_LINE_BREAKS   | Aktiviert automatische Zeilenumbrüche in Markdown (`true`/`false`). Default: `true`          |
@@ -279,6 +282,7 @@ Einige allgemeine Einstellungen können auch über Umgebungsvariablen konfigurie
     | GEO_API_PASS                | Passwort für die Authentifizierung an der Geo-Api (htaccess)                                 |
     | ENABLE_SCHEDULER_RSS        | Aktiviert die regelmäßige Indexierung von den (im Profil/Theme) festgelegten RSS Feeds (`true`/`false`). Default: `true` |
     | ENABLE_SCHEDULER_CODELIST   | Aktiviert die regelmäßige Indexierung vom konfigurierten Codelist-Repo (`true`/`false`). Default: `true` |
+    | ENABLE_SCHEDULER_BACKUP     | Aktivierung Seiten-Backup. Default: `false` |
     | MVIS_VERSION                | Version des Messwerteclient. Default: `2.0.9` |
     | ENABLE_MVIS                 | Messwerteclient im Portal zur Verfügung stellen (`true`/`false`). Default: `true`            |
     | ENABLE_FOOTER_BANNER        | Roten Banner unten rechts im Portal aktivieren (`true`/`false`). Default: `false`            |

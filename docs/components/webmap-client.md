@@ -108,6 +108,8 @@ Einige allgemeine Einstellungen können auch über Umgebungsvariablen konfigurie
     | Variable                    | Hinweis                                                                                      |
     | --------------------------- | -------------------------------------------------------------------------------------------- |
     | SERVER_CONNECTOR_ATTR       | Umstellung auf HTTPS.                                                                        |
+    | MAPCLIENT_ADMIN_PW          | Passwort in SHA-256  (./apache-tomcat/bin/digest.sh -a sha-256 -s 0 PASSWORT_KLARTEXT)       |
+    | THEME                       | Vorhandenes Theme einstellen                                                                             |
 
 
 <hr>
