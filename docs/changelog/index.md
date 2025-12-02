@@ -4,6 +4,32 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 ---
 
 
+
+## Version 8.1.3 <small>02.12.2025</small> { id="8.1.3" data-toc-label="8.1.3"}
+
+### Allgemein { id="8.1.3_changes_allgemein" }
+
+* :octicons-bug-16:{ title="Bug Fix" } PORTAL: Fehler bei der Darstellung von Querverweise in der Detaildarstellung <br>[:octicons-link-external-16: REDMINE-8489](https://redmine.informationgrid.eu/issues/8489)
+* :octicons-bug-16:{ title="Bug Fix" } PORTAL: Fehlende Lokalisierung bei "URL des Zugangs" <br>[:octicons-link-external-16: REDMINE-8494](https://redmine.informationgrid.eu/issues/8494)
+* :octicons-bug-16:{ title="Bug Fix" } Fehlende Informationen zum Raster-/Gridformat <br>[:octicons-link-external-16: REDMINE-8509](https://redmine.informationgrid.eu/issues/8509)
+
+### Profil BASt { id="8.1.3_changes_profil_bast" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Unerwünschte Anzeige Identifikator im Portal auf TEST <br>[:octicons-link-external-16: REDMINE-8488](https://redmine.informationgrid.eu/issues/8488)
+
+### Profil BAW MIS { id="8.1.3_changes_profil_baw_mis" }
+
+* :material-star:{ title="Feature" } Portal-NG: Darstellung der Vertikalen Ausdehnung  <br>[:octicons-link-external-16: REDMINE-8464](https://redmine.informationgrid.eu/issues/8464)
+
+### Profil LUBW { id="8.1.3_changes_profil_lubw" }
+
+* :material-star:{ title="Feature" } Umstellung Portal auf neue Portal-Technologie <br>[:octicons-link-external-16: REDMINE-7806](https://redmine.informationgrid.eu/issues/7806)
+* :material-star:{ title="Feature" } Einschränkung für Fachredakteure: Verschieben von Elementen im Themenbaum unterbinden <br>[:octicons-link-external-16: REDMINE-8422](https://redmine.informationgrid.eu/issues/8422)
+
+### Profil UPSH { id="8.1.3_changes_profil_upsh" }
+
+* :material-star:{ title="Feature" } UP-SH: Umstellung Portal auf neue Portal-Technologie <br>[:octicons-link-external-16: REDMINE-7967](https://redmine.informationgrid.eu/issues/7967)
+
 ## Version 8.1.2 <small>19.11.2025</small> { id="8.1.2" data-toc-label="8.1.2"}
 
 ### Allgemein { id="8.1.2_changes_allgemein" }
