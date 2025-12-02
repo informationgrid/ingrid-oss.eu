@@ -23,7 +23,6 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 ### Profil LUBW { id="8.1.3_changes_profil_lubw" }
 
-* :material-star:{ title="Feature" } Umstellung Portal auf neue Portal-Technologie <br>[:octicons-link-external-16: REDMINE-7806](https://redmine.informationgrid.eu/issues/7806)
 * :material-star:{ title="Feature" } Einschränkung für Fachredakteure: Verschieben von Elementen im Themenbaum unterbinden <br>[:octicons-link-external-16: REDMINE-8422](https://redmine.informationgrid.eu/issues/8422)
 
 ### Profil UPSH { id="8.1.3_changes_profil_upsh" }
