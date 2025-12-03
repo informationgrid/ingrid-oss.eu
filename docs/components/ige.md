@@ -8,7 +8,7 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 Der [**InGrid Editor**](https://github.com/informationgrid/ingrid-editor) ermöglicht die Erfassung von Metadaten über vielseitige
 Formulare und bietet einen umfangreichen Workflow, der den Import sowie den Export verschiedener Formate erlaubt.
 
-Insbesondere wird die Erfassung und Publizierung von **ISO 19115/19119**, **OGC** und **INSPIRE** konformen Metadaten unterstützt.
+Insbesondere wird die Erfassung und Publizierung von **ISO 19115/19119**, **OGC**, **INSPIRE** und **DCAT-AP.DE** konformen Metadaten unterstützt.
 
 ![](../assets/drawio/ingrid-editor.drawio)
 
