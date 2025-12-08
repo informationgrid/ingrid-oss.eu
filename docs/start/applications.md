@@ -62,9 +62,9 @@ Technisch gesehen unterscheidet sich der Einsatz von InGrid auf europäischer Eb
 ### Länderportale
 
 * [MetadatenVerbund (MetaVer) der Länder Brandenburg, Bremen, Hamburg, Sachsen-Anhalt, Mecklenburg-Vorpommern](http://metaver.de/)
-* [NUMIS - Niedersächsisches Umweltportal](http://numis.niedersachsen.de/)
+* [NUMIS - Niedersächsisches UmweltPORTAL](http://numis.niedersachsen.de/)
 * [PortalU Rheinland Pfalz - behördliche Umweltinformationen aus Rheinland Pfalz](http://www.portalu.rlp.de/)
-* [Umweltportal Schleswig-Holstein](https://umweltportal.schleswig-holstein.de/)
+* [UmweltPORTAL Schleswig-Holstein](https://umweltportal.schleswig-holstein.de/)
 * [Umweltgeodaten für Baden-Württemberg](https://rips-metadaten.lubw.de)
         
 
