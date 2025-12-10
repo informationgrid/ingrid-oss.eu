@@ -277,6 +277,8 @@ Einige allgemeine Einstellungen können auch über Umgebungsvariablen konfigurie
     | CODELIST_API                | URL zur Codelist API                                                                         |
     | CODELIST_USER               | Benutzername für die Authentifizierung an der Codelist API                                   |
     | CODELIST_PASS               | Passwort für die Authentifizierung an der Codelist API                                       |
+    | CONTACT_MAIL_SUBJECT_DE     | Kontakt E-Mail-Betreff ändern (Deutsch)                                                      |
+    | CONTACT_MAIL_SUBJECT_EN     | Kontakt E-Mail-Betreff ändern (Englisch)                                                     |
     | GEO_API_URL                 | URL zur Geo-Api, z.B. `https://geo-api.informationgrid.eu/v1/convert?exportFormat=`          |
     | GEO_API_USER                | Benutzername für die Authentifizierung an der Geo-Api (htaccess)                             |
     | GEO_API_PASS                | Passwort für die Authentifizierung an der Geo-Api (htaccess)                                 |
