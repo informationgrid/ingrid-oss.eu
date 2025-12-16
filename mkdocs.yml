@@ -86,6 +86,9 @@ plugins:
       version_selector: false
   - drawio:
       toolbar: false
+  - blog
+  - roamlinks
+  - knowledge_graph
 
 extra_css:
   - 'assets/stylesheets/color-slate.css'
@@ -220,3 +223,6 @@ nav:
       - Dokumentationsproblem melden: contributing/reporting-a-docs-issue.md
   - Kontakt:
     - Impressum: about/impressum.md
+  - Blog: 
+    - blog/index.md
+  

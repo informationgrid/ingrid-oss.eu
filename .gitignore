@@ -14,3 +14,6 @@ __pycache__
 
 # builds
 site
+
+mkdocs_knowledge_graph.egg-info
+.obsidian
