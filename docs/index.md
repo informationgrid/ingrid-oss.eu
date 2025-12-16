@@ -106,11 +106,11 @@ solutions:
       "
 development:
   title: Gemeinsam weiterentwickelt
-  subtitle: "In <b>16</b> <nobr>Bundesländern</nobr> vertreten"
+  subtitle: "In <b>16</b> <nobr>Ländern</nobr> vertreten"
   color: rgb(28, 118, 255)
   description: "<b>InGrid</b> wird von Institutionen des Bundes und aller Länder kontinuierlich gepflegt und weiterentwickelt. Diese Kooperation für moderne Umweltinformationssysteme garantiert leistungsfähige und zukunftssichere Lösungen. Im Folgenden finden Sie eine Auswahl von Anwendungen, die auf InGrid basieren."
   accordion:
-    - title: MetaVer Metadatenverbund
+    - title: MetaVer Metadatenverbund zahlreicher Länder
       website: 
         - https://metaver.de
       logo: ./assets/logos/metaver.svg
@@ -122,7 +122,7 @@ development:
       <li><b>Transparenz & Offenheit:</b><br>Die Metadaten sind sowohl für Fachanwender als auch für die Öffentlichkeit leicht zugänglich und verständlich aufbereitet. Schnittstellen ermöglichen die Nachnutzung der Daten, sowie eine automatisierte Erfassung.</li>
       <li><b>Flexibel und partner-spezifisch:</b><br>Durch die flexible Struktur der <b>InGrid Software</b> kann auf Besonderheiten der beteiligten Partner eingegangen werden.</li>
       </ul>"
-    - title: UVP Verbund
+    - title: UVP Verbund aller Länder
       website: 
         - https://www.uvp-verbund.de
       logo: ./assets/logos/logo-uvp.svg
@@ -150,7 +150,7 @@ development:
       Die Notwendigkeit eines solchen zentralen und benutzerfreundlichen Werkzeugs ergibt sich aus der wachsenden Bedeutung offener Daten für Transparenz, Innovation und die Entwicklung datengetriebener Anwendungen. Durch die Bereitstellung standardisierter Metadaten wird die Auffindbarkeit und Interoperabilität der Datenbestände erheblich verbessert. Dies erleichtert nicht nur die Nutzung der Daten durch Bürger, Unternehmen und Forschungseinrichtungen, sondern stärkt auch die Zusammenarbeit innerhalb der Verwaltung.</p><p>
       <b>InGrid</b> als zugrundeliegende Softwareplattform zeichnet sich durch ihre modulare Architektur und ihre flexible Anpassungsfähigkeit aus. Dies erlaubt es, den Open Data Editor Bund spezifisch auf die Bedürfnisse der Bundesbehörden zuzuschneiden und gleichzeitig eine hohe Benutzungsfreundlichkeit zu gewährleisten. Die intuitive Benutzeroberfläche führt die Anwendenden durch den Erfassungsprozess, bietet Hilfestellungen und Validierungen um die Qualität der Metadaten zu sichern und minimiert so den Schulungsaufwand.</p>
       "
-    - title: Metadateninformationssystem des Bundesamt für Kartographie und Geodäsie (MIS-BKG)
+    - title: Bundesamt für Kartographie und Geodäsie
       website: 
         - https://mis.bkg.bund.de
       logo: ./assets/logos/logo-bkg.svg
@@ -158,16 +158,7 @@ development:
       Das Metadateninformationssystem des Bundesamtes für Kartographie und Geodäsie bietet einen strukturierten Überblick über die digitalen Geodaten, Geodaten-Dienste und Anwendungen des BKG. Grundlage ist die standardisierte und qualitätsgesicherte Beschreibung dieser Ressourcen durch Metadaten.</p>
       <p>Die Erfassung und Pflege der Metadaten erfolgt über ein integriertes Metadatentool auf Basis der <b>InGrid-Software</b>. Nach einer qualitativen Prüfung werden die Metadaten im MIS veröffentlicht und stehen für Recherche und Nachnutzung bereit.
       </p>"
-    - title: Metadateninformationssystem der Arbeitsgemeinschaft der Vermessungsverwaltungen der Länder der Bundesrepublik Deutschland (MIS-AdV)
-      website: 
-        - https://advmis.geodatenzentrum.de
-      logo: ./assets/logos/logo_advmis.png
-      text: "<p>
-      Das Metadateninformationssystem der Arbeitsgemeinschaft der Vermessungsverwaltungen der Länder der Bundesrepublik Deutschland bietet einen strukturierten Überblick über die digitalen Geodaten und Geodaten-Dienste der AdV-Mitgliedsverwaltungen. Grundlage bildet die standardisierte und qualitätsgesicherte Beschreibung dieser Informationen durch Metadaten.</p>
-      <p>Geodaten der AdV besitzen stets einen Raumbezug, etwa Koordinaten oder Adressen. Die zugehörigen Geodaten-Dienste ermöglichen den direkten Online-Zugriff auf die Daten der jeweiligen Landesverwaltung; darüber hinaus stehen weitere Schnittstellen und Formate zur Verfügung.</p>
-      <p>Die Metadaten werden von den Mitgliedsverwaltungen nach einheitlichen Vorgaben gepflegt und im MIS bereitgestellt, sodass eine transparente Recherche sowie eine verlässliche Nachnutzung über Ländergrenzen hinweg gewährleistet wird.
-      </p>"
-    - title: Metadaten des Räumlichen Informations- und Planungssystems der Landesanstalt für Umwelt Baden-Württemberg (RIPS-LUBW)
+    - title: Landesanstalt für Umwelt Baden-Württemberg
       website: 
         - https://rips-metadaten.lubw.de
       logo: ./assets/logos/logo-rips-lubw.png
@@ -175,21 +166,13 @@ development:
       Die Landesanstalt für Umwelt Baden-Württemberg (LUBW) ist das zentrale Kompetenzzentrum des Landes in den Bereichen Umwelt- und Naturschutz, technischer Arbeitsschutz, Strahlenschutz und Produktsicherheit. Als unabhängige Landeseinrichtung unterstützt sie Politik und Verwaltung mit fundierter fachlicher Expertise zu Themen wie Klimawandel und Anpassung, Windkraft und Artenschutz sowie Hoch- und Niedrigwasservorhersagen.</p>
       <p>Zur Erfüllung ihrer Aufgaben betreibt die LUBW umfangreiche Messnetze und führt landesweite Kartierungen durch. Die dabei gewonnenen Daten sind Grundlage für die Bewertung der Umweltqualität in Baden-Württemberg. Die Metadaten des Räumlichen Informations- und Planungssystems werden mit Hilfe der <b>InGrid-Software</b> standardisiert erfasst und bereitgestellt, sodass eine transparente Nutzung und eine einheitliche Datenbasis für Verwaltung, Fachanwender und Öffentlichkeit gewährleistet ist.
       </p>"
-    - title: Metadatensystem des Ministerium für Klimaschutz, Umwelt, Energie und Mobilität des Landes Rheinland-Pfalz (PortalU-RLP)
+    - title: Umweltportal Niedersachen
       website: 
-        - https://www.portalu.rlp.de
-      logo: ./assets/logos/logo-rlp-portalu.png
+        - https://umweltportal.niedersachsen.de/
+      logo: ./assets/logos/logo_upn.svg
       text: "<p>
-      PortalU RLP bündelt den Zugang zu umweltrelevanten Informationen des Landes Rheinland-Pfalz. Das Portal bietet eine zentrale Recherche über Webseiten landesweiter Institutionen sowie über Metainformationen zu Umweltdaten, Zuständigkeiten und fachlichen Angeboten. Zusätzlich stehen Umweltmesswerte und Kartenanwendungen zur Verfügung, die einen schnellen Überblick über aktuelle Umweltparameter ermöglichen.</p>
-      <p>Eine zentrale Komponente bildet die integrierte Suchmaschine, die Webseiten und Datenbankeinträge nach Stichwörtern durchsucht und so eine effiziente Recherche unterstützt. Die Metainformationen werden strukturiert erfasst und über die Portaloberfläche bereitgestellt, sodass Fachanwenderinnen, Behörden und Öffentlichkeit gleichermaßen profitieren.
-      </p>"
-    - title: Umweltportal Niedersachsen
-      website: 
-        - https://numis.niedersachsen.de
-      logo: ./assets/logos/logo-numis.svg
-      text: "<p>
-      NUMIS Umweltportal Niedersachsen bündelt den Zugang zu umweltrelevanten Informationen des Landes Niedersachsen und ermöglicht die Recherche in Datenkatalogen, Umweltmesswerten, Kartenanwendungen und weiterführenden Internetangeboten öffentlicher Institutionen und Organisationen. Die Metadaten werden mithilfe der <b>InGrid-Software</b> strukturiert erfasst und bereitgestellt, sodass Nutzerinnen und Nutzer schnell einen transparenten Überblick über verfügbare Umweltinformationen erhalten.</p>
-      <p>Das Portal erfüllt die Anforderungen des <b>Niedersächsischen Umweltinformationsgesetzes (NUIG)</b>, der Umsetzung der </b>EU-Richtlinie 2003/4/EG</b> zum freien Zugang der Öffentlichkeit zu Umweltinformationen.
+      Das UmweltPORTAL Niedersachsen bietet einen zentralen Zugang zu umweltrelevanten Informationen öffentlicher Institutionen und Organisationen im Land. Es bündelt aktuelle Daten, Messwerte, Hintergrundinformationen und Umweltereignisse und richtet sich sowohl an interessierte Bürgerinnen und Bürger als auch an fachliche Nutzer wie Umweltorganisationen oder Ingenieurbüros. Das Angebot wird fortlaufend erweitert, um langfristig möglichst alle behördlichen Umweltinformationen in Niedersachsen abzudecken.</p>
+      <p>Die Konzeption orientiert sich an der EU-Umweltinformationsrichtlinie und der EU-INSPIRE-Richtlinie, die den transparenten Zugang zu Umweltinformationen und den Aufbau entsprechender Geodateninfrastrukturen vorgeben. Betrieben wird das Portal vom Niedersächsischen Ministerium für Umwelt, Energie und Klimaschutz, das es kontinuierlich weiterentwickelt und optimiert.
       </p>"
     - title: Umweltportal Schleswig-Holstein
       website: 
@@ -216,36 +199,7 @@ development:
       <p><b>InGrid – Die technologische Basis vom UmweltNAVI</b></p>
       <p>Die UmweltNAVI-App basiert auf der leistungsfähigen InGrid-Plattform, die eine strukturierte, flexible und standardkonforme Verwaltung von Umweltdaten ermöglicht. Durch die nahtlose Integration verschiedener Datenquellen werden Informationen aus den Bundesländern mit deutschlandweiten Umweltdaten vernetzt und benutzerfreundlich aufbereitet. Dank der modularen Architektur von InGrid lässt sich die App dynamisch erweitern, z. B. um neue Datenquellen einzubinden und auf spezifische Anforderungen anzupassen – eine zukunftssichere Lösung für digitale Umweltinformationen.</p>
       "
-    - title: Eisenbahn-Bundesamt GeoPortal.EBA
-      website: 
-        - https://geoportal.eisenbahn-bundesamt.de
-      logo: ./assets/logos/logo-eba.svg
-      text: "<p>
-      Das Eisenbahn-Bundesamt (EBA) ist die zuständige Aufsichts- und Genehmigungsbehörde für alle bundeseigenen Eisenbahnen sowie für nichtbundeseigene Eisenbahnunternehmen, die eine Sicherheitsbescheinigung oder Sicherheitsgenehmigung benötigen. Zur Unterstützung seiner Aufgaben stellt das EBA georeferenzierte Informationen bereit, die im GeoPortal.EBA visualisiert und analysiert werden können.
-      </p>Das GeoPortal.EBA basiert auf Komponenten der InGrid-Software und nutzt derzeit den <b>InGrid Webmap Client</b> zur Darstellung und Kombination verschiedener Kartenthemen. Die Recherche erfolgt über bereitgestellte Dienste des EBA, deren Ergebnisse sich direkt im Kartenclient visualisieren lassen.<br><br>Das Portal ermöglicht:</p>
-      <ul>
-      <li>die Anzeige und Vorschau von Kartenlayern</li>
-  	  <li>den Zugriff auf strukturierte Kartenthemen sowie das Einbinden externer Layer</li>
-  	  <li>Zeichen- und Messfunktionen</li>
-  	  <li>Layer-Vergleiche über eine einblendbare Slider-Funktion</li>
-  	  <li>das Abspeichern und Teilen individueller Kartenzusammenstellungen (z. B. per Link oder QR-Code)</li>
-  	  <li>sowie Druckfunktionen</li>
-      </ul>
-      <p>Damit bietet das GeoPortal.EBA ein flexibel nutzbares Werkzeug zur Übersicht, Analyse und Weiterverwendung geobasierter Informationen im Zuständigkeitsbereich des Eisenbahn-Bundesamtes.
-      </p>"
-    - title: Zentrales Datenmanagement (ZDM) der Wasserstraßen- und Schifffahrtsverwaltung des Bundes (WSV)
-      website:
-        - https://www.kuestendaten.de/DE/dienste/zeitreihen
-        - https://www.kuestendaten.de/DE/dienste/karte?lang=de&topic=kuestendaten
-      logo: ./assets/logos/logo-wsv.jpg
-      text: "<p>
-      Das Zentrale Datenmanagement (ZDM) der Wasserstraßen- und Schifffahrtsverwaltung des Bundes (WSV) stellt geobasierte Fachinformationen bereit und nutzt hierfür den <b>InGrid Webmap client</b> als zentrale Komponente zur Visualisierung. Ergänzend ermöglicht ein integrierter <b>Zeitreihenclient</b> die Auswertung und Darstellung zeitbezogener Messdaten.</p>
-      <p>
-Im <b>Zeitreihenclient</b> können Messstationen über ihre geografische Lage ausgewählt oder über Parameter, Stationsbezeichnungen und Zeiträume gefiltert werden. Die zugrunde liegenden Daten werden über einen OGC-konformen <b>Sensor Observation Service (SOS)</b> bereitgestellt, der auch extern nachnutzbar ist. Für Wasserstands- und Leitfähigkeitsdaten erfolgt die Anbindung über die Schnittstellen des <b>wasserwirtschaftlichen Informationssystems KISTERS (WISKI)</b>. Perspektivisch erfolgt auch die Datenintegration über <b>OGC SensorThings API (STA)</b>.
-      </p>
-      <p>Die Kombination aus Karten- und Zeitreihenvisualisierung unterstützt Fachanwender und Verwaltung bei der Analyse, Auswertung und Bereitstellung hydrologischer Informationen.</p>
-      "
-    - title: GeoPortal.WSV Intranet der Wasserstraßen- und Schifffahrtsverwaltung des Bundes (WSV)
+    - title: Wasserstraßen- und Schifffahrtsverwaltung des Bundes
       logo: ./assets/logos/logo-wsv.jpg
       text: "<p>
       Das GeoPortal.WSV dient der Wasserstraßen- und Schifffahrtsverwaltung des Bundes (WSV) als zentrales <b>Intranet-Werkzeug</b> zur Darstellung und Nutzung geobasierter Informationen. Über den <b>InGrid Webmap Client</b> können verschiedene Kartenthemen visualisiert, kombiniert und analysiert werden. Das Portal unterstützt interne Fachprozesse, indem es Kartenlayer, Fachdaten und Werkzeuge zur räumlichen Auswertung übersichtlich bereitstellt.</p>
