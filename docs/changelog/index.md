@@ -4,6 +4,12 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 ---
 
 
+## Version 8.1.4 <small>06.01.2026</small> { id="8.1.4" data-toc-label="8.1.4"}
+
+### Profil BAW { id="8.1.4_changes_profil_baw_mis" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Editor: Bug bei der Indizierung von LFS Links
+  <br>[:octicons-link-external-16: REDMINE-8557](https://redmine.informationgrid.eu/issues/8557)
 
 ## Version 8.1.3 <small>02.12.2025</small> { id="8.1.3" data-toc-label="8.1.3"}
 
