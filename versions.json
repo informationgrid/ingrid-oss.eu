@@ -3,18 +3,17 @@
     "version": "8.2.0",
     "title": "8.2.0",
     "aliases": [
+      "latest",
       "draft"
     ],
     "properties": {
-      "hidden": true
+      "hidden": false
     }
   },
   {
     "version": "8.1.0",
     "title": "8.1.0",
-    "aliases": [
-      "latest"
-    ],
+    "aliases": [],
     "properties": {
       "hidden": false
     }
