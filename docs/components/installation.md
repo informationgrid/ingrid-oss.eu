@@ -24,23 +24,15 @@ Genauere Informationen zur Installation der einzelnen Komponenten können bei de
 
 ### Welche Datenbank wird verwendet?
 
-InGrid unterstützt MySQL, Oracle und PostgreSQL (ab InGrid 4.0.2). Der Einsatz von MySQL oder PostgreSQL ist dabei vorzuziehen, da hier der Installer die Datenbank initial erzeugen und initialisieren kann (Portal und IGE iPlug).
+InGrid unterstützt PostgreSQL.
 
 Genauere Informationen können bei der Dokumentation der einzelnen Komponenten eingesehen werden.
 
-### Welche Portal Features sollen installiert werden?
-
-Das Portal wird mit einem optionalen INSPIRE kompatiblen Metadateneditor (IGE - InGrid Editor) ausgeliefert, der die Installation von weiteren Komponenten (IGE iPlug) erforderlich macht. Die Installation des Editiors ist optional.
-
 ### Welches Betriebssystem kommt zum Einsatz?
 
-Die empfohlene Plattform ist Linux (Ubuntu/Redhat).
+Die empfohlene Plattform ist Linux.
 
-Das System kann auch unter Windows installiert werden. Dies macht jedoch die Installation von CYGWIN erforderlich.
-
-
-
-Sobald Sie diese Fragen für sich beantwortet haben, können Sie mit der Installation beginnen und InGrid konfiguieren.
+Das System kann auch unter Windows installiert werden. Dies wird jedoch nur für eien container basierte Installation empfohlen.
 
 <hr>
 
@@ -84,8 +76,7 @@ Details zur Schritt-für-Schritt Installation finden Sie hier:  <https://github.
 ### Systemvoraussetzungen
 
 - JAVA 17 JDK (z.B. OpenJDK)
-- Cygwin (unter Windows)
-- MySQL, ORACLE oder PostgreSQL (ab InGrid 4.0.2)
+- PostgreSQL
 
 ### Allgemeine Hinweise
 
@@ -107,4 +98,5 @@ Viele Komponenten besitzen eine Administrations GUI, über die die Komponente ko
 ## Weitere Installationsmöglichkeiten
 
 - Installationsdatei (.rpm) 
-- Java Installer (.exe)
+- Container basierte Installation (Docker)
+- Container basierte Installation (Kubernetes)
