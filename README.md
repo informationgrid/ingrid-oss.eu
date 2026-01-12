@@ -92,7 +92,7 @@ A new version is released based on the `draft` version/branch.
 4. Create new tag (e.g. `git tag v8.1.0`)
 5. Push tag (e.g. `git push origin v8.1.0`)
 6. Update file `.docs-version` with the upcoming version
-7. Commit the updated `.docs-version` file!
+7. Commit and push the updated `.docs-version` file!
 
 
 This triggers the following workflows: 
