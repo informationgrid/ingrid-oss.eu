@@ -5,10 +5,52 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 ## Version 8.2.0 <small>12.01.2026</small> { id="8.2.0" data-toc-label="8.2.0"}
 
+### Wichtige Änderungen&nbsp;⚠️
+
+#### Editor
+
+#### Herausforderung Codeliste 100
+
+Die Codeliste 100 für Raumbezugssysteme stößt an ihre Grenzen. Die aktuelle Struktur im Codeliste-Repo erlaubt nur begrenzte Werteaufnahme ohne Übersichtlichkeit zu verlieren. Daher können nun externe Raumbezugssysteme aufgerufen werden.
+
+![InGrid Editor: "Externe Koordinaterefenzsysteme"](../assets/changelog/820_editor_coord-reference.png "InGrid Editor: "Externe Koordinaterefenzsysteme"")
+<figcaption class="figcaption">InGrid Editor: "Externe Koordinaterefenzsysteme"</figcaption>
+
+[:octicons-link-external-16: REDMINE-7705](https://redmine.informationgrid.eu/issues/7705)
+
+
+#### Einstellungsoptionen für Veröffentlichungsrechte
+
+Die neue Funktionalität ermöglicht die Anpassung der Standard-Veröffentlichungsrechte für neue Datensätze. Anstelle des bisherigen Defaults "Internet" können nun die Optionen "amtsintern" oder "Intranet" ausgewählt werden. Diese Änderung bietet mehr Flexibilität bei der Verwaltung von Datensatz-Zugriffsrechten.
+
+![InGrid Editor: "Defaulteinstellungen"](../assets/changelog/820_editor_document_publication-rights.png "InGrid Editor: "Defaulteinstellungen"")
+<figcaption class="figcaption">InGrid Editor: "Defaulteinstellungen"</figcaption>
+
+[:octicons-link-external-16: REDMINE-6352](https://redmine.informationgrid.eu/issues/6352)
+
+#### Erweiterung Aktivitätsbericht
+
+Die Archivierung ist nun Teil des Aktivitätsbericht im UVP-Editor. Dies ermöglicht eine umfassendere Dokumentation der Tätigkeiten. Die Erweiterung schafft mehr Transparenz und Nachvollziehbarkeit der Prozesse.
+
+![InGrid Editor: "Erweiterung Aktivitätsbericht"](../assets/changelog/820_editor_report_archive.png "InGrid Editor: "Erweiterung Aktivitätsbericht"")
+<figcaption class="figcaption">InGrid Editor: "Erweiterung Aktivitätsbericht"</figcaption>
+
+[:octicons-link-external-16: REDMINE-7525](https://redmine.informationgrid.eu/issues/7525)
+
+#### UX Verbesserung des Zeitbezugs
+
+Die Eingabe der Zeitbezüge wurde überarbeitet. Der Umgang mit Zeitbezügen wurde umgfangreich beleuchtet und konzeptionell überarbeitet. Die Verständlichkeit der unterschiedlichen Zeitbezüge für Redakteure und Betrachter von Metadaten wurde verbessert.
+
+![InGrid Editor: "Editor Zeitbezüge"](../assets/changelog/820_editor_time-reference.png "InGrid Editor: "Editor Zeitbezüge"")
+<figcaption class="figcaption">InGrid Editor: "Editor Zeitbezüge"</figcaption>
+
+[:octicons-link-external-16: REDMINE-7527](https://redmine.informationgrid.eu/issues/7527)
+
 ### Allgemein { id="8.2.0_changes_allgemein" }
 
 * :material-star:{ title="Feature" } Anzeige WKTs im Editor verbessern <br>[:octicons-link-external-16: REDMINE-5731](https://redmine.informationgrid.eu/issues/5731)
 * :material-star:{ title="Feature" } IGE: neue Dienstart "OGC API-Feature" <br>[:octicons-link-external-16: REDMINE-6189](https://redmine.informationgrid.eu/issues/6189)
+* :material-star:{ title="Feature" } "Amtsintern" als default Einstellung für neue Datensätze <br>[:octicons-link-external-16: REDMINE-6352](https://redmine.informationgrid.eu/issues/6352)
 * :material-star:{ title="Feature" } Zoneless Angular <br>[:octicons-link-external-16: REDMINE-6408](https://redmine.informationgrid.eu/issues/6408)
 * :material-star:{ title="Feature" } "Übernahme freie Einträge" Funktionalität aus IGE Classic <br>[:octicons-link-external-16: REDMINE-7063](https://redmine.informationgrid.eu/issues/7063)
 * :material-star:{ title="Feature" } ISO-XML von Dienst-Metadaten bereinigen: Abschnitt srv:coupledResource entfernen <br>[:octicons-link-external-16: REDMINE-7233](https://redmine.informationgrid.eu/issues/7233)
@@ -18,6 +60,7 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 * :material-star:{ title="Feature" } Nur Ordner mit veröffentlichten MD ans Portal liefern <br>[:octicons-link-external-16: REDMINE-8418](https://redmine.informationgrid.eu/issues/8418)
 * :material-star:{ title="Feature" } Portaldarstellung Zeitbezüge <br>[:octicons-link-external-16: REDMINE-8503](https://redmine.informationgrid.eu/issues/8503)
 * :material-star:{ title="Feature" } Ersetzen der until-destroy Bibliothek <br>[:octicons-link-external-16: REDMINE-8541](https://redmine.informationgrid.eu/issues/8541)
+* :material-star:{ title="Feature" } Druckansicht im Portal verschlechtert <br>[:octicons-link-external-16: REDMINE-8582](https://redmine.informationgrid.eu/issues/8582)
 * :octicons-bug-16:{ title="Bug Fix" } Scrollen der Facetten schwierig <br>[:octicons-link-external-16: REDMINE-6043](https://redmine.informationgrid.eu/issues/6043)
 * :octicons-bug-16:{ title="Bug Fix" } ISO Import übernimmt gco:Date nicht im erwarteten ISO-Zeitformat <br>[:octicons-link-external-16: REDMINE-7776](https://redmine.informationgrid.eu/issues/7776)
 * :octicons-bug-16:{ title="Bug Fix" } Planung (Cron-Job), Differenz der angezeigten Zeiten (UTC) <br>[:octicons-link-external-16: REDMINE-7791](https://redmine.informationgrid.eu/issues/7791)
@@ -48,12 +91,11 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 ### Profil BASt { id="8.2.0_changes_profil_bast" }
 
-* :material-star:{ title="Support" } Inhalte der englischen Portalseiten im Repo ablegen <br>[:octicons-link-external-16: REDMINE-8586](https://redmine.informationgrid.eu/issues/8586)
-* :material-star:{ title="Feature" } "Amtsintern" als default Einstellung für neue Datensätze <br>[:octicons-link-external-16: REDMINE-6352](https://redmine.informationgrid.eu/issues/6352)
 * :material-star:{ title="Feature" } Anzeige von Projektnummer und Projekttitel im Portal <br>[:octicons-link-external-16: REDMINE-6713](https://redmine.informationgrid.eu/issues/6713)
 * :material-star:{ title="Feature" } Portal-NG: weitere Anpassungen, externes Portal <br>[:octicons-link-external-16: REDMINE-8409](https://redmine.informationgrid.eu/issues/8409)
 * :octicons-bug-16:{ title="Bug Fix" } Portal-NG: Korrekturen internes Portal <br>[:octicons-link-external-16: REDMINE-8320](https://redmine.informationgrid.eu/issues/8320)
 * :octicons-bug-16:{ title="Bug Fix" } Unerwünschte Anzeige Identifikator im Portal auf TEST <br>[:octicons-link-external-16: REDMINE-8488](https://redmine.informationgrid.eu/issues/8488)
+* :octicons-bug-16:{ title="Bug Fix" } Inhalte der englischen Portalseiten im Repo ablegen <br>[:octicons-link-external-16: REDMINE-8586](https://redmine.informationgrid.eu/issues/8586)
 
 ### Profil BAW MIS { id="8.2.0_changes_profil_baw_mis" }
 
@@ -80,7 +122,6 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 ### Profil KRZN { id="8.2.0_changes_profil_krzn" }
 
-* :material-star:{ title="Support" } Druckansicht im Portal verschlechtert <br>[:octicons-link-external-16: REDMINE-8582](https://redmine.informationgrid.eu/issues/8582)
 * :material-star:{ title="Feature" } Portal-NG: weitere Anpassungen <br>[:octicons-link-external-16: REDMINE-8321](https://redmine.informationgrid.eu/issues/8321)
 
 ### Profil LUBW { id="8.2.0_changes_profil_lubw" }
