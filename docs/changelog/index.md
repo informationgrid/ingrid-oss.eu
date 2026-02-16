@@ -10,6 +10,14 @@ Die Komponenten der InGrid Sofware in der Version 7.5.x werden offiziell nicht m
 
 ## Version 8.2.0 <small>12.01.2026</small> { id="8.2.0" data-toc-label="8.2.0"}
 
+### Hinweise für die Aktualisierung ⚠️
+
+#### Editor
+
+Mit der Aktualisuerung auf 8.2.0 hat sich im InGrid-Profil nicht nur die Eingabe der Zeitbezüge verbessert, sondern auch das zugrundeliegende interne Format. Bei der Aktualität des Datensatzes sind Mehrfacheingaben nicht mehr möglich. Wenn es vorher mehrere Datumsangaben gab, wird nur eine verwendet und die anderen verworfen. Dies sollte bei der Aktualisierung beachtet werden!
+
+Für die "Erstellung", "Erstmalige Veröffentlichung" und "Letzte Änderung" sind Mehrfachangaben auch nicht sinnvoll. Wenn die Daten nicht verloren gehen sollen, so setzen Sie sich mit uns in Verbindung um eine Lösung zu finden. 
+
 ### Allgemein { id="8.2.0_changes_allgemein" }
 
 * :material-star:{ title="Feature" } Anzeige WKTs im Editor verbessern <br>[:octicons-link-external-16: REDMINE-5731](https://redmine.informationgrid.eu/issues/5731)
