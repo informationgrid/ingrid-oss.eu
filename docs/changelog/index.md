@@ -5,6 +5,14 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 ## Version 8.2.0 <small>12.01.2026</small> { id="8.2.0" data-toc-label="8.2.0"}
 
+### Hinweise für die Aktualisierung ⚠️
+
+#### Editor
+
+Mit der Aktualisuerung auf 8.2.0 hat sich im InGrid-Profil nicht nur die Eingabe der Zeitbezüge verbessert, sondern auch das zugrundeliegende interne Format. Bei der Aktualität des Datensatzes sind Mehrfacheingaben nicht mehr möglich. Wenn es vorher mehrere Datumsangaben gab, wird nur eine verwendet und die anderen verworfen. Dies sollte bei der Aktualisierung beachtet werden!
+
+Für die "Erstellung", "Erstmalige Veröffentlichung" und "Letzte Änderung" sind Mehrfachangaben auch nicht sinnvoll. Wenn die Daten nicht verloren gehen sollen, so setzen Sie sich mit uns in Verbindung um eine Lösung zu finden.
+
 ### Wichtige Änderungen&nbsp;⚠️
 
 #### Editor
