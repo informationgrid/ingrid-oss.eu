@@ -17,3 +17,5 @@ site
 
 .obsidian
 mkdocs_knowledge_graph.egg-info
+/.idea/
+/ingrid-docs.iml
