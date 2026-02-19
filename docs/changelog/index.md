@@ -7,6 +7,34 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 Die Komponenten der InGrid Sofware in der Version 7.5.x werden offiziell nicht mehr unterstützt. Es werden keine Sicherheitsupdates für diese Versionen bereitgestellt. Es wird dringend empfohlen auf die neusten Versionen der Komponenten zu aktualisieren.
 
+## Version 8.2.2 <small>10.02.2026</small> { id="8.2.2" data-toc-label="8.2.2"}
+
+### Allgemein { id="8.2.2_changes_allgemein" }
+
+* :octicons-bug-16:{ title="Bug Fix" } "mit Schreibzugriff"-Schieberegler resettet nach "Auswahl"-Checkbox Aktivierung <br>[:octicons-link-external-16: REDMINE-8638](https://redmine.informationgrid.eu/issues/8638)
+* :octicons-bug-16:{ title="Bug Fix" } PORTAL: Doppelte Quellenvermerk-Einträge in der Detaildarstellung <br>[:octicons-link-external-16: REDMINE-8725](https://redmine.informationgrid.eu/issues/8725)
+
+### Profil LUBW { id="8.2.2_changes_profil_lubw" }
+
+* :material-star:{ title="Feature" } Kontexthilfe um Informationen für Fachredaktionen ergänzen <br>[:octicons-link-external-16: REDMINE-8562](https://redmine.informationgrid.eu/issues/8562)
+* :material-star:{ title="Feature" } Ergänzende Informationen "Für die Fachredaktion zuständige Dienststelle" als neues Feld <br>[:octicons-link-external-16: REDMINE-8614](https://redmine.informationgrid.eu/issues/8614)
+* :octicons-bug-16:{ title="Bug Fix" } CSV-Export aus Portal-NG beinhaltet Informationen die falsch gedeutet werden können. <br>[:octicons-link-external-16: REDMINE-8710](https://redmine.informationgrid.eu/issues/8710)
+
+### Profil MetaVer { id="8.2.2_changes_profil_metaver" }
+
+* :octicons-bug-16:{ title="Bug Fix" } PORTAL: Link zur Verordnung Änderungen führt zu Fehler bei Objektklasse Anwendung <br>[:octicons-link-external-16: REDMINE-8724](https://redmine.informationgrid.eu/issues/8724)
+
+### Profil UPSH { id="8.2.2_changes_profil_upsh" }
+
+* :material-star:{ title="Feature" } Portal: Verlinkung zu "Interner Bereich: Metadaten" aus Menü entfernen <br>[:octicons-link-external-16: REDMINE-8702](https://redmine.informationgrid.eu/issues/8702)
+
+### Profil UVP { id="8.2.2_changes_profil_uvp" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Kartenansicht: Verlinkungen haben falschen Titel <br>[:octicons-link-external-16: REDMINE-8688](https://redmine.informationgrid.eu/issues/8688)
+* :octicons-bug-16:{ title="Bug Fix" } UVP: Fehlermeldung Datensatz inkonsistent <br>[:octicons-link-external-16: REDMINE-8743](https://redmine.informationgrid.eu/issues/8743)
+
+<hr>
+
 
 ## Version 8.2.1 <small>29.01.2026</small> { id="8.2.1" data-toc-label="8.2.1"}
 
