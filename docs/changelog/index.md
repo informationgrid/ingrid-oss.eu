@@ -8,6 +8,37 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 Die Komponenten der InGrid Sofware in der Version 7.5.x werden offiziell nicht mehr unterstützt. Es werden keine Sicherheitsupdates für diese Versionen bereitgestellt. Es wird dringend empfohlen auf die neusten Versionen der Komponenten zu aktualisieren.
 
 
+## Version 8.2.1 <small>29.01.2026</small> { id="8.2.1" data-toc-label="8.2.1"}
+
+### Allgemein { id="8.2.1_changes_allgemein" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Open Data - Angabe Link Ressource einfügen <br>[:octicons-link-external-16: REDMINE-8637](https://redmine.informationgrid.eu/issues/8637)
+* :octicons-bug-16:{ title="Bug Fix" } Fehlertext korrigieren <br>[:octicons-link-external-16: REDMINE-8664](https://redmine.informationgrid.eu/issues/8664)
+* :octicons-bug-16:{ title="Bug Fix" } IDF Erzeugung mit Leerzeilen/-zeichen führt zu MessageSizeTooBigException <br>[:octicons-link-external-16: REDMINE-8681](https://redmine.informationgrid.eu/issues/8681)
+* :octicons-bug-16:{ title="Bug Fix" } Harvester muss HTML Tags bei der Erstellung von IDF Dokumenten escapen <br>[:octicons-link-external-16: REDMINE-8690](https://redmine.informationgrid.eu/issues/8690)
+
+### Profil BAW MIS { id="8.2.1_changes_profil_baw_mis" }
+
+* :material-star:{ title="Feature" } IGE: Bild hochladen Button entfernen oder Funktion anpassen <br>[:octicons-link-external-16: REDMINE-8594](https://redmine.informationgrid.eu/issues/8594)
+
+### Profil BKG { id="8.2.1_changes_profil_bkg" }
+
+* :material-star:{ title="Feature" } Anpassungen Portal-NG, Teil 2 <br>[:octicons-link-external-16: REDMINE-8612](https://redmine.informationgrid.eu/issues/8612)
+* :octicons-bug-16:{ title="Bug Fix" } AdV-MIS: Angezeigte Einträge in Facetten angleichen im Portal NG <br>[:octicons-link-external-16: REDMINE-8606](https://redmine.informationgrid.eu/issues/8606)
+
+### Profil LUBW { id="8.2.1_changes_profil_lubw" }
+
+* :material-star:{ title="Feature" } CSV Export: Erweiterung und Umbenennung der Ebenen <br>[:octicons-link-external-16: REDMINE-8483](https://redmine.informationgrid.eu/issues/8483)
+* :material-star:{ title="Feature" } X aus der Funktion "Teilen" im neuen Portal entfernen; weitere Anpassungen Portal-NG <br>[:octicons-link-external-16: REDMINE-8666](https://redmine.informationgrid.eu/issues/8666)
+
+### Profil UVP { id="8.2.1_changes_profil_uvp" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Kartenansicht: Verlinkungen haben falschen Titel <br>[:octicons-link-external-16: REDMINE-8688](https://redmine.informationgrid.eu/issues/8688)
+
+
+<hr>
+
+
 ## Version 8.2.0 <small>12.01.2026</small> { id="8.2.0" data-toc-label="8.2.0"}
 
 ### Hinweise für die Aktualisierung ⚠️
