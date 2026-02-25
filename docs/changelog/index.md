@@ -7,6 +7,15 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 Die Komponenten der InGrid Sofware in der Version 7.5.x werden offiziell nicht mehr unterstützt. Es werden keine Sicherheitsupdates für diese Versionen bereitgestellt. Es wird dringend empfohlen auf die neusten Versionen der Komponenten zu aktualisieren.
 
+
+## Version 8.2.3 <small>23.02.2026</small> { id="8.2.3" data-toc-label="8.2.3"}
+
+### Profil MetaVer { id="8.2.3_changes_profil_metaver" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Druckvorschau - Es wird nur die erste Seite gedruckt <br>[:octicons-link-external-16: REDMINE-8752](https://redmine.informationgrid.eu/issues/8752)
+
+<hr>
+
 ## Version 8.2.2 <small>10.02.2026</small> { id="8.2.2" data-toc-label="8.2.2"}
 
 ### Allgemein { id="8.2.2_changes_allgemein" }
