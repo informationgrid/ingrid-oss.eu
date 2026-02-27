@@ -7,6 +7,13 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 Die Komponenten der InGrid Software in der Version 7.5.x werden offiziell nicht mehr unterstützt. Es werden keine Sicherheitsupdates für diese Versionen bereitgestellt. Es wird dringend empfohlen auf die neusten Versionen der Komponenten zu aktualisieren.
 
+## Version 8.2.4 <small>26.02.2026</small> { id="8.2.4" data-toc-label="8.2.4"}
+
+### Profil BAW MIS { id="8.2.4_changes_profil_baw_mis" }
+
+* :material-star:{ title="Feature" } IGE: Messdaten (Allgmein) Selectboxen in Comboboxen ändern <br>[:octicons-link-external-16: REDMINE-8796](https://redmine.informationgrid.eu/issues/8796)
+
+<hr>
 
 ## Version 8.2.3 <small>23.02.2026</small> { id="8.2.3" data-toc-label="8.2.3"}
 
