@@ -7,6 +7,36 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 Die Komponenten der InGrid Software in der Version 7.5.x werden offiziell nicht mehr unterstützt. Es werden keine Sicherheitsupdates für diese Versionen bereitgestellt. Es wird dringend empfohlen auf die neusten Versionen der Komponenten zu aktualisieren.
 
+## Version 8.2.6 <small>DD.MM.YYYY</small> { id="8.2.6" data-toc-label="8.2.6"}
+
+### Allgemein { id="8.2.6_changes_allgemein" }
+
+* :material-star:{ title="Feature" } ES Indexmapping für Ortssuche anpassen, Felder befüllen <br>[:octicons-link-external-16: REDMINE-8425](https://redmine.informationgrid.eu/issues/8425)
+
+### Profil LUBW { id="8.2.6_changes_profil_lubw" }
+
+* :material-star:{ title="Feature" } Einrichtung eines JSON Merge Patch Prozesses zum Überschreiben des Datums "Letzte Änderung" <br>[:octicons-link-external-16: REDMINE-8815](https://redmine.informationgrid.eu/issues/8815)
+* :material-star:{ title="Feature" } Minimallösung JSON MERGE PATCHes in der OGC-API Records Schnittstelle <br>[:octicons-link-external-16: REDMINE-8868](https://redmine.informationgrid.eu/issues/8868)
+
+
+## Version 8.2.5 <small>DD.MM.YYYY</small> { id="8.2.5" data-toc-label="8.2.5"}
+
+### Allgemein { id="8.2.5_changes_allgemein" }
+
+* :material-star:{ title="Feature" } Portal: Umsortierung Zeitbezüge <br>[:octicons-link-external-16: REDMINE-8770](https://redmine.informationgrid.eu/issues/8770)
+* :octicons-bug-16:{ title="Bug Fix" } Zeitbezug: Diskrepanz Hinweistexte im Portal und im Editor <br>[:octicons-link-external-16: REDMINE-8813](https://redmine.informationgrid.eu/issues/8813)
+* :octicons-bug-16:{ title="Bug Fix" } PORTAL: Uploads werden nach Neustart des Docker-Containers entfernt <br>[:octicons-link-external-16: REDMINE-8819](https://redmine.informationgrid.eu/issues/8819)
+* :octicons-bug-16:{ title="Bug Fix" } PORTAL: Messwerte-Client kann durch die GravCMS-Administration gelöscht werden <br>[:octicons-link-external-16: REDMINE-8820](https://redmine.informationgrid.eu/issues/8820)
+
+### Profil BKG { id="8.2.5_changes_profil_bkg" }
+
+* :octicons-bug-16:{ title="Bug Fix" } BKG-MIS: Portal: Auffälligkeit - Nutzungsbedingungen in Suchergebnis-Ausgabe <br>[:octicons-link-external-16: REDMINE-8849](https://redmine.informationgrid.eu/issues/8849)
+
+### Profil LUBW { id="8.2.5_changes_profil_lubw" }
+
+* :material-star:{ title="Feature" } Beschreibungselement "Herstellungsprozess" sollte in ein normales editierbares Textfeld geändert werden <br>[:octicons-link-external-16: REDMINE-8632](https://redmine.informationgrid.eu/issues/8632)
+
+
 ## Version 8.2.4 <small>26.02.2026</small> { id="8.2.4" data-toc-label="8.2.4"}
 
 ### Profil BAW MIS { id="8.2.4_changes_profil_baw_mis" }
