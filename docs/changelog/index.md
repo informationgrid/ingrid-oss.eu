@@ -7,7 +7,7 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 Die Komponenten der InGrid Software in der Version 7.5.x werden offiziell nicht mehr unterstützt. Es werden keine Sicherheitsupdates für diese Versionen bereitgestellt. Es wird dringend empfohlen auf die neusten Versionen der Komponenten zu aktualisieren.
 
-## Version 8.2.6 <small>DD.MM.YYYY</small> { id="8.2.6" data-toc-label="8.2.6"}
+## Version 8.2.6 <small>20.03.2026</small> { id="8.2.6" data-toc-label="8.2.6"}
 
 ### Allgemein { id="8.2.6_changes_allgemein" }
 
@@ -19,7 +19,7 @@ Die Komponenten der InGrid Software in der Version 7.5.x werden offiziell nicht 
 * :material-star:{ title="Feature" } Minimallösung JSON MERGE PATCHes in der OGC-API Records Schnittstelle <br>[:octicons-link-external-16: REDMINE-8868](https://redmine.informationgrid.eu/issues/8868)
 
 
-## Version 8.2.5 <small>DD.MM.YYYY</small> { id="8.2.5" data-toc-label="8.2.5"}
+## Version 8.2.5 <small>11.03.2026</small> { id="8.2.5" data-toc-label="8.2.5"}
 
 ### Allgemein { id="8.2.5_changes_allgemein" }
 
