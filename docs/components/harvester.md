@@ -255,6 +255,7 @@ In einem Docker-Setup sollten diese Dateien vom Hostsystem in den Container gema
     | server/config.json                            | /opt/ingrid/harvester/config.json                   | Konfiguration des Harvester                             |
     | server/config-general.json                    | /opt/ingrid/harvester/config-general.json           | Allgemeine Einstellungen (Elasticsearch, Postgres, ...) |
     | server/mappings.json                          | /opt/ingrid/harvester/mappings.json                 | Mapping der Datenformate                                |
+    | server/keycloak.json                          | /opt/ingrid/harvester/keycloak.json                 | Zugriffskonfiguration für den Keycloak-Client                                |
     | client/src/assets/config.json                 | /opt/ingrid/harvester/app/webapp/assets/config.json | Einstellungen des Clients                               |
 
 ### Umgebungsvariablen
@@ -288,7 +289,25 @@ Einige allgemeine Einstellungen können auch über Umgebungsvariablen konfigurie
     | ALLOW_ALL_UNAUTHORIZED      | Ob alle Verbindungen unabhängig vom SSL-Status erlaubt werden sollen         |
     | IMPORTER_PROFILE            | Profil, das für die Anwendung verwendet wird: ingrid, diplanung, mcloud      |
     | BASE_URL                    | Unterpfad, unter dem der Harvester bereitgestellt wird, wenn nicht unter `/` |
+    | PASSPORT_ENABLED            | Aktiviere lokalen Login mit `ADMIN_PASSWORD` |
+    | KEYCLOAK_ENABLED            | Aktiviere Login mit Keycloak |
+    | KEYCLOAK_AUTH_SERVER_URL    | URL zur Keycloak-Instanz |
+    | KEYCLOAK_CREDENTIALS_SECRET | Geheimnis für den Zugriff auf Keycloak-Client `harvester` |
 
+### Keycloak Konfiguration
+
+Damit der Harvester mit Keycloak authentifiziert werden kann, muss ein Client mit dem Namen `harvester` eingerichtet werden. Wird der bereitgestellte vorkonfigurierte Keycloak von wemove verwenden, dann ist dieser Client schon vorhanden und kann über Umgebungsvariablen angepasst werden. Für die manuelle Konfiguration muss wie folgt vorgegangen werden:
+
+- neuen Client mit der ID `harvester` anlegen
+- Redirect-URIs: <URL zum Harvester>/*
+- Client authentication: An
+- Authentication flow: Standard flow
+- unter `Roles` müssen die folgenden drei Rollen angelegt werden
+  - admin
+  - editor
+  - viewer
+
+Um einem Benutzer Zugang zu m Harvester zu geben, muss dieser Benutzer eine der Rolle zugewiesen werden. Der Benutzer kann dann auf den Harvester zugreifen.
 
 <hr>
 

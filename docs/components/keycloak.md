@@ -68,22 +68,24 @@ services:
         image: docker-registry.wemove.com/keycloak:${KEYCLOAK_VERSION}
         restart: unless-stopped
         environment:
-          - KC_BOOTSTRAP_ADMIN_USERNAME=admin
-          - KC_BOOTSTRAP_ADMIN_PASSWORD=admin
-          - KC_HTTP_RELATIVE_PATH=/keycloak
-          - KC_HOSTNAME=http://${HOST_URL}/keycloak
-          - KC_HTTP_ENABLED=true
-          - KC_DB=postgres
-          - KC_DB_URL_HOST=db
-          - KC_DB_USERNAME=${DB_USERNAME}
-          - KC_DB_PASSWORD=${DB_PASSWORD}
-          - MAIL_SMTP=mailrelay
-          - MAIL_FROM=${MAIL_FROM}
-          - IGE_SUPER_USER_LOGIN=ige
-          - IGE_SUPER_USER_PASSWORD=ige
-          - IGE_SUPER_USER_FIRSTNAME=Max
-          - IGE_SUPER_USER_LASTNAME=Mustermann
-          - IGE_SUPER_USER_EMAIL=max.mustermann@beispiel.de
+          KC_BOOTSTRAP_ADMIN_USERNAME: admin
+          KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+          KC_HTTP_RELATIVE_PATH: /keycloak
+          KC_HOSTNAME: http://${HOST_URL}/keycloak
+          KC_HTTP_ENABLED: true
+          KC_DB: postgres
+          KC_DB_URL_HOST: db
+          KC_DB_USERNAME: ${DB_USERNAME}
+          KC_DB_PASSWORD: ${DB_PASSWORD}
+          MAIL_SMTP: mailrelay
+          MAIL_FROM: ${MAIL_FROM}
+          IGE_SUPER_USER_LOGIN: ige
+          IGE_SUPER_USER_PASSWORD: ige
+          IGE_SUPER_USER_FIRSTNAME: Max
+          IGE_SUPER_USER_LASTNAME: Mustermann
+          IGE_SUPER_USER_EMAIL: max.mustermann@beispiel.de
+          HARVESTER_URL: http://${HOST_URL}/harvester
+          HARVESTER_SECRET: <my-secret>
         networks:
           - informationgrid-network
 ```
@@ -99,6 +101,8 @@ folgenden Umgebungsvariablen bereitgestellt:
 | **Variable**              | **Hinweis**                                                                                                | **Defaultwert**       |
 |---------------------------|------------------------------------------------------------------------------------------------------------|-----------------------|
 | ADDITIONAL_REDIRECT_URIS  | Füge weitere URLs zum Client hinzu, um weitere InGrid-Editor Instanzen mit demselben Keycloak zu betreiben |                       |
+| HARVESTER_URL             | Die URL zum Harvester, welche für den Redirect verwendet wird                                              |                       |
+| HARVESTER_SECRET          | Das Secret für den Client                                                                                  |                       |
 | IGE_CLIENT_ID             | Der Präfix für die Clients für den InGrid-Editor                                                           | ige-ng                |
 | IGE_FRONTEND_URL          | Die URL unter der der InGrid-Editor erreichbar ist. Dies wird bspw. für die RedirectURL benötigt.          |                       |
 | IGE_SUPER_USER_EMAIL      | Die Email-Adresse des Super-Admins im InGrid-Editor                                                        |                       |
