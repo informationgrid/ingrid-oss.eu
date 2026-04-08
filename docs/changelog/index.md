@@ -7,6 +7,20 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 Die Komponenten der InGrid Software in der Version 7.5.x werden offiziell nicht mehr unterstützt. Es werden keine Sicherheitsupdates für diese Versionen bereitgestellt. Es wird dringend empfohlen auf die neusten Versionen der Komponenten zu aktualisieren.
 
+## Version 8.2.7 <small>27.03.2026</small> { id="8.2.7" data-toc-label="8.2.7"}
+
+### Allgemein { id="8.2.7_changes_allgemein" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Portal kann nicht alle Anfragen beantworten (getMimeType-Requests) <br>[:octicons-link-external-16: REDMINE-8274](https://redmine.informationgrid.eu/issues/8274)
+
+### Profil LUBW { id="8.2.7_changes_profil_lubw" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Aufruf der Metadaten mit Stamm-URL "https://rips-metadaten.lubw.de/trefferanzeige?oac=" ergibt Fehlermeldung <br>[:octicons-link-external-16: REDMINE-8888](https://redmine.informationgrid.eu/issues/8888)
+
+
+<hr>
+
+
 ## Version 8.2.6 <small>20.03.2026</small> { id="8.2.6" data-toc-label="8.2.6"}
 
 ### Allgemein { id="8.2.6_changes_allgemein" }
