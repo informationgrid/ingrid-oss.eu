@@ -75,7 +75,7 @@ Im folgenden wird die Konfiguration eines **CSW Harvesters** beschrieben. Klicke
     Beispiel für einen Record Filter:
 
     ```
-    <ogc:Filter>
+    <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
         <ogc:And>
             <ogc:Or>
                 <ogc:PropertyIsEqualTo>
