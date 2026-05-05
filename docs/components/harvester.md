@@ -2,11 +2,15 @@
 title: Harvester
 description: Der InGrid Harvester erfasst Daten aus verschiedenen Quellen, speichert sie in Elasticsearch und stellt sie strukturiert für die weitere Verarbeitung bereit.
 ---
+
 <!-- md:version 7.5.0 -->
 
 ## Allgemeines
 
-Der [**InGrid Harvester**](https://github.com/informationgrid/ingrid-harvester) ist eine eigenständige Softwarekomponente, die Daten aus diversen Quellen „erntet“ und in einem Speicher, den Elasticsearch-Indizes, zur weiteren Verarbeitung bereitstellt. Dadurch wird sichergestellt, dass die Daten jederzeit in einem einheitlichen Format verfügbar sind.
+Der [**InGrid Harvester**](https://github.com/informationgrid/ingrid-harvester) ist eine eigenständige
+Softwarekomponente, die Daten aus diversen Quellen „erntet“ und in einem Speicher, den Elasticsearch-Indizes, zur
+weiteren Verarbeitung bereitstellt. Dadurch wird sichergestellt, dass die Daten jederzeit in einem einheitlichen Format
+verfügbar sind.
 
 ![](../assets/drawio/ingrid-harvester.drawio)
 
@@ -38,7 +42,6 @@ Sie haben die Installation bereits abgeschlossen? Diese Leitfaden könnten Sie i
 
     [CSW Harvester aufsetzen]({{ fix_url('guides/harvester-csw.md') }}){ .md-button }
 
-
 </div>
 
 <div class="grid cards" markdown>
@@ -62,7 +65,7 @@ Sie haben die Installation bereits abgeschlossen? Diese Leitfaden könnten Sie i
 ## Systemvoraussetzungen
 
 |              | **Systembestandteil** | **Anforderung**       |
-| ------------ | --------------------- | --------------------- |
+|--------------|-----------------------|-----------------------|
 | **Hardware** | Arbeitsspeicher       | 2 GB RAM              |
 |              | Festplattenspeicher   | 10 GB frei            |
 |              | Prozessor             | Dual Core CPU         |
@@ -93,7 +96,6 @@ Die Installation des Harvester kann mit Docker, per RPM (in Arbeit) oder direkt 
     [:octicons-arrow-right-24: docker-registry.wemove.com/ingrid-harvester](https://docker-registry.wemove.com/ingrid-harvester)
 
 </div>
-
 
 ``` yaml title="Beispiel docker-compose.yml"
 services:
@@ -208,7 +210,8 @@ npm run install-production
 
 #### Harvester starten
 
-Zuerst eine Datenbank erstellen und die nötigen Umgebungsvariablen für Elasticsearch und PostgreSQL einrichten, siehe [Umgebungsvariablen](#umgebungsvariablen). Danach:
+Zuerst eine Datenbank erstellen und die nötigen Umgebungsvariablen für Elasticsearch und PostgreSQL einrichten,
+siehe [Umgebungsvariablen](#umgebungsvariablen). Danach:
 
 ```
 export IMPORTER_PROFILE=ingrid
@@ -219,7 +222,8 @@ node app/index.js
 
 ## Konfiguration
 
-Wenn der **InGrid Harvester** unter einem Unterpfad (z. B. nicht direkt unter dem Root) erreichbar sein soll, müssen **beide** der folgenden Einstellungen vorgenommen werden:
+Wenn der **InGrid Harvester** unter einem Unterpfad (z. B. nicht direkt unter dem Root) erreichbar sein soll, müssen *
+*beide** der folgenden Einstellungen vorgenommen werden:
 
 * `BASE_URL` auf den gewünschten Pfad setzen (Umgebungsvariable)
 * `contextPath` in der Client-Konfigurationsdatei auf denselben Wert setzen
@@ -227,6 +231,7 @@ Wenn der **InGrid Harvester** unter einem Unterpfad (z. B. nicht direkt unter de
 Zusätzlich müssen entsprechende Einstellungen in nginx vorgenommen werden.
 
 ### Authentifizierung
+
 Benutzer und Passwort wird über die Konfigurationsdatei `users.json` gesetzt.
 Das Admin-Password kann mit der Umgebungsvariable `ADMIN_PASSWORD` überschieben werden.
 
@@ -260,7 +265,8 @@ In einem Docker-Setup sollten diese Dateien vom Hostsystem in den Container gema
 
 ### Umgebungsvariablen
 
-Einige allgemeine Einstellungen können auch über Umgebungsvariablen konfiguriert werden. Diese Einstellungen haben Vorrang vor den Konfigurationsdateien.
+Einige allgemeine Einstellungen können auch über Umgebungsvariablen konfiguriert werden. Diese Einstellungen haben
+Vorrang vor den Konfigurationsdateien.
 
 ??? example "Alle Umgebungsvariablen im Überblick"
 
@@ -296,21 +302,26 @@ Einige allgemeine Einstellungen können auch über Umgebungsvariablen konfigurie
 
 ### Keycloak Konfiguration
 
-Damit der Harvester mit Keycloak authentifiziert werden kann, muss ein Client mit dem Namen `harvester` eingerichtet werden. Wird der bereitgestellte vorkonfigurierte Keycloak von wemove verwenden, dann ist dieser Client schon vorhanden und kann über Umgebungsvariablen angepasst werden. Für die manuelle Konfiguration muss wie folgt vorgegangen werden:
+Damit der Harvester mit Keycloak authentifiziert werden kann, muss ein Client mit dem Namen `harvester` eingerichtet
+werden. Wird der bereitgestellte vorkonfigurierte Keycloak von wemove verwenden, dann ist dieser Client schon vorhanden
+und kann über Umgebungsvariablen angepasst werden. Für die manuelle Konfiguration muss wie folgt vorgegangen werden:
 
 - neuen Client mit der ID `harvester` anlegen
 - Redirect-URIs: <URL zum Harvester>/*
 - Client authentication: An
 - Authentication flow: Standard flow
 - unter `Roles` müssen die folgenden drei Rollen angelegt werden
-  - admin
-  - editor
-  - viewer
+    - admin
+    - editor
+    - viewer
 
-Um einem Benutzer Zugang zu m Harvester zu geben, muss dieser Benutzer eine der Rolle zugewiesen werden. Der Benutzer kann dann auf den Harvester zugreifen.
+Um einem Benutzer Zugang zum Harvester zu geben, muss diesem Benutzer eine der Rollen zugewiesen werden. Der Benutzer
+kann dann auf den Harvester zugreifen.
+
+Der Harvester muss außerdem mit dem korrekten Client-Secret konfiguriert werden, so dass der Zugriff auf den Keycloak-Client
+erlaubt ist.
 
 <hr>
-
 
 ## FAQ
 
@@ -321,7 +332,6 @@ Um einem Benutzer Zugang zu m Harvester zu geben, muss dieser Benutzer eine der 
 ??? question "Wie setze ich einen CSW Harvester auf?"
 
     Siehe Leitfaden [CSW Harvester]({{ fix_url('guides/harvester-csw.md') }})
-    
 
 ??? question "Werde ich benachrichtigt wenn ein Harvester Process fehl schlägt?"
 
