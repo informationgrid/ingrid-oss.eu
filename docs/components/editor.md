@@ -5,10 +5,12 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 ## Allgemeines
 
-Der [**InGrid Editor**](https://github.com/informationgrid/ingrid-editor) ermöglicht die Erfassung von Metadaten über vielseitige
+Der [**InGrid Editor**](https://github.com/informationgrid/ingrid-editor) ermöglicht die Erfassung von Metadaten über
+vielseitige
 Formulare und bietet einen umfangreichen Workflow, der den Import sowie den Export verschiedener Formate erlaubt.
 
-Insbesondere wird die Erfassung und Publizierung von **ISO 19115/19119**, **OGC**, **INSPIRE** und **DCAT-AP.DE** konformen Metadaten unterstützt.
+Insbesondere wird die Erfassung und Publizierung von **ISO 19115/19119**, **OGC**, **INSPIRE** und **DCAT-AP.DE**
+konformen Metadaten unterstützt.
 
 ![](../assets/drawio/ingrid-editor.drawio)
 
@@ -20,17 +22,18 @@ Sie haben die Installation bereits abgeschlossen? Dieser Leitfaden könnte Sie i
 
 <div class="grid cards float-right" markdown>
 
--   :material-book-open-variant-outline: __Benutzeroberfläche__
+- :material-book-open-variant-outline: __Benutzeroberfläche__
 
-    ---
+  ---
 
-    ![Erfassungsmaske InGrid Editor](../assets/components/editor/dashboard.png "Erfassungsmaske InGrid Editor"){ class="grid-image" }
+  ![Erfassungsmaske InGrid Editor](../assets/components/editor/dashboard.png "Erfassungsmaske InGrid Editor"){ class="
+  grid-image" }
 
-    Interesse an der **Benutzeroberfläche**?
+  Interesse an der **Benutzeroberfläche**?
 
-    Dieser Leitfaden bietet Einblicke in die Bedienung vom **InGrid Editor**.
+  Dieser Leitfaden bietet Einblicke in die Bedienung vom **InGrid Editor**.
 
-    [Benutzeroberfläche]({{ fix_url('guides/ige-user-guide.md') }}){ .md-button }
+  [Benutzeroberfläche]({{ fix_url('guides/editor-user-guide.md') }}){ .md-button }
 
 </div>
 
@@ -53,7 +56,9 @@ Sie haben die Installation bereits abgeschlossen? Dieser Leitfaden könnte Sie i
 ## Installation
 
 !!! example inline end "Info"
-    Neben dem InGrid Editor wird zusätzlich eine **Postgres-Datenbank**, **Elasticsearch** und **Keycloak** eingerichtet werden. Hierfür müssen auch die Datenbanken für den Editor sowie auch für Keycloak erstellt werden. Diese haben standardmäßig den Namen
+Neben dem InGrid Editor wird zusätzlich eine **Postgres-Datenbank**, **Elasticsearch** und **Keycloak** eingerichtet
+werden. Hierfür müssen auch die Datenbanken für den Editor sowie auch für Keycloak erstellt werden. Diese haben
+standardmäßig den Namen
 
     * ige
     * keycloak
@@ -62,13 +67,13 @@ Sie haben die Installation bereits abgeschlossen? Dieser Leitfaden könnte Sie i
 
 <div class="grid cards" markdown>
 
--   :material-file-edit-outline:{ .lg .middle } __Docker-Image__
+- :material-file-edit-outline:{ .lg .middle } __Docker-Image__
 
-    ---
+  ---
 
-    Zur Installation kann das folgende Docker-Image verwendet werden:
+  Zur Installation kann das folgende Docker-Image verwendet werden:
 
-    [:octicons-arrow-right-24: docker-registry.wemove.com/ingrid-ige-ng](https://docker-registry.wemove.com/ingrid-ige-ng)
+  [:octicons-arrow-right-24: docker-registry.wemove.com/ingrid-ige-ng](https://docker-registry.wemove.com/ingrid-ige-ng)
 
 </div>
 
@@ -170,6 +175,7 @@ services:
         networks:
           - informationgrid-network
     ```
+
 In einer weiteren Datei `.env` werden die Variablen für die `docker-compose.yml` Datei gesetzt.
 
 ### :material-github: From Source
@@ -201,7 +207,10 @@ mkdir -p /opt/ingrid/editor
 
 #### Editor starten
 
-Bevor Sie den InGrid-Editor starten, müssen sie die Konfiguration vervollständigen. Dazu setzen Sie entweder die Umgebungsvariablen oder erstellen eine Datei `application-default.properties`. Stellen Sie sicher, dass in der PostgreSQL-Datenbank, die Datenbanken mit den Namen "ige" und "keycloak" angelegt worden sind. Für die weitere Konfiguration, siehe [Umgebungsvariablen](#umgebungsvariablen). Danach:
+Bevor Sie den InGrid-Editor starten, müssen sie die Konfiguration vervollständigen. Dazu setzen Sie entweder die
+Umgebungsvariablen oder erstellen eine Datei `application-default.properties`. Stellen Sie sicher, dass in der
+PostgreSQL-Datenbank, die Datenbanken mit den Namen "ige" und "keycloak" angelegt worden sind. Für die weitere
+Konfiguration, siehe [Umgebungsvariablen](#umgebungsvariablen). Danach:
 
 ``` shell
 java -jar ./server/build/libs/server-<version>.jar
@@ -236,13 +245,11 @@ konfigurieren.
     | DATABASE_PORT                       | Der Port der Datenbank                                                                                                                                                              | 5432                                                                                       |
     | DATABASE_USERNAME                   | Der Benutzername für den Zugriff auf die Datenbank                                                                                                                                  | admin                                                                                      |
     | ENABLE_AI                           | Option zum Aktivieren der KI‑Funktion, die derzeit die Generierung von SQL‑Abfragen umfasst                                                                                        | false                                                                                      |
-    | KEYCLOAK_BACKEND_USER               | Benutzername eines Keycloak‑Benutzers mit Administratorrechten. Wird für administrative Aufgaben in Keycloak benötigt.                                                             |                                                                                            |
-    | KEYCLOAK_BACKEND_USER_PASSWORD      | siehe oben                                                                                                                                                                          |                                                                                            |
     | KEYCLOAK_CLIENT_ID                  | Die Client‑ID in Keycloak                                                                                                                                                           | ige-ng-backend                                                                             |
+    | KEYCLOAK_CLIENT_SECRET              | Das konfigurierte Secret für den Client in Keycloak                                                                                                                                                           | ige-ng-backend                                                                             |
     | KEYCLOAK_REALM                      | Der Realm in Keycloak                                                                                                                                                               | InGrid                                                                                     |
     | KEYCLOAK_RESOURCE                   | Der Client für das Frontend in Keycloak                                                                                                                                             | ige-ng-frontend                                                                            |
-    | KEYCLOAK_URL                        | Die URL zu Keycloak. Wenn eine interne IP verwendet wird, muss die Umgebungsvariable `KEYCLOAK_URL_FRONTEND` gesetzt werden, damit die Authentifizierung über den Browser möglich ist. | https://keycloak.informationgrid.eu                                                        |
-    | KEYCLOAK_URL_FRONTEND               | Wird benötigt, wenn die Backend‑Kommunikation zu Keycloak über eine interne IP erfolgt. Es muss eine externe URL angegeben werden, die von außen erreichbar ist.                   | wie KEYCLOAK_URL                                                                           |
+    | KEYCLOAK_URL                        | Die URL zu Keycloak. Hier sollte die interne IP verwendet werden, muss die Umgebungsvariable `KEYCLOAK_URL_FRONTEND` gesetzt werden, damit die Authentifizierung über den Browser möglich ist. | https://keycloak.informationgrid.eu                                                        |
     | OPEN_AI_TOKEN                       | Token zur Authentifizierung bei OpenAI, um KI‑Funktionen zu nutzen.                                                                                                                |                                                                                            |
     | MAIL_FROM                           | Absenderadresse für ausgehende E‑Mails                                                                                                                                              | noreply@wemove.com                                                                         |
     | MAIL_HOST                           | Hostname des zu verwendenden Mailservers                                                                                                                                            | mailrelay                                                                                  |

@@ -106,7 +106,7 @@ Jede Komponente wird in einem eigenen Kapitel beschrieben und enthält eine deta
 
     Erfassen, Verwalten und Publizieren von Metadaten mit dem **InGrid Editor**
 
-    [:octicons-arrow-right-24: InGrid Editor]({{ fix_url('components/ige.md') }})
+    [:octicons-arrow-right-24: InGrid Editor]({{ fix_url('components/editor.md') }})
 </div>
 
 
@@ -120,7 +120,7 @@ Jede Komponente wird in einem eigenen Kapitel beschrieben und enthält eine deta
     
     Lesen und Schreiben von Metadaten über die OGC API - Records Schnittstelle.
     
-    [:octicons-arrow-right-24: OGC-API Records]({{ fix_url('components/interface_ige.md') }})
+    [:octicons-arrow-right-24: OGC-API Records]({{ fix_url('components/interface_editor.md') }})
 
 -   :material-lan:{ .lg .middle } __CSW-Schnittstelle__
 

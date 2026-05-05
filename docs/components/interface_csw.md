@@ -223,12 +223,12 @@ Es werden jeweils nur die ersten 10 Treffer angezeigt. Ein Klick auf ein Sucherg
 
 ## Konfiguration CSW-T Schnittstelle
 
-Die CSW-T Schnittstelle ermöglicht das schreiben von Daten in einen CSW Katalog. Die CSW-T Schnittstelle wird direkt vom [InGrid Editor](ige.md) über die [InGrid Editor Schnittstelle](interface_ige.md) bereitgestellt.
+Die CSW-T Schnittstelle ermöglicht das schreiben von Daten in einen CSW Katalog. Die CSW-T Schnittstelle wird direkt vom [InGrid Editor](editor.md) über die [InGrid Editor Schnittstelle](interface_editor.md) bereitgestellt.
 
 Der Zugriff muss in der Proxy Konfiguration und in der CSW Capabilities entsprechend konfiguiert werden.
 
 !!! info
-    Der Zugang zur [CSW-T Schnittstelle](../guides/ige-api-cswt.md) ist über OAuth 2.0 geschützt. Credentials werden über einen Nutzer Account im [InGrid Editor](ige.md) festgelegt.
+    Der Zugang zur [CSW-T Schnittstelle](../guides/editor-api-cswt.md) ist über OAuth 2.0 geschützt. Credentials werden über einen Nutzer Account im [InGrid Editor](editor.md) festgelegt.
 
 
 

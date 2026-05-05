@@ -31,7 +31,7 @@ Sie haben die Konfiguration bereits abgeschlossen? Diese Leitfaden könnten Sie 
 
     Dieser Leitfaden begleitet Sie bei der Bediehnung der **OGC Records Schnittstelle**. 
 
-    [OGC Records Schnittstelle]({{ fix_url('guides/ige-api-ogc.md') }}){ .md-button }
+    [OGC Records Schnittstelle]({{ fix_url('guides/editor-api-ogc.md') }}){ .md-button }
 
 -   :material-book-open-variant-outline: __CSW-T Schnittstelle__
 
@@ -39,7 +39,7 @@ Sie haben die Konfiguration bereits abgeschlossen? Diese Leitfaden könnten Sie 
 
     Dieser Leitfaden begleitet Sie bei der Bediehnung der **CSW-T Schnittstelle**. 
 
-    [CSW-T Schnittstelle]({{ fix_url('guides/ige-api-cswt.md') }}){ .md-button }
+    [CSW-T Schnittstelle]({{ fix_url('guides/editor-api-cswt.md') }}){ .md-button }
 
 </div>
 
@@ -47,7 +47,7 @@ Sie haben die Konfiguration bereits abgeschlossen? Diese Leitfaden könnten Sie 
 
 ## Konfiguration
 
-Um die Schnittstellen nutzen zu können, muss der [InGrid Editor](ige.md) installiert sein. Achten Sie bei der Installation darauf, die entsprechenden Profile zu aktivieren, da die Schnittstellen andernfalls nicht zur Verfügung stehen.
+Um die Schnittstellen nutzen zu können, muss der [InGrid Editor](editor.md) installiert sein. Achten Sie bei der Installation darauf, die entsprechenden Profile zu aktivieren, da die Schnittstellen andernfalls nicht zur Verfügung stehen.
 
 Die Aktivierung erfolgt über die Startparameter, z. B.:
 
@@ -76,7 +76,7 @@ Folgende Profile stehen zur Verfügung und können je nach Bedarf aktiviert werd
     
     Informationen zur Komponente können Sie der Dokumentation entnehmen.
 
-    [Editor Dokumentation]({{ fix_url('components/ige.md') }}){ .md-button }
+    [Editor Dokumentation]({{ fix_url('components/editor.md') }}){ .md-button }
 
 </div>
 
@@ -142,9 +142,9 @@ Sobald Sie einen gültigen `access_token` erhalten haben, können Sie die Schnit
 
 ??? question "Wie bediene ich die OGC Records Schnittstelle?"
 
-    Siehe Leitfaden [Editor API: OGC Records]({{ fix_url('guides/ige-api-ogc.md') }})
+    Siehe Leitfaden [Editor API: OGC Records]({{ fix_url('guides/editor-api-ogc.md') }})
     
 
 ??? question "Wie bediene ich die CSW-T Schnittstelle?"
 
-    Siehe Leitfaden [Editor API: CSW-T]({{ fix_url('guides/ige-api-cswt.md') }})
+    Siehe Leitfaden [Editor API: CSW-T]({{ fix_url('guides/editor-api-cswt.md') }})

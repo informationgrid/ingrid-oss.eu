@@ -119,3 +119,26 @@ folgenden Umgebungsvariablen bereitgestellt:
 | SIMPLE_SECURITY           | Initialisiert das InGrid-Realm mit einfachen Anforderungen für das Passwort (keine Mindestlänge, ...)      |                       |
 | WAIT_FOR_DATABASE         | Warte auf die Datenbank, bevor Keycloak gestartet wird                                                     | true                  |
 | WAIT_FOR_DATABASE_TIMEOUT | Maximale Wartezeit, die auf die Datenbank gewartet werden soll (in Sekunden)                               | 180                   |
+
+### Manuelle Installation
+
+Wird ein eigener Keycloak-Server verwendet, so müssen folgende Schritte getätigt werden:
+
+- Erstellung eines neuen Realms `InGrid`
+- Erstellung eines neuen Clients `editor`
+    - Redirect-URIs: `<URL-Editor>/*`
+    - `Client authentication`, `Standard-Flow` und `Service account roles` aktivieren
+    - Client Secret unter `Credentials` für die Konfiguration des Editors nehmen
+    - unter `Roles` die Client-Rolle `user` erstellen
+    - unter `Client scopes` -> `editor-dedicated` die predefinied Mapper `client roles`und `realm roles` hinzufügen
+        - in beiden Mappern `Add to ID token` aktivieren
+    - unter `Service account roles` füge Client-Rolle `realm-admin` aus `realm-management` hinzu
+- Erstellung eines neuen Clients `harvester`
+    - Redirect-URIs: `<URL-Harvester>/*`
+    - `Client authentication` und `Standard-Flow` aktivieren
+    - Client Secret unter `Credentials` für die Konfiguration des Harvesters nehmen
+    - unter `Roles` die Client-Rollen `viewer`, `editor` und `admin` erstellen
+- Erstellung der Realm-Rollen
+    - `ige-user`
+    - `ige-super-admin`
+- Erstellung eines Benutzers mit der Rolle `ige-super-admin`, um den InGrid-Editor einzurichten

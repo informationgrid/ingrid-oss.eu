@@ -4,7 +4,7 @@ description: Der InGrid Editor ermöglicht die Erfassung von beliebiger Formular
 ---
 # Editor API: OGC Records
 
-Der [InGrid Editor]({{ fix_url('/components/ige.md') }}) verfügt über eine leistungsfähige API, die dem [Standard OGC API - Records](https://ogcapi.ogc.org/records/) entspricht. Diese Schnittstelle ermöglicht einen standardkonformen Zugriff auf Metadaten, indem sie moderne Webtechnologien nutzt und eine effiziente Suche, Abfrage und Bereitstellung von Geoinformationen unterstützt. Durch die Implementierung des OGC-Standards wird eine einfache Integration mit anderen Systemen gewährleistet und die Interoperabilität innerhalb geodatenbezogener Infrastrukturen deutlich verbessert.
+Der [InGrid Editor]({{ fix_url('/components/editor.md') }}) verfügt über eine leistungsfähige API, die dem [Standard OGC API - Records](https://ogcapi.ogc.org/records/) entspricht. Diese Schnittstelle ermöglicht einen standardkonformen Zugriff auf Metadaten, indem sie moderne Webtechnologien nutzt und eine effiziente Suche, Abfrage und Bereitstellung von Geoinformationen unterstützt. Durch die Implementierung des OGC-Standards wird eine einfache Integration mit anderen Systemen gewährleistet und die Interoperabilität innerhalb geodatenbezogener Infrastrukturen deutlich verbessert.
 
 
 Folgende Formate werden unterstützt:
@@ -27,7 +27,7 @@ Folgende Formate werden unterstützt:
     
     Informationen zur Konfiguration der Editor Schnittstelle können Sie der Dokumentation entnehmen.
 
-    [Editor Schnittstelle]({{ fix_url('components/interface_ige.md') }}){ .md-button }
+    [Editor Schnittstelle]({{ fix_url('components/interface_editor.md') }}){ .md-button }
 
 </div>
 
@@ -48,7 +48,7 @@ Beispiel für eine OGC API Antwort:
 
 ### Authentifizierung
 
-Details bzgl. Bearer-Token-Abfrage finden Sie unter [Editor API Authentifizierung]({{ fix_url('components/interface_ige.md/#authentifizierung') }})
+Details bzgl. Bearer-Token-Abfrage finden Sie unter [Editor API Authentifizierung]({{ fix_url('components/interface_editor.md/#authentifizierung') }})
 
 
 ## Endpunkte

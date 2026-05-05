@@ -303,11 +303,11 @@ Damit der Harvester mit Keycloak authentifiziert werden kann, muss ein Client mi
 - Client authentication: An
 - Authentication flow: Standard flow
 - unter `Roles` müssen die folgenden drei Rollen angelegt werden
-  - admin
-  - editor
-  - viewer
+    - admin
+    - editor
+    - viewer
 
-Um einem Benutzer Zugang zu m Harvester zu geben, muss dieser Benutzer eine der Rolle zugewiesen werden. Der Benutzer kann dann auf den Harvester zugreifen.
+Um einem Benutzer Zugang zum Harvester zu geben, muss diesem Benutzer eine dieser Rollen zugewiesen werden. Der Benutzer kann dann auf den Harvester zugreifen.
 
 <hr>
 

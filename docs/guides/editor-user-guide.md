@@ -18,6 +18,6 @@ Diese Seite bietet einen Überblick über den **InGrid Editor**.
     
     Informationen zur Komponente können Sie der Dokumentation entnehmen.
 
-    [Editor Dokumentation]({{ fix_url('components/ige.md') }}){ .md-button }
+    [Editor Dokumentation]({{ fix_url('components/editor.md') }}){ .md-button }
 
 </div>
