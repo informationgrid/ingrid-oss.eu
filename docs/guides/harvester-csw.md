@@ -1,9 +1,9 @@
 ---
-title: CSW Harvester Ausfüllhilfe
+title: Ausfüllhilfe für eine CSW Datenquelle 
 description: Der InGrid Harvester erfasst Daten aus verschiedenen Quellen, speichert sie in Elasticsearch und stellt sie strukturiert für die weitere Verarbeitung bereit.
 ---
 
-In diesem Leitfaden finden Sie Ausfüllhilfen und Beschreibungen, um einen CSW Harvester aufzusetzen. Eine abgeschlossene Installation vom Harvester wird vorausgesetzt.
+In diesem Leitfaden finden Sie Ausfüllhilfen und Beschreibungen, um eine CSW Datenquelle aufzusetzen. Eine abgeschlossene Installation des Harvesters wird vorausgesetzt.
 
 <div class="grid cards" markdown>
 
@@ -23,41 +23,42 @@ In diesem Leitfaden finden Sie Ausfüllhilfen und Beschreibungen, um einen CSW H
 
 ## Ausfüllhilfe
 
-Bei der Konfiguration der Harvester gibt es allgemeine Einstellungen die bei allen Harvestern zur Verfügung stehen, und spezifische Einstellungen für die verschiedenen Typen von Importern, diese werden erst angezeigt, wenn der Typ des Importers ausgewählt wurde. Die verfügbaren Harvester-Typen sind profilabhängig.
+Bei der Konfiguration der Datenquellen gibt es zwei Arten von Einstellungen:
+einerseits allgemeine Einstellungen, die bei allen Datenquellen zur Verfügung stehen, aber auch Datenquellen-spezifische Einstellungen. Letztere werden erst angezeigt, wenn der Typ der Datenquelle ausgewählt wurde. Die verfügbaren Datenquellen-Typen sind profilabhängig.
 
-Im folgenden wird die Konfiguration eines **CSW Harvesters** beschrieben. Klicken Sie zunächst auf Harvester `HINZUFÜGEN`.
+Im Folgenden wird die Konfiguration einer **CSW Datenquelle** beschrieben. Klicken Sie zunächst auf Datenquellen `HINZUFÜGEN`.
 
 
-???+ success "Basis Angaben"
-
-    | Feldname                    | Beschreibung                                                      |
-    |-----------------------------|-------------------------------------------------------------------|
-    | Typ                         | Typ der Datenquelle (verfügbaren Typen sind profilabhängig) <br>Beispielwert: `CSW` |
-    | Indexname                   | Der Name von dem Index, in den Daten abgespeichert werden sollen. <br>Beispielwert: `csw_data_server_de` |
-    | Beschreibung                | Beschreibung von dem Harvester <br>Beispielwert: `data-server.de`  |
-    | Priorität                   | Bestimmt die Priorität der Datensätze bei der Deduplizierung (profilabhängig). Gelöscht wird der Datensatz mit der niedrigeren Priorität. Über die Priorisierung von Harvestern können Harvester ab- oder aufgewertet werden, bei Duplikaten werden die Datensätze des am höchsten priorisierten Harvesters beibehalten.<br>Beispielwert: `5` |
-
-??? success "Allgemeine Einstellungen"
+???+ success "Allgemeine Einstellungen"
 
     | Feldname                    | Beschreibung                                                      |
     |-----------------------------|-------------------------------------------------------------------|
-    | Max. Datensätze pro Anfrage | Um den Harvester-Prozess zu optimieren können die Dokumente gebündelt abgefragt werden. Legen Sie dafür die maximale Anzahl an Datensätzen pro Anfrage fest. <br>Beispielwert: `200` |
-    | Start Datensatz             | Definieren Sie mit welchen Datensatz gestartet werden soll.  <br>Beispielwert: `1` |
-    | Katalog-Identifier          | TODO |
+    | Name                        | Name der Datenquelle               |
+    | Typ                         | Typ der Datenquelle (verfügbare Typen sind profilabhängig) <br>Beispielwert: `CSW` |
+    | Priorität                   | Bestimmt die Priorität der Datensätze bei der Deduplizierung (profilabhängig). Bei Duplikaten werden die Datensätze der am höchsten priorisierten Datenquelle beibehalten.<br>Beispielwert: `5` |
+    | Kataloge                    | Hier müssen Kataloge ausgewählt werden, in die die CSW Metadatensätze geschrieben werden sollen. Kataloge müssen zuvor in der Menüleiste unter "Kataloge" erstellt werden.                                  |
+
+??? success "InGrid Einstellungen"
+
+    | Feldname                    | Beschreibung                                                      |
+    |-----------------------------|-------------------------------------------------------------------|
+    | iPlugId | Identifiziert die Datenquelle im InGrid Datenraum |
+    | Partner | Eine übergeordnete Organisation, z.B. ein Bundsland (siehe https://ingrid-oss.eu/8.3.0/guides/querySyntax/?h=partner#allgemeines) |
+    | Provider | Eine untergeordnete Organisation, z.B. eine Behörde (siehe https://ingrid-oss.eu/8.3.0/guides/querySyntax/?h=provider#allgemeines) |
+    | Datasource Name | Beschreibender Name der Datenquelle, z.B. CSW Schnittstelle des Nds. Ministerium für Umwelt |
+    | Datatype | Klassifizierende Merkmale des Datensatzes, z.B. metadata, opendata, etc. (siehe https://ingrid-oss.eu/8.3.0/guides/querySyntax/?h=datatype#allgemeines) |
 
 ??? success "CSW Einstellungen"
 
     | Feldname                    | Beschreibung                                                      |
     |-----------------------------|-------------------------------------------------------------------|
     | HTTP Methode                | Anfragemethode an den CSW Dienst <br>Beispielwert: `POST`         |
-    | GetRecords URL              | URL von der GetRecords Schnittstelle <br>Beispielwert: `https://gdk.gdi-de.org/gdi-de/srv/ger/csw` |
-    | Anzahl paralleler Abfragen  | Um den Harvest-Prozess zu beschleunigen kann eine Anzahl von parallelen Abfragen definiert werden <br>Beispielwert: `6` |
-    | Harvesting Modus            | Bei Harvesting kann zwischen folgenden Modi gewählt werden: <br>- `Standard`: Eine vereinfachte Abfrage, die zusätzlich Dienst nicht auflöst. <br>- `Separat (langsam)`: Enthaltene Dienste (WFS und WMS Distributionen) werden zusätzlich aufgelöst. Dieser Prozess ist zeitintensiver. Zusätzlich kann die max. Dienste pro Anfrage definiert werden. |
-    | Max. Dienste pro Anfrage    | Relevant für den Modus `Separat`, um maximale Anzahl an Dienste pro Anfrage zu definieren <br>Beispielwert: `30`                                             |
-    | WFS/WMS auflösen            | Enthaltene WFS/WMS Dienste auflösen <br>Beispielwert: `ja (langsam)` |
-    | Toleranz: Polygon vereinfachen | Optional können sehr detaillierte Polygone vereinfacht werden, um die Speichergröße zu reduzieren. <br>Beispielwert: `0,0001`                                            |
-    | Planstatus                  | Ermöglicht das Filtern von Datensätze nach Planstatus (relevant in Profile `diplanung`) <br>Beispielwert: `festgestellt` |
-
+    | GetCapabilities URL              | URL des GetCapabilities Endpoints der CSW-Schnittstelle <br>Beispielwert: `https://gdk.gdi-de.org/gdi-de/srv/ger/csw` |
+    | Harvesting Modus            | Es kann zwischen folgenden Modi gewählt werden: <br>- `Standard`: Eine naive Abfrage, die zusätzlich Dienste nicht auflöst. <br>- `Separat (langsam)`: Metadaten werden in einem zweistufigen Prozess geharvestet; zuerst werden alle Datensätze, dann alle zugehörigen Dienste abgeholt. Für die letztere Funktion muss die maximale Anzahl von Diensten pro Anfrage definiert werden. Dieser Prozess ist deutlich zeitintensiver. |
+    | Max. Dienste pro Anfrage    | Nur verfügbar wenn der Harvesting-Modus `Separat` ausgewählt ist. Wird verwendet, um die maximale Anzahl an Diensten pro Anfrage zu definieren <br>Beispielwert: `30`                                             |
+    | Max. Datensätze pro Anfrage | Um den Harvesting-Prozess zu optimieren können die Dokumente gebündelt abgefragt werden. Legen Sie dafür die maximale Anzahl an Datensätzen pro Anfrage fest. <br>Beispielwert: `200` |
+    | Start Datensatz             | Definieren Sie mit welchen Datensatz gestartet werden soll.  <br>Beispielwert: `1` |
+    | Anzahl paralleler Abfragen  | Um den Harvesting-Prozess zu beschleunigen kann eine Anzahl von parallelen Abfragen definiert werden. <br>Beispielwert: `6` |
 
 ??? success "Filter und Regeln"
 
@@ -101,7 +102,7 @@ Im folgenden wird die Konfiguration eines **CSW Harvesters** beschrieben. Klicke
 
 ??? success "Weitere Einstellungen"
 
-    Für einen Harvester kann ein zusätzlicher `Mapping-Code` hinterlegt werden, um die Elasticsearch Einträge vor dem Speicher anzupassen. Dafür werden Vorkenntnisse über das Elasticsearch Mapping benötigt.
+    Für eine Datenquelle kann ein zusätzlicher `Mapping-Code` hinterlegt werden, um die Elasticsearch-Einträge vor dem Speichern anzupassen. Dafür werden Vorkenntnisse über das Elasticsearch-Mapping benötigt.
 
     > **Beispielszenario**: Der Wert "Mitte" soll eine räumliche Einordnung ermöglichen. Das Wort ist jedoch nicht eindeutig genug. Der Wert könnte entsprechend nach "Berlin Mitte" gemappt werden, um die Verständlichkeit zu erhöhen.  
 

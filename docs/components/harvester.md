@@ -6,7 +6,7 @@ description: Der InGrid Harvester erfasst Daten aus verschiedenen Quellen, speic
 
 ## Allgemeines
 
-Der [**InGrid Harvester**](https://github.com/informationgrid/ingrid-harvester) ist eine eigenständige Softwarekomponente, die Daten aus diversen Quellen „erntet“ und in einem Speicher, den Elasticsearch-Indizes, zur weiteren Verarbeitung bereitstellt. Dadurch wird sichergestellt, dass die Daten jederzeit in einem einheitlichen Format verfügbar sind.
+Der [**InGrid Harvester**](https://github.com/informationgrid/ingrid-harvester) ist eine eigenständige Softwarekomponente, die Daten aus diversen Quellen „erntet“ und sie in verschiedenen, konfigurierten "Katalogen" bereitstellt. Diese Kataloge umfassen Elasticsearch-Indizes, CSW-Server oder Piveau-Kataloge.
 
 ![](../assets/drawio/ingrid-harvester.drawio)
 
@@ -22,7 +22,7 @@ Sie haben die Installation bereits abgeschlossen? Diese Leitfaden könnten Sie i
 
     ---
 
-    Sie haben die Installation vom **Harvester** abgeschlossen?
+    Sie haben die Installation des **Harvesters** abgeschlossen?
 
     Dieser Leitfaden begleitet Sie beim finalen Einrichtungsprozess.
 
@@ -34,7 +34,7 @@ Sie haben die Installation bereits abgeschlossen? Diese Leitfaden könnten Sie i
 
     Sie wollen einen **Harvester-Prozess aufsetzen**?
 
-    Dieser Leitfaden begleitet Sie bei dem Aufsetzen eines **CSW** Harvesters.
+    Dieser Leitfaden begleitet Sie beim Aufsetzen einer **CSW** Datenquelle.
 
     [CSW Harvester aufsetzen]({{ fix_url('guides/harvester-csw.md') }}){ .md-button }
 
@@ -76,9 +76,9 @@ Sie haben die Installation bereits abgeschlossen? Diese Leitfaden könnten Sie i
 ## Installation
 
 !!! example inline end "Info"
-    Neben dem Harvester muss zusätzlich eine **Datenbank** und **Elasticsearch** eingerichtet werden.
+    Neben dem Harvester muss zusätzlich eine **Datenbank** und ein **Elasticsearch-Cluster** eingerichtet werden. Wenn gewünscht, sollten zusätzliche Katalog-Ziele (**CSW-Server** oder **Piveau-Hub** Instanz) installiert sein.
 
-Die Installation des Harvester kann mit Docker, per RPM (in Arbeit) oder direkt aus dem github-Repository erfolgen. Im Folgenden sind Beispiele und Anleitungen dazu aufgelistet.
+Die Installation des Harvesters kann mit Docker, per RPM (in Arbeit) oder direkt aus dem github-Repository erfolgen. Im Folgenden sind Beispiele und Anleitungen dazu aufgelistet.
 
 ### :material-docker: Docker
 
@@ -103,7 +103,6 @@ services:
     restart: unless-stopped
     environment:
      - NODE_ENV=production
-     #- BASE_URL=/harvester/
      - IMPORTER_PROFILE=ingrid
      - ADMIN_PASSWORD=admin
      - ELASTIC_URL=http://elastic:9200
@@ -177,7 +176,7 @@ TODO
 
 Um den Harvester direkt auf einem System zu installieren, müssen folgende Vorbedingungen erfüllt sein:
 
-* Elasticsearch (>= v6)
+* Elasticsearch (>= v8)
 * PostgreSQL (>= v14)
 * NodeJS (>= v20)
 
@@ -224,7 +223,7 @@ Wenn der **InGrid Harvester** unter einem Unterpfad (z. B. nicht direkt unter de
 * `BASE_URL` auf den gewünschten Pfad setzen (Umgebungsvariable)
 * `contextPath` in der Client-Konfigurationsdatei auf denselben Wert setzen
 
-Zusätzlich müssen entsprechende Einstellungen in nginx vorgenommen werden.
+Gegebenenfalls muss ein existierender Reverse-Proxy entsprechend konfiguriert werden.
 
 ### Authentifizierung
 Benutzer und Passwort wird über die Konfigurationsdatei `users.json` gesetzt.
@@ -251,8 +250,9 @@ In einem Docker-Setup sollten diese Dateien vom Hostsystem in den Container gema
 
     | Speicherort der Konfigurationsdatei (Projekt) | Speicherort der Konfigurationsdatei (Docker-Container)     | Zweck                                                   |
     | --------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------- |
-    | server/users.json                             | /opt/ingrid/harvester/users.json                    | Konfiguration von Benutzer und Passwort                 |
-    | server/config.json                            | /opt/ingrid/harvester/config.json                   | Konfiguration des Harvester                             |
+    | server/users.json                             | /opt/ingrid/harvester/users.json                    | Konfiguration von Harvester-Zugangsdaten                 |
+    | server/config.json                            | /opt/ingrid/harvester/config.json                   | Konfiguration der Datenquellen                             |
+    | server/config-catalogs.json                            | /opt/ingrid/harvester/config-catalogs.json                   | Konfiguration der Kataloge                              |
     | server/config-general.json                    | /opt/ingrid/harvester/config-general.json           | Allgemeine Einstellungen (Elasticsearch, Postgres, ...) |
     | server/mappings.json                          | /opt/ingrid/harvester/mappings.json                 | Mapping der Datenformate                                |
     | server/keycloak.json                          | /opt/ingrid/harvester/keycloak.json                 | Zugriffskonfiguration für den Keycloak-Client                                |
@@ -314,17 +314,20 @@ Um einem Benutzer Zugang zum Harvester zu geben, muss diesem Benutzer eine diese
 
 ## FAQ
 
-??? question "Wie richte ich den Harvester final ein, wenn die Installation abgeschlossen ist?"
+??? question "Wie richte ich den Harvester ein, nachdem die Installation abgeschlossen ist?"
 
     Siehe Leitfaden [Harvester einrichten]({{ fix_url('guides/harvester-setup.md') }})
 
-??? question "Wie setze ich einen CSW Harvester auf?"
+??? question "Wie setze ich eine CSW-Datenquelle auf?"
 
-    Siehe Leitfaden [CSW Harvester]({{ fix_url('guides/harvester-csw.md') }})
-    
+    Siehe Leitfaden [CSW-Datenquelle]({{ fix_url('guides/harvester-csw.md') }})
 
-??? question "Werde ich benachrichtigt wenn ein Harvester Process fehl schlägt?"
+??? question "Wie setze ich einen Elasticsearch-Katalog auf?"
 
-    Diese Verhalten kann eingerichtet werden.
+    Siehe Leitfaden [Elasticsearch-Katalog]({{ fix_url('guides/harvester-elasticsearch.md') }})
 
-    Im Abschnitt [E-Mail Einstellungen]({{ fix_url('guides/harvester-setup.md/#e-mail-einstellungen') }}) vom Leitfaden "Harvester einrichten" können Benachrichtigungen eingerichtet werden.
+??? question "Werde ich benachrichtigt, wenn ein Harvester Job fehlschlägt?"
+
+    Dieses Verhalten kann eingerichtet werden.
+
+    Im Abschnitt [E-Mail Einstellungen]({{ fix_url('guides/harvester-setup.md/#e-mail-einstellungen') }}) im Leitfaden "Harvester einrichten" können Benachrichtigungen eingerichtet werden.
