@@ -275,7 +275,7 @@ Einige allgemeine Einstellungen können auch über Umgebungsvariablen konfigurie
     | DB_PASSWORD                 |                                                                              |
     | DEFAULT_CATALOG             | Standardkatalog, der verwendet wird, wenn kein spezifischer angegeben ist    |
     | ELASTIC_URL                 |                                                                              |
-    | ELASTIC_VERSION             | Hauptversion (6, 7 oder 8)                                                   |
+    | ELASTIC_VERSION             | Hauptversion (8 oder 9)                                                      |
     | ELASTIC_USER                |                                                                              |
     | ELASTIC_PASSWORD            |                                                                              |
     | ELASTIC_REJECT_UNAUTHORIZED | Ob Verbindungen abgelehnt werden sollen, wenn das Zertifikat ungültig ist    |
