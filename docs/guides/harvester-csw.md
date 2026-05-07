@@ -26,8 +26,10 @@ In diesem Leitfaden finden Sie Ausfüllhilfen und Beschreibungen, um eine CSW Da
 Bei der Konfiguration der Datenquellen gibt es zwei Arten von Einstellungen:
 einerseits allgemeine Einstellungen, die bei allen Datenquellen zur Verfügung stehen, aber auch Datenquellen-spezifische Einstellungen. Letztere werden erst angezeigt, wenn der Typ der Datenquelle ausgewählt wurde. Die verfügbaren Datenquellen-Typen sind profilabhängig.
 
-Im Folgenden wird die Konfiguration einer **CSW Datenquelle** beschrieben. Klicken Sie zunächst auf Datenquellen `HINZUFÜGEN`.
+1. Klicken Sie zunächst auf Datenquellen `HINZUFÜGEN`. 
+2. Wählen Sie unter dem Feld `Typ` den Wert `CSW` aus und füllen Sie alle Pflichtfelder aus.
 
+Im Folgenden finden Sie Hilfestellenungen zu den einzelnen Eingabefeldern, um eine **CSW Datenquelle** zu konfigurieren. 
 
 ???+ success "Allgemeine Einstellungen"
 
