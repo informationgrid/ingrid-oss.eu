@@ -324,7 +324,7 @@ Um einem Benutzer Zugang zum Harvester zu geben, muss diesem Benutzer eine diese
 
 ??? question "Wie setze ich einen Elasticsearch-Katalog auf?"
 
-    Siehe Leitfaden [Elasticsearch-Katalog]({{ fix_url('guides/harvester-elasticsearch.md') }})
+<!-- Siehe Leitfaden [Elasticsearch-Katalog]({{ fix_url('guides/harvester-elasticsearch.md') }}) -->
 
 ??? question "Werde ich benachrichtigt, wenn ein Harvester Job fehlschlägt?"
 
