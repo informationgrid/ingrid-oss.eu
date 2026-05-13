@@ -47,7 +47,7 @@ Sie haben die Installation bereits abgeschlossen? Diese Leitfaden könnten Sie i
 
     ---
 
-    ![](../assets/components/harvester/harvester-gui.jpg "Harvester Benutzeroberfläche"){ class="grid-image" }
+    ![](../assets/components/harvester/harvester-gui-datasource.png "Harvester Benutzeroberfläche"){ class="grid-image" }
 
     Interesse an der **Benutzeroberfläche**?
 
