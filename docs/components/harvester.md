@@ -220,6 +220,11 @@ node app/index.js
 
 Wenn der **InGrid Harvester** unter einem Unterpfad (z. B. nicht direkt unter dem Root) erreichbar sein soll, müssen **beide** der folgenden Einstellungen vorgenommen werden:
 
+!!! example inline end "Info"
+    Achten Sie darauf, dass der Unterpfad mit einem Schrägstrich `/` endet.
+    
+    Beispiel: `"contextPath": "/harvester/"`
+
 * `BASE_URL` auf den gewünschten Pfad setzen (Umgebungsvariable)
 * `contextPath` in der Client-Konfigurationsdatei auf denselben Wert setzen
 
