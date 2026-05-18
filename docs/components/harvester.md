@@ -298,6 +298,8 @@ Einige allgemeine Einstellungen können auch über Umgebungsvariablen konfigurie
     | KEYCLOAK_ENABLED            | Aktiviere Login mit Keycloak |
     | KEYCLOAK_AUTH_SERVER_URL    | URL zur Keycloak-Instanz |
     | KEYCLOAK_CREDENTIALS_SECRET | Geheimnis für den Zugriff auf Keycloak-Client `harvester` |
+    | THREADPOOL_SIZE             | Anzahl paralleler Harvest Jobs (Default: `5`)                             |
+    | MAX_LOGS_PER_HARVESTER      | Limit für Log-Dateien pro Datenquelle (Default: `10`). Ältere Logs werden gelöscht. |
 
 ### Keycloak Konfiguration
 
