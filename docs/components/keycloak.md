@@ -103,8 +103,8 @@ folgenden Umgebungsvariablen bereitgestellt:
 | ADDITIONAL_REDIRECT_URIS  | Füge weitere URLs zum Client hinzu, um weitere InGrid-Editor Instanzen mit demselben Keycloak zu betreiben |                       |
 | HARVESTER_URL             | Die URL zum Harvester, welche für den Redirect verwendet wird                                              |                       |
 | HARVESTER_SECRET          | Das Secret für den Client                                                                                  |                       |
-| IGE_CLIENT_ID             | Der Präfix für die Clients für den InGrid-Editor                                                           | ige-ng                |
-| IGE_FRONTEND_URL          | Die URL unter der der InGrid-Editor erreichbar ist. Dies wird bspw. für die RedirectURL benötigt.          |                       |
+| IGE_CLIENT_ID             | Der Präfix für die Clients für den InGrid-Editor                                                           | editor                |
+| EDITOR_URL                | Die URL unter der der InGrid-Editor erreichbar ist. Dies wird bspw. für die RedirectURL benötigt.          |                       |
 | IGE_SUPER_USER_EMAIL      | Die Email-Adresse des Super-Admins im InGrid-Editor                                                        |                       |
 | IGE_SUPER_USER_FIRSTNAME  | Der Vorname des Super-Admins im InGrid-Editor                                                              |                       |
 | IGE_SUPER_USER_LASTNAME   | Der Nachname des Super-Admins im InGrid-Editor                                                             |                       |

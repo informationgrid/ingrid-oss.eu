@@ -25,6 +25,7 @@ Folgende Anpassungen müssen getätigt werden:
 - Keycloak-Image `docker-registry.wemove.com/keycloak:26.5.6-2` sollte mindestens verwendet werden
     - dieses erzeugt einen neuen Client `editor`
     - über Umgebungsvariable `EDITOR_SECRET` wird das Secret für den Client definiert
+    - die Umgebungsvariable `IGE_FRONTEND_URL` muss durch `EDITOR_URL` ersetzt werden
     - bei eigenem Keycloak bitte die Dokumentation beachten: [Keycloak](../components/keycloak.md)
 - Anpassung der Editor-Konfiguration:
     - die Umgebungsvariable `KEYCLOAK_CLIENT_SECRET` muss das definierte Secret aus dem Keycloak-Client haben
