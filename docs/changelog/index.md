@@ -25,6 +25,90 @@ Der Harvester unterstützt nun die Authentifizierung mit Keycloak, welche standa
 
 Soll die Keycloak-Authentifizierung verwendet werden, so folgen Sie den Anweisungen in der [Harvester-Dokumentation](../components/harvester.md#keycloak-konfiguration).
 
+### Wichtige Änderungen&nbsp;⚠️
+
+#### Opendata Integration
+
+Das frei zugängliche, maschinenlesbare Opendata‑Format gewinnt zunehmend an Bedeutung. Behörden, Forschungseinrichtungen und Unternehmen erhalten dadurch schnelleren, standardisierten Zugriff auf strukturierte Daten. InGrid bildet das Opendata‑Format in Kombination mit Editor, Harvester und Portal ab: Der Editor erstellt und validiert die Datensätze, der Harvester sammelt und harmonisiert sie aus verschiedenen Quellen und das Portal stellt die Daten nutzerfreundlich bereit. Die verbesserte Datenqualität ermöglicht Wiederverwendung und fördert interoperable Analysen. Es entstehen neue Möglichkeiten für Transparenz und datengetriebene Entscheidungen.
+
+##### Opendata im Editor
+
+![InGrid Editor: "Opendata"](../assets/changelog/830_ingrid_editor_opendata.png "InGrid Editor: "Opendata"")
+<figcaption class="figcaption">InGrid Editor: "Opendata"</figcaption>
+
+##### Opendata im Portal 
+
+###### Detailseite
+
+![InGrid Portal: "Opendata Detailseite"](../assets/changelog/830_ingrid_portal_opendata_detail.png "InGrid Portal: "Opendata Detailseite"")
+<figcaption class="figcaption">InGrid Portal: "Opendata Detailseite"</figcaption>
+
+###### Opensearch query
+
+![InGrid Portal: "Opendata Opensearch"](../assets/changelog/830_ingrid_portal_opendata_opensearch.png "InGrid Portal: "Opendata Opensearch"")
+<figcaption class="figcaption">InGrid Portal: "Opendata Opensearch"</figcaption>
+
+##### Opendata im Harvester
+
+![InGrid Harvester: "Opendata"](../assets/changelog/830_ingrid_harvester_opendata.png "InGrid Harvester: "Opendata"")
+<figcaption class="figcaption">InGrid Harvester: "Opendata"</figcaption>
+
+
+[:octicons-link-external-16: REDMINE-8313](https://redmine.informationgrid.eu/issues/8313)
+[:octicons-link-external-16: REDMINE-8314](https://redmine.informationgrid.eu/issues/8314)
+[:octicons-link-external-16: REDMINE-8315](https://redmine.informationgrid.eu/issues/8315)
+[:octicons-link-external-16: REDMINE-8868](https://redmine.informationgrid.eu/issues/8868)
+[:octicons-link-external-16: REDMINE-8572](https://redmine.informationgrid.eu/issues/8572)
+
+
+#### Harvester
+
+Der Harvester hat einige Neuerungen erhalten. Neben der Integration der Web Service Features für das Zentrale Datenmanagemnt und der Erweiterung des Harvesting für OpenData Quellen sowie der Transformation nach RDF/XML wurde die User-Experience verbessert und moderne Techniken der Nutzer\*innenverwaltung ermöglicht. 
+
+
+##### UX/UI
+
+Verschiedene Bereiche des UI wurden überarbeitet. Unter dem Navigationspunkt "Datenquellen" werden alle Datenquellen aufgeführt. Auf den ersten Blick erhält man so eine Übersicht der konfigurierten Harvester und der Datenquellen die geharvestet werden sollen. Eine schlichte Infobox infomiert über geplante und durchgeführte Harvestingprozesse.
+
+![InGrid Harvester: "UI Überarbeitung"](../assets/changelog/830_ingrid_harvester_ui_data_sources_05.png "InGrid harvester: "UI Überarbeitung"")
+<figcaption class="figcaption">InGrid Harvester: "UI Überarbeitung"</figcaption>
+
+Wird eine Datenquelle ausgewählt erhält man eine kleine Übersicht bzgl. des letzten Harvestings wie z.B. dem Status
+
+![InGrid Harvester: "UI Überarbeitung - wird importiert"](../assets/changelog/830_ingrid_harvester_ui_data_sources_01.png "InGrid Harvester: "UI Überarbeitung wird importiert"")
+<figcaption class="figcaption">InGrid Harvester: "UI Überarbeitung wird importiert"</figcaption>
+
+![InGrid Harvester: "UI Überarbeitung - Erfolgreich"](../assets/changelog/830_ingrid_harvester_ui_data_sources_04.png "InGrid Harvester: "UI Überarbeitung - Erfolgreich"")
+<figcaption class="figcaption">InGrid Harvester: "UI Überarbeitung - Erfolgreich"</figcaption>
+
+Meldet das Harvesting Warnungen und Fehler, kann der Verlauf bei der Analyse behilflich sein.
+
+![InGrid Harvester: "UI Überarbeitung - Verlauf aufrufen"](../assets/changelog/830_ingrid_harvester_ui_data_sources_02.png "InGrid Harvester: "UI Überarbeitung - Verlauf aufrufen"")
+<figcaption class="figcaption">InGrid Harvester: "UI Überarbeitung - Verlauf aufrufen"</figcaption>
+
+![InGrid Harvester: "UI Überarbeitung - Verlauf Ansicht"](../assets/changelog/830_ingrid_harvester_ui_data_sources_03.png "InGrid Harvester: "UI Überarbeitung - Verlauf Ansicht"")
+<figcaption class="figcaption">InGrid Harvester: "UI Überarbeitung - Verlauf Ansicht"</figcaption>
+
+
+
+##### WFS Integration
+
+Für die Erstellung einer neuen Datenquelle, stehen ab sofort sowohl GENESIS als auch WFS als Datentyp zur Verfügung.
+
+![InGrid Harvester: "WFS Harvester InGrid Profil umsetzen"](../assets/changelog/830_ingrid_harvester_data_sources_wfs_genesis.png "InGrid harvester: "WFS Harvester InGrid Profil umsetzen"")
+<figcaption class="figcaption">InGrid Harvester: "WFS Harvester InGrid Profil umsetzen"</figcaption>
+
+[:octicons-link-external-16: REDMINE-8322](https://redmine.informationgrid.eu/issues/8322)
+
+##### Nutzer*innenverwaltung
+
+Der Harvester als eigenständige Komponente ermöglicht eine eigene Nutzer\*innenverwaltung und kann damit auch in Umgebungen eingesetzt werden die wenig Resourcen zur Verfügung haben. Für Umgebungen die eine erhöhte Sicherheit benötigen und die zentrale Nutzer\*innenverwaltung Keycloak zur Verfügung haben, besteht nun die Möglichkeit die Harvester-User mittels Keycloak zu verwalten. Details zur Einrichtung: https://ingrid-oss.eu/8.3.0/components/harvester/#keycloak-konfiguration
+
+![InGrid Harvester: "Dezentrale Nutzer\*innenverwaltung"](../assets/changelog/830_ingrid_harvester_login_keycloak.png "InGrid harvester: "Dezentrale Nutzer\*innenverwaltung"")
+<figcaption class="figcaption">InGrid Harvester: "Dezentrale Nutzer\*innenverwaltung"</figcaption>
+
+[:octicons-link-external-16: REDMINE-8438](https://redmine.informationgrid.eu/issues/8438)
+
 ### Allgemein { id="8.3.0_changes_allgemein" }
 
 * :material-star:{ title="Feature" } DOI Registrierung/Aktualisierung über die DataCite REST-API implementieren <br>[:octicons-link-external-16: REDMINE-6695](https://redmine.informationgrid.eu/issues/6695)
