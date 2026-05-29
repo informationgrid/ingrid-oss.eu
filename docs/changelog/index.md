@@ -7,6 +7,42 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 Die Komponenten der InGrid Software in der Version 7.5.x werden offiziell nicht mehr unterstützt. Es werden keine Sicherheitsupdates für diese Versionen bereitgestellt. Es wird dringend empfohlen auf die neusten Versionen der Komponenten zu aktualisieren.
 
+## Version 8.3.1 <small>28.05.2026</small> { id="8.3.1" data-toc-label="8.3.1"}
+
+### Allgemein { id="8.3.1_changes_allgemein" }
+
+* :material-star:{ title="Support" } Aktualisierung der Informationsanbieter (Codeliste 111) in MetaVer für HB <br>[:octicons-link-external-16: REDMINE-8973](https://redmine.informationgrid.eu/issues/8973)
+* :material-star:{ title="Feature" } "Ansprechpartner Metadaten" - Text in Editor und Portal vereinheitlichen <br>[:octicons-link-external-16: REDMINE-6707](https://redmine.informationgrid.eu/issues/6707)
+* :octicons-bug-16:{ title="Bug Fix" } [WFS] Informationen werden vermischt, wenn Anzahl paralleler Abfragen > 1 <br>[:octicons-link-external-16: REDMINE-9056](https://redmine.informationgrid.eu/issues/9056)
+* :octicons-bug-16:{ title="Bug Fix" } Zurücksetzen einer einzelnen Codeliste im Profil InGrid mit OpenData schlägt fehl <br>[:octicons-link-external-16: REDMINE-9071](https://redmine.informationgrid.eu/issues/9071)
+
+### Profil BKG { id="8.3.1_changes_profil_bkg" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Portal AdV-MIS und BKG-MIS: Kontaktformular - Layout der Zusammenfassung <br>[:octicons-link-external-16: REDMINE-8844](https://redmine.informationgrid.eu/issues/8844)
+
+### Profil LUBW { id="8.3.1_changes_profil_lubw" }
+
+* :material-star:{ title="Feature" } Defaulteinstellung für Beschreibungselement "Identifikator der Datenquelle*"  <br>[:octicons-link-external-16: REDMINE-8633](https://redmine.informationgrid.eu/issues/8633)
+
+### Profil MetaVer { id="8.3.1_changes_profil_metaver" }
+
+* :material-star:{ title="Feature" } Kommunaler MDK ST, Anpassung ingrid-with-opendata Profil <br>[:octicons-link-external-16: REDMINE-9025](https://redmine.informationgrid.eu/issues/9025)
+
+### Profil UVP { id="8.3.1_changes_profil_uvp" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Fehler bei Zabbix-Service während der Indizierung <br>[:octicons-link-external-16: REDMINE-9083](https://redmine.informationgrid.eu/issues/9083)
+* :octicons-bug-16:{ title="Bug Fix" } Raumbezugssuche im Portal funktioniert nicht mehr <br>[:octicons-link-external-16: REDMINE-9086](https://redmine.informationgrid.eu/issues/9086)
+* :octicons-bug-16:{ title="Bug Fix" } Zabbix Jobs werden nicht abgebaut <br>[:octicons-link-external-16: REDMINE-9097](https://redmine.informationgrid.eu/issues/9097)
+
+### Komponenten
+
+<div class="ingrid-component-list" markdown>
+
+- CODELIST-REPOSITORY [:material-download: Download](https://distributions.informationgrid.eu/ingrid-codelist-repository/8.3.1/)
+
+</div>
+
+<hr>
 
 ## Version 8.3.0 <small>17.04.2026</small> { id="8.3.0" data-toc-label="8.3.0"}
 
