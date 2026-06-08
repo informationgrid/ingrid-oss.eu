@@ -7,6 +7,14 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 Die Komponenten der InGrid Software in der Version 7.5.x werden offiziell nicht mehr unterstützt. Es werden keine Sicherheitsupdates für diese Versionen bereitgestellt. Es wird dringend empfohlen auf die neusten Versionen der Komponenten zu aktualisieren.
 
+## Version 8.3.1.1 <small>02.06.2026</small> { id="8.3.1.1" data-toc-label="8.3.1.1"}
+
+### Allgemein { id="8.3.1.1_changes_allgemein" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Unvollständiges Mapping für "Datensätze" führt zu fehlenden Ergebnissen im Portal <br>[:octicons-link-external-16: REDMINE-9135](https://redmine.informationgrid.eu/issues/9135)
+
+<hr>
+
 ## Version 8.3.1 <small>28.05.2026</small> { id="8.3.1" data-toc-label="8.3.1"}
 
 ### Allgemein { id="8.3.1_changes_allgemein" }
