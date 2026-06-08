@@ -74,7 +74,7 @@ solutions:
   color: rgb(29, 219, 0)
   description: <b>InGrid</b> ermöglicht maßgeschneiderte Lösungen für Daten und Metadaten. Durch offene Standards und flexible Schnittstellen lassen sich Datenquellen effizient vernetzen und integrieren. Im Folgenden erfahren Sie, wie vielseitig <b>InGrid</b> eingesetzt werden kann.
   accordion:
-    - title: Einsatz als Umweltinformationportal
+    - title: Einsatz als Umweltinformationsportal
       text: "<p>InGrid wird für den Aufbau verschiedener Landesumweltportale eingesetzt. Seine Daten- und Modulstrukturen ermöglichen den Einsatz auf lokaler, regionaler, nationaler und internationaler Ebene.</p>
       <p>Unterschiedliche Datenquellen können zusammengeführt und für die Recherche und Visualisierung aufbereitet werden. Ein Kartenclient und ein Messdatenclient ergänzen die ansprechende Visualisierung der Daten.</p>
       "

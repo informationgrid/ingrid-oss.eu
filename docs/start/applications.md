@@ -5,7 +5,7 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 ## Einsatzmöglichkeiten von InGrid
 
-### Einsatz als Umweltinformationportal
+### Einsatz als Umweltinformationsportal
 
 InGrid wird für den Aufbau verschiedener Landesumweltportalen eingesetzt. Seine Daten- und Modulstrukturen ermöglichen den Einsatz auf lokaler, regionaler, nationaler und internationaler Ebene.
 
