@@ -25,7 +25,7 @@ In diesem Leitfaden finden Sie Ausfüllhilfen und Beschreibungen, um einen CSW K
 
 Der Anschluss an einen Katalog erfolgt unter dem Menupunkt "Kataloge".
 
-1. Klicken Sie zunächst auf Datenquellen `HINZUFÜGEN`. 
+1. Klicken Sie zunächst auf `HINZUFÜGEN`. 
 2. Wählen Sie unter dem Feld `Typ` den Wert `CSW` aus und füllen Sie alle Pflichtfelder aus.
 
 Im Folgenden finden Sie Hilfestellenungen zu den einzelnen Eingabefeldern, um einen **CSW Katalog** zu konfigurieren. 
