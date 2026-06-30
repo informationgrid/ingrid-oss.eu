@@ -189,6 +189,8 @@ nav:
         - Benutzeroberfläche: guides/iplug-se-setup.md
       # - Barrierefreiheit: guides/accessibility.md
       # - InGrid Query Syntax: guides/querySyntax.md
+      # - Externe Anwendungen:
+      #   - pycsw - CSW Katalog: guides/pycsw.md
   - Docs:
     - Überblick: components/overview.md
     - Installation: components/installation.md
