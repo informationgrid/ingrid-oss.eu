@@ -189,8 +189,6 @@ nav:
         - Benutzeroberfläche: guides/iplug-se-setup.md
       # - Barrierefreiheit: guides/accessibility.md
       # - InGrid Query Syntax: guides/querySyntax.md
-      # - Externe Anwendungen:
-      #   - pycsw - CSW Katalog: guides/pycsw.md
   - Docs:
     - Überblick: components/overview.md
     - Installation: components/installation.md
@@ -214,6 +212,7 @@ nav:
         - iBus: components/ibus.md
         - Codelist Repository: components/codelist_repository.md
         - Keycloak: components/keycloak.md
+        # - CSW Schnittstelle: components/pycsw.md
   - Mitwirken:
     - Entwicklungsmodell: contributing/overview.md
     - Projektorganisation: contributing/organisation.md
