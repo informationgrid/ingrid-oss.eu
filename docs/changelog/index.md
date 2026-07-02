@@ -19,7 +19,7 @@ Komponenten zu aktualisieren.
 #### InGrid Editor
 
 Die Konfiguration des InGrid Editors hat sich für die Anbindung an Keycloak geändert. Die Authentisierung sowie
-Autoriserung erfolgen nun vollständig im Backend.
+Autorisierung erfolgen nun vollständig im Backend.
 Folgende Anpassungen müssen getätigt werden:
 
 - Keycloak-Image `docker-registry.wemove.com/keycloak:26.5.6-2` sollte mindestens verwendet werden
@@ -33,3 +33,5 @@ Folgende Anpassungen müssen getätigt werden:
         - `KEYCLOAK_BACKEND_USER`
         - `KEYCLOAK_BACKEND_USER_PASSWORD`
         - `KEYCLOAK_URL_FRONTEND`
+    - prüfen, dass `KEYCLOAK_URL` die externe URL zu Keycloak enthält
+    - `KEYCLOAK_URL_INTERNAL` setzen, mit der internen URL zu Keycloak (optional)
