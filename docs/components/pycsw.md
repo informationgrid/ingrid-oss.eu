@@ -1,16 +1,18 @@
 ---
 title: CSW Schnittstelle
-description: "Leitfaden zur Installation und Konfiguration von pyCSW im InGrid-Kontext"
+description: "Leitfaden zur Installation und Konfiguration von pycsw im InGrid-Kontext"
 ---
+
+# CSW Schnittstelle
 
 ## Allgemeines
 
 !!! info inline end "Offizielle Dokumentation"
-    Weiterführende Informationen zu Installation und Konfiguration finden sich in der [offiziellen pyCSW-Dokumentation](https://docs.pycsw.org/en/latest/).
+    Weiterführende Informationen zu Installation und Konfiguration finden sich in der [offiziellen pycsw-Dokumentation](https://docs.pycsw.org/en/latest/).
 
-[pyCSW](https://pycsw.org/) ist ein quelloffener, OGC-konformer CSW-Server auf Python-Basis. Er implementiert den [OGC CSW 2.0.2 AP ISO 1.0](http://www.opengeospatial.org/standards/cat)-Standard und eignet sich als eigenständiger Metadatenkatalog innerhalb einer InGrid-Infrastruktur.
+Die **CSW-Schnittstelle** stellt Metadaten im InGrid-System über den [OGC CSW 2.0.2 AP ISO 1.0](http://www.opengeospatial.org/standards/cat)-Standard bereit und eignet sich als eigenständiger Metadatenkatalog innerhalb einer InGrid-Infrastruktur. Umgesetzt wird sie mit [pycsw](https://pycsw.org/), einem quelloffenen CSW-Server auf Python-Basis.
 
-In der InGrid-Umgebung dient pyCSW als zentrales Katalog-Ziel für einliefernde Komponenten (Editor, Harvester) und stellt Metadaten via CSW-Schnittstelle für abfragende Komponenten wie das Portal bereit.
+In der InGrid-Umgebung dient pycsw als zentrales Katalog-Ziel für einliefernde Komponenten (Editor, Harvester) und stellt Metadaten via CSW-Schnittstelle für abfragende Komponenten wie das Portal bereit.
 
 ![](../assets/drawio/ingrid-pycsw.drawio)
 
@@ -34,7 +36,7 @@ In der InGrid-Umgebung dient pyCSW als zentrales Katalog-Ziel für einliefernde 
 
     ---
 
-    Das offizielle Docker-Image von pyCSW:
+    Das offizielle Docker-Image von pycsw:
 
     [:octicons-arrow-right-24: hub.docker.com/r/geopython/pycsw](https://hub.docker.com/r/geopython/pycsw)
 
@@ -83,7 +85,7 @@ networks:
 
 ## Konfiguration
 
-pyCSW wird über eine YAML-Konfigurationsdatei (`pycsw.yml`) konfiguriert. Eine vollständige Referenz aller Parameter ist in der [offiziellen Konfigurationsdokumentation](https://docs.pycsw.org/en/latest/configuration.html) verfügbar.
+pycsw wird über eine YAML-Konfigurationsdatei (`pycsw.yml`) konfiguriert. Eine vollständige Referenz aller Parameter ist in der [offiziellen Konfigurationsdokumentation](https://docs.pycsw.org/en/latest/configuration.html) verfügbar.
 
 ???+ example "Beispiel pycsw.yml"
 
@@ -103,7 +105,7 @@ pyCSW wird über eine YAML-Konfigurationsdatei (`pycsw.yml`) konfiguriert. Eine 
     metadata:
       identification:
         title: Mein Metadatenkatalog
-        description: OGC CSW-Katalog auf Basis von pyCSW
+        description: OGC CSW-Katalog auf Basis von pycsw
         keywords:
           - pycsw
           - Metadaten
@@ -141,7 +143,7 @@ Die wichtigsten Einstellungen im Überblick:
 
 ### Authentifizierung
 
-pyCSW bietet **keine eingebaute Benutzerauthentifizierung**. Die Absicherung erfolgt auf zwei Ebenen:
+pycsw bietet **keine eingebaute Benutzerauthentifizierung**. Die Absicherung erfolgt auf zwei Ebenen:
 
 - **CSW-T (Schreibzugriff):** Über `manager.allowed_ips` werden nur explizit erlaubte IP-Adressen zum Schreiben zugelassen.
 - **CSW (Lesezugriff):** Für einen komplett nicht-öffentlichen Katalog empfiehlt sich ein vorgeschalteter **Reverse Proxy** mit HTTP Basic Auth.
@@ -190,13 +192,13 @@ a2enmod proxy proxy_http auth_basic authn_file
 
 ### InGrid Editor
 
-Der InGrid Editor kann Metadatensätze via **CSW-T** direkt in pyCSW einliefern. Damit der Editor gegen pyCSW publizieren kann, müssen folgende Voraussetzungen erfüllt sein:
+Der InGrid Editor kann Metadatensätze via **CSW-T** direkt in pycsw einliefern. Damit der Editor gegen pycsw publizieren kann, müssen folgende Voraussetzungen erfüllt sein:
 
-1. In pyCSW ist die CSW-T-Transaktion aktiviert (`manager.transactions: "true"`)
+1. In pycsw ist die CSW-T-Transaktion aktiviert (`manager.transactions: "true"`)
 2. Die IP-Adresse des Editors ist unter `manager.allowed_ips` eingetragen
-3. Im Editor ist die Export-Konfiguration auf den pyCSW-Endpunkt gesetzt
+3. Im Editor ist die Export-Konfiguration auf den pycsw-Endpunkt gesetzt
 
-Der CSW-T-Endpunkt von pyCSW ist erreichbar unter:
+Der CSW-T-Endpunkt von pycsw ist erreichbar unter:
 
 ```
 http://<pycsw-host>:<port>
@@ -221,20 +223,20 @@ curl --location 'http://<pycsw-host>' \
 
 ### InGrid Harvester
 
-Der InGrid Harvester kann pyCSW als **CSW-Katalogziel** verwenden. Dabei werden geerntete Metadaten per CSW-T an pyCSW übertragen.
+Der InGrid Harvester kann pycsw als **CSW-Katalogziel** verwenden. Dabei werden geerntete Metadaten per CSW-T an pycsw übertragen.
 
 Einrichtung in der Harvester-Konfiguration:
 
 1. In der Harvester-Oberfläche eine neue Katalog-Verbindung vom Typ **CSW** anlegen
-2. Als Endpunkt den pyCSW-Endpunkt eintragen: `http://<pycsw-host>:<port>`
-3. Sicherstellen, dass die IP-Adresse des Harvesters in `manager.allowed_ips` von pyCSW eingetragen ist
+2. Als Endpunkt den pycsw-Endpunkt eintragen: `http://<pycsw-host>:<port>`
+3. Sicherstellen, dass die IP-Adresse des Harvesters in `manager.allowed_ips` von pycsw eingetragen ist
 
 !!! info
     Weitere Informationen zur Einrichtung von Katalogzielen finden sich im [Leitfaden Harvester-Katalog]({{ fix_url('guides/harvester-catalog.md') }}).
 
 ### InGrid Portal
 
-Das InGrid Portal kann Metadaten über die CSW-Schnittstelle von pyCSW abfragen und zur Darstellung aufbereiten.
+Das InGrid Portal kann Metadaten über die CSW-Schnittstelle von pycsw abfragen und zur Darstellung aufbereiten.
 
 Die CSW-Abfrage-URL lautet:
 
@@ -257,7 +259,7 @@ Eine vollständige Übersicht aller Portal-Konfigurationsoptionen ist in der [Po
 
 ??? question "GetCapabilities: Wie kann die CSW-Schnittstelle getestet werden?"
 
-    Der einfachste Smoke-Test ist ein **GetCapabilities**-Request. Er gibt die Fähigkeiten des Servers zurück und zeigt an, ob pyCSW erreichbar ist.
+    Der einfachste Smoke-Test ist ein **GetCapabilities**-Request. Er gibt die Fähigkeiten des Servers zurück und zeigt an, ob pycsw erreichbar ist.
 
     Zum Testen eignen sich Tools wie [Postman](https://www.getpostman.com/) oder vergleichbare REST-Clients. Bei POST-Anfragen muss der Content-Type `application/xml` gesetzt werden.
 

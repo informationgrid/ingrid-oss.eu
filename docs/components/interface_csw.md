@@ -3,6 +3,9 @@ title: CSW Schnittstelle
 description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 ---
 
+!!! warning "Deprecated"
+    Diese Komponente ist veraltet und wird durch die neue [CSW-Schnittstelle](pycsw.md) auf Basis von pycsw ersetzt.
+
 ## Allgemeines
 
 Die CSW-Schnittstelle bietet Zugang zur InGrid-Suche über die [OGC CSW 2.0.2 AP ISO 1.0](http://www.opengeospatial.org/standards/cat) Schnittstellenspezifikation. Die Komponente bezieht die grundlegenden Daten aus einer oder mehreren Datenquellen. Die Datenquellen werden regelmäßig indexiert. Es wird ein lokaler Index vorgehalten, so dass eine CSW-Anfrage nicht zur Abfrage von den Datenquellen führt. Dies vermeidet Inkompatibilitäten zwischen der [OGC CSW 2.0.2 AP ISO 1.0](http://www.opengeospatial.org/standards/cat) eigenen Abfragesprache und der InGrid Query.

@@ -204,7 +204,8 @@ nav:
         - InGrid Editor: components/editor.md
       - APIs:
         - Such-Schnittstelle: components/interface_search.md
-        - CSW Schnittstelle: components/interface_csw.md
+        - CSW Schnittstelle neu: components/pycsw.md
+        - CSW Schnittstelle veraltet ⚠️: components/interface_csw.md
         - InGrid Editor Schnittstelle: components/interface_editor.md
         - InGrid-API: components/api.md
       - Datenanbindung:
@@ -214,7 +215,6 @@ nav:
         - iBus: components/ibus.md
         - Codelist Repository: components/codelist_repository.md
         - Keycloak: components/keycloak.md
-        # - CSW Schnittstelle: components/pycsw.md
   - Mitwirken:
     - Entwicklungsmodell: contributing/overview.md
     - Projektorganisation: contributing/organisation.md
