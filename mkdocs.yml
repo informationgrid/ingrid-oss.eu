@@ -192,8 +192,10 @@ nav:
   - Docs:
     - Überblick: components/overview.md
     - Installation: components/installation.md
-    - Architektur: components/architecture.md
     - Lizensierung: components/license.md
+    - Architektur: 
+      - Technischer Aufbau: components/architecture.md
+      - Indexformat/JSON-Schema: components/indexformat.md
     - Komponenten:
       - Portal:
         - InGrid Portal: components/portal.md

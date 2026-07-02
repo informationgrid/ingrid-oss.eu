@@ -3,8 +3,6 @@ Die grundlegende Software-Architektur besteht aus Komponenten, die über eine Ko
 ![](../assets/drawio/ingrid-system.drawio)
 <figcaption class="figcaption">Schematische Darstellung eines InGrid-Systems</figcaption>
 
-## Technischer Aufbau
-
 InGrid basiert auf dem Komponenten-Konzept, das im Bereich der Software-Entwicklung bereits seit längerem erfolgreich eingesetzt wird. Bei diesem Konzept werden Arbeitsaufgaben in Teilaufgaben unterteilt und parallel bearbeitet. Dadurch ergibt sich ein erweiterbares, flexibles und damit auch skalierbares System, mit dem hohe Flexibilität und Performanz gewährleistet werden können. InGrid besteht aus unterschiedlichen Modulen. Die wichtigsten sind der Informationsbroker (iBus), die Schnittstellen zu den Datenquellen (iPlugs), standardisierte Schnittstellen zur Portaloberfläche, offene Schnittstellen zur Weitergabe von Informationen an andere Systeme (CSW und OpenSearch), die Portaloberfläche sowie der InGridCatalog.
 
 ![](../assets/drawio/ingrid-components.drawio)
