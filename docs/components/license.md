@@ -25,4 +25,4 @@ Verwendete OpenSoure Produkte:
 | Kartenviewer & Messdatenviewer  | [Masterportal (MIT)](https://www.masterportal.org/)  |
 | Zeitreihendatenbank | [FROST Sensor Things API Server (LGPL 3.0)](https://fraunhoferiosb.github.io/FROST-Server/) |
 | Indexierung und Suche  | [Elasticsearch (AGPL 3.0)](https://www.elastic.co/enterprise-search) |
-| Unterstützte Datenbanken  | [MySQL](https://www.mysql.com/), [PostgreSQL](https://www.postgresql.org/) |
+| Unterstützte Datenbanken  | [PostgreSQL](https://www.postgresql.org/) |

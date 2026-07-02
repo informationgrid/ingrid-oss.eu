@@ -4,7 +4,7 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 ---
 
 ## InGrid Sourcecode
-Der Sourcecode wird über [GITHUB](https://github.com/informationgrid) verwaltet.
+Der Sourcecode wird über [GitHub](https://github.com/informationgrid) verwaltet.
 
 ## Bedienungsanleitung Metadaten-Editor (metaver.de) 
 
