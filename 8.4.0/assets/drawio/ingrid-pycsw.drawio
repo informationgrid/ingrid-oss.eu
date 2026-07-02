@@ -1,18 +1,18 @@
 <mxfile host="65bd71144e">
     <diagram name="Seite-1" id="4UVButH17yrCxIi93USr">
-        <mxGraphModel dx="772" dy="524" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="760" pageHeight="560" math="0" shadow="0">
+        <mxGraphModel dx="1349" dy="524" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="760" pageHeight="560" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="31" style="edgeStyle=none;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=light-dark(#00c753, #ededed);" edge="1" parent="1" source="KTzBcZGx58Pp06jGYM_a-17">
+                <mxCell id="31" style="edgeStyle=none;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=light-dark(#00c753, #ededed);" parent="1" source="KTzBcZGx58Pp06jGYM_a-17" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="380" y="410" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="KTzBcZGx58Pp06jGYM_a-17" value="pyCSW" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#d5e8d4;fontStyle=1;fontSize=16;strokeColor=#00C753;" parent="1" vertex="1">
+                <mxCell id="KTzBcZGx58Pp06jGYM_a-17" value="pycsw" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#d5e8d4;fontStyle=1;fontSize=16;strokeColor=#00C753;" parent="1" vertex="1">
                     <mxGeometry x="160" y="320" width="440" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="28" style="edgeStyle=none;html=1;strokeWidth=2;endArrow=block;endFill=1;strokeColor=light-dark(#00c753, #ededed);" edge="1" parent="1" source="4">
+                <mxCell id="28" style="edgeStyle=none;html=1;strokeWidth=2;endArrow=block;endFill=1;strokeColor=light-dark(#00c753, #ededed);" parent="1" source="4" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="240" y="310" as="targetPoint"/>
                     </mxGeometry>
@@ -20,7 +20,7 @@
                 <mxCell id="4" value="Editor" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=none;fontStyle=1;fontSize=16;" parent="1" vertex="1">
                     <mxGeometry x="160" y="220" width="160" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=2;endArrow=block;endFill=1;strokeColor=light-dark(#00c753, #ededed);" edge="1" parent="1" source="5">
+                <mxCell id="29" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=2;endArrow=block;endFill=1;strokeColor=light-dark(#00c753, #ededed);" parent="1" source="5" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="520" y="310" as="targetPoint"/>
                     </mxGeometry>
@@ -28,7 +28,7 @@
                 <mxCell id="5" value="Harvester" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=none;fontStyle=1;fontSize=16;" parent="1" vertex="1">
                     <mxGeometry x="440" y="220" width="160" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" value="Portal" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=none;fontStyle=1;fontSize=16;" vertex="1" parent="1">
+                <mxCell id="30" value="Portal" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=none;fontStyle=1;fontSize=16;" parent="1" vertex="1">
                     <mxGeometry x="300" y="420" width="160" height="40" as="geometry"/>
                 </mxCell>
             </root>
