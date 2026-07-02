@@ -51,6 +51,8 @@ Beim Einsatz von der Suchmaschine (iPlug-SE) können durch den Crawl Prozess gro
 
 Die einfachste und schnellste Methode, um InGrid zum Laufen zu bringen, ist die Installation über Docker. Die Installation kann sowohl lokal als auch auf einem Server durchgeführt werden.
 
+![](../assets/drawio/ingrid-docker.drawio)
+
 1. **InGrid-Docker-Container starten**
     ```
     git clone https://github.com/informationgrid/ingrid-docker.git
