@@ -109,7 +109,7 @@ maintenance:
       until: '2027-01-01'
       website: 'https://www.wemove.com'
   type: contract
-name: InGrid Editor
+name: InGrid
 platforms:
   - web
 releaseDate: '2026-07-01'
