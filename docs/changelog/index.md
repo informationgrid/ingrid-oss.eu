@@ -39,6 +39,51 @@ Folgende Anpassungen müssen getätigt werden:
 
 ## Version 8.4.0 <small>06.07.2026</small> { id="8.4.0" data-toc-label="8.4.0"}
 
+### Wichtige Änderungen&nbsp;⚠️
+
+
+
+#### Suchbegriffe einfacher verwenden
+
+Die Schlagworte dienen nun auch als Suchbegriff. Im Portal kann unter der Detailseite => Schlagworte => Suchbegriffe der gewünschte Suchbegriff angelickt werden. Dies führt zu einer bequemen Suche des Schlagwortes innerhalb des Portals und erleichtert damit die Recherche.
+
+![InGrid Portal: "Clickable Searchterms"](../assets/changelog/840_portal_search_clickabl-search-terms-1.png "InGrid Portal: "Clickable Searchterms"")
+<figcaption class="figcaption">InGrid Portal: "Clickable Searchterms"</figcaption>
+
+
+![InGrid Portal: "Clickable Searchterms: Redirect Search"](../assets/changelog/840_portal_search_clickabl-search-terms-2.png "InGrid Portal: "Clickable Searchterms: Redirect Search"")
+<figcaption class="figcaption">InGrid Portal: "Clickable Searchterms: Redirect Search"</figcaption>
+
+* :material-star:{ title="Feature" } Portal: auf Schlagwort klicken führt zu Suche mit diesem Begriff <br>[:octicons-link-external-16: REDMINE-8887](https://redmine.informationgrid.eu/issues/8887)
+
+
+#### Kategorisierte Darstellung der BAW-Schlagworte
+
+Für BAW-MIS wurde die Auswahl für Schlagworte im Editor vereinfacht. Aus einem Schlagwortkatalog kann nun innerhalb der Objekterstellung meherere Schlagworte sortiert nach Kategorien ausgewählt werden.
+
+![InGrid Edtior: "Keyword selector"](../assets/changelog/840_editor_object_keyword.png "InGrid Edtior: "Keyword selector"")
+<figcaption class="figcaption">InGrid Edtior: "Keyword selector"</figcaption>
+
+* :material-star:{ title="Feature" } Editor: Kategorisierte Darstellung der BAW-Schlagworte <br>[:octicons-link-external-16: REDMINE-8716](https://redmine.informationgrid.eu/issues/8716)
+
+#### Opendata Integration
+
+Die Umetzung des frei zugänglichen, maschinenlesbaren Opendata‑Format geht voran. Mit dem Editor erstellte Opendata Datensätze werden nun Bei MetaVer in den Facetten abgebildet.
+
+![InGrid Portal: "Opendata Facette"](../assets/changelog/840_portal_navigation_open-data-facette-01.png "InGrid Portal: "Opendata Facette"")
+<figcaption class="figcaption">InGrid Portal: "Opendata Facette"</figcaption>
+
+![InGrid Portal: "Opendata Facette"](../assets/changelog/840_portal_navigation_open-data-facette-02.png "InGrid Portal: "Opendata Facette"")
+<figcaption class="figcaption">InGrid Portal: "Opendata Facette"</figcaption>
+
+* :material-star:{ title="Feature" } OpenData-Facetten im Portal (TEST) einblenden <br>[:octicons-link-external-16: REDMINE-9024](https://redmine.informationgrid.eu/issues/9024)
+
+#### Keycloak: verbesserte Sicherheit
+
+Der Editor setzt auf Keycloak zur Verwaltung der Benutzer und deren Authentifizierung. Für die Kommunikation zwischen den Komponenten wird per HTTP der Anmeldeversuch eines Benutzers überprüft und bei erfolgreicher Validierung freigegeben. Hierbei gibt es verschiedene Kanäle, über die die Kommunikation erfolgen kann. Mit diesem Update kann Keycloak innerhalb eines Docker-Setups so konfiguriert werden, dass die Authentifizierung ausschließlich im Docker-Netzwerk der jeweiligen Docker-Installation verbleibt. Die Anmeldedaten der Benutzer sind damit noch sicherer geschützt.
+
+* :material-star:{ title="Feature" } Keycloak-Behandlung aus dem Frontend entfernen (Security) <br>[:octicons-link-external-16: REDMINE-8538](https://redmine.informationgrid.eu/issues/8538)
+
 ### Allgemein { id="8.4.0_changes_allgemein" }
 
 * :material-star:{ title="Support" } BKG-MIS: Portal und ISO-XML: Dienst-MD - Ausgabe der räumlichen Auflösung (Maßstab,...) korrigieren <br>[:octicons-link-external-16: REDMINE-8897](https://redmine.informationgrid.eu/issues/8897)
