@@ -18,8 +18,24 @@ description:
     shortDescription: >
       Modulare Open-Source-Plattform zur Erfassung, Verwaltung und
       Bereitstellung von Daten und Metadaten.
-    longDescription: "\n\n# Erfassen.\n# Verwalten.\n# Entdecken.\n\n## Das Werkzeug für Ihre Daten und Metadaten\n\n**InGrid** [ingrid-oss.eu](https://ingrid-oss.eu/) ist eine leistungsstarke und flexible Softwarelösung für die Erfassung, Verwaltung und Bereitstellung von Daten und Metadaten. Der Name vereint Information & Grid und steht für die strukturierte, effiziente Vernetzung und Organisation komplexer Datenbestände. Entwickelt für Geo- und Umweltportale, Open Data Plattformen und Verwaltungsanwendungen, ermöglicht **InGrid** eine skalierbare Infrastruktur, die sich nahtlos in bestehende Systeme integriert.\n\n## Daten Verwalten\n\n**InGrid** ist ein flexibles System für die Verwaltung von Daten und Metadaten. Die Orientierung an internationalen Standards, z.B. INSPIRE-Richtlinien und OGC-Standards gewährleistet die Interoperabilität der verwalteten Daten. [Mehr ehrfahren](https://ingrid-oss.eu/latest/start/applications/)\n\n## Zahlreiche Formate und Schnittstellen\n\n**InGrid** bietet eine vielseitige Anbindung an bestehende Datenquellen und erleichtert den Austausch zwischen unerschiedlichen Systemen. Durch die Unterstützung gängiger Schnittstellen und standardisierter Protokolle lassen sich Daten aus verschiedensten Formaten integrieren und effizient bereitstellen. So können Informationen aus verteilten Strukturen zusammengeführt, analysiert und gezielt weiterverarbeitet werden.\n\n## Spezialisiert auf:\n\n- Open Data\n- Geometadaten\n- Kartendienste\n- Zeitreihendaten\n- Individuelle Daten\n\n## Barrierefreiheit\n\n**InGrid** bietet Screen Reader Funktionen, einfache Navigation und kontrastreiches Design für optimale Nutzerunterstützung.\nVon Barrierefreiheit kann jeder profitieren. [Mehr erfahren](https://ingrid-oss.eu/latest/guides/accessibility/)"
-
+    longDescription: >
+      InGrid ist eine leistungsstarke und flexible Softwarelösung für die Erfassung, Verwaltung und Bereitstellung
+      von Daten und Metadaten. Der Name vereint "Information" und "Grid" und steht für die strukturierte, effiziente
+      Organisation und Vernetzung komplexer Datenbestände. Entwickelt für Geo- und Umweltportale, Open Data-Plattformen
+      und Verwaltungsanwendungen, ermöglicht InGrid den Aufbau von skalierbaren Infrastrukturen, die sich nahtlos
+      in bestehende Systeme integrieren.
+      
+      Pflege und Weiterentwicklung erfolgen kontinuierlich und bedarfsorientiert innerhalb einer
+      Bund-Länder-Verwaltungskooperation und berücksichtigen individuelle Anforderungen der Kooperationspartner.
+      
+      
+      Weiterführende Links:
+      
+      - [Dokumentation](https://ingrid-oss.eu/latest/)
+      
+      - [Infos zum Projekt](https://ingrid-oss.eu/latest/contributing/organisation/)
+      
+      - [Projektpartner](https://ingrid-oss.eu/latest/contributing/partner/)
     features:
       - Web-Portal für Recherche und Volltextsuche
       - Metadateneditor (InGrid Editor / IGE) für ISO 19115/19119, OGC- und INSPIRE-konforme Metadaten
