@@ -11,13 +11,13 @@ InGrid basiert auf dem Komponenten-Konzept, das im Bereich der Software-Entwickl
 Der iBus (“Information Bus”) bildet in einem InGrid-System das zentrale, verbindende Element. Er arbeitet als Verteilungsstation zwischen den InGrid Komponenten.
 
 !!! note "Hinweis"
-  Der iBus wird in Zukunft durch die InGrid-API ersetzt.
+    Der iBus wird in Zukunft durch die InGrid-API ersetzt.
 
 ### iPlugs
 Ein iPlug (“Information Plug”) ist ein Datenadapter, der einen externen Datenbestand an das InGrid System anbindet. Das System ist flexibel erweiterbar, d.h. neue iPlugs können nachträglich entwickelt und angeschlossen werden, ohne dass das bestehende System geändert werden muss. Die wichtigsten iPlugs werden im Folgenden vorgestellt
 
 !!! note "Hinweis"
-  Das iPlug-System wird zurückgebaut und durch neuere und flexiblere Komponenten ersetzt. Der Harvester ersetzt bereits mehrere iPlugs.
+    Das iPlug-System wird zurückgebaut und durch neuere und flexiblere Komponenten ersetzt. Der Harvester ersetzt bereits mehrere iPlugs.
 
 **SE-iPlug:** Die Suchmaschine (“Search-Engine-iPlug”) besteht aus einem Web Crawler und einer Administrationsoberfläche. Die Pflege der zu indexierenden Webseiten kann durch Redakteure über eine Benutzeroberfläche vorgenommen werden.
 
