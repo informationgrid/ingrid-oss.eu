@@ -191,7 +191,7 @@ development:
       </p>
       <ul>
       <li><b>Live-Umweltdaten</b> aus verschiedenen Fachbereichen</li>
-  	  <li><b>Messstationen & aktuelle Werte</b> jederzeit abrufbar</li>
+      <li><b>Messstationen & aktuelle Werte</b> jederzeit abrufbar</li>
       <li><b>Interaktive Funktionen & Quizfragen</b> mit regionalem Bezug</li>
       <li><b>Pressemitteilungen & Neuigkeiten</b> direkt aus den Umweltministerien</li>
       </ul>

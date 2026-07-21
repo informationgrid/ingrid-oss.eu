@@ -1,0 +1,7 @@
+config:
+  default: false
+  MD010:
+    code-blocks: false # tabs inside fenced code blocks (e.g. Makefiles) are fine
+globs:
+  - "docs/**/*.md"
+  - "README.md"

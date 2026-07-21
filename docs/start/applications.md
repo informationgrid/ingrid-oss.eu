@@ -66,7 +66,6 @@ Technisch gesehen unterscheidet sich der Einsatz von InGrid auf europäischer Eb
 * Geoportal der Wasser- und Schifffahrtsverwaltung des Bundes im Geschäftsbereich des Bundesministeriums für Verkehr und digitale Infrastruktur, betrieben durch das [Informationstechnikzentrum Bund (ITZBund)](https://www.itzbund.de/)
 
 
-		
 ## InGrid auf EU-Ebene:
 
 * GS Soil Portal: Das europäische Bodenportal wurde im Rahmen des EU-Projekts GS Soil eingesetzt. (Installation ist nicht mehr online.) 
