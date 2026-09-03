@@ -36,6 +36,15 @@ Folgende Anpassungen müssen getätigt werden:
     - prüfen, dass `KEYCLOAK_URL` die externe URL zu Keycloak enthält
     - `KEYCLOAK_URL_INTERNAL` setzen, mit der internen URL zu Keycloak (optional)
 
+<hr>
+
+## Version 8.4.0.1 <small>02.09.2026</small> { id="8.4.0.1" data-toc-label="8.4.0.1"}
+
+### Allgemein { id="8.4.0.1_changes_allgemein" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Passwort ändern leitet falsch weiter <br>[:octicons-link-external-16: REDMINE-9467](https://redmine.informationgrid.eu/issues/9467)
+
+<hr>
 
 ## Version 8.4.0 <small>06.07.2026</small> { id="8.4.0" data-toc-label="8.4.0"}
 
