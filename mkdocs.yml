@@ -100,6 +100,7 @@ extra_css:
 extra_javascript:
   - 'assets/javascripts/version-select.js'
   - 'assets/javascripts/external-links.js'
+  - 'assets/javascripts/copy-permalink.js'
   - 'assets/libraries/splide.min.js'
   - 'assets/libraries/glightbox.min.js'
 
