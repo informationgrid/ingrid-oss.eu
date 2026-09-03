@@ -71,7 +71,7 @@ services:
           KC_BOOTSTRAP_ADMIN_USERNAME: admin
           KC_BOOTSTRAP_ADMIN_PASSWORD: admin
           KC_HTTP_RELATIVE_PATH: /keycloak
-          KC_HOSTNAME: http://${HOST_URL}/keycloak
+          KC_HOSTNAME: https://${HOST_URL}/keycloak
           KC_HTTP_ENABLED: true
           KC_DB: postgres
           KC_DB_URL_HOST: db
@@ -84,8 +84,12 @@ services:
           IGE_SUPER_USER_FIRSTNAME: Max
           IGE_SUPER_USER_LASTNAME: Mustermann
           IGE_SUPER_USER_EMAIL: max.mustermann@beispiel.de
-          HARVESTER_URL: http://${HOST_URL}/harvester
-          HARVESTER_SECRET: <my-secret>
+          EDITOR_URL: https://${HOST_URL}/editor
+          EDITOR_SECRET: ${INGRID_EDITOR_SECRET}
+          HARVESTER_URL: https://${HOST_URL}/harvester
+          HARVESTER_SECRET: ${INGRID_HARVESTER_SECRET}
+          INGRID_API_URL: https://${HOST_URL}/ingrid-api
+          INGRID_API_SECRET: ${INGRID_API_SECRET}
         networks:
           - informationgrid-network
 ```
@@ -100,11 +104,12 @@ folgenden Umgebungsvariablen bereitgestellt:
 
 | **Variable**              | **Hinweis**                                                                                                | **Defaultwert**       |
 |---------------------------|------------------------------------------------------------------------------------------------------------|-----------------------|
-| ADDITIONAL_REDIRECT_URIS  | Füge weitere URLs zum Client hinzu, um weitere InGrid-Editor Instanzen mit demselben Keycloak zu betreiben |                       |
+| EDITOR_URL                | Die URL zum Editor, welche für den Redirect verwendet wird                                                 |                       |
+| EDITOR_SECRET             | Das Secret für den Editor                                                                                  |                       |
 | HARVESTER_URL             | Die URL zum Harvester, welche für den Redirect verwendet wird                                              |                       |
 | HARVESTER_SECRET          | Das Secret für den Client                                                                                  |                       |
-| IGE_CLIENT_ID             | Der Präfix für die Clients für den InGrid-Editor                                                           | editor                |
-| EDITOR_URL                | Die URL unter der der InGrid-Editor erreichbar ist. Dies wird bspw. für die RedirectURL benötigt.          |                       |
+| INGRID_API_URL            | Die URL zur InGrid API, welche für den Redirect verwendet wird                                             |                       |
+| INGRID_API_SECRET         | Das Secret für den InGrid API                                                                              |                       |
 | IGE_SUPER_USER_EMAIL      | Die Email-Adresse des Super-Admins im InGrid-Editor                                                        |                       |
 | IGE_SUPER_USER_FIRSTNAME  | Der Vorname des Super-Admins im InGrid-Editor                                                              |                       |
 | IGE_SUPER_USER_LASTNAME   | Der Nachname des Super-Admins im InGrid-Editor                                                             |                       |
@@ -116,7 +121,7 @@ folgenden Umgebungsvariablen bereitgestellt:
 | ORGANIZATION              | Die Organisation, welches auf der Login-Seite gezeigt werden soll                                          | Name der Organisation |
 | PROFILE                   | Auswahl eines Profils für spezielle Anpassungen des Themes                                                 |                       |
 | PRIVACY_NOTE_URL          | Die URL für den Datenschutz, welches auf der Login-Seite gezeigt werden soll                               | #                     |
-| SIMPLE_SECURITY           | Initialisiert das InGrid-Realm mit einfachen Anforderungen für das Passwort (keine Mindestlänge, ...)      |                       |
+| SIMPLE_SECURITY           | Initialisiert das InGrid-Realm mit einfachen Anforderungen für das Passwort (keine Mindestlänge, ...)      | false                 |
 | WAIT_FOR_DATABASE         | Warte auf die Datenbank, bevor Keycloak gestartet wird                                                     | true                  |
 | WAIT_FOR_DATABASE_TIMEOUT | Maximale Wartezeit, die auf die Datenbank gewartet werden soll (in Sekunden)                               | 180                   |
 
@@ -129,16 +134,23 @@ Wird ein eigener Keycloak-Server verwendet, so müssen folgende Schritte getäti
     - Redirect-URIs: `<URL-Editor>/*`
     - `Client authentication`, `Standard-Flow` und `Service account roles` aktivieren
     - Client Secret unter `Credentials` für die Konfiguration des Editors nehmen
-    - unter `Roles` die Client-Rolle `user` erstellen
+    - unter `Roles` die Client-Rollen `user` und `admin` erstellen
     - unter `Client scopes` -> `editor-dedicated` die predefinied Mapper `client roles`und `realm roles` hinzufügen
         - in beiden Mappern `Add to ID token` aktivieren
     - unter `Service account roles` füge Client-Rolle `realm-admin` aus `realm-management` hinzu
+- Erstellung eines neuen Clients `editor-api` (für OGC-Records-API und CSW-T)
+    - Redirect-URIs: `<URL-Editor>/*`
+    - `Client authentication` und `Standard-Flow` aktivieren
 - Erstellung eines neuen Clients `harvester`
     - Redirect-URIs: `<URL-Harvester>/*`
     - `Client authentication` und `Standard-Flow` aktivieren
-    - Client Secret unter `Credentials` für die Konfiguration des Harvesters nehmen
+    - Client Secret unter `Credentials` für die Harvester-Konfiguration nehmen
     - unter `Roles` die Client-Rollen `viewer`, `editor` und `admin` erstellen
-- Erstellung der Realm-Rollen
-    - `ige-user`
-    - `ige-super-admin`
-- Erstellung eines Benutzers mit der Rolle `ige-super-admin`, um den InGrid-Editor einzurichten
+- Erstellung eines neuen Clients `ingrid-api`
+    - Redirect-URIs: `<URL-API>/*`
+    - `Client authentication` und `Standard-Flow` aktivieren
+    - Client Secret unter `Credentials` für die InGrid-API-Konfiguration nehmen
+    - unter `Roles` die Client-Rolle `admin` erstellen
+
+Für die Administration der InGrid-Komponenten, muss ein Benutzer angelegt werden, der die entsprechenden Client-Rollen erhält
+- Erstellung eines Benutzers mit der Client-Rolle (editor) `admin`, um den InGrid-Editor einzurichten
