@@ -38,6 +38,62 @@ Folgende Anpassungen müssen getätigt werden:
 
 <hr>
 
+
+## Version 8.4.1 <small>04.09.2026</small> { id="8.4.1" data-toc-label="8.4.1"}
+
+### Allgemein { id="8.4.1_changes_allgemein" }
+
+* :material-star:{ title="Support" } Fehlermeldung keycloak-Server bei Anmeldung im Editor <br>[:octicons-link-external-16: REDMINE-9444](https://redmine.informationgrid.eu/issues/9444)
+* :material-star:{ title="Feature" } Datenformate fehlen in opensearch Schnittstelle für RDF Abgabe von OpenData Datensätze <br>[:octicons-link-external-16: REDMINE-9130](https://redmine.informationgrid.eu/issues/9130)
+* :octicons-bug-16:{ title="Bug Fix" } Code-Liste 2000 - Mapping für deutsche Verweis-Typen korrigieren <br>[:octicons-link-external-16: REDMINE-8783](https://redmine.informationgrid.eu/issues/8783)
+* :octicons-bug-16:{ title="Bug Fix" } Portal: Formatierung "Maßstab 1:x" korrigieren <br>[:octicons-link-external-16: REDMINE-9031](https://redmine.informationgrid.eu/issues/9031)
+* :octicons-bug-16:{ title="Bug Fix" } Geodatensatz: Verweis zu Dienst wird nicht in das Portal übertragen <br>[:octicons-link-external-16: REDMINE-9341](https://redmine.informationgrid.eu/issues/9341)
+* :octicons-bug-16:{ title="Bug Fix" } ISO-Schemenvalidierungsfehler in der GDI-DE Testsuite schlägt bei Datengrundlage/Herkunft fehl <br>[:octicons-link-external-16: REDMINE-9351](https://redmine.informationgrid.eu/issues/9351)
+* :octicons-bug-16:{ title="Bug Fix" } Passwort ändern leitet falsch weiter <br>[:octicons-link-external-16: REDMINE-9467](https://redmine.informationgrid.eu/issues/9467)
+
+### Profil BAW Datenrepository { id="8.4.1_changes_baw_datenrepository" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Falsche Verknüpfung der Kategorien auf der Startseite <br>[:octicons-link-external-16: REDMINE-9136](https://redmine.informationgrid.eu/issues/9136)
+
+### Profil BAW MIS { id="8.4.1_changes_profil_baw_mis" }
+
+* :material-star:{ title="Feature" } Mapping und Portal-Anzeige für BWaStr.-Strecken Raumbezüge <br>[:octicons-link-external-16: REDMINE-8949](https://redmine.informationgrid.eu/issues/8949)
+* :octicons-bug-16:{ title="Bug Fix" } IGE: Veröffentlichungsdatum von Literaturverweise fehlen im ISO und Portal <br>[:octicons-link-external-16: REDMINE-9269](https://redmine.informationgrid.eu/issues/9269)
+
+### Profil BKG { id="8.4.1_changes_profil_bkg" }
+
+* :octicons-bug-16:{ title="Bug Fix" } AdV-MIS: Portal: Verhalten der Filterung "Art der Ressource" fehlerhaft <br>[:octicons-link-external-16: REDMINE-9283](https://redmine.informationgrid.eu/issues/9283)
+
+### Profil LUBW { id="8.4.1_changes_profil_lubw" }
+
+* :material-star:{ title="Feature" } Portal LUBW: Sachattribute mit Übermittlungsstufen 0 und 1 sollen im Portal angezeigt werden. <br>[:octicons-link-external-16: REDMINE-9003](https://redmine.informationgrid.eu/issues/9003)
+
+### Profil LfU Bayern { id="8.4.1_changes_profil_lfu_bayern" }
+
+* :material-star:{ title="Feature" } applicationProfile - Anzeige im Editor <br>[:octicons-link-external-16: REDMINE-6393](https://redmine.informationgrid.eu/issues/6393)
+* :material-star:{ title="Feature" } Anzahl (Summe) der ausgewählten Datensätze beim Export anzeigen <br>[:octicons-link-external-16: REDMINE-9220](https://redmine.informationgrid.eu/issues/9220)
+
+### Profil UVP { id="8.4.1_changes_profil_uvp" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Refactoring des Zabbix-Aufräumjobs und Dokumentation <br>[:octicons-link-external-16: REDMINE-8319](https://redmine.informationgrid.eu/issues/8319)
+* :octicons-bug-16:{ title="Bug Fix" } Begrenzung der Größe aller erstellten ZIP Dateien <br>[:octicons-link-external-16: REDMINE-8929](https://redmine.informationgrid.eu/issues/8929)
+* :octicons-bug-16:{ title="Bug Fix" } Fehler bei der Kommunikation mit Zabbix <br>[:octicons-link-external-16: REDMINE-9273](https://redmine.informationgrid.eu/issues/9273)
+* :octicons-bug-16:{ title="Bug Fix" } RDF-Dateien werden im Zip-Download zu bin-Dateien <br>[:octicons-link-external-16: REDMINE-9280](https://redmine.informationgrid.eu/issues/9280)
+* :octicons-bug-16:{ title="Bug Fix" } Portal gibt ZIP-Datei mit veralteten Dateien zurück <br>[:octicons-link-external-16: REDMINE-9412](https://redmine.informationgrid.eu/issues/9412)
+
+### Komponenten
+
+<div class="ingrid-component-list" markdown>
+
+- CODELIST-REPOSITORY [:material-download: Download](https://distributions.informationgrid.eu/ingrid-codelist-repository/8.4.1/)
+- INTERFACE-SEARCH [:material-download: Download](https://distributions.informationgrid.eu/ingrid-interface-search/8.4.1/)
+
+</div>
+
+<hr>
+
+
+
 ## Version 8.4.0.1 <small>02.09.2026</small> { id="8.4.0.1" data-toc-label="8.4.0.1"}
 
 ### Allgemein { id="8.4.0.1_changes_allgemein" }
