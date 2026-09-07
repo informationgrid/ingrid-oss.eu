@@ -21,8 +21,8 @@ Aufrufer (z.B. das Portal) weitergeleitet.
 | **Hardware** | Arbeitsspeicher       | 128 MB RAM      |
 |              | Festplattenspeicher   | 80 MB frei      |
 |              | Prozessor             | Dual Core CPU   |
-| **Software** | Java                  | Java 17         |
-|              | Elasticsearch         | Version 8.x     |
+| **Software** | Java                  | Java 25         |
+|              | Elasticsearch         | Version 9.x     |
 
 <hr>
 
@@ -67,9 +67,9 @@ und Anleitungen dazu aufgelistet.
 
 Um den iBus direkt auf einem System zu installieren, müssen folgende Vorbedingungen erfüllt sein:
 
-* Elasticsearch 8.x
+* Elasticsearch 9.x
 * Maven 3.5.0+
-* Java 17
+* Java 25
 
 Die Installation des iBus (z.B. nach `/opt/ingrid/ibus`) erfolgt dann mit diesen Schritten:
 

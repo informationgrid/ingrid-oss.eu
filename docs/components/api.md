@@ -20,8 +20,9 @@ Den kompletten Funktionsumfang erfahren Sie weiter unten.
 | **Hardware** | Arbeitsspeicher       | 128 MB RAM      |
 |              | Festplattenspeicher   | 80 MB frei      |
 |              | Prozessor             | Dual Core CPU   |
-| **Software** | Java                  | Java 17         |
-|              | Elasticsearch         | Version 8.x     |
+| **Software** | Java                  | Java 25         |
+|              | Elasticsearch         | Version 9.x     |
+|              | Keycloak              | Version 26.x    |
 
 <hr>
 
@@ -62,9 +63,9 @@ und Anleitungen dazu aufgelistet.
 
 Um die InGrid-API direkt auf einem System zu installieren, müssen folgende Vorbedingungen erfüllt sein:
 
-* Elasticsearch 8.x
+* Elasticsearch 9.x
 * Gradle 8.x
-* Java 17
+* Java 25
 
 Die Installation der InGrid-API (z.B. nach `/opt/ingrid/ingrid-api`) erfolgt dann mit diesen Schritten:
 

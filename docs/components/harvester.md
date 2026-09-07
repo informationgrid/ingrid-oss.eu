@@ -62,13 +62,13 @@ Sie haben die Installation bereits abgeschlossen? Diese Leitfaden könnten Sie i
 ## Systemvoraussetzungen
 
 |              | **Systembestandteil** | **Anforderung**       |
-| ------------ | --------------------- | --------------------- |
+| ------------ | --------------------- |-----------------------|
 | **Hardware** | Arbeitsspeicher       | 2 GB RAM              |
 |              | Festplattenspeicher   | 10 GB frei            |
 |              | Prozessor             | Dual Core CPU         |
-| **Software** | Java                  | Java 17               |
+| **Software** | Java                  | Java 25               |
 |              | Node.js               | Version 20            |
-|              | Elasticsearch         | Version 8.x           |
+|              | Elasticsearch         | Version 9.x           |
 |              | PostgreSQL            | Version 13 oder höher |
 
 <hr>

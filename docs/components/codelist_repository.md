@@ -30,7 +30,7 @@ Namensschema: "data/codelist_<codelist-id>.xml"
 | **Hardware** | Arbeitsspeicher       | 256 MB RAM      |
 |              | Festplattenspeicher   | 500 MB frei     |
 |              | Prozessor             | Dual Core CPU   |
-| **Software** | Java                  | Java 17         |
+| **Software** | Java                  | Java 25         |
 
 <hr>
 
@@ -71,7 +71,7 @@ und Anleitungen dazu aufgelistet.
 Um das Codelist-Repository direkt auf einem System zu installieren, müssen folgende Vorbedingungen erfüllt sein:
 
 * Maven 3.5.0+
-* Java 17
+* Java 25
 
 Die Installation des iBus (z.B. nach `/opt/ingrid/codelist-repository`) erfolgt dann mit diesen Schritten:
 

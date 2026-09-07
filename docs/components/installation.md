@@ -13,12 +13,10 @@ Bevor Sie mit der Installation starten, sollten Sie die folgenden Fragen klären
 Eine Basis Installation enthält mind. folgende Komponenten:
 
 - Elasticsearch
-- [iBus]({{ fix_url('components/ibus.md') }})
+- [InGrid API]({{ fix_url('components/api.md') }})
 - [Portal]({{ fix_url('components/portal.md') }})
 - [Editor]({{ fix_url('components/editor.md') }})
 - [Codelist Repository]({{ fix_url('components/codelist_repository.md') }})
-
-
 
 Genauere Informationen zur Installation der einzelnen Komponenten können bei der Dokumentation der einzelnen Komponenten eingesehen werden.
 
