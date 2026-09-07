@@ -31,9 +31,8 @@ Den kompletten Funktionsumfang erfahren Sie weiter unten.
 !!! example inline end "Info"
     Neben der InGrid-API muss zusätzlich **Elasticsearch** eingerichtet werden.
 
-Die Installation der InGrid-API kann mit Docker oder direkt aus dem GitHub-Repository erfolgen. Im Folgenden sind
-Beispiele
-und Anleitungen dazu aufgelistet.
+Die Installation der InGrid-API kann mit Docker, RPM oder direkt aus dem GitHub-Repository erfolgen. Im Folgenden sind
+Beispiele und Anleitungen dazu aufgelistet.
 
 ### :material-docker: Docker
 
@@ -57,6 +56,22 @@ und Anleitungen dazu aufgelistet.
       - ES_HOST=elastic
       - ES_USERNAME=elastic
       - ES_PASSWORD=admin
+```
+
+### :material-redhat: RPM
+
+Installieren Sie das RPM über den folgenden Befehl:
+```shell
+sudo dnf install ingrid-api
+```
+
+Bearbeiten Sie die Datei `application.yaml` im Verzeichnis `/opt/ingrid/ingrid-api` und konfigurieren Sie die Einträge für `ktor.deployment.port`, `ktor.elasticsearch` und `ktor.keycloak`. Starten Sie danach die InGrid API über den folgenden Befehl:
+
+```shell
+sudo systemctl start ingrid-api
+
+# wenn automatisch gestartet werden soll beim Neustart des Systems
+sudo systemctl enable ingrid-api
 ```
 
 ### :material-github: From Source
