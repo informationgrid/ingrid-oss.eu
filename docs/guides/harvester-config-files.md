@@ -17,7 +17,7 @@ Alle drei Konfigurationsdateien müssen als Volumes in der `docker-compose.yml` 
 
 ```yaml
 harvester:
-  image: docker-registry.wemove.com/ingrid-harvester:8.3.0
+  image: registry.opencode.de/informationgrid/ingrid-harvester
   # ...
   volumes:
     # ...

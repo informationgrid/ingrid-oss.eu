@@ -44,13 +44,13 @@ Beispiele und Anleitungen dazu aufgelistet.
   
     Zur Installation kann das folgende Docker-Image verwendet werden:
   
-    [:octicons-arrow-right-24: docker-registry.wemove.com/ingrid-api](https://docker-registry.wemove.com/ingrid-ibus)
+    [:octicons-arrow-right-24: registry.opencode.de/informationgrid/ingrid-api](https://gitlab.opencode.de/informationgrid/ingrid-api/container_registry)
 
 </div>
 
 ``` yaml title="Beispiel docker-compose.yml"
   ingrid-api:
-    image: docker-registry.wemove.com/ingrid-api
+    image: registry.opencode.de/informationgrid/ingrid-api
     restart: unless-stopped
     environment:
       - ES_HOST=elastic

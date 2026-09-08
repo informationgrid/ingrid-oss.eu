@@ -90,7 +90,7 @@ Die Installation des Harvesters kann mit Docker, per RPM (in Arbeit) oder direkt
 
     Zur Installation kann das folgende Docker-Image verwendet werden:
 
-    [:octicons-arrow-right-24: docker-registry.wemove.com/ingrid-harvester](https://docker-registry.wemove.com/ingrid-harvester)
+    [:octicons-arrow-right-24: registry.opencode.de/informationgrid/ingrid-harvester](https://gitlab.opencode.de/informationgrid/ingrid-harvester/container_registry)
 
 </div>
 
@@ -99,7 +99,7 @@ Die Installation des Harvesters kann mit Docker, per RPM (in Arbeit) oder direkt
 services:
 
   harvester:
-    image: docker-registry.wemove.com/ingrid-harvester:latest
+    image: registry.opencode.de/informationgrid/ingrid-harvester:latest
     restart: unless-stopped
     environment:
      - NODE_ENV=production

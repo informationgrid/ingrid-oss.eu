@@ -46,10 +46,6 @@ Profile können während des Deployments oder in der Administrationsoberfläche 
 
 ### :material-docker: Docker
 
-!!! info inline end
-    Zugang zum Docker Repository<br><br>
-    login: readonly<br>password: readonly
-
 <div class="grid cards" markdown>
 
 -   :material-file-edit-outline:{ .lg .middle } __Docker-Image__
@@ -58,9 +54,9 @@ Profile können während des Deployments oder in der Administrationsoberfläche 
 
     Das Portal benötigt die Komponente ingrid-api um auf den Index zuzugreifen. Zur Installation können folgende Docker-Images verwendet werden:
 
-    [:octicons-arrow-right-24: docker-registry.wemove.com/ingrid-api](https://docker-registry.wemove.com/ingrid-api)
+    [:octicons-arrow-right-24: registry.opencode.de/informationgrid/ingrid-api](https://gitlab.opencode.de/informationgrid/ingrid-api/container_registry)
 
-    [:octicons-arrow-right-24: docker-registry.wemove.com/ingrid-portal](https://docker-registry.wemove.com/ingrid-portal)
+    [:octicons-arrow-right-24: registry.opencode.de/informationgrid/ingrid-portal](https://gitlab.opencode.de/informationgrid/ingrid-portal/container_registry)
 
 </div>
 
@@ -72,7 +68,7 @@ Für den Betrieb des Portals wird ein Zugriff auf das Codelist Repository benöt
 services:
 
 ingrid-api:
-    image: docker-registry.wemove.com/ingrid-api
+    image: registry.opencode.de/informationgrid/ingrid-api
     restart: unless-stopped
     environment:
       - TZ=Europe/Berlin
@@ -83,7 +79,7 @@ ingrid-api:
       - ingrid-network
 
   portal:
-    image: docker-registry.wemove.com/ingrid-portal
+    image: registry.opencode.de/informationgrid/ingrid-portal
     restart: unless-stopped
     volumes:
       - ./grav:/var/www/portal

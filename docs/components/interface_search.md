@@ -40,22 +40,15 @@ Unterstützte Schnittstellen:
 
     Zur Installation kann das folgende Docker-Image verwendet werden:
 
-    [:octicons-arrow-right-24: docker-registry.wemove.com/ingrid-interface-search](https://docker-registry.wemove.com/ingrid-interface-search)
+    [:octicons-arrow-right-24: registry.opencode.de/informationgrid/ingrid-interface-search](https://gitlab.opencode.de/informationgrid/ingrid-interface-search/container_registry)
 
 </div>
-
-!!! info
-    Zugang zum Docker Repository
-    ```
-    docker login docker-registry.wemove.com
-    ```
-    login: readonly<br>password: readonly
 
 
 
 ``` yaml title="Beispiel docker-compose.yml"
   ingrid-interface-search:
-    image: docker-registry.wemove.com/ingrid-interface-search
+    image: registry.opencode.de/informationgrid/ingrid-interface-search
     restart: unless-stopped
     environment:
       - TZ=Europe/Berlin

@@ -52,10 +52,6 @@ Ein Indexierungsdurchlauf besteht aus mehreren Phasen:
 
 ### :material-docker: Docker
 
-!!! info inline end
-    Zugang zum Docker Repository<br><br>
-    login: readonly<br>password: readonly
-
 <div class="grid cards" markdown>
 
 -   :material-file-edit-outline:{ .lg .middle } __Docker-Image__
@@ -64,7 +60,7 @@ Ein Indexierungsdurchlauf besteht aus mehreren Phasen:
 
     Zur Installation kann das folgende Docker-Image verwendet werden:
 
-    [:octicons-arrow-right-24: docker-registry.wemove.com/ingrid-iplug-se](https://docker-registry.wemove.com/ingrid-iplug-se)
+    [:octicons-arrow-right-24: registry.opencode.de/informationgrid/ingrid-iplug-se](https://gitlab.opencode.de/informationgrid/ingrid-iplug-se/container_registry)
 
 </div>
 
@@ -72,7 +68,7 @@ Ein Indexierungsdurchlauf besteht aus mehreren Phasen:
 services:
 
   crawler:
-    image: docker-registry.wemove.com/ingrid-iplug-se
+    image: registry.opencode.de/informationgrid/ingrid-iplug-se
     restart: unless-stopped
     depends_on:
       - "ibus"

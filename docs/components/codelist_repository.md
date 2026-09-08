@@ -50,13 +50,13 @@ und Anleitungen dazu aufgelistet.
 
     Zur Installation kann das folgende Docker-Image verwendet werden:
 
-    [:octicons-arrow-right-24: docker-registry.wemove.com/ingrid-codelist-repository](https://docker-registry.wemove.com/ingrid-ibus)
+    [:octicons-arrow-right-24: registry.opencode.de/informationgrid/ingrid-codelist-repository](https://gitlab.opencode.de/informationgrid/ingrid-codelist-repository/container_registry)
 
 </div>
 
 ``` yaml title="Beispiel docker-compose.yml"
   ingrid-codelist-repo:
-    image: docker-registry.wemove.com/ingrid-codelist-repository
+    image: registry.opencode.de/informationgrid/ingrid-codelist-repository
     restart: unless-stopped
     environment:
       - TZ=Europe/Berlin

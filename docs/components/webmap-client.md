@@ -64,6 +64,10 @@ Sie haben die Installation bereits abgeschlossen? Diese Leitfäden könnten Sie 
 
 ## Installation
 
+!!! info inline end
+Zugang zum Docker Repository<br><br>
+login: readonly<br>password: readonly
+
 ### :material-docker: Docker
 
 ``` yaml title="Beispiel docker-compose.yml"

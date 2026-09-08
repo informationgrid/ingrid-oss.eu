@@ -73,7 +73,7 @@ standardmäßig den Namen
 
   Zur Installation kann das folgende Docker-Image verwendet werden:
 
-  [:octicons-arrow-right-24: docker-registry.wemove.com/ingrid-ige-ng](https://docker-registry.wemove.com/ingrid-ige-ng)
+  [:octicons-arrow-right-24: registry.opencode.de/informationgrid/ingrid-editor](https://gitlab.opencode.de/informationgrid/ingrid-editor/container_registry)
 
 </div>
 
@@ -81,7 +81,7 @@ standardmäßig den Namen
 services:
 
   editor:
-    image: docker-registry.wemove.com/ingrid-ige-ng
+    image: registry.opencode.de/informationgrid/ingrid-editor
     restart: unless-stopped
     depends_on:
       - postgres-db
@@ -157,7 +157,7 @@ services:
           - informationgrid-network
 
       editor:
-        image: docker-registry.wemove.com/ingrid-ige-ng
+        image: registry.opencode.de/informationgrid/ingrid-editor
         restart: unless-stopped
         depends_on:
           - postgres-db

@@ -44,13 +44,13 @@ und Anleitungen dazu aufgelistet.
 
     Zur Installation kann das folgende Docker-Image verwendet werden:
 
-    [:octicons-arrow-right-24: docker-registry.wemove.com/ingrid-ibus](https://docker-registry.wemove.com/ingrid-ibus)
+    [:octicons-arrow-right-24: registry.opencode.de/informationgrid/ingrid-ibus](https://gitlab.opencode.de/informationgrid/ingrid-ibus/container_registry)
 
 </div>
 
 ``` yaml title="Beispiel docker-compose.yml"
   ingrid-ibus:
-    image: docker-registry.wemove.com/ingrid-ibus
+    image: registry.opencode.de/informationgrid/ingrid-ibus
     restart: unless-stopped
     environment:
       - TZ=Europe/Berlin

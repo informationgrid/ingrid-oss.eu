@@ -44,10 +44,6 @@ Die Schnittstelle bildet Daten aus dem InGrid Catalog Datenraum wie folgt ab:
 
 ### :material-docker: Docker
 
-!!! info inline end
-    Zugang zum Docker Repository<br><br>
-    login: readonly<br>password: readonly
-
 <div class="grid cards" markdown>
 
 -   :material-file-edit-outline:{ .lg .middle } __Docker-Image__
@@ -56,7 +52,7 @@ Die Schnittstelle bildet Daten aus dem InGrid Catalog Datenraum wie folgt ab:
 
     Zur Installation kann das folgende Docker-Image verwendet werden:
 
-    [:octicons-arrow-right-24: docker-registry.wemove.com/ingrid-interface-csw](https://docker-registry.wemove.com/ingrid-interface-csw)
+    [:octicons-arrow-right-24: registry.opencode.de/informationgrid/ingrid-interface-csw](https://gitlab.opencode.de/informationgrid/ingrid-interface-csw/container_registry)
 
 </div>
 
@@ -66,7 +62,7 @@ Die Schnittstelle bildet Daten aus dem InGrid Catalog Datenraum wie folgt ab:
     services:
 
     ingrid-interface-csw:
-        image: docker-registry.wemove.com/ingrid-interface-csw
+        image: registry.opencode.de/informationgrid/ingrid-interface-csw
         restart: unless-stopped
         environment:
         - TZ=Europe/Berlin

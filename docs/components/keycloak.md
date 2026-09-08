@@ -49,6 +49,10 @@ Konfigurationen:
 
 ### :material-docker: Docker
 
+!!! info inline end
+Zugang zum Docker Repository<br><br>
+login: readonly<br>password: readonly
+
 <div class="grid cards" markdown>
 
 - :material-file-edit-outline:{ .lg .middle } __Docker-Image__
