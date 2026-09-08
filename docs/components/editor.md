@@ -20,20 +20,19 @@ konformen Metadaten unterstützt.
 
 Sie haben die Installation bereits abgeschlossen? Dieser Leitfaden könnte Sie interessieren.
 
-<div class="grid cards float-right" markdown>
+<div class="grid cards" markdown>
 
-- :material-book-open-variant-outline: __Benutzeroberfläche__
+-   :material-book-open-variant-outline: __Benutzeroberfläche__
 
-  ---
+    ---
 
-  ![Erfassungsmaske InGrid Editor](../assets/components/editor/dashboard.png "Erfassungsmaske InGrid Editor"){ class="
-  grid-image" }
+    ![Erfassungsmaske InGrid Editor](../assets/components/editor/dashboard.png "Erfassungsmaske InGrid Editor"){ class="grid-image" }
 
-  Interesse an der **Benutzeroberfläche**?
+    Interesse an der **Benutzeroberfläche**?
 
-  Dieser Leitfaden bietet Einblicke in die Bedienung vom **InGrid Editor**.
+    Dieser Leitfaden bietet Einblicke in die Bedienung vom **InGrid Editor**.
 
-  [Benutzeroberfläche]({{ fix_url('guides/editor-user-guide.md') }}){ .md-button }
+    [Benutzeroberfläche]({{ fix_url('guides/editor-user-guide.md') }}){ .md-button }
 
 </div>
 
@@ -55,27 +54,25 @@ Sie haben die Installation bereits abgeschlossen? Dieser Leitfaden könnte Sie i
 
 ## Installation
 
-!!! example inline end "Info"
-Neben dem InGrid Editor wird zusätzlich eine **Postgres-Datenbank**, **Elasticsearch** und **Keycloak** eingerichtet
-werden. Hierfür müssen auch die Datenbanken für den Editor sowie auch für Keycloak erstellt werden. Diese haben
-standardmäßig den Namen
-
-    * ige
-    * keycloak
-
 ### :material-docker: Docker
+
+!!! example inline end "Info"
+    Neben dem InGrid Editor wird zusätzlich eine **Postgres-Datenbank**, **Elasticsearch** und **Keycloak** eingerichtet werden. Hierfür müssen auch die Datenbanken für den Editor sowie auch für Keycloak erstellt werden. Diese haben standardmäßig die Namen `ige` und `keycloak`
+
 
 <div class="grid cards" markdown>
 
-- :material-file-edit-outline:{ .lg .middle } __Docker-Image__
+-   :material-file-edit-outline:{ .lg .middle } __Docker-Image__
 
-  ---
+    ---
 
-  Zur Installation kann das folgende Docker-Image verwendet werden:
+    Zur Installation kann das folgende Docker-Image verwendet werden:
 
-  [:octicons-arrow-right-24: registry.opencode.de/informationgrid/ingrid-editor](https://gitlab.opencode.de/informationgrid/ingrid-editor/container_registry)
+    [:octicons-arrow-right-24: registry.opencode.de/informationgrid/ingrid-editor](https://gitlab.opencode.de/informationgrid/ingrid-editor/container_registry)
 
 </div>
+
+  <div style="clear: both;"></div>
 
 ``` yaml title="Beispiel docker-compose.yml"
 services:
