@@ -60,6 +60,9 @@ Beispiele und Anleitungen dazu aufgelistet.
 
 ### :material-redhat: RPM
 
+!!! info
+    Schauen Sie sich auch die allgemeinen Informationen für das Installieren von RPMs hier an: [Link]({{ fix_url('components/installation.md/#lokale-installation') }})
+
 Installieren Sie das RPM über den folgenden Befehl:
 ```shell
 sudo dnf install ingrid-api

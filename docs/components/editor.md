@@ -177,6 +177,9 @@ In einer weiteren Datei `.env` werden die Variablen für die `docker-compose.yml
 
 ### :material-redhat: RPM
 
+!!! info
+    Schauen Sie sich auch die allgemeinen Informationen für das Installieren von RPMs hier an: [Link]({{ fix_url('components/installation.md/#lokale-installation') }})
+
 Installieren Sie das RPM über den folgenden Befehl:
 ```shell
 sudo dnf install ingrid-editor

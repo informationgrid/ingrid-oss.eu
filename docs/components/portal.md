@@ -239,6 +239,9 @@ access:
 
 ### :material-redhat: RPM
 
+!!! info
+    Schauen Sie sich auch die allgemeinen Informationen für das Installieren von RPMs hier an: [Link]({{ fix_url('components/installation.md/#lokale-installation') }})
+
 Vor der Installation des Portals sollte ein Webserver (Apache oder Nginx) installiert sein, über dem die PHP-Seiten ausgegeben werden können.
 
 Installieren Sie das RPM über den folgenden Befehl:
