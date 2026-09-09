@@ -48,31 +48,35 @@ Für den Betrieb wird eine **PostgreSQL-Datenbank** empfohlen.
 services:
 
     pycsw:
-    image: geopython/pycsw
-    restart: unless-stopped
-    environment:
-        - PYCSW_CONFIG=/etc/pycsw/pycsw.yml
-    volumes:
-        - ./pycsw/pycsw.yml:/etc/pycsw/pycsw.yml
-    ports:
-        - "8000:8000"
-    depends_on:
-        pycsw-db:
-        condition: service_healthy
-    networks:
-        - ingrid-network
+        image: geopython/pycsw
+        restart: unless-stopped
+        environment:
+            - TZ=Europe/Berlin
+            - PYCSW_CONFIG=/etc/pycsw/pycsw.yml
+            - PYCSW_SERVER_URL=${SERVICE_URL_APACHE}/pycsw
+            - DB_URL=postgresql://${DB_USER}:${DB_PASSWORD}@db/pycsw
+        volumes:
+            - ./pycsw/pycsw.yml:/etc/pycsw/pycsw.yml
+            - ./pycsw/traceability-filter.xsl:/etc/pycsw/traceability-filter.xsl
+        ports:
+            - "8000:8000"
+        depends_on:
+            db:
+            condition: service_healthy
+        networks:
+            - ingrid-network
 
-    pycsw-db:
-    image: postgres:15
-    restart: unless-stopped
-    environment:
-        - POSTGRES_DB=pycsw
-        - POSTGRES_USER=pycsw
-        - POSTGRES_PASSWORD=pycsw
-    volumes:
-        - pycsw-data:/var/lib/postgresql/data
-    networks:
-        - ingrid-network
+    db:
+        image: postgres:15
+        restart: unless-stopped
+        environment:
+            - POSTGRES_DB=pycsw
+            - POSTGRES_PASSWORD=${DB_PASSWORD}
+            - POSTGRES_USER=${DB_USER}
+        volumes:
+            - pycsw-data:/var/lib/postgresql/data
+        networks:
+            - ingrid-network
 
 volumes:
     pycsw-data:
@@ -91,40 +95,104 @@ pycsw wird über eine YAML-Konfigurationsdatei (`pycsw.yml`) konfiguriert. Eine 
 
     ``` yaml
     server:
-      url: http://<host>:8000
+      url: ${PYCSW_SERVER_URL}
       mimetype: application/xml; charset=UTF-8
       encoding: UTF-8
-      language: de
+      language: en-US
       maxrecords: 10
-      pretty_print: true
+      timeout: 30
+      #ogc_schemas_location: http://foo
+      #pretty_print: true
+      gzip_compresslevel: 9
+      #domainquerytype: range
+      #domaincounts: true
+      #spatial_ranking: true
+      #workers=2
+      templates:
+        path: /etc/pycsw/templates
+
+
+
+    logging:
+      level: DEBUG
+      # logfile: /tmp/pycsw.log
+
+    profiles:
+      - apiso
+
+    federatedcatalogues:
+      - http://catalog.data.gov/csw
 
     manager:
-      transactions: "true"
-      allowed_ips: 127.0.0.1,<IP-Adresse-Editor>,<IP-Adresse-Harvester>
+      transactions: true
+      allowed_ips:
+        - 127.0.0.1
+        - 192.168.0.*
+        - 172.*
+      # csw_harvest_pagesize: 10
 
     metadata:
       identification:
-        title: Mein Metadatenkatalog
-        description: OGC CSW-Katalog auf Basis von pycsw
+        title: pycsw Geospatial Catalogue
+        description: pycsw is an OARec and OGC CSW server implementation written in Python
         keywords:
-          - pycsw
-          - Metadaten
-          - CSW
+          - catalogue
+          - discovery
+          - metadata
         keywords_type: theme
         fees: None
         accessconstraints: None
+        terms_of_service: https://creativecommons.org/licenses/by/4.0
+        url: https://example.org
+      license:
+        name: CC-BY 4.0 license
+        url: https://creativecommons.org/licenses/by/4.0
       provider:
-        name: Meine Organisation
-        url: https://www.meine-organisation.de
+        name: Organization Name
+        url: https://pycsw.org
       contact:
-        name: Kontaktname
-        position: Datenmanagement
-        email: kontakt@meine-organisation.de
-        role: pointOfContact
+        name: Lastname, Firstname
+        position: Position Title
+        address: Mailing Address
+        city: City
+        stateorprovince: Administrative Area
+        postalcode: Zip or Postal Code
+        country: Country
+        phone: +xx-xxx-xxx-xxxx
+        fax: +xx-xxx-xxx-xxxx
+        email: you@example.org
+        url: Contact URL
+        hours: Mo-Fr 08:00-17:00
+        instructions: During hours of service. Off on weekends.
+        role: pointOfContact    
+
+    inspire:
+      enabled: true
+      languages_supported:
+        - eng
+        - gre
+      default_language: eng
+      date: YYYY-MM-DD
+      gemet_keywords:
+        - Utility and governmental services
+      conformity_service: notEvaluated
+      contact_name: Organization Name
+      contact_email: Email Address
+      temp_extent:
+        begin: YYYY-MM-DD
+        end: YYYY-MM-DD
 
     repository:
-      database: postgresql://pycsw:pycsw@pycsw-db/pycsw
+      database: ${DB_URL}
       table: records
+      facets:
+        - type
+        - title
+
+    xslt:
+      - input_os: http://www.isotc211.org/2005/gmd
+        output_os: http://www.isotc211.org/2005/gmd
+        transform: /etc/pycsw/traceability-filter.xsl
     ```
 
 Die wichtigsten Einstellungen im Überblick:
@@ -186,9 +254,66 @@ a2enmod proxy proxy_http auth_basic authn_file
 !!! info
     Einliefernde Komponenten (Editor, Harvester) müssen bei aktivierter Basic Auth die Credentials in ihrer Verbindungskonfiguration hinterlegen.
 
-### Response Transformation
+### XSLT-Transformation
 
-**TODO**
+pycsw kann CSW-Antworten vor der Auslieferung per **XSLT** transformieren. Dies wird über den Konfigurationsblock `xslt` gesteuert (siehe [Beispiel pycsw.yml](#konfiguration)):
+
+``` yaml
+xslt:
+  - input_os: http://www.isotc211.org/2005/gmd
+    output_os: http://www.isotc211.org/2005/gmd
+    transform: /etc/pycsw/traceability-filter.xsl
+```
+
+- `input_os` / `output_os` legen fest, für welches `outputSchema` die Transformation angewendet wird (hier: ISO 19139).
+- `transform` verweist auf die XSLT-Datei im Container, die auf jede passende Antwort angewendet wird.
+
+#### Traceability-Filter 
+
+Einliefernde InGrid-Komponenten (Editor, Harvester) hinterlegen Herkunfts- und Zuordnungsinformationen als strukturierte Schlagwörter im Feld `apiso:Subject` (z. B. `organisation:`, `sub_organisation:`, `source:`, `transaction:`, `catalog:`). Diese Traceability-Keywords werden benötigt, um Datensätze intern nach Partner, Anbieter oder Quelle filtern zu können (siehe [FAQ Filterabfragen](#filtern-nach-partner)), sollen jedoch nicht in den nach außen ausgelieferten Metadatensätzen sichtbar sein. Diese Keywords sind kein Bestandteil des CSW- oder ISO-Standards, sondern eine InGrid-Konvention.
+
+Die Datei `traceability-filter.xsl` entfernt diese internen Schlagwörter aus der CSW-Antwort, bevor sie an abfragende Komponenten (z. B. das Portal) ausgeliefert wird. Sie muss unter dem in `xslt.transform` angegebenen Pfad im pycsw-Container bereitgestellt werden (z. B. per Volume-Mount siehe [Docker Compose Beispiel](#docker)).
+
+??? example "Beispiel traceability-filter.xsl"
+
+    ``` xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <xsl:stylesheet version="1.0"
+                    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                    xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                    xmlns:gco="http://www.isotc211.org/2005/gco">
+
+        <!-- Identity: copy everything by default -->
+        <xsl:template match="@*|node()">
+            <xsl:copy>
+                <xsl:apply-templates select="@*|node()"/>
+            </xsl:copy>
+        </xsl:template>
+
+        <!-- Suppress individual traceability keywords -->
+        <xsl:template match="gmd:keyword[gco:CharacterString[
+            starts-with(., 'source:')          or
+            starts-with(., 'transaction:')     or
+            starts-with(., 'catalog:')         or
+            starts-with(., 'organisation:')    or
+            starts-with(., 'sub_organisation:')
+        ]]"/>
+
+        <!-- Suppress the whole descriptiveKeywords block if only traceability keywords remain -->
+        <xsl:template match="gmd:descriptiveKeywords[not(
+            gmd:MD_Keywords/gmd:keyword[not(gco:CharacterString[
+                starts-with(., 'source:')          or
+                starts-with(., 'transaction:')     or
+                starts-with(., 'catalog:')         or
+                starts-with(., 'organisation:')    or
+                starts-with(., 'sub_organisation:')
+            ])]
+        )]"/>
+
+    </xsl:stylesheet>
+    ```
+
+
 
 ### InGrid Editor
 
@@ -332,8 +457,7 @@ Eine vollständige Übersicht aller Portal-Konfigurationsoptionen ist in der [Po
 
 ??? question "GetRecords: Wie wird nach Partner gefiltert?"
 
-    !!! note "InGrid-spezifisch"
-        Die Filterung nach Partner und Anbieter basiert auf einer InGrid-Konvention: Einliefernde Komponenten (Editor, Harvester) schreiben die Zugehörigkeit als strukturiertes Schlagwort in das Feld `apiso:Subject`. Diese Keywords sind kein Bestandteil des CSW- oder ISO-Standards.
+    #### Filtern nach Partner
 
     In InGrid werden Partner als Schlagwort im Feld `apiso:Subject` mit dem Präfix `organisation:` gespeichert. Da das Feld die gesamte kommagetrennte Schlagwortliste enthält, muss `PropertyIsLike` für die Teilsuche verwendet werden – `PropertyIsEqualTo` würde den vollständigen Spalteninhalt auf exakte Übereinstimmung prüfen und damit keine Treffer liefern.
 
@@ -367,7 +491,9 @@ Eine vollständige Übersicht aller Portal-Konfigurationsoptionen ist in der [Po
 
 ??? question "GetRecords: Wie wird nach Anbieter gefiltert?"
 
-    Anbieter werden mit dem Präfix `sub_organisation:` als Schlagwort abgelegt. Das Abfragemuster ist identisch mit der Partnerabfrage:
+    #### Filtern nach Anbieter
+
+    Anbieter werden mit dem Präfix `sub_organisation:` als Schlagwort abgelegt. Das Abfragemuster ist identisch mit der [Filterung nach Partnern]](#filtern-nach-partner):
 
     **GET (CQL_TEXT)**
 
@@ -398,6 +524,8 @@ Eine vollständige Übersicht aller Portal-Konfigurationsoptionen ist in der [Po
     ```
 
 ??? question "GetRecords: Wie wird nach ResourceIdentifier gefiltert?"
+
+    #### Filter nach ResourceIdentifier
 
     Um Datensätze einer bestimmten Datenquelle über ihren eindeutigen Ressourcenbezeichner abzufragen:
 
