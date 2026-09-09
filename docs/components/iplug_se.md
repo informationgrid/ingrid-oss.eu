@@ -44,7 +44,7 @@ Ein Indexierungsdurchlauf besteht aus mehreren Phasen:
 | **Hardware** | Arbeitsspeicher       | 512 MB RAM         |
 |              | Festplattenspeicher   | 10 GB frei         |
 |              | Prozessor             | Dual Core CPU      |
-| **Software** | Java                  | Java 21            |
+| **Software** | Java                  | Java 25            |
 
 
 ## Installation

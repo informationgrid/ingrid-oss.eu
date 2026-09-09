@@ -36,7 +36,7 @@ Die Schnittstelle bildet Daten aus dem InGrid Catalog Datenraum wie folgt ab:
 | **Hardware** | Arbeitsspeicher       | 500 MB RAM         |
 |              | Festplattenspeicher   | 1 GB frei          |
 |              | Prozessor             | Dual Core CPU      |
-| **Software** | Java                  | Java 21            |
+| **Software** | Java                  | Java 8             |
 
 
 ## Installation

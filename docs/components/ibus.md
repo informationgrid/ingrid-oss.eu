@@ -5,6 +5,9 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 ## Allgemeines
 
+!!! info
+    Der iBus wird demnächst eingestellt! Die Aufgaben übernimmt dann die InGrid-API.
+
 Der iBus (information bus) bildet in einem InGrid-System das zentrale Element. Er fungiert als Verteilungsstation
 zwischen Datenquellen und Suchanfragen. So nimmt der iBus eine Suchanfrage von der Portaloberfläche oder einer anderen
 übergeordneten Schnittstelle entgegen, bereitet die Anfrage auf und sucht in einem zentralen Index, der im Elasticsearch

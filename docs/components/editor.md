@@ -45,9 +45,9 @@ Sie haben die Installation bereits abgeschlossen? Dieser Leitfaden könnte Sie i
 | **Hardware** | Arbeitsspeicher       | 2 GB RAM                |
 |              | Festplattenspeicher   | 10 GB frei              |
 |              | Prozessor             | Dual Core CPU           |
-| **Software** | Java                  | Java 21                 |
+| **Software** | Java                  | Java 25                 |
 |              | Keycloak              | Version 26.x oder höher |
-|              | Elasticsearch         | Version 8.x             |
+|              | Elasticsearch         | Version 9.x             |
 |              | PostgreSQL            | Version 13 oder höher   |
 
 <hr>
@@ -175,15 +175,31 @@ services:
 
 In einer weiteren Datei `.env` werden die Variablen für die `docker-compose.yml` Datei gesetzt.
 
+### :material-redhat: RPM
+
+Installieren Sie das RPM über den folgenden Befehl:
+```shell
+sudo dnf install ingrid-editor
+```
+
+Stellen Sie sicher, dass die PostgreSQL-Datenbank mit dem Namen "ige" vorhanden ist und dem Datenbankbenutzer die Rechte korrekt gesetzt sind. Passen Sie die Umgebungsvariablen für den Editor in der Datei `/etc/sysconfig/ingrid-editor` an. Dabei sind vor allem die Einstellungen für die Datenbank und Keycloak wichtig. Für die weitere Konfiguration schauen Sie bitte die verfügbaren [Umgebungsvariablen](#umgebungsvariablen) an. Außerdem können Sie alle Einstellungen auch in der Datei `/opt/ingrid/ingrid-editor/config/application.properties` vornehmen, allerdings empfehlen wir die Konfiguration über Umgebungsvariablen.
+
+Starten Sie danach den InGrid Editor über den folgenden Befehl:
+
+```shell
+sudo systemctl start ingrid-editor
+
+# wenn automatisch gestartet werden soll beim Neustart des Systems
+sudo systemctl enable ingrid-editor
+```
+
 ### :material-github: From Source
 
-Um den InGrid-Editor direkt auf einem System zu installieren, müssen folgende Vorbedingungen erfüllt sein:
+Um den InGrid-Editor direkt auf einem System zu installieren, müssen folgende zusätzliche Vorbedingungen erfüllt sein:
 
-* Elasticsearch (>= v8)
-* PostgreSQL (>= v13)
-* NodeJS (>= v20)
+* NodeJS (>= v22)
 
-Die Installation des InGrid-Editors (z.B. nach `/opt/ingrid/editor`) erfolgt dann mit diesen Schritten:
+Die Installation des InGrid-Editors (z.B. nach `/opt/ingrid/ingrid-editor`) erfolgt dann mit diesen Schritten:
 
 #### Editor klonen und bauen
 
@@ -192,14 +208,16 @@ git clone https://github.com/informationgrid/ingrid-editor
 cd ingrid-editor/frontend
 yarn
 cd ..
-./gradlew bootJar -x test
+./gradlew -PbuildProfile=prod build -x test -x check
 ```
 
 #### Editor installieren
 
 ``` shell
-mkdir -p /opt/ingrid/editor
-... TODO ...
+unzip -qq "build/distributions/ingrid-editor-[0-9]*.zip" -d /tmp/editor
+mkdir -p /opt/ingrid/ingrid-editor
+mv /tmp/editor/ingrid-editor-*/* /opt/ingrid/ingrid-editor
+cp -r frontend/build/dist/browser/* /opt/ingrid/ingrid-editor/webapp/static
 ```
 
 #### Editor starten
@@ -209,8 +227,20 @@ Umgebungsvariablen oder erstellen eine Datei `application-default.properties`. S
 PostgreSQL-Datenbank, die Datenbanken mit den Namen "ige" und "keycloak" angelegt worden sind. Für die weitere
 Konfiguration, siehe [Umgebungsvariablen](#umgebungsvariablen). Danach:
 
+Damit das Frontend verfügbar ist, muss dieses noch auf den Klassenpfad der Anwendung gesetzt werden. Dazu muss das Startskript unter "bin/ingrid-editor" angepasst werden:
+
+```shell
+# replace
+eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $INGRID_EDITOR_OPTS -jar "\"$JARPATH\"" "$APP_ARGS"
+# with
+JAVA_OPTS="-Dloader.path=/opt/ingrid/ingrid-editor/webapp/"
+eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $INGRID_EDITOR_OPTS -cp "\"$JARPATH\"" org.springframework.boot.loader.launch.PropertiesLauncher "$APP_ARGS"
+```
+
+Danach können Sie den Editor im Verzeichnis `/opt/ingrid/ingrid-editor` wie folgt starten:
+
 ``` shell
-java -jar ./server/build/libs/server-<version>.jar
+bin/ingrid-editor
 ```
 
 <hr>

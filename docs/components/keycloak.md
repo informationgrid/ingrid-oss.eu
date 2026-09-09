@@ -29,7 +29,7 @@ Keycloak in allen InGrid-Komponenten zu verwenden.
 | **Hardware** | Arbeitsspeicher       | 1 GB RAM              |
 |              | Festplattenspeicher   | 10 GB frei            |
 |              | Prozessor             | Dual Core CPU         |
-| **Software** | Java                  | Java 21               |
+| **Software** | Java                  | Java 25               |
 |              | PostgreSQL            | Version 13 oder höher |
 
 <hr>
@@ -50,8 +50,8 @@ Konfigurationen:
 ### :material-docker: Docker
 
 !!! info inline end
-Zugang zum Docker Repository<br><br>
-login: readonly<br>password: readonly
+    Zugang zum Docker Repository<br><br>
+    login: readonly<br>password: readonly
 
 <div class="grid cards" markdown>
 
@@ -100,7 +100,7 @@ services:
 
 In einer weiteren Datei `.env` werden die Variablen für die docker-compose.yml Datei gesetzt.
 
-#### Umgebungsvariablen
+### Umgebungsvariablen
 
 Da als Basis das Original-Keycloak-Image verwendet wird, können hier alle Umgebungsvariablen für Keycloak verwendet
 werden ([Keycloak-Umgebungsvariablen](https://www.keycloak.org/server/all-config)). Zusätzlich werden von uns die
@@ -128,6 +128,25 @@ folgenden Umgebungsvariablen bereitgestellt:
 | SIMPLE_SECURITY           | Initialisiert das InGrid-Realm mit einfachen Anforderungen für das Passwort (keine Mindestlänge, ...)      | false                 |
 | WAIT_FOR_DATABASE         | Warte auf die Datenbank, bevor Keycloak gestartet wird                                                     | true                  |
 | WAIT_FOR_DATABASE_TIMEOUT | Maximale Wartezeit, die auf die Datenbank gewartet werden soll (in Sekunden)                               | 180                   |
+
+### :material-redhat: RPM
+
+Installieren Sie das RPM über den folgenden Befehl:
+```shell
+sudo dnf install ingrid-keycloak
+```
+
+Stellen Sie sicher, dass die PostgreSQL-Datenbank mit dem Namen "keycloak" vorhanden ist und dem Datenbankbenutzer die Rechte korrekt gesetzt sind.
+Starten Sie danach Keycloak über den folgenden Befehl:
+
+```shell
+sudo systemctl start keycloak
+
+# wenn automatisch gestartet werden soll beim Neustart des Systems
+sudo systemctl enable keycloak
+```
+
+Sobald Keycloak läuft, muss der Admin-Benutzer erstellt und der InGrid-Realm eingerichtet werden. Die Einrichtung des Admin-Benutzers erfolgt über den Browser über http://localhost:8080. Sobald der Admin-Benutzer erstellt worden ist, kann der Realm erzeugt werden. Dies kann manuell erfolgen oder über ein bereitgestelltes Skript, welches sich hier befindet: `/opt/keycloak/init.sh`.
 
 ### Manuelle Installation
 

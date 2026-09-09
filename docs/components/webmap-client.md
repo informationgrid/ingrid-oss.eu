@@ -57,7 +57,7 @@ Sie haben die Installation bereits abgeschlossen? Diese Leitfäden könnten Sie 
 | **Hardware** | Arbeitsspeicher       | 2 GB RAM                |
 |              | Festplattenspeicher   | 10 GB frei              |
 |              | Prozessor             | Dual Core CPU           |
-| **Software** | Java                  | Java 21                 |
+| **Software** | Java                  | Java 25                 |
 |              | Apache-Tomcat         | Version 9.x             |
 
 <hr>

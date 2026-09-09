@@ -25,7 +25,7 @@ Unterstützte Schnittstellen:
 | **Hardware** | Arbeitsspeicher       | 500 MB RAM         |
 |              | Festplattenspeicher   | 1 GB frei          |
 |              | Prozessor             | Dual Core CPU      |
-| **Software** | Java                  | Java 21            |
+| **Software** | Java                  | Java 25            |
 
 
 ## Installation

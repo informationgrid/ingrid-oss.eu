@@ -71,6 +71,23 @@ Details zur Schritt-für-Schritt Installation finden Sie hier:  <https://github.
 
 <hr>
 
+## Lokale Installation
+
+Wenn eine Installation über RPMs oder über die Sourcen erfolgt, dann sollten einige Bedingungen vorher erfüllt sein.
+
+Für RPMs muss ein Repository definiert werden, über das diese bezogen werden können.
+
+```shell
+# Füge ein neues RPM-Repository hinzu
+sudo dnf config-manager --add-repo https://nexus.informationgrid.eu/repository/rpm-ingrid
+
+# Importiere den Public-Key des Repositories
+# Schreibe den Key in eine Datei
+vi wemove-nexus.gpg.key
+# und importiere ihn
+sudo rpm --import wemove-nexus.gpg.key
+```
+
 ## Weitere Installationsmöglichkeiten
 
 - Installationsdatei (.rpm) 

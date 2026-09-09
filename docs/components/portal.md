@@ -237,6 +237,83 @@ access:
     super: true
 ```
 
+### :material-redhat: RPM
+
+Vor der Installation des Portals sollte ein Webserver (Apache oder Nginx) installiert sein, über dem die PHP-Seiten ausgegeben werden können.
+
+Installieren Sie das RPM über den folgenden Befehl:
+```shell
+sudo dnf install ingrid-portal
+```
+
+Starten Sie danach das InGrid-Portal über den folgenden Befehl:
+
+```shell
+sudo systemctl start ingrid-portal
+
+# wenn automatisch gestartet werden soll beim Neustart des Systems
+sudo systemctl enable ingrid-portal
+```
+
+Um das InGrid Portal aufzurufen, muss der Webserver noch konfiguriert werden. Anbei sind Beispiele-Konfigurationen für Apache und Nginx:
+
+??? note "Apache Konfiguration für das InGrid-Portal"
+    ``` apache
+    <VirtualHost *:80>
+        ServerName localhost
+        DocumentRoot /var/www/ingrid-portal
+    
+        <Directory /var/www/ingrid-portal>
+            Options -Indexes +FollowSymLinks
+            AllowOverride All
+            Require all granted
+    
+            DirectoryIndex index.php index.html
+            RewriteEngine On
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteCond %{REQUEST_FILENAME} !-d
+            RewriteRule ^ index.php [QSA,L]
+        </Directory>
+    
+        <FilesMatch \.php$>
+            SetHandler "proxy:unix:/run/php-fpm/www.sock|fcgi://localhost/"
+        </FilesMatch>
+    
+        ErrorLog /var/log/httpd/ingrid_portal_error.log
+        CustomLog /var/log/httpd/ingrid_portal_access.log combined
+    </VirtualHost>
+    ```
+
+??? note "Nginx Konfiguration für das InGrid-Portal"
+    ```nginx
+    server {
+        listen 80;
+        server_name localhost;
+    
+        root /var/www/ingrid-portal;
+        index index.php index.html;
+    
+        location / {
+            try_files $uri $uri/ /index.php?$query_string;
+        }
+    
+        location ~ \.php$ {
+            include fastcgi_params;
+            fastcgi_pass unix:/run/php-fpm/www.sock;
+            fastcgi_index index.php;
+            fastcgi_split_path_info ^(.+\.php)(/.*)$;
+            fastcgi_param SCRIPT_FILENAME /var/www/ingrid-portal$fastcgi_script_name;
+            fastcgi_param PATH_INFO $fastcgi_path_info;
+        }
+    }
+    ```
+
+Unter SE-Linux werden eventuell noch weitere Berechtigungen benötigt, die hiermit erteilt werden können:
+```shell
+sudo semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/ingrid-portal(/.*)?"
+sudo restorecon -Rv /var/www/ingrid-portal
+```
+
 ## Konfiguration
 
 Die Konfiguration erfolgt über die Administrationsoberfläche des Content-Management-Systems GRAV.
