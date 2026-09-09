@@ -110,15 +110,24 @@ java -jar ingrid-api-all.jar
 ### Umgebungsvariablen
 
 ???+ example "Alle Umgebungsvariablen im Überblick"
-    
-    | **Variable**  | **Hinweis**                                                                          | **Defaultwert** |
-    |---------------|--------------------------------------------------------------------------------------|-----------------|
-    | CONTEXT_PATH | Der Kontextpfad unter dem die API laufen soll                                        | /               |
-    | ES_HOST      | Die IP/URL zur Elasticsearch Instanz                                                 | localhost       |
-    | ES_PORT      | Der Port, unter dem Elasticsearch erreichbar ist                                     | 9200            |
-    | ES_HTTPS     | Wenn Elasticsearch unter HTTPS erreichbar ist, dann muss diese Option gesetzt werden | false           |
-    | ES_USERNAME  | Wenn abgesichert, dann kann hier der Benutzername definiert werden                   |                 |
-    | ES_PASSWORD  | Wenn abgesichert, dann kann hier das Passwort definiert werden                       |                 |
+ 
+    | **Variable**           | **Hinweis**                                                                          | **Defaultwert**       |
+    |------------------------|--------------------------------------------------------------------------------------|-----------------------|
+    | AUTH_DISABLED          | Login für die Adminseite deaktivieren                                                | false                 |
+    | CONTEXT_PATH           | Der Kontextpfad unter dem die API laufen soll                                        | /                     |
+    | DEVELOPMENT            | Startet die Anwendung im Entwicklungsmodus                                           | false                 |
+    | ES_HOST                | Die IP/URL zur Elasticsearch Instanz                                                 | localhost             |
+    | ES_PORT                | Der Port, unter dem Elasticsearch erreichbar ist                                     | 9200                  |
+    | ES_HTTPS               | Wenn Elasticsearch unter HTTPS erreichbar ist, dann muss diese Option gesetzt werden | false                 |
+    | ES_USERNAME            | Wenn abgesichert, dann kann hier der Benutzername definiert werden                   |                       |
+    | ES_PASSWORD            | Wenn abgesichert, dann kann hier das Passwort definiert werden                       |                       |
+    | INDEX_PREFIX           | Definiere einen Präfix für Elasticsearch Indizes, um diese vorzufiltern.             |                       |
+    | KEYCLOAK_CLIENT_ID     | Die Client-ID für die InGrid-API in Keycloak.                                        | ingrid-api            |
+    | KEYCLOAK_CLIENT_SECRET | Das Client-Secret für die Verbindung der InGrid-API zu Keycloak.                     |                       |
+    | KEYCLOAK_REALM         | Der Realm der in Keycloak verwendet werden soll.                                     | InGrid                |
+    | SESSION_SECURE         | Speichern des Session-Cookies als Secure                                             | true                  |
+    | KEYCLOAK_SERVER_URL    | Die URL zu Keycloak                                                                  | http://localhost:8080 |
+    | SESSION_SIGN_KEY       | Ein Schlüssel für die Signatur des Session-Cookies                                   | <vordefinierter Wert> |
 
 ## REST-API
 
