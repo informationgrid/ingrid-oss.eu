@@ -137,6 +137,10 @@ sudo dnf install ingrid-keycloak
 ```
 
 Stellen Sie sicher, dass die PostgreSQL-Datenbank mit dem Namen "keycloak" vorhanden ist und dem Datenbankbenutzer die Rechte korrekt gesetzt sind.
+
+```shell
+sudo -u postgres psql -c "CREATE DATABASE keycloak;"
+```
 Starten Sie danach Keycloak über den folgenden Befehl:
 
 ```shell

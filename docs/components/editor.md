@@ -182,7 +182,14 @@ Installieren Sie das RPM über den folgenden Befehl:
 sudo dnf install ingrid-editor
 ```
 
-Stellen Sie sicher, dass die PostgreSQL-Datenbank mit dem Namen "ige" vorhanden ist und dem Datenbankbenutzer die Rechte korrekt gesetzt sind. Passen Sie die Umgebungsvariablen für den Editor in der Datei `/etc/sysconfig/ingrid-editor` an. Dabei sind vor allem die Einstellungen für die Datenbank und Keycloak wichtig. Für die weitere Konfiguration schauen Sie bitte die verfügbaren [Umgebungsvariablen](#umgebungsvariablen) an. Außerdem können Sie alle Einstellungen auch in der Datei `/opt/ingrid/ingrid-editor/config/application.properties` vornehmen, allerdings empfehlen wir die Konfiguration über Umgebungsvariablen.
+Der InGrid-Editor verwendet eine PostgreSQL-Datenbank, die vor dem Start vorhanden sein muss. Erstellen Sie die bereits vorkonfigurierte Datenbank mit dem folgenden Befehl:
+
+
+```shell
+sudo -u postgres psql -c "CREATE DATABASE ige;"
+```
+
+Stellen Sie sicher, dass dem Datenbankbenutzer die Rechte für die neu erstellte Datenbank korrekt gesetzt sind. Passen Sie die Umgebungsvariablen für den Editor in der Datei `/etc/sysconfig/ingrid-editor` an. Dabei sind vor allem die Einstellungen für die Datenbank und Keycloak wichtig. Für die weitere Konfiguration schauen Sie bitte die verfügbaren [Umgebungsvariablen](#umgebungsvariablen) an. Außerdem können Sie alle Einstellungen auch in der Datei `/opt/ingrid/ingrid-editor/config/application.properties` vornehmen, allerdings empfehlen wir die Konfiguration über Umgebungsvariablen.
 
 Starten Sie danach den InGrid Editor über den folgenden Befehl:
 

@@ -170,7 +170,20 @@ networks:
 
 ### :material-redhat: RPM
 
-TODO
+Installieren Sie das RPM über den folgenden Befehl:
+
+```shell
+sudo dnf install ingrid-harvester
+```
+
+Die wichtigsten Einstellungen erfolgen über Umgebungsvariablen, die für den InGrid Harvester unter `/etc/sysconfig/ingrid-harvester` eingestellt werden können. Für den Start werden hier die folgenden Variablen benötigt: `IMPORTER_PROFILE`, `DB_URL`, `DB_NAME`, `DB_USER` und `DB_PASSWORD`. Alles Weitere lässt sich später auf der Administrationsseite eintragen.
+
+```shell
+sudo systemctl start ingrid-harvester
+
+# wenn automatisch gestartet werden soll beim Neustart des Systems
+sudo systemctl enable ingrid-harvester
+```
 
 ### :material-github: From Source
 
@@ -231,7 +244,8 @@ Wenn der **InGrid Harvester** unter einem Unterpfad (z. B. nicht direkt unter de
 Gegebenenfalls muss ein existierender Reverse-Proxy entsprechend konfiguriert werden.
 
 ### Authentifizierung
-Benutzer und Passwort wird über die Konfigurationsdatei `users.json` gesetzt.
+
+Es gibt zwei Arten der Authentifizierung. Die empfohlene Art ist sich mit Keycloak in den Harvester einzuloggen. Dazu muss ein Benutzer eines der Client-Rollen des Harvester-Clients zugewiesen haben. Alternativ ist es auch möglich ein festes Passwort für einen Administrator zu setzen, welches über die Konfigurationsdatei `users.json` erfolgt.
 Das Admin-Password kann mit der Umgebungsvariable `ADMIN_PASSWORD` überschieben werden.
 
 ???+ example "Beispiel für `users.json`"

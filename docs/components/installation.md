@@ -73,7 +73,7 @@ Details zur Schritt-für-Schritt Installation finden Sie hier:  <https://github.
 
 ## Lokale Installation
 
-Wenn eine Installation über RPMs oder über die Sourcen erfolgt, dann sollten einige Bedingungen vorher erfüllt sein.
+Wenn eine Installation über RPMs oder über die Sourcen erfolgt, sollten einige Bedingungen vorher erfüllt sein.
 
 Für RPMs muss ein Repository definiert werden, über das diese bezogen werden können.
 
@@ -82,11 +82,10 @@ Für RPMs muss ein Repository definiert werden, über das diese bezogen werden k
 sudo dnf config-manager --add-repo https://nexus.informationgrid.eu/repository/rpm-ingrid
 
 # Importiere den Public-Key des Repositories
-# Schreibe den Key in eine Datei
-vi wemove-nexus.gpg.key
-# und importiere ihn
-sudo rpm --import wemove-nexus.gpg.key
+sudo rpm --import https://nexus.informationgrid.eu/repository/public-keys-repository/ingrid/RPM-GPG-KEY-InGrid
 ```
+
+Es wird empfohlen PostgreSQL und Elasticsearch zu installieren, da diese in vielen InGrid-Komponenten verwendet werden. Die Dokumentation finden Sie auf den jeweiligen Seiten des Anbieters.
 
 ## Weitere Installationsmöglichkeiten
 
