@@ -71,7 +71,7 @@ Details zur Schritt-für-Schritt Installation finden Sie hier:  <https://github.
 
 <hr>
 
-## Lokale Installation
+## Installation mit RPM oder über die Sourcen
 
 Wenn eine Installation über RPMs oder über die Sourcen erfolgt, sollten einige Bedingungen vorher erfüllt sein.
 
