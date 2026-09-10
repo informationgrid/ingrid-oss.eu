@@ -10,6 +10,7 @@ description: "InGrid: Indexieren, Recherchieren, Visualisieren, Teilen"
 
 Die einfachste und schnellste Methode, um InGrid zum Laufen zu bringen, ist die Installation über Docker. Die Installation kann sowohl lokal als auch auf einem Server durchgeführt werden.
 
+### Docker
 ![](../assets/drawio/ingrid-docker.drawio)
 
 1. **InGrid-Docker-Container starten**
@@ -25,6 +26,21 @@ Die einfachste und schnellste Methode, um InGrid zum Laufen zu bringen, ist die 
 
 
 Details zur Schritt-für-Schritt Installation finden Sie hier:  <https://github.com/informationgrid/ingrid-docker>. 
+
+### RPM
+
+Für eine Installation eines lauffähigen InGrid-Systems werden die folgenden Komponenten benötigt:
+
+* [InGrid-Portal](../components/portal.md) für die Anzeige der Datensätze
+* [InGrid-Api](../components/api.md) für verschiedene Schnittstellen zu den Datensätzen
+* [InGrid-Editor](../components/editor.md) und/oder [InGrid Harvester](../components/harvester.md) für die Datenbereitstellung
+* [Keycloak](../components/keycloak.md) für die zentrale Benutzerverwaltung für den Zugang zu den Komponenten
+
+Zusätzlich werden benötigt:
+
+* **PostgreSQL** für die Verwaltung der Daten
+* **Elasticsearch** für die Suche
+
 
 
 ## Komponenten
