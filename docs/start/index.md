@@ -32,6 +32,7 @@ Details zur Schritt-für-Schritt Installation finden Sie hier:  <https://github.
 Für eine Installation eines lauffähigen InGrid-Systems werden die folgenden Komponenten benötigt:
 
 * [InGrid-Portal](../components/portal.md) für die Anzeige der Datensätze
+* [InGrid-Webmap-Client](../components/webmap-client.md) für die Anzeige der Karte im Portal
 * [InGrid-Api](../components/api.md) für verschiedene Schnittstellen zu den Datensätzen
 * [InGrid-Editor](../components/editor.md) und/oder [InGrid Harvester](../components/harvester.md) für die Datenbereitstellung
 * [Keycloak](../components/keycloak.md) für die zentrale Benutzerverwaltung für den Zugang zu den Komponenten

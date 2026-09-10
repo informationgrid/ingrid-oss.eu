@@ -85,22 +85,17 @@ services:
 
 ```
 
-Apache-Konfiguration:
+### :material-redhat: RPM
 
-``` xml
-  ###################
-  # mapclient
+!!! info
+    Schauen Sie sich auch die allgemeinen Informationen für das Installieren von RPMs hier an: [Link]({{ fix_url('components/installation.md/#lokale-installation') }})
 
-  <Location "/ingrid-webmap-client">
-
-    ProxyPass  http://mapclient:8080/ingrid-webmap-client
-    ProxyPassReverse http://mapclient:8080/ingrid-webmap-client
-    ProxyAddHeaders On
-    ProxyPreserveHost On
-
-    Header set Access-Control-Allow-Origin '*'
-  </Location>
+Installieren Sie das RPM über den folgenden Befehl:
+```shell
+sudo dnf install ingrid-webmap-client
 ```
+
+Im Abschnitt "Konfiguration" erfahren Sie mehr, wie sie die Anwendung einrichten können, um sie im Portal anzeigen zu lassen.
 
 
 ### Umgebungsvariablen
@@ -120,7 +115,26 @@ Einige allgemeine Einstellungen können auch über Umgebungsvariablen konfigurie
 
 ## Konfiguration
 
-Zentrale Backend-Einstellungen werden innerhalb der Portal Installation in folgendem Verzeichnis definiert:
+Für den Aufruf des InGrid-Webmap Clients müssen Sie den Webserver entsprechend konfigurieren. Hier ist eine Konfiguration für Apache:
+
+Apache-Konfiguration:
+
+``` xml
+  ###################
+  # mapclient
+
+  <Location "/ingrid-webmap-client">
+
+    ProxyPass  http://mapclient:8080/ingrid-webmap-client
+    ProxyPassReverse http://mapclient:8080/ingrid-webmap-client
+    ProxyAddHeaders On
+    ProxyPreserveHost On
+
+    Header set Access-Control-Allow-Origin '*'
+  </Location>
+```
+
+Zentrale Backend-Einstellungen werden innerhalb der Portal-Installation in folgendem Verzeichnis definiert:
 
 ```
 /PORTAL-INSTALLATIONS-PFAD/apache-tomcat/webapps/ingrid-webmap-client/WEB-INF/classes
