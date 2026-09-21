@@ -165,12 +165,21 @@ Wird ein eigener Keycloak-Server verwendet, so müssen folgende Schritte getäti
     - `Client authentication`, `Standard-Flow` und `Service account roles` aktivieren
     - Client Secret unter `Credentials` für die Konfiguration des Editors nehmen
     - unter `Roles` die Client-Rollen `user` und `admin` erstellen
-    - unter `Client scopes` -> `editor-dedicated` die predefinied Mapper `client roles`und `realm roles` hinzufügen
-        - in beiden Mappern `Add to ID token` aktivieren
-    - unter `Service account roles` füge Client-Rolle `realm-admin` aus `realm-management` hinzu
+    - unter `Service account roles` füge diese Client-Rollen hinzu
+        - `view-realm`, `manage-users`, `query-clients` und `view-clients` des Clients `realm-management`
+    - unter `Client scopes` -> `editor-dedicated`
+      - die predefinied Mapper `client roles`und `realm roles` hinzufügen
+          - in beiden Mappern `Add to ID token` aktivieren
+      - wenn unter `Scope` die Option `Full scope allowed` deaktiviert werden soll (erhöhte Sicherheit), dann müssen folgende Rollen hinzugefügt werden:
+        - alle Client-Rollen die auch unter `Service account roles` angelegt wurden
+        - wegen Abwärtskompatibilität zusätzlich die Realm-Rollen:
+            - ige-super-admin
+            - ige-user
 - Erstellung eines neuen Clients `editor-api` (für OGC-Records-API und CSW-T)
     - Redirect-URIs: `<URL-Editor>/*`
-    - `Client authentication` und `Standard-Flow` aktivieren
+      - `Client authentication` und `Standard-Flow` aktivieren
+      - unter `Client scopes` -> `editor-api-dedicated` -> `Scope` die Option `Full scope allowed` deaktivieren und folgende Rollen hinzufügen:
+        - `user` und `admin` vom Client `editor`
 - Erstellung eines neuen Clients `harvester`
     - Redirect-URIs: `<URL-Harvester>/*`
     - `Client authentication` und `Standard-Flow` aktivieren
