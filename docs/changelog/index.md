@@ -38,6 +38,13 @@ Folgende Anpassungen müssen getätigt werden:
 
 <hr>
 
+## Version 8.4.1.1 <small>DD.MM.YYYY</small> { id="8.4.1.1" data-toc-label="8.4.1.1"}
+
+### Profil LUBW { id="8.4.1.1_changes_profil_lubw" }
+
+* :material-star:{ title="Feature" } Portal LUBW: Sachattribute mit Übermittlungsstufen 0 und 1 sollen im Portal angezeigt werden. <br>[:octicons-link-external-16: REDMINE-9003](https://redmine.informationgrid.eu/issues/9003)
+
+<hr>
 
 ## Version 8.4.1 <small>04.09.2026</small> { id="8.4.1" data-toc-label="8.4.1"}
 
