@@ -38,7 +38,7 @@ Folgende Anpassungen müssen getätigt werden:
 
 <hr>
 
-## Version 8.4.1.1 <small>DD.MM.YYYY</small> { id="8.4.1.1" data-toc-label="8.4.1.1"}
+## Version 8.4.1.1 <small>22.09.2026</small> { id="8.4.1.1" data-toc-label="8.4.1.1"}
 
 ### Profil LUBW { id="8.4.1.1_changes_profil_lubw" }
 
