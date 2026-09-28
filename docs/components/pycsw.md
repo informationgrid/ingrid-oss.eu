@@ -332,12 +332,16 @@ http://<pycsw-host>:<port>
 Ein Beispiel-Request für das Einfügen eines Datensatzes:
 
 ``` bash
-curl --location 'http://<pycsw-host>' \
-  --header 'Content-Type: application/xml' \
-  --data-raw '<?xml version="1.0" encoding="UTF-8"?>
+curl --request POST \
+  --url 'http://<pycsw-host>/csw' \
+  --header 'content-type: application/xml' \
+  --data '<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <csw:Transaction service="CSW" version="2.0.2"
     xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
     xmlns:gmd="http://www.isotc211.org/2005/gmd"
+    xmlns:gco="http://www.isotc211.org/2005/gco"
+    xmlns:ogc="http://www.opengis.net/ogc"
+    xmlns:apiso="http://www.opengis.net/cat/csw/apiso/1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-publication.xsd">
     <csw:Insert>
