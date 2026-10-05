@@ -62,7 +62,7 @@ services:
             - "8000:8000"
         depends_on:
             db:
-            condition: service_healthy
+                condition: service_healthy
         networks:
             - ingrid-network
 
@@ -73,6 +73,11 @@ services:
             - POSTGRES_DB=pycsw
             - POSTGRES_PASSWORD=${DB_PASSWORD}
             - POSTGRES_USER=${DB_USER}
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d pycsw"]
+            interval: 10s
+            timeout: 5s
+            retries: 5
         volumes:
             - pycsw-data:/var/lib/postgresql/data
         networks:
@@ -93,12 +98,14 @@ pycsw wird über eine YAML-Konfigurationsdatei (`pycsw.yml`) konfiguriert. Eine 
 
 ???+ example "Beispiel pycsw.yml"
 
+    Die Werte unter `metadata` und `inspire` sind Platzhalter und müssen an den eigenen Katalog angepasst werden.
+
     ``` yaml
     server:
       url: ${PYCSW_SERVER_URL}
       mimetype: application/xml; charset=UTF-8
       encoding: UTF-8
-      language: en-US
+      language: de-DE
       maxrecords: 10
       timeout: 30
       #ogc_schemas_location: http://foo
@@ -114,21 +121,16 @@ pycsw wird über eine YAML-Konfigurationsdatei (`pycsw.yml`) konfiguriert. Eine 
 
 
     logging:
-      level: DEBUG
+      level: WARNING  # zur Fehlersuche: DEBUG
       # logfile: /tmp/pycsw.log
 
     profiles:
       - apiso
 
-    federatedcatalogues:
-      - http://catalog.data.gov/csw
-
     manager:
       transactions: true
       allowed_ips:
         - 127.0.0.1
-        - 192.168.0.*
-        - 172.*
       # csw_harvest_pagesize: 10
 
     metadata:
@@ -164,14 +166,14 @@ pycsw wird über eine YAML-Konfigurationsdatei (`pycsw.yml`) konfiguriert. Eine 
         url: Contact URL
         hours: Mo-Fr 08:00-17:00
         instructions: During hours of service. Off on weekends.
-        role: pointOfContact    
+        role: pointOfContact
 
     inspire:
       enabled: true
       languages_supported:
+        - ger
         - eng
-        - gre
-      default_language: eng
+      default_language: ger
       date: YYYY-MM-DD
       gemet_keywords:
         - Utility and governmental services
@@ -268,7 +270,7 @@ xslt:
 - `input_os` / `output_os` legen fest, für welches `outputSchema` die Transformation angewendet wird (hier: ISO 19139).
 - `transform` verweist auf die XSLT-Datei im Container, die auf jede passende Antwort angewendet wird.
 
-#### Traceability-Filter 
+#### Traceability-Filter
 
 Einliefernde InGrid-Komponenten (Editor, Harvester) hinterlegen Herkunfts- und Zuordnungsinformationen als strukturierte Schlagwörter im Feld `apiso:Subject` (z. B. `organisation:`, `sub_organisation:`, `source:`, `transaction:`, `catalog:`). Diese Traceability-Keywords werden benötigt, um Datensätze intern nach Partner, Anbieter oder Quelle filtern zu können (siehe [FAQ Filterabfragen](#filtern-nach-partner)), sollen jedoch nicht in den nach außen ausgelieferten Metadatensätzen sichtbar sein. Diese Keywords sind kein Bestandteil des CSW- oder ISO-Standards, sondern eine InGrid-Konvention.
 
@@ -313,69 +315,30 @@ Die Datei `traceability-filter.xsl` entfernt diese internen Schlagwörter aus de
     </xsl:stylesheet>
     ```
 
+### Anbindung von Komponenten
 
-
-### InGrid Editor
-
-Der InGrid Editor kann Metadatensätze via **CSW-T** direkt in pycsw einliefern. Damit der Editor gegen pycsw publizieren kann, müssen folgende Voraussetzungen erfüllt sein:
-
-1. In pycsw ist die CSW-T-Transaktion aktiviert (`manager.transactions: "true"`)
-2. Die IP-Adresse des Editors ist unter `manager.allowed_ips` eingetragen
-3. Im Editor ist die Export-Konfiguration auf den pycsw-Endpunkt gesetzt
-
-Der CSW-T-Endpunkt von pycsw ist erreichbar unter:
+pycsw stellt einen **einzigen CSW-Endpunkt** bereit, über den sowohl lesende (CSW) als auch schreibende (CSW-T) Zugriffe erfolgen:
 
 ```
-http://<pycsw-host>:<port>
+http://<pycsw-host>:<port>/csw
 ```
 
-Ein Beispiel-Request für das Einfügen eines Datensatzes:
+Ist ein Reverse Proxy vorgeschaltet, entspricht die Basis-URL dem Wert von `server.url`. Diese URL wird in der jeweiligen Komponente als CSW-Endpunkt hinterlegt.
 
-``` bash
-curl --request POST \
-  --url 'http://<pycsw-host>/csw' \
-  --header 'content-type: application/xml' \
-  --data '<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<csw:Transaction service="CSW" version="2.0.2"
-    xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
-    xmlns:gmd="http://www.isotc211.org/2005/gmd"
-    xmlns:gco="http://www.isotc211.org/2005/gco"
-    xmlns:ogc="http://www.opengis.net/ogc"
-    xmlns:apiso="http://www.opengis.net/cat/csw/apiso/1.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-publication.xsd">
-    <csw:Insert>
-        <!-- vollständiges ISO 19139 Metadatendokument -->
-    </csw:Insert>
-</csw:Transaction>'
-```
+Welche Voraussetzungen in pycsw erfüllt sein müssen, hängt von der Rolle der angebundenen Komponente ab:
 
-### InGrid Harvester
+| Rolle | Zugriff | Beispiele | Voraussetzungen in pycsw |
+|---|---|---|---|
+| **Einliefernd** | CSW-T (`Transaction`: Insert, Update, Delete) | Editor, Harvester, weitere Systeme mit CSW-T-Client | `manager.transactions: true` und IP-Adresse der Komponente in `manager.allowed_ips` |
+| **Abfragend** | CSW (`GetCapabilities`, `GetRecords`, `GetRecordById`) | Portal, externe Geoportale und CSW-Clients | Netzwerkzugriff auf den Endpunkt |
 
-Der InGrid Harvester kann pycsw als **CSW-Katalogziel** verwenden. Dabei werden geerntete Metadaten per CSW-T an pycsw übertragen.
+Für alle Komponenten gilt:
 
-Einrichtung in der Harvester-Konfiguration:
+- **Netzwerk:** Die Komponente muss den pycsw-Endpunkt erreichen können, z. B. über ein gemeinsames Docker-Netzwerk (siehe [Docker Compose Beispiel](#docker)) oder über die öffentliche URL.
+- **Ausgabeformat:** Im InGrid-Kontext wird ISO 19139 (`http://www.isotc211.org/2005/gmd`) als `outputSchema` verwendet.
+- **Authentifizierung:** Ist ein Reverse Proxy mit Basic Auth vorgeschaltet (siehe [Authentifizierung](#authentifizierung)), müssen die Credentials in der Verbindungskonfiguration der Komponente hinterlegt werden.
 
-1. In der Harvester-Oberfläche eine neue Katalog-Verbindung vom Typ **CSW** anlegen
-2. Als Endpunkt den pycsw-Endpunkt eintragen: `http://<pycsw-host>:<port>`
-3. Sicherstellen, dass die IP-Adresse des Harvesters in `manager.allowed_ips` von pycsw eingetragen ist
-
-!!! info
-    Weitere Informationen zur Einrichtung von Katalogzielen finden sich im [Leitfaden Harvester-Katalog]({{ fix_url('guides/harvester-catalog.md') }}).
-
-### InGrid Portal
-
-Das InGrid Portal kann Metadaten über die CSW-Schnittstelle von pycsw abfragen und zur Darstellung aufbereiten.
-
-Die CSW-Abfrage-URL lautet:
-
-```
-http://<pycsw-host>:<port>
-```
-
-Diese URL wird in der Portal-Konfiguration als CSW-Endpunkt hinterlegt. Über die Umgebungsvariable `INGRID_API` verweist das Portal auf die InGrid API, die als Vermittler zwischen Portal und den angebundenen Datenquellen agiert.
-
-Eine vollständige Übersicht aller Portal-Konfigurationsoptionen ist in der [Portal-Dokumentation]({{ fix_url('components/portal.md') }}) beschrieben.
+Die Einrichtung des Endpunkts auf Seite der jeweiligen Komponente ist in deren Dokumentation beschrieben, z. B. im [Leitfaden Harvester-Katalog]({{ fix_url('guides/harvester-catalog.md') }}). Beispielanfragen für Lese- und Schreibzugriffe finden sich in den [FAQ](#faq).
 
 <hr>
 
@@ -497,7 +460,7 @@ Eine vollständige Übersicht aller Portal-Konfigurationsoptionen ist in der [Po
 
     #### Filtern nach Anbieter
 
-    Anbieter werden mit dem Präfix `sub_organisation:` als Schlagwort abgelegt. Das Abfragemuster ist identisch mit der [Filterung nach Partnern]](#filtern-nach-partner):
+    Anbieter werden mit dem Präfix `sub_organisation:` als Schlagwort abgelegt. Das Abfragemuster ist identisch mit der [Filterung nach Partnern](#filtern-nach-partner):
 
     **GET (CQL_TEXT)**
 
@@ -529,7 +492,7 @@ Eine vollständige Übersicht aller Portal-Konfigurationsoptionen ist in der [Po
 
 ??? question "GetRecords: Wie wird nach ResourceIdentifier gefiltert?"
 
-    #### Filter nach ResourceIdentifier
+    #### Filtern nach ResourceIdentifier
 
     Um Datensätze einer bestimmten Datenquelle über ihren eindeutigen Ressourcenbezeichner abzufragen:
 
@@ -561,3 +524,104 @@ Eine vollständige Übersicht aller Portal-Konfigurationsoptionen ist in der [Po
         </csw:Query>
     </csw:GetRecords>
     ```
+
+### Schreibzugriffe (CSW-T)
+
+??? question "Transaction: Wie wird ein Datensatz per CSW-T eingefügt?"
+
+    Schreibzugriffe erfolgen per POST mit einem `csw:Transaction`-Dokument. Voraussetzung ist, dass in pycsw `manager.transactions: true` gesetzt und die IP-Adresse des aufrufenden Systems unter `manager.allowed_ips` eingetragen ist (siehe [Konfiguration](#konfiguration)).
+
+    ``` bash
+    curl --request POST \
+      --url 'http://<pycsw-host>/csw' \
+      --header 'content-type: application/xml' \
+      --data '<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <csw:Transaction service="CSW" version="2.0.2"
+        xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
+        xmlns:gmd="http://www.isotc211.org/2005/gmd"
+        xmlns:gco="http://www.isotc211.org/2005/gco"
+        xmlns:ogc="http://www.opengis.net/ogc"
+        xmlns:apiso="http://www.opengis.net/cat/csw/apiso/1.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-publication.xsd">
+        <csw:Insert>
+            <!-- ein vollständiges Dokument im Format ISO 19139 (2007)-->
+        </csw:Insert>
+    </csw:Transaction>'
+    ```
+
+    Die Antwort enthält in `csw:TransactionSummary` unter `csw:totalInserted` die Anzahl der eingefügten Datensätze.
+
+??? question "Transaction: Wie wird ein Datensatz per CSW-T aktualisiert?"
+
+    Bei einem `csw:Update` wird der bestehende Datensatz vollständig durch das übertragene Dokument ersetzt. Welcher Datensatz ersetzt wird, ergibt sich aus dem Identifier (`gmd:fileIdentifier`) im übertragenen Dokument. Es gelten dieselben Voraussetzungen wie beim Einfügen.
+
+    ``` bash
+    curl --request POST \
+      --url 'http://<pycsw-host>/csw' \
+      --header 'content-type: application/xml' \
+      --data '<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <csw:Transaction service="CSW" version="2.0.2"
+        xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
+        xmlns:gmd="http://www.isotc211.org/2005/gmd"
+        xmlns:gco="http://www.isotc211.org/2005/gco"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-publication.xsd">
+        <csw:Update>
+            <!-- ein vollständiges Dokument im Format ISO 19139 (2007)-->
+        </csw:Update>
+    </csw:Transaction>'
+    ```
+
+    Die Antwort enthält in `csw:TransactionSummary` unter `csw:totalUpdated` die Anzahl der aktualisierten Datensätze.
+
+??? question "Transaction: Wie wird ein Datensatz per CSW-T gelöscht?"
+
+    Zum Löschen wird ein `csw:Delete` mit einem Filter übertragen, der die zu löschenden Datensätze auswählt. Es werden **alle** Datensätze gelöscht, auf die der Filter zutrifft – daher sollte immer über einen eindeutigen Identifier gefiltert werden. Es gelten dieselben Voraussetzungen wie beim Einfügen.
+
+    ``` bash
+    curl --request POST \
+      --url 'http://<pycsw-host>/csw' \
+      --header 'content-type: application/xml' \
+      --data '<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <csw:Transaction service="CSW" version="2.0.2"
+        xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
+        xmlns:ogc="http://www.opengis.net/ogc"
+        xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <csw:Delete>
+            <csw:Constraint version="2.0.0">
+                <ogc:Filter>
+                    <ogc:PropertyIsEqualTo>
+                        <ogc:PropertyName>dc:identifier</ogc:PropertyName>
+                        <ogc:Literal>8ab590a216f7f05f01185fd222071e45</ogc:Literal>
+                    </ogc:PropertyIsEqualTo>
+                </ogc:Filter>
+            </csw:Constraint>
+        </csw:Delete>
+    </csw:Transaction>'
+    ```
+
+    Die Antwort enthält in `csw:TransactionSummary` unter `csw:totalDeleted` die Anzahl der gelöschten Datensätze.
+
+### Migration
+
+??? question "Was ändert sich beim Umstieg von der alten CSW-Schnittstelle auf pycsw?"
+
+    Die [alte CSW-Schnittstelle]({{ fix_url('components/interface_csw.md') }}) (`ingrid-interface-csw`) wird nicht mehr weiterentwickelt und durch pycsw abgelöst. Die wesentlichen Unterschiede:
+
+    | | Alte CSW-Schnittstelle | pycsw |
+    |---|---|---|
+    | **Datenfluss** | Pull: Daten werden zeitgesteuert aus Datenquellen (iBus/iPlugs) indexiert | Push: Einliefernde Komponenten übertragen Datensätze per CSW-T |
+    | **Aktualität** | Änderungen erst nach dem nächsten Indexierungslauf sichtbar | Änderungen sofort nach der Einlieferung verfügbar |
+    | **Datenhaltung** | Lokaler Index | PostgreSQL-Datenbank |
+    | **Konfiguration** | Admin-GUI und `config.override.properties` | `pycsw.yml` |
+    | **Filterung nach Partner/Anbieter** | Eigene Properties (`partner`, `provider`, `iplug`) bzw. URL-Parameter | Traceability-Keywords in `apiso:Subject` (siehe [Filterabfragen](#filterabfragen)) |
+
+??? question "Welche Schritte sind für die Migration notwendig?"
+
+    1. **pycsw bereitstellen:** pycsw mit eigener PostgreSQL-Datenbank installieren (siehe [Installation](#installation)) und `pycsw.yml` anpassen, insbesondere `server.url`, `metadata` sowie `manager.transactions` und `manager.allowed_ips`.
+    2. **Einliefernde Komponenten anbinden:** Editor, Harvester und ggf. weitere Systeme auf den pycsw-Endpunkt als Ziel konfigurieren (siehe [Anbindung von Komponenten](#anbindung-von-komponenten)).
+    3. **Bestand übertragen:** Da pycsw keine Daten selbst abruft, muss der vorhandene Datenbestand einmalig von den einliefernden Komponenten an pycsw übertragen werden.
+    4. **Ergebnis prüfen:** Die Trefferanzahl (`numberOfRecordsMatched`) einer ungefilterten GetRecords-Anfrage sowie stichprobenartig einzelne Datensätze mit der alten Schnittstelle vergleichen (siehe [Grundlegende Abfragen](#grundlegende-abfragen)).
+    5. **Abfragende Komponenten umstellen:** Portal, externe Clients und die Reverse-Proxy-Konfiguration auf den pycsw-Endpunkt umstellen.
+    6. **Alte Schnittstelle abschalten:** Nach erfolgreicher Umstellung kann `ingrid-interface-csw` außer Betrieb genommen werden.

@@ -28,6 +28,6 @@ Bei folgenden Images hat sich auch der Name geändert:
 
 #### Umstellung auf die neue CSW-Schnittstelle
 
-Das Interface-CSW wird nicht mehr weiterentwickelt und wird durch pyCSW abgelöst. Der größte Unterschied bei der Umstellung betrifft die Indizierung der Daten. Während das Interface-CSW eine Quelle benötigt hat und die Daten zusammenhängend indiziert hat, werden die Daten über pyCSW direkt eingeliefert. Dies hat den Vorteil, dass die Daten sofort verfügbar sind. Dafür müssen Anpassungen im Portal, Harvester und Editor erfolgen. Nähere Informationen gibt es hier: [Migration zu pyCSW]({{ fix_url('components/pycsw.md#ingrid-editor') }})
+Das Interface-CSW wird nicht mehr weiterentwickelt und wird durch pyCSW abgelöst. Der größte Unterschied bei der Umstellung betrifft die Indizierung der Daten. Während das Interface-CSW eine Quelle benötigt hat und die Daten zusammenhängend indiziert hat, werden die Daten über pyCSW direkt eingeliefert. Dies hat den Vorteil, dass die Daten sofort verfügbar sind. Dafür müssen Anpassungen im Portal, Harvester und Editor erfolgen. Nähere Informationen gibt es hier: [Migration zu pyCSW]({{ fix_url('components/pycsw.md#migration') }})
 
 <hr>
