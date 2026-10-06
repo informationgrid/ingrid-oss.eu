@@ -39,7 +39,7 @@ Folgende Anpassungen müssen getätigt werden:
 <hr>
 
 
-## Version 8.4.1.2 <small>09.10.2026</small> { id="8.4.1.2" data-toc-label="8.4.1.2"}
+## Version 8.4.1.2 <small>06.10.2026</small> { id="8.4.1.2" data-toc-label="8.4.1.2"}
 
 ### Allgemein { id="8.4.1.2_changes_allgemein" }
 
