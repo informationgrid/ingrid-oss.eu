@@ -38,6 +38,24 @@ Folgende Anpassungen müssen getätigt werden:
 
 <hr>
 
+
+## Version 8.4.1.2 <small>09.10.2026</small> { id="8.4.1.2" data-toc-label="8.4.1.2"}
+
+### Allgemein { id="8.4.1.2_changes_allgemein" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Hochgeladene Dateien werden gelöscht durch automatische Speicherung (Regression) <br>[:octicons-link-external-16: REDMINE-9540](https://redmine.informationgrid.eu/issues/9540)
+* :octicons-bug-16:{ title="Bug Fix" } Verbesserung der Sicherheit beim Verarbeiten von XML <br>[:octicons-link-external-16: REDMINE-9564](https://redmine.informationgrid.eu/issues/9564)
+
+### Komponenten
+
+<div class="ingrid-component-list" markdown>
+
+- INTERFACE-CSW [:material-download: Download](https://distributions.informationgrid.eu/ingrid-interface-csw/8.4.1.2/)
+
+</div>
+
+<hr>
+
 ## Version 8.4.1.1 <small>22.09.2026</small> { id="8.4.1.1" data-toc-label="8.4.1.1"}
 
 ### Profil LUBW { id="8.4.1.1_changes_profil_lubw" }
