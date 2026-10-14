@@ -9,12 +9,15 @@ Dieser Artikel baut auf dem **[Überblick über die InGrid-Komponenten]({{ fix_u
 
 Die grundlegende Software-Architektur besteht aus Komponenten, die über eine Kommunikationsschicht gekoppelt sind. Zwischen den einzelnen Komponenten können Nachrichten ausgetauscht werden, und jede Komponente kann auf einem unterschiedlichen System installiert werden. Dadurch ergeben sich hochflexible Anwendungsszenarien, die auch hohen Sicherheitsanforderungen genügen.
 
-![](../assets/drawio/ingrid-system.drawio)
-<figcaption class="figcaption">Schematische Darstellung eines verteilten InGrid-Systems</figcaption>
 
 ## Architekturüberblick
 
+![](../assets/drawio/ingrid-uebersicht.drawio)
+
 InGrid befindet sich in einem laufenden Umbau: Ein Teil der Komponenten kommuniziert noch über die **klassische, Socket-basierte iBus/iPlug-Architektur**, während neuere Komponenten wie die **InGrid-API**, die **OGC-API Records/CSW-T-Schnittstelle** des Editors und die **pycsw**-basierte CSW-Schnittstelle bereits auf **HTTP/REST** setzen. Beide Modelle sind aktuell parallel im Einsatz — die von [Installation]({{ fix_url('components/installation.md') }}) empfohlene Basisinstallation setzt weiterhin auf den iBus.
+
+![](../assets/drawio/ingrid-system.drawio)
+<figcaption class="figcaption">Schematische Darstellung eines verteilten InGrid-Systems</figcaption>
 
 <!-- ![](../assets/drawio/ingrid-components.drawio)
 <figcaption class="figcaption">Komponentenübersicht: klassische und moderne Schnittstellen im InGrid-System</figcaption> -->
