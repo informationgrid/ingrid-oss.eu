@@ -1,38 +1,45 @@
 <mxfile host="65bd71144e">
     <diagram id="ingrid" name="InGrid Übersicht">
-        <mxGraphModel dx="1232" dy="860" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1110" pageHeight="689" math="0" shadow="0">
+        <mxGraphModel dx="1077" dy="751" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1110" pageHeight="689" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="c2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=4;spacingLeft=10;spacingRight=10;strokeWidth=2;fillColor=none;strokeColor=#000000;fontFamily=Arial;fontColor=#000000;" value="&lt;b style=&quot;font-size:15px&quot;&gt;InGrid Editor&lt;/b&gt;&lt;div style=&quot;font-size: 12px; color: rgb(51, 51, 51); margin-top: 8px; line-height: 1.25;&quot;&gt;Metadaten-Redakteure erfassen Metadatensätze im InGrid Editor.&lt;/div&gt;" vertex="1">
+                <mxCell id="c47" edge="1" parent="1" source="c27" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#00C853;endArrow=block;endFill=1;endSize=8;startArrow=none;exitX=1;exitY=0.5;entryX=0;entryY=0.1833;" target="c8">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="c2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=4;spacingLeft=10;spacingRight=10;strokeWidth=2;fillColor=#D5E8D4;strokeColor=#00C753;fontFamily=Arial;fontColor=#000000;" value="&lt;b style=&quot;font-size:15px&quot;&gt;InGrid Editor&lt;/b&gt;&lt;div style=&quot;font-size: 12px; color: rgb(51, 51, 51); margin-top: 8px; line-height: 1.25;&quot;&gt;Metadaten-Redakteure erfassen Metadatensätze im InGrid Editor.&lt;/div&gt;" vertex="1">
                     <mxGeometry height="90" width="190" x="218.9" y="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="c3" parent="c2" style="shape=module;jettyWidth=8;jettyHeight=4;strokeWidth=1.5;fillColor=none;strokeColor=#000000;" value="" vertex="1">
                     <mxGeometry height="16" width="16" x="168" y="6" as="geometry"/>
                 </mxCell>
-                <mxCell id="c4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=4;spacingLeft=10;spacingRight=10;strokeWidth=2;fillColor=none;strokeColor=#000000;fontFamily=Arial;fontColor=#000000;" value="&lt;b style=&quot;font-size:15px&quot;&gt;InGrid Harvester&lt;/b&gt;&lt;div style=&quot;font-size: 12px; color: rgb(51, 51, 51); margin-top: 8px; line-height: 1.25;&quot;&gt;„Erntet“ Datensätze aus unterschiedlichen Quellen und stellt sie in Katalogen bereit.&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="90" width="190" x="218.9" y="320" as="geometry"/>
-                </mxCell>
-                <mxCell id="c5" parent="c4" style="shape=module;jettyWidth=8;jettyHeight=4;strokeWidth=1.5;fillColor=none;strokeColor=#000000;" value="" vertex="1">
-                    <mxGeometry height="16" width="16" x="168" y="6" as="geometry"/>
-                </mxCell>
-                <mxCell id="c6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=4;spacingLeft=10;spacingRight=10;strokeWidth=2;fillColor=none;strokeColor=#000000;fontFamily=Arial;fontColor=#000000;" value="&lt;b style=&quot;font-size:15px&quot;&gt;InGrid API&lt;/b&gt;&lt;div style=&quot;font-size:12px;color:#333333;margin-top:8px;line-height:1.25&quot;&gt;Liefert aufgearbeitete Ergebnisse aus diversen Datenquellen (OGC API, ATOM Download Service, OpenSearch Interface).&lt;/div&gt;" vertex="1">
+                <mxCell id="c6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=4;spacingLeft=10;spacingRight=10;strokeWidth=2;fillColor=#D5E8D4;strokeColor=#00C753;fontFamily=Arial;fontColor=#000000;" value="&lt;b style=&quot;font-size:15px&quot;&gt;InGrid API&lt;/b&gt;&lt;div style=&quot;font-size:12px;color:#333333;margin-top:8px;line-height:1.25&quot;&gt;Liefert aufgearbeitete Ergebnisse aus diversen Datenquellen (OGC API, ATOM Download Service, OpenSearch Interface).&lt;/div&gt;" vertex="1">
                     <mxGeometry height="120" width="190" x="510" y="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="c7" parent="c6" style="shape=module;jettyWidth=8;jettyHeight=4;strokeWidth=1.5;fillColor=none;strokeColor=#000000;" value="" vertex="1">
                     <mxGeometry height="16" width="16" x="168" y="6" as="geometry"/>
                 </mxCell>
-                <mxCell id="c8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=4;spacingLeft=10;spacingRight=10;strokeWidth=2;fillColor=none;strokeColor=#000000;fontFamily=Arial;fontColor=#000000;" value="&lt;b style=&quot;font-size:15px&quot;&gt;InGrid Portal&lt;/b&gt;&lt;div style=&quot;font-size: 12px; color: rgb(51, 51, 51); margin-top: 8px; line-height: 1.25;&quot;&gt;Fachanwender und Öffentlichkeit recherchieren aufgearbeitete Daten in Portalen (intern, extern und Open Data).&lt;/div&gt;" vertex="1">
+                <mxCell id="c8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=4;spacingLeft=10;spacingRight=10;strokeWidth=2;fillColor=#D5E8D4;strokeColor=#00C753;fontFamily=Arial;fontColor=#000000;" value="&lt;b style=&quot;font-size:15px&quot;&gt;InGrid Portal&lt;/b&gt;&lt;div style=&quot;font-size: 12px; color: rgb(51, 51, 51); margin-top: 8px; line-height: 1.25;&quot;&gt;Fachanwender und Öffentlichkeit recherchieren aufgearbeitete Daten in Portalen (intern, extern und Open Data).&lt;/div&gt;" vertex="1">
                     <mxGeometry height="120" width="190" x="800" y="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="c9" parent="c8" style="shape=module;jettyWidth=8;jettyHeight=4;strokeWidth=1.5;fillColor=none;strokeColor=#000000;" value="" vertex="1">
                     <mxGeometry height="16" width="16" x="168" y="6" as="geometry"/>
                 </mxCell>
-                <mxCell id="c10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=4;spacingLeft=10;spacingRight=10;strokeWidth=2;fillColor=none;strokeColor=#000000;fontFamily=Arial;fontColor=#000000;" value="&lt;b style=&quot;font-size:15px&quot;&gt;InGrid Maps&lt;/b&gt;&lt;div style=&quot;font-size:12px;color:#333333;margin-top:8px;line-height:1.25&quot;&gt;Die Kartenkomponente stellt Datensätze aus Portalen dar.&lt;/div&gt;" vertex="1">
+                <mxCell id="c10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=4;spacingLeft=10;spacingRight=10;strokeWidth=2;fillColor=#D5E8D4;strokeColor=#00C753;fontFamily=Arial;fontColor=#000000;" value="&lt;b style=&quot;font-size:15px&quot;&gt;InGrid Maps&lt;/b&gt;&lt;div style=&quot;font-size:12px;color:#333333;margin-top:8px;line-height:1.25&quot;&gt;Die Kartenkomponente stellt Datensätze aus Portalen dar.&lt;/div&gt;" vertex="1">
                     <mxGeometry height="75" width="190" x="800" y="298" as="geometry"/>
                 </mxCell>
                 <mxCell id="c11" parent="c10" style="shape=module;jettyWidth=8;jettyHeight=4;strokeWidth=1.5;fillColor=none;strokeColor=#000000;" value="" vertex="1">
                     <mxGeometry height="16" width="16" x="168" y="6" as="geometry"/>
+                </mxCell>
+                <mxCell id="boc8GgxYdNo3oRF8eWI0-1" edge="1" parent="1" source="c12" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;dashed=1;strokeWidth=2;strokeColor=light-dark(#ff9800, #ededed);" target="c29">
+                    <mxGeometry relative="1" x="0.1053" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="760" y="495.5"/>
+                            <mxPoint x="760" y="580"/>
+                            <mxPoint x="180" y="580"/>
+                            <mxPoint x="180" y="254"/>
+                        </Array>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="c12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=4;spacingLeft=10;spacingRight=10;strokeWidth=2;fillColor=none;strokeColor=#000000;fontFamily=Arial;fontColor=#000000;" value="&lt;b style=&quot;font-size:15px&quot;&gt;Externe Clients&lt;/b&gt;&lt;div style=&quot;font-size:12px;color:#333333;margin-top:8px;line-height:1.25&quot;&gt;Fachanwender und Öffentlichkeit greifen auf Schnittstellen zu.&lt;/div&gt;" vertex="1">
                     <mxGeometry height="90" width="190" x="800" y="473" as="geometry"/>
@@ -152,38 +159,28 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="c45" edge="1" parent="1" source="c4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#00C853;endArrow=block;endFill=1;endSize=8;startArrow=oval;startFill=1;startSize=6;exitX=1;exitY=0.2444;entryX=0;entryY=0.5;" target="c23">
-                    <mxGeometry relative="1" as="geometry">
-                        <Array as="points">
-                            <mxPoint x="450" y="342"/>
-                            <mxPoint x="450" y="495"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
                 <mxCell id="c46" edge="1" parent="1" source="c16" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#00C853;endArrow=block;endFill=1;endSize=8;startArrow=oval;startFill=1;startSize=6;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" target="c6">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="c47" edge="1" parent="1" source="c27" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#00C853;endArrow=block;endFill=1;endSize=8;startArrow=none;exitX=1;exitY=0.5;entryX=0;entryY=0.1833;" target="c8">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="c48" edge="1" parent="1" source="c8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#00C853;endArrow=block;endFill=1;endSize=8;startArrow=oval;startFill=1;startSize=6;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="c10">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="c49" edge="1" parent="1" source="c12" style="html=1;strokeWidth=2;strokeColor=#FF9800;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;endSize=8;startArrow=oval;startFill=1;startSize=6;exitX=0;exitY=0.2444;entryX=1;entryY=0.5;" target="c25">
+                <mxCell id="c49" edge="1" parent="1" source="c12" style="html=1;strokeWidth=2;strokeColor=#FF9800;dashed=1;endArrow=block;endFill=1;endSize=8;startArrow=oval;startFill=1;startSize=6;exitX=0;exitY=0.2444;entryX=1;entryY=0.5;" target="c25">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="c50" edge="1" parent="1" source="c12" style="html=1;strokeWidth=2;strokeColor=#FF9800;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;endSize=8;startArrow=oval;startFill=1;startSize=6;curved=1;exitX=0;exitY=0.2444;entryX=0.5;entryY=1;" target="c27">
-                    <mxGeometry relative="1" as="geometry">
+                <mxCell id="c50" edge="1" parent="1" source="c12" style="html=1;strokeWidth=2;strokeColor=#FF9800;dashed=1;endArrow=block;endFill=1;endSize=8;startArrow=oval;startFill=1;startSize=6;curved=0;exitX=0;exitY=0.2444;entryX=1;entryY=1;rounded=1;entryDx=0;entryDy=0;" target="c27">
+                    <mxGeometry relative="1" x="0.062" as="geometry">
                         <Array as="points">
-                            <mxPoint x="780" y="495"/>
-                            <mxPoint x="750" y="282"/>
+                            <mxPoint x="760" y="495"/>
+                            <mxPoint x="760" y="310"/>
+                            <mxPoint x="760" y="200"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="c51" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=4;spacingLeft=10;spacingRight=10;strokeWidth=1.5;fillColor=none;strokeColor=#000000;fontFamily=Arial;fontColor=#000000;" value="" vertex="1">
+                <mxCell id="c51" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=4;spacingLeft=10;spacingRight=10;strokeWidth=1.5;fillColor=#d5e8d4;strokeColor=#00C753;fontFamily=Arial;" value="" vertex="1">
                     <mxGeometry height="22" width="34" x="187.51562500000003" y="629" as="geometry"/>
                 </mxCell>
-                <mxCell id="c52" parent="c51" style="shape=module;jettyWidth=8;jettyHeight=4;strokeWidth=1.5;fillColor=#FFFFFF;strokeColor=#000000;" value="" vertex="1">
+                <mxCell id="c52" parent="c51" style="shape=module;jettyWidth=8;jettyHeight=4;strokeWidth=1.5;fillColor=none;strokeColor=#000000;" value="" vertex="1">
                     <mxGeometry height="14" width="12" x="14" y="4" as="geometry"/>
                 </mxCell>
                 <mxCell id="c53" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontFamily=Arial;" value="InGrid-Komponente" vertex="1">
@@ -226,7 +223,7 @@
                 <mxCell id="c63" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontFamily=Arial;" value="Datenfluss" vertex="1">
                     <mxGeometry height="20" width="68.6875" x="854.015625" y="630" as="geometry"/>
                 </mxCell>
-                <mxCell id="c64" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#FF9800;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;endSize=8;startArrow=none;">
+                <mxCell id="c64" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#FF9800;dashed=1;endArrow=block;endFill=1;endSize=8;startArrow=none;">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="925.703125" y="640" as="sourcePoint"/>
                         <mxPoint x="963.703125" y="640" as="targetPoint"/>
@@ -240,6 +237,20 @@
                 </mxCell>
                 <mxCell id="zdqVMUxnG_O_24RSAjk1-5" edge="1" parent="1" source="c29" style="edgeStyle=none;html=1;entryX=0.032;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;strokeWidth=2;" target="c2">
                     <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="c4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=4;spacingLeft=10;spacingRight=10;strokeWidth=2;fillColor=#D5E8D4;strokeColor=#00C753;fontFamily=Arial;fontColor=#000000;" value="&lt;b style=&quot;font-size:15px&quot;&gt;InGrid Harvester&lt;/b&gt;&lt;div style=&quot;font-size: 12px; color: rgb(51, 51, 51); margin-top: 8px; line-height: 1.25;&quot;&gt;„Erntet“ Datensätze aus unterschiedlichen Quellen und stellt sie in Katalogen bereit.&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="90" width="190" x="218.9" y="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="c5" parent="c4" style="shape=module;jettyWidth=8;jettyHeight=4;strokeWidth=1.5;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+                    <mxGeometry height="16" width="16" x="168" y="6" as="geometry"/>
+                </mxCell>
+                <mxCell id="c45" edge="1" parent="1" source="c4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#00C853;endArrow=block;endFill=1;endSize=8;startArrow=oval;startFill=1;startSize=6;exitX=1;exitY=0.2444;entryX=0;entryY=0.5;" target="c23">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="450" y="342"/>
+                            <mxPoint x="450" y="495"/>
+                        </Array>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>
