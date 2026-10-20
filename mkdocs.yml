@@ -186,6 +186,7 @@ nav:
         - Datenquelle verbinden: guides/harvester-csw.md
         - Katalog verbinden: guides/harvester-catalog.md
         - Konfigurationsdateien: guides/harvester-config-files.md
+        - Profil erstellen: guides/harvester-create-profile.md
       - Web Crawler:
         - Benutzeroberfläche: guides/iplug-se-setup.md
       # - Barrierefreiheit: guides/accessibility.md
