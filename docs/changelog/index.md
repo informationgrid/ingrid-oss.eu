@@ -43,7 +43,6 @@ Folgende Anpassungen müssen getätigt werden:
 
 ### Allgemein { id="8.4.1.2_changes_allgemein" }
 
-* :octicons-bug-16:{ title="Bug Fix" } Hochgeladene Dateien werden gelöscht durch automatische Speicherung (Regression) <br>[:octicons-link-external-16: REDMINE-9540](https://redmine.informationgrid.eu/issues/9540)
 * :octicons-bug-16:{ title="Bug Fix" } Verbesserung der Sicherheit beim Verarbeiten von XML <br>[:octicons-link-external-16: REDMINE-9564](https://redmine.informationgrid.eu/issues/9564)
 
 ### Komponenten
