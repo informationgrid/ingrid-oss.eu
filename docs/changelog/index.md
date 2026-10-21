@@ -39,6 +39,36 @@ Folgende Anpassungen müssen getätigt werden:
 <hr>
 
 
+
+## Version 8.4.2 <small>20.10.2026</small> { id="8.4.2" data-toc-label="8.4.2"}
+
+### Allgemein { id="8.4.2_changes_allgemein" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Verbesserung der Sicherheit im InGrid Portal <br>[:octicons-link-external-16: REDMINE-9345](https://redmine.informationgrid.eu/issues/9345)
+* :octicons-bug-16:{ title="Bug Fix" } Hochgeladene Dateien werden gelöscht durch automatische Speicherung (Regression) <br>[:octicons-link-external-16: REDMINE-9540](https://redmine.informationgrid.eu/issues/9540)
+* :octicons-bug-16:{ title="Bug Fix" } Verbesserung der Sicherheit beim Verarbeiten von XML <br>[:octicons-link-external-16: REDMINE-9564](https://redmine.informationgrid.eu/issues/9564)
+* :octicons-bug-16:{ title="Bug Fix" } Migration von pecl zu pie <br>[:octicons-link-external-16: REDMINE-9622](https://redmine.informationgrid.eu/issues/9622)
+
+### Profil KRZN { id="8.4.2_changes_profil_krzn" }
+
+* :octicons-bug-16:{ title="Bug Fix" } OpenData "Datensatz" erscheint nicht in der Übersicht, wenn ich nach Open Data filtere <br>[:octicons-link-external-16: REDMINE-9462](https://redmine.informationgrid.eu/issues/9462)
+
+### Profil LUBW { id="8.4.2_changes_profil_lubw" }
+
+* :material-star:{ title="Feature" } Portal LUBW: Sachattribute mit Übermittlungsstufen 0 und 1 sollen im Portal angezeigt werden. <br>[:octicons-link-external-16: REDMINE-9003](https://redmine.informationgrid.eu/issues/9003)
+* :octicons-bug-16:{ title="Bug Fix" } Fehlende CodelistId Info in LUBW-spezifischen Feldern <br>[:octicons-link-external-16: REDMINE-9503](https://redmine.informationgrid.eu/issues/9503)
+
+### Komponenten
+
+<div class="ingrid-component-list" markdown>
+
+- INTERFACE-CSW [:material-download: Download](https://distributions.informationgrid.eu/ingrid-interface-csw/8.4.2/)
+
+</div>
+
+<hr>
+
+
 ## Version 8.4.1.2 <small>06.10.2026</small> { id="8.4.1.2" data-toc-label="8.4.1.2"}
 
 ### Allgemein { id="8.4.1.2_changes_allgemein" }
