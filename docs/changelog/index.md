@@ -32,6 +32,34 @@ Das Interface-CSW wird nicht mehr weiterentwickelt und wird durch pyCSW abgelös
 
 <hr>
 
+
+## Version 8.5.1 <small>20.10.2026</small> { id="8.5.1" data-toc-label="8.5.1"}
+
+### Allgemein { id="8.5.1_changes_allgemein" }
+
+* :material-star:{ title="Feature" } ingrid-with-opendata - Anzeige Informationen zum Metadatensatz <br>[:octicons-link-external-16: REDMINE-9230](https://redmine.informationgrid.eu/issues/9230)
+* :material-star:{ title="Feature" } ingrid-with-opendata- Darstellung der Ressource im Portal <br>[:octicons-link-external-16: REDMINE-9232](https://redmine.informationgrid.eu/issues/9232)
+* :material-star:{ title="Feature" } ingrid-with-opendata- Platzierung des Feldes "Webseite" <br>[:octicons-link-external-16: REDMINE-9247](https://redmine.informationgrid.eu/issues/9247)
+* :octicons-bug-16:{ title="Bug Fix" } Verbesserung der Sicherheit im InGrid Portal <br>[:octicons-link-external-16: REDMINE-9345](https://redmine.informationgrid.eu/issues/9345)
+* :octicons-bug-16:{ title="Bug Fix" } OGC API setzt "type" von neuen Dokumenten nicht korrekt <br>[:octicons-link-external-16: REDMINE-9530](https://redmine.informationgrid.eu/issues/9530)
+* :octicons-bug-16:{ title="Bug Fix" } Portal nicht aufrufbar, nach Löschen der Ingrid API <br>[:octicons-link-external-16: REDMINE-9577](https://redmine.informationgrid.eu/issues/9577)
+* :octicons-bug-16:{ title="Bug Fix" } Kurzes Auftauchen eines Fehlerdialogs beim Anmelden mit Firefox <br>[:octicons-link-external-16: REDMINE-9579](https://redmine.informationgrid.eu/issues/9579)
+* :octicons-bug-16:{ title="Bug Fix" } Swagger-Seite nicht aufrufbar <br>[:octicons-link-external-16: REDMINE-9613](https://redmine.informationgrid.eu/issues/9613)
+
+### Profil BAW MIS { id="8.5.1_changes_profil_baw_mis" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Metadaten für Geodienst: Dargestellte Daten <br>[:octicons-link-external-16: REDMINE-9588](https://redmine.informationgrid.eu/issues/9588)
+* :octicons-bug-16:{ title="Bug Fix" } Metadaten für Geodienst: Dargestellte Daten <br>[:octicons-link-external-16: REDMINE-9588](https://redmine.informationgrid.eu/issues/9588)
+
+### Komponenten
+
+<div class="ingrid-component-list" markdown>
+
+
+</div>
+
+<hr>
+
 ## Version 8.5.0 <small>09.10.2026</small> { id="8.5.0" data-toc-label="8.5.0"}
 
 ### Allgemein { id="8.5.0_changes_allgemein" }
