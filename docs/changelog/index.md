@@ -46,7 +46,9 @@ Folgende Anpassungen müssen getätigt werden:
 
 * :octicons-bug-16:{ title="Bug Fix" } Verbesserung der Sicherheit im InGrid Portal <br>[:octicons-link-external-16: REDMINE-9345](https://redmine.informationgrid.eu/issues/9345)
 * :octicons-bug-16:{ title="Bug Fix" } Hochgeladene Dateien werden gelöscht durch automatische Speicherung (Regression) <br>[:octicons-link-external-16: REDMINE-9540](https://redmine.informationgrid.eu/issues/9540)
+* :octicons-bug-16:{ title="Bug Fix" } SSRF Lücke im Portal <br>[:octicons-link-external-16: REDMINE-9549](https://redmine.informationgrid.eu/issues/9549)
 * :octicons-bug-16:{ title="Bug Fix" } Verbesserung der Sicherheit beim Verarbeiten von XML <br>[:octicons-link-external-16: REDMINE-9564](https://redmine.informationgrid.eu/issues/9564)
+* :octicons-bug-16:{ title="Bug Fix" } Mögliche Sicherheitslücke beim ZIP-Download <br>[:octicons-link-external-16: REDMINE-9576](https://redmine.informationgrid.eu/issues/9576)
 * :octicons-bug-16:{ title="Bug Fix" } Migration von pecl zu pie <br>[:octicons-link-external-16: REDMINE-9622](https://redmine.informationgrid.eu/issues/9622)
 
 ### Profil KRZN { id="8.4.2_changes_profil_krzn" }
@@ -57,6 +59,10 @@ Folgende Anpassungen müssen getätigt werden:
 
 * :material-star:{ title="Feature" } Portal LUBW: Sachattribute mit Übermittlungsstufen 0 und 1 sollen im Portal angezeigt werden. <br>[:octicons-link-external-16: REDMINE-9003](https://redmine.informationgrid.eu/issues/9003)
 * :octicons-bug-16:{ title="Bug Fix" } Fehlende CodelistId Info in LUBW-spezifischen Feldern <br>[:octicons-link-external-16: REDMINE-9503](https://redmine.informationgrid.eu/issues/9503)
+
+### Profil UVP { id="8.4.2_changes_profil_uvp" }
+
+* :octicons-bug-16:{ title="Bug Fix" } UVP: Fehler beim Download von erstellten ZIPs in der Detaildarstellung <br>[:octicons-link-external-16: REDMINE-9569](https://redmine.informationgrid.eu/issues/9569)
 
 ### Komponenten
 
