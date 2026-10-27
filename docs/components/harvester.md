@@ -320,7 +320,7 @@ Einige allgemeine Einstellungen können auch über Umgebungsvariablen konfigurie
 
 ### Keycloak Konfiguration
 
-Damit der Harvester mit Keycloak authentifiziert werden kann, muss ein Client mit dem Namen `harvester` eingerichtet werden. Wird der bereitgestellte vorkonfigurierte Keycloak von wemove verwenden, dann ist dieser Client schon vorhanden und kann über Umgebungsvariablen angepasst werden. Für die manuelle Konfiguration muss wie folgt vorgegangen werden:
+Damit der Harvester mit Keycloak authentifiziert werden kann, muss ein Client mit dem Namen `harvester` eingerichtet werden. Wird der bereitgestellte vorkonfigurierte Keycloak von wemove verwendet, dann ist dieser Client schon vorhanden und kann über Umgebungsvariablen angepasst werden. Für die manuelle Konfiguration muss wie folgt vorgegangen werden:
 
 - neuen Client mit der ID `harvester` anlegen
 - Redirect-URIs: <URL zum Harvester>/*
