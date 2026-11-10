@@ -21,6 +21,9 @@ Der iBus wird nicht mehr weiterentwickelt und wird funktional durch die InGrid-A
     elastic.communication.ibus=false
     communications.disableIBus=true
     elastic.remoteHosts=<IP_ELASTIC_SEARCH>\:9200
+    # falls Elasticsearch abgesichert ist
+    elastic.username=<ELASTIC_USERNAME>
+    elastic.password=<ELASTIC_PASSWORD>
     ```
 * Interface-CSW
   * wird durch pyCSW ersetzt
