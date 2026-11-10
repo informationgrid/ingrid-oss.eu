@@ -18,6 +18,7 @@ Der iBus wird nicht mehr weiterentwickelt und wird funktional durch die InGrid-A
 * iPlug-BLP und iPlug-SE
   * in der config.override.properties folgenden Eintrag hinzufügen
     ```properties
+    elastic.communication.ibus=false
     communications.disableIBus=true
     elastic.remoteHosts=<IP_ELASTIC_SEARCH>\:9200
     ```
