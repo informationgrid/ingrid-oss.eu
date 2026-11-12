@@ -89,8 +89,6 @@ services:
       - DATABASE_PASSWORD=${POSTGRES_DB_PASSWORD}
       - KEYCLOAK_URL=http://keycloak:8080/keycloak
       - KEYCLOAK_URL_FRONTEND=http://${HOST}/keycloak
-      - KEYCLOAK_BACKEND_USER=${KEYCLOAK_ADMIN}
-      - KEYCLOAK_BACKEND_USER_PASSWORD=${KEYCLOAK_PASSWORD}
     ports:
       - "8080:8080"
     networks:
@@ -165,8 +163,6 @@ services:
           - DATABASE_PASSWORD=${POSTGRES_DB_PASSWORD}
           - KEYCLOAK_URL=http://keycloak:8080/keycloak
           - KEYCLOAK_URL_FRONTEND=http://${HOST}/keycloak
-          - KEYCLOAK_BACKEND_USER=${KEYCLOAK_ADMIN}
-          - KEYCLOAK_BACKEND_USER_PASSWORD=${KEYCLOAK_PASSWORD}
         ports:
           - "8080:8080"
         networks:
@@ -294,6 +290,13 @@ konfigurieren.
     | OPEN_AI_TOKEN                       | Token zur Authentifizierung bei OpenAI, um KI‑Funktionen zu nutzen.                                                                                                                                                                                |                                                                                            |
     | MAIL_FROM                           | Absenderadresse für ausgehende E‑Mails                                                                                                                                                                                                             | noreply@wemove.com                                                                         |
     | MAIL_HOST                           | Hostname des zu verwendenden Mailservers                                                                                                                                                                                                           | mailrelay                                                                                  |
+    | MAIL_WELCOME_SUBJECT                | Betreff der Willkommens‑E‑Mail, die an neu angelegte Benutzer gesendet wird                                                                                                                                                                        |                                                                                            |
+    | MAIL_WELCOME_BODY                   | Inhalt der Willkommens‑E‑Mail, die an neu angelegte Benutzer gesendet wird                                                                                                                                                                         |                                                                                            |
+    | MAIL_WELCOME_BODY_PASSWORD          | Inhalt der Willkommens‑E‑Mail für neu angelegte Benutzer, die zusätzlich das initiale Passwort enthält                                                                                                                                             |                                                                                            |
+    | MAIL_RESET_SUBJECT                  | Betreff der E‑Mail, die beim Zurücksetzen des Passworts gesendet wird                                                                                                                                                                              |                                                                                            |
+    | MAIL_RESET_BODY                     | Inhalt der E‑Mail, die beim Zurücksetzen des Passworts gesendet wird                                                                                                                                                                               |                                                                                            |
+    | MAIL_DELETE_SUBJECT                 | Betreff der E‑Mail, die beim Löschen eines Benutzerkontos gesendet wird                                                                                                                                                                            |                                                                                            |
+    | MAIL_DELETE_BODY                    | Inhalt der E‑Mail, die beim Löschen eines Benutzerkontos gesendet wird                                                                                                                                                                             |                                                                                            |
     | MAP_TILE_URL                        | URL für die Kartenkacheln mit den Platzhaltern {x}, {y} und {z}. Wird zum Hinzufügen räumlicher Bezüge verwendet.                                                                                                                                  | https://gdi-niederrhein-geodienste.de/openstreetmap/\{z\}/\{x\}/\{y\}.png                  |
     | MAP_ATTRIBUTION                     | Anzuzeigender Quellenvermerk für die Karte                                                                                                                                                                                                         | `&copy; <a href="https://openstreetmap.de" target="_blank">OpenStreetMap</a> contributors` |
     | MAP_WMS_URL                         | Bei Verwendung eines WMS‑Dienstes muss diese Variable gesetzt werden; sie überschreibt MAP_TILE_URL.                                                                                                                                               |                                                                                            |
