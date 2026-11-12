@@ -109,7 +109,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/informationgrid
     # - icon: fontawesome/brands/docker
-    #   link: 
+    #   link:
 
 
 markdown_extensions:
@@ -177,7 +177,7 @@ nav:
         - Webmap Client Frontend: guides/webmap-client-frontend.md
         - Webmap Client Admin GUI: guides/webmap-client-admin-gui.md
       - Editor:
-        # - Benutzeroberfläche: guides/editor-user-guide.md
+        - Erstkonfiguration: guides/editor-user-guide.md
         - 'API: OGC Records': guides/editor-api-ogc.md
         - 'API: CSW-T': guides/editor-api-cswt.md
       - Harvester:
@@ -195,7 +195,7 @@ nav:
     - Überblick: components/overview.md
     - Installation: components/installation.md
     - Lizensierung: components/license.md
-    - Architektur: 
+    - Architektur:
       - Technischer Aufbau: components/architecture.md
       - Indexformat/JSON-Schema: components/indexformat.md
     - Komponenten:
