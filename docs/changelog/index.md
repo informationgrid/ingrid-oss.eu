@@ -49,6 +49,37 @@ Das Interface-CSW wird nicht mehr weiterentwickelt und wird durch pyCSW abgelös
 
 <hr>
 
+## Version 8.5.2 <small>12.11.2026</small> { id="8.5.2" data-toc-label="8.5.2"}
+
+### Allgemein { id="8.5.2_changes_allgemein" }
+
+* :material-star:{ title="Feature" } Update der Geo-API auf NodeJS 22 <br>[:octicons-link-external-16: REDMINE-9706](https://redmine.informationgrid.eu/issues/9706)
+* :octicons-bug-16:{ title="Bug Fix" } Anchor-Elemente für INSPIRE-Themen <br>[:octicons-link-external-16: REDMINE-9481](https://redmine.informationgrid.eu/issues/9481)
+* :octicons-bug-16:{ title="Bug Fix" } Export von Ordnern: Adressreferenzen werden nicht mit exportiert <br>[:octicons-link-external-16: REDMINE-9590](https://redmine.informationgrid.eu/issues/9590)
+* :octicons-bug-16:{ title="Bug Fix" } NPE in OGC API bei PUT von existierendem Dokument <br>[:octicons-link-external-16: REDMINE-9621](https://redmine.informationgrid.eu/issues/9621)
+* :octicons-bug-16:{ title="Bug Fix" } Migration von pecl zu pie <br>[:octicons-link-external-16: REDMINE-9622](https://redmine.informationgrid.eu/issues/9622)
+* :octicons-bug-16:{ title="Bug Fix" } Daten-Dienste-Kopplung bleibt nach Geodatensatz-Löschung als „???“ bestehen <br>[:octicons-link-external-16: REDMINE-9624](https://redmine.informationgrid.eu/issues/9624)
+* :octicons-bug-16:{ title="Bug Fix" } Migrationen im Editor können zu OutOfMemory führen <br>[:octicons-link-external-16: REDMINE-9633](https://redmine.informationgrid.eu/issues/9633)
+* :octicons-bug-16:{ title="Bug Fix" } Import mit Adressreferenzen schlägt fehl <br>[:octicons-link-external-16: REDMINE-9654](https://redmine.informationgrid.eu/issues/9654)
+
+### Profil BAW MIS { id="8.5.2_changes_profil_baw_mis" }
+
+* :octicons-bug-16:{ title="Bug Fix" } unvollständige Katalogsicht <br>[:octicons-link-external-16: REDMINE-9667](https://redmine.informationgrid.eu/issues/9667)
+
+### Profil HMDK { id="8.5.2_changes_profil_hmdk" }
+
+* :octicons-bug-16:{ title="Bug Fix" } JSON-Schema Validierung: property 'isHvd' is not evaluated <br>[:octicons-link-external-16: REDMINE-9676](https://redmine.informationgrid.eu/issues/9676)
+
+### Profil LUBW { id="8.5.2_changes_profil_lubw" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Heilquellenschutzgebietszone nicht veröffentlichbar <br>[:octicons-link-external-16: REDMINE-9623](https://redmine.informationgrid.eu/issues/9623)
+
+### Profil UVP { id="8.5.2_changes_profil_uvp" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Fehler beim Upload von Dokumenten im Verfahrensschritt "Unterrichtung über den Untersuchungsrahmen" <br>[:octicons-link-external-16: REDMINE-9720](https://redmine.informationgrid.eu/issues/9720)
+
+<hr>
+
 
 ## Version 8.5.1 <small>20.10.2026</small> { id="8.5.1" data-toc-label="8.5.1"}
 
