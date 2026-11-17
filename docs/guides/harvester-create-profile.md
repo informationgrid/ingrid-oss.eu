@@ -1,6 +1,6 @@
 ---
 title: Harvester Profil erstellen
-description: Der InGrid Harvester erfasst Daten aus verschiedenen Quellen, speichert sie in Postgres und stellt sie strukturiert für diverse Kataloge (Elasticsearch, pyCSW) bereit.
+description: Anleitung zum Anlegen eines eigenen Harvester-Profils am Beispiel uba.
 ---
 # Harvester Profil erstellen
 
@@ -24,39 +24,40 @@ Dieser Leitfaden zeigt, wie ein neues Profil für den [InGrid Harvester](https:/
 
 ## Überblick
 
-Mit derselben Codebasis des Harvesters werden ganz unterschiedliche Anwendungen betrieben, zum Beispiel InGrid (`ingrid`), DiPlanung (`diplanung`) oder Angebote des Landschaftsverbands Rheinland (`lvr`). Diese Anwendungen harvesten zum Teil dieselben Formate. Sie unterscheiden sich aber darin, welche Daten sie benötigen, wie ihr Suchindex aufgebaut ist und wohin die Daten geschrieben werden. Ein **Profil** fasst alles zusammen, was für eine solche Anwendung spezifisch ist. Der Kern des Harvesters bleibt für alle Anwendungen gleich.
+Der Harvester wird für verschiedene Einsatzzwecke verwendet, zum Beispiel für InGrid (`ingrid`), DiPlanung (`diplanung`) oder Angebote des Landschaftsverbands Rheinland (`lvr`). Bei diesen Anwendungen werden zum Teil dieselben Formate geharvestet; es gibt aber Unterschiede darin, welche Daten benötigt werden, wie der Suchindex aufgebaut ist und wohin die Daten geschrieben werden. Ein **Profil** fasst alles zusammen, was für eine solche Anwendung spezifisch ist. Der Kern des Harvesters bleibt für alle Anwendungen gleich.
 
 Ein Profil legt fest:
 
 - **Datenquellen-Typen:** welche Typen (z. B. `CSW`, `DCATAP`, `WFS`) in der Oberfläche zur Auswahl stehen und welcher Importer sie verarbeitet.
 - **Indexdokument:** welche Felder ein Datensatz im Zielsystem hat und wie die Werte der Quelle darauf abgebildet werden.
-- **Zielkataloge:** in welche Systeme geschrieben wird (Elasticsearch, CSW, Piveau) und wie das geschieht.
+- **Zielkataloge:** in welche Systeme geschrieben wird (Elasticsearch, CSW, Piveau).
 - **Deduplizierung:** welche Datensätze als Duplikate gelten, welcher davon Vorrang hat und wie sie zusammengeführt werden.
 - **Elasticsearch-Index:** Mapping und Settings, also Feldtypen und Analyzer für die Suche.
 - **Oberfläche:** profilspezifische Hilfetexte (siehe [Schritt 7](#schritt-7-kontexthilfe-optional)) und Formularfelder.
 
-Das Profil wird beim Start über die Umgebungsvariable `IMPORTER_PROFILE` gewählt und gilt für die gesamte Laufzeit. Eine Instanz des Harvesters arbeitet also immer mit genau einem Profil.
+Das Profil wird beim Start über die Umgebungsvariable `IMPORTER_PROFILE` gewählt und kann nur mit einem Neustart geändert werden.
 
 Der Kern stellt Importer und Format-Mapper bereit, die das Quellformat lesen. Im Beispiel sind das `DcatapImporter` und `DcatapMapper`. Sie sind profilunabhängig und werden nur wiederverwendet. Das Profil ergänzt einen eigenen Mapper, der aus den gelesenen Werten das Indexdokument erzeugt (`UbaDcatapMapper`), und einen eigenen Katalog, der Duplikate zusammenführt und in Elasticsearch schreibt (`UbaElasticsearchCatalog`). Verbesserungen am Kern, etwa an einem Importer, kommen dadurch allen Profilen zugute.
 
 !!! tip "Brauche ich ein neues Profil?"
 
-    Soll nur eine weitere Quelle angebunden werden, genügt eine neue Datenquelle im bestehenden Profil. Ein neues Profil lohnt sich erst, wenn die Anwendung ein eigenes Indexformat, eigene Regeln für die Deduplizierung oder andere Zielkataloge benötigt.
+    Soll nur eine weitere Quelle angebunden werden, genügt eine neue Datenquelle im bestehenden Profil. Ein neues Profil lohnt sich erst, wenn die Anwendung etwa ein eigenes Indexformat, eigene Regeln für die Deduplizierung oder andere Zielkataloge benötigt.
 
 Das fertige Profil besteht aus diesen Dateien unter `server/app/profiles/uba/`:
 
 | Datei | Inhalt |
 | ----- | ------ |
 | `profile.factory.ts` | `UbaFactory`, der Einstiegspunkt des Profils |
-| `uba.utils.ts` | `createEsId()` |
+| `uba.utils.ts` | `createEsId()`, für die Erzeugung der Elasticsearch-ID aus dem Dokument |
 | `model/index.document.ts` | `UbaIndexDocument` |
 | `mapper/uba.dcatap.mapper.ts` | `UbaDcatapMapper` |
 | `catalog/elasticsearch.catalog.ts` | `UbaElasticsearchCatalog` |
-| `persistence/default-mapping.json` | Elasticsearch-Mapping |
+| `persistence/opendata-mapping.json` | Elasticsearch-Mapping |
 | `persistence/default-settings.json` | Elasticsearch-Settings |
 | `persistence/elastic.queries.ts` | Abfragen für Historie und Prüfungen in der Oberfläche |
+| `persistence/queries/getBuckets.sql` | SQL-Abfrage für "Buckets" von Datensätzen |
 
-Als Vorlage eignet sich das Profil [`lvr`](https://github.com/informationgrid/ingrid-harvester/tree/main/server/app/profiles/lvr). Für den DCAT-AP-Teil dient [`ingrid`](https://github.com/informationgrid/ingrid-harvester/tree/main/server/app/profiles/ingrid) als Vorlage.
+Als Vorlage wird das Profil [`ingrid`](https://github.com/informationgrid/ingrid-harvester/tree/main/server/app/profiles/ingrid) verwendet, da dadurch das Zusammenspiel mit dem Portal sichergestellt ist.
 
 ## Schritt 1: Profil-Factory
 
@@ -72,7 +73,6 @@ import type { DocumentFactory } from '../../model/index.document.factory.js';
 import type { Summary } from '../../model/summary.js';
 import type { ElasticQueries as AbstractElasticQueries } from '../../persistence/elastic.queries.js';
 import { CatalogService } from '../../services/catalog/CatalogService.js';
-import * as MiscUtils from '../../utils/misc.utils.js';
 import { ProfileFactory } from '../profile.factory.js';
 import { UbaDcatapMapper } from './mapper/uba.dcatap.mapper.js';
 import type { UbaIndexDocument } from './model/index.document.js';
@@ -81,8 +81,6 @@ import { ElasticQueries } from './persistence/elastic.queries.js';
 const log = log4js.getLogger(import.meta.filename);
 
 export class UbaFactory extends ProfileFactory<DcatapSettings> {
-
-    dateReplacer = MiscUtils.dateReplacer;
 
     protected getSupportedTypeNames(): ImporterType[] {
         return ['DCATAP'];
@@ -133,7 +131,7 @@ export class UbaFactory extends ProfileFactory<DcatapSettings> {
 
 | Methode | Zweck |
 | ------- | ----- |
-| `getProfileName()` | Name des Profils. Er muss dem Verzeichnisnamen entsprechen, weil Mappings, Settings und SQL-Abfragen unter `profiles/<name>/persistence/` gesucht werden |
+| `getProfileName()` | Name des Profils, der dem Verzeichnisnamen entsprechen muss. SQL-Abfragen sowie Elasticsearch-Mappings und -Settings werden unter `profiles/<name>/persistence/` angenommen |
 | `getSupportedTypeNames()` | Datenquellen-Typen, die die Oberfläche anbietet |
 | `getImporter()` | Importer zum Datenquellen-Typ. Für einen weiteren Typ wird dieser in `getSupportedTypeNames()` ergänzt und je ein weiterer `case` hier und in `getDocumentFactory()` hinzugefügt. Der Settings-Typ der Factory wird dann zur Union, z. B. `DcatapSettings \| CswSettings` (vgl. `ingridSettings` im Profil `ingrid`) |
 | `getDocumentFactory()` | Profil-Mapper zum Mapper des Importers |
@@ -149,83 +147,58 @@ import { UbaFactory } from './uba/profile.factory.js';
 
 // in createInstance():
 case 'uba':
-    this.instance = new UbaFactory() as unknown as ProfileFactory<any>;
+    this.instance = new UbaFactory();
     break;
 ```
 
-Startskript in `server/package.json`:
+Für die Entwicklung kann ein Startskript in `server/package.json` hinzugefügt werden:
 
 ```json
-"start-uba": "cross-env IMPORTER_PROFILE=uba ELASTIC_PREFIX=uba- ELASTIC_INDEX=harvester nodemon"
+"start-uba": "cross-env IMPORTER_PROFILE=uba nodemon"
 ```
 
-## Schritt 3: Indexdokument
+## Schritt 3: Elasticsearch-Indexdokument
 
 Das Indexdokument muss `IndexDocument` erweitern, also `uuid` und `extras.metadata` enthalten.
+Sollen die Dokumente auch im Portal angezeigt werden, muss `IngridIndexDocument` oder für OpenData-Dokumente `IngridOpendataIndexDocument` erweitert werden:
 
 ```typescript title="server/app/profiles/uba/model/index.document.ts"
-import type { License } from '@shared/license.model.js';
-import type { Geometry, Point } from 'geojson';
-import type { DateRange } from '../../../model/dateRange.js';
-import type { Distribution } from '../../../model/distribution.js';
-import type { IndexDocument } from '../../../model/index.document.js';
+import type { IngridOpendataIndexDocument } from '../../ingrid/model/opendataindex.document.js';
 
-export type UbaIndexDocument = IndexDocument & {
-    title: string,
-    description?: string,
-    keywords: string[],
-    themes: string[],
-    publisher: string[],
-    distributions: Distribution[],
-    license?: License,
-    spatial?: { geometry: Geometry, centroid: Point, title?: string },
-    temporal?: DateRange[],
-    modified?: Date
+export type UbaIndexDocument = IngridOpendataIndexDocument & {
+    full_description: string,
+    has_distributions: boolean
 };
 ```
 
+Werden keine zusätzlichen Felder verwendet, kann `IngridIndexDocument`/`IngridOpendataIndexDocument` direkt verwendet werden.
+
 ## Schritt 4: Mapper
 
-Der Profil-Mapper implementiert `DocumentFactory`. Er erbt nicht vom `DcatapMapper`, sondern kapselt ihn und liest die Werte über dessen Getter. Das RDF-Parsing übernimmt der `DcatapMapper`.
+Der Profil-Mapper implementiert `DocumentFactory`. Er erbt nicht direkt von `DcatapMapper`, sondern kapselt ihn als `baseMapper` und liest die Werte über dessen Getter. Das RDF-Parsing übernimmt der `DcatapMapper`.
+Wenn ein bestimmter Profil-Mapper nur erweitert wird, kann dies aber auch direkt geschehen, wie hier im Beispiel `ingridDcatapMapper`.
 
 ```typescript title="server/app/profiles/uba/mapper/uba.dcatap.mapper.ts"
 import type { DcatapMapper } from '../../../importer/dcatap/dcatap.mapper.js';
 import type { DocumentFactory } from '../../../model/index.document.factory.js';
-import * as GeoJsonUtils from '../../../utils/geojson.utils.js';
 import type { UbaIndexDocument } from '../model/index.document.js';
 import { createEsId } from '../uba.utils.js';
+import { ingridDcatapMapper } from '../../ingrid/mapper/ingrid.dcatap.mapper.js';
+import type { IngridOpendataIndexDocument } from '../../ingrid/model/opendataindex.document.js';
 
-export class UbaDcatapMapper implements DocumentFactory<UbaIndexDocument> {
+export class UbaDcatapMapper extends ingridDcatapMapper implements DocumentFactory<UbaIndexDocument> {
 
-    constructor(private baseMapper: DcatapMapper) {}
+    constructor(baseMapper: DcatapMapper) {
+        super(baseMapper);
+    }
 
     async createIndexDocument(): Promise<UbaIndexDocument> {
-        const m = this.baseMapper;
-        const geometry = m.getSpatial();
         const document: UbaIndexDocument = {
-            uuid: m.getGeneratedId(),
-            title: m.getTitle(),
-            description: m.getDescription(),
-            keywords: m.getKeywords(),
-            themes: m.getThemes(),
-            publisher: m.getPublisher().map(p => p.name),
-            distributions: await m.getDistributions(),
-            license: await m.getLicense(),
-            spatial: geometry ? { geometry, centroid: GeoJsonUtils.getCentroid(geometry), title: m.getSpatialText() } : undefined,
-            temporal: m.getTemporal(),
-            modified: m.getModifiedDate(),
-            extras: {
-                metadata: {
-                    harvested: m.getHarvestingDate(),
-                    issued: m.getIssued(),
-                    modified: m.getModifiedDate(),
-                    source: m.getMetadataSource(),
-                    merged_from: []
-                }
-            }
-        };
+            ...await super.createIndexDocument() as IngridOpendataIndexDocument,
+            full_description: this.getFullDescription(),
+            has_distributions: await this.getHasDistributions()
+        }
         document.extras.metadata.merged_from.push(createEsId(document));
-        m.executeCustomCode(document);
         return document;
     }
 
@@ -236,6 +209,17 @@ export class UbaDcatapMapper implements DocumentFactory<UbaIndexDocument> {
 
     createDcatapdeDocument(): string {
         return null;
+    }
+
+    getFullDescription(): string {
+        const title = this.baseMapper.getTitle() ?? '';
+        const description = this.baseMapper.getDescription() ?? '';
+        return `${title}\n${description}`;
+    }
+
+    async getHasDistributions(): Promise<boolean> {
+        const distributions = await this.baseMapper.getDistributions();
+        return distributions?.length > 0;
     }
 }
 ```
@@ -254,7 +238,9 @@ export function createEsId(document: UbaIndexDocument): string {
 
 ## Schritt 5: Elasticsearch-Katalog
 
-`ElasticsearchCatalog` legt den Index und den Alias aus den Katalog-Settings an und schreibt die Operationen. Das Profil implementiert nur `processBucket()`. Ein Bucket enthält alle Datensätze mit gleichem Identifier. Daraus entsteht entweder ein Index-Eintrag oder eine Löschung.
+`ElasticsearchCatalog` legt den Index und den Alias aus den Katalog-Settings an und erstellt die Elasticsearch-Operationen. Das Beispiel-Profil implementiert `processBucket()`: Ein "Bucket" enthält eine Menge "zusammengehöriger" Datensätze, beispielsweise ein CSW-Metadatensatz mit zugehörigen Diensten oder etwaige Duplikate (gleiche ID) aus verschiedenen Quellen.
+
+Aus einem Bucket wird üblicherweise ein Elasticsearch-Dokument erstellt, ggf. entstehen Lösch-Operationen für existierende, im Bucket sekundäre Datensätze.
 
 ```typescript title="server/app/profiles/uba/catalog/elasticsearch.catalog.ts"
 import { ElasticsearchCatalog } from '../../../catalog/elasticsearch/elasticsearch.catalog.js';
@@ -272,19 +258,21 @@ export class UbaElasticsearchCatalog extends ElasticsearchCatalog {
 
         // alle Datensätze gelöscht -> Dokument entfernen
         if (active.length == 0) {
-            return [{ operation: 'delete', _id: createEsId(documents[0]) }];
+            return [...new Set(documents.map(createEsId))].map(id => ({ operation: 'delete', _id: id }));
         }
 
-        // zuletzt geänderter Datensatz gewinnt, die übrigen werden als Duplikate vermerkt
+        // zuletzt geänderter Datensatz wird übernommen, die übrigen werden als Duplikate vermerkt
         active.sort((a, b) => (b.modified?.getTime() ?? 0) - (a.modified?.getTime() ?? 0));
         const [main, ...duplicates] = active;
-        const operations: EsOperation[] = [];
+        const idsToDelete = new Set([
+            ...duplicates.map(createEsId),
+            ...documents.filter(d => d.extras.metadata.deleted != null).map(createEsId)
+        ]);
+        idsToDelete.delete(createEsId(main));
+        const operations: EsOperation[] = [...idsToDelete].map(id => ({ operation: 'delete', _id: id }));
         for (const duplicate of duplicates) {
             const id = createEsId(duplicate);
             main.extras.metadata.merged_from.push(id);
-            if (id != createEsId(main)) {
-                operations.push({ operation: 'delete', _id: id });
-            }
         }
         operations.push({ operation: 'index', _id: createEsId(main), document: main });
         return operations;
@@ -292,44 +280,31 @@ export class UbaElasticsearchCatalog extends ElasticsearchCatalog {
 }
 ```
 
-Welche Datensätze einen Bucket bilden, legt `getBuckets.sql` fest. Eine Datei unter `uba/persistence/queries/` ersetzt die gleichnamige Standardabfrage aus `server/app/persistence/queries/`. Ein Beispiel ist [`lvr/persistence/queries/getBuckets.sql`](https://github.com/informationgrid/ingrid-harvester/blob/main/server/app/profiles/lvr/persistence/queries/getBuckets.sql).
+Die Gruppierung zusammengehöriger Datensätze in Buckets erfolgt mittels `getBuckets.sql`, diese muss unter `uba/persistence/queries/` angelegt werden. Ein Beispiel ist [`ingrid/persistence/queries/getBuckets.sql`](https://github.com/informationgrid/ingrid-harvester/blob/main/server/app/profiles/ingrid/persistence/queries/getBuckets.sql).
 
 ## Schritt 6: Mapping, Settings und Abfragen
 
-- `persistence/default-mapping.json`: Felder des `UbaIndexDocument`.
-- `persistence/default-settings.json`: die Analyzer, die im Mapping verwendet werden. Mapping und Settings müssen zusammenpassen, sonst schlägt das Anlegen des Index fehl. Übernehmen Sie daher beide Dateien aus demselben Profil, z. B. `ingrid/persistence/opendata-mapping.json` zusammen mit `ingrid/persistence/default-settings.json`, und passen Sie das Mapping an.
-- `persistence/elastic.queries.ts`: kann unverändert aus `lvr/persistence/elastic.queries.ts` übernommen werden.
-
-```json title="server/app/profiles/uba/persistence/default-mapping.json (Auszug)"
-{
-    "properties": {
-        "uuid": { "type": "keyword" },
-        "title": { "type": "text", "analyzer": "german" },
-        "description": { "type": "text", "analyzer": "german" },
-        "keywords": { "type": "keyword" },
-        "themes": { "type": "keyword" },
-        "publisher": { "type": "keyword" },
-        "distributions": {
-            "properties": {
-                "format": { "type": "keyword" },
-                "accessURL": { "type": "keyword" },
-                "downloadURL": { "type": "keyword" }
+- `persistence/opendata-mapping.json`: Felder des `UbaIndexDocument`
+    - hierzu kann `ingrid/persistence/opendata-mapping.json` übernommen werden, ergänzt um:
+        ```javascript title="server/app/profiles/ingrid/persistence/opendata-mapping.json"
+        {
+            ...
+            "full_description": {
+                "type": "text"
+            },
+            "has_distributions": {
+                "type": "boolean"
             }
-        },
-        "spatial": {
-            "properties": {
-                "geometry": { "type": "geo_shape" },
-                "centroid": { "type": "geo_point" }
-            }
-        },
-        "modified": { "type": "date" }
-    }
-}
-```
+        }
+        ```
+- `persistence/default-settings.json`: die Analyzer, die im Mapping verwendet werden
+    - hierzu kann `ingrid/persistence/default-settings.json` übernommen werden
+- `persistence/elastic.queries.ts`: Elasticsearch-Abfragen, die unter anderem für die History verwendet werden 
+    - hierzu kann `ingrid/persistence/elastic.queries.ts` übernommen werden
 
 ## Schritt 7: Kontexthilfe (optional)
 
-Die Hilfetexte der Oberfläche sind Markdown-Dateien unter [`server/app/contextHelp/`](https://github.com/informationgrid/ingrid-harvester/tree/main/server/app/contextHelp). Sie sind nach Sprache und Profil abgelegt: `contextHelp/<sprache>/<profil>/<id>.md`. Der Dateiname ohne Endung ist die ID, unter der die Oberfläche den Text anfordert (`rest/api/help/<sprache>/<id>`). Der `title` im Frontmatter wird als Überschrift der Hilfe angezeigt.
+Die Hilfetexte der Oberfläche sind Markdown-Dateien unter [`server/app/contextHelp/`](https://github.com/informationgrid/ingrid-harvester/tree/main/server/app/contextHelp), abgelegt nach Sprache und Profil: `contextHelp/<sprache>/<profil>/<id>.md`. Der Dateiname ohne Endung ist die ID, unter der die Oberfläche den Text anfordert (`rest/api/help/<sprache>/<id>`). Der `title` im Frontmatter wird als Überschrift der Hilfe angezeigt.
 
 ```markdown title="server/app/contextHelp/de/ingrid/harvester_csw_settings.md (Auszug)"
 ---
@@ -340,14 +315,9 @@ title: CSW Einstellungen
 Konfigurationsbereich für grundlegende Parameter zur Anbindung einer CSW-Quelle.
 ```
 
-Der Server sucht eine Datei in zwei Schritten:
+Als Fallback wird die Version des ingrid-Profils verwendet: `contextHelp/<sprache>/ingrid/<id>.md`
 
-1. `contextHelp/<sprache>/<aktives Profil>/<id>.md`
-2. falls dort nicht vorhanden: `contextHelp/<sprache>/ingrid/<id>.md`
-
-Der Ordner `ingrid` enthält den vollständigen Satz an Hilfetexten und dient als Standard für alle Profile. Ein neues Profil muss daher **keine** Hilfetexte mitbringen. Ohne eigenen Ordner zeigt es die Texte aus `ingrid` an. Weicht ein Text ab, legen Sie im Ordner des Profils eine Datei mit **demselben Namen** an. Sie ersetzt dann den Standardtext aus `ingrid`. Alle übrigen Texte werden weiterhin aus `ingrid` geladen.
-
-So macht es das Profil `diplanung`: Es überschreibt nur `harvester_csw_settings.md` und verwendet für alle anderen Hilfetexte die Dateien aus `ingrid`.
+Der Ordner `ingrid` enthält den vollständigen Satz an Hilfetexten und dient als Standard für alle Profile. Ein neues Profil muss daher nur die Hilfetexte anlegen, in denen von InGrid abweichende Informationen angezeigt werden sollen.
 
 Für `uba` würde etwa eine eigene Beschreibung der Datenquellen-Einstellungen so angelegt:
 
@@ -365,20 +335,24 @@ cp server/app/contextHelp/de/ingrid/harvester_settings_general.md server/app/con
 
 Katalog und Datenquelle werden in der Oberfläche angelegt. Siehe Beispiele: 
 
-* [Datenquelle Verbinden (CSW-Beispiel)]({{ fix_url('guides/harvester-catalog.md') }})
+* [Datenquelle verbinden (CSW-Beispiel)]({{ fix_url('guides/harvester-csw.md') }})
 * [Katalog verbinden]({{ fix_url('guides/harvester-catalog.md') }})
 * [Konfigurationsdateien]({{ fix_url('guides/harvester-config-files.md') }})
 
-```json title="Reduziertes Beispiel config-catalogs.json für Zielkataloge"
+```json title="Beispiel config-catalogs.json für Zielkataloge"
 [
     { 
         "id": 1, 
         "type": "elasticsearch", 
         "name": "UBA", 
-        "url": "http://elasticsearch:9200",
+        "url": "http://localhost:9200",
         "settings": { 
             "index": "uba-index", 
-            "alias": "uba" 
+            "alias": "uba",
+            "mappingFile": "opendata-mapping",
+            "version": "9",
+            "user": "elastic",
+            "password": "elastic"
         } 
     }
 ]
@@ -412,6 +386,10 @@ Tests liegen in `server/test/`. Vorlagen für DCAT-AP aus dem InGrid-Profil:
     * Test für den Mapper 
 * [`test/integration/dcatap.integration.spec.ts`](https://github.com/informationgrid/ingrid-harvester/blob/main/server/test/integration/dcatap.integration.spec.ts) 
     * Integration-Test für einen kompletten Harvesting-Lauf (PostgreSQL als Testcontainer, Elasticsearch gemockt)
+    * Daten für den Test liegen unter `test/data/<type>/<source>`
+        * `config.json`: Konfiguration der Datenquelle
+        * `./input`: Input-Daten bzw. (gemockte) Antwort des Endpunkts
+        * `./elasticsearch`, `.csw`, etc.: erwartete Output-Dokumente für verschiedene Formate
 
 ??? success "Mapper-Test"
 
@@ -459,8 +437,6 @@ Tests liegen in `server/test/`. Vorlagen für DCAT-AP aus dem InGrid-Profil:
 
 ??? success "Integrationstest"
 
-    Fixtures unter `test/data/uba/<quelle>/`: `config.json` (Datenquelle), `input/` (Antwort des Endpunkts) und `elasticsearch/` (erwartete Dokumente).
-
     ```typescript title="server/test/integration/uba.integration.spec.ts"
     import type { DcatapSettings } from '../../app/importer/dcatap/dcatap.settings.js';
     import settings from '../data/uba/example/config.json' with { type: 'json' };
@@ -505,12 +481,11 @@ harvester:
   image: ingrid-harvester:8.5.0
   environment:
     - IMPORTER_PROFILE=uba
-    - ELASTIC_PREFIX=uba-
 ```
 
 ## Checkliste
 
-- [ ] `server/app/profiles/uba/` mit Factory, Indexdokument, Mapper, Katalog und `persistence/` angelegt
+- [ ] `server/app/profiles/uba/` mit Factory, Indexdokument, Mapper, Katalog und `persistence/` (inkl. `getBuckets.sql`) angelegt
 - [ ] Profil in `profile.factory.loader.ts` registriert
 - [ ] Mapping und Settings aus demselben Profil übernommen und angepasst
 - [ ] Abweichende Hilfetexte unter `contextHelp/de/uba/` angelegt (nur bei Bedarf)
