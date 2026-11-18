@@ -49,6 +49,14 @@ Das Interface-CSW wird nicht mehr weiterentwickelt und wird durch pyCSW abgelös
 
 <hr>
 
+## Version 8.5.2.1 <small>18.11.2026</small> { id="8.5.2.1" data-toc-label="8.5.2.1"}
+
+### Profil UVP { id="8.5.2.1_changes_profil_uvp" }
+
+* :octicons-bug-16:{ title="Bug Fix" } Fehler beim Upload von Dokumenten im Verfahrensschritt "Unterrichtung über den Untersuchungsrahmen" <br>[:octicons-link-external-16: REDMINE-9750](https://redmine.informationgrid.eu/issues/9750)
+
+<hr>
+
 ## Version 8.5.2 <small>12.11.2026</small> { id="8.5.2" data-toc-label="8.5.2"}
 
 ### Allgemein { id="8.5.2_changes_allgemein" }
