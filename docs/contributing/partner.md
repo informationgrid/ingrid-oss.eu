@@ -6,6 +6,7 @@ description: "InGrid: Projektpartner"
 Aus der öffentlichen Verwaltung sind folgende Partner beteiligt:
 
 - Niedersachsen: **Ministerium für Umwelt, Energie und Klimaschutz** (Federführung)
+- Bund: **Umweltbundesamt** (UBA)
 - Bund: **Bundesanstalt für Wasserbau** (BAW)
 - Bund: **Informationstechnikzentrum Bund** (ITZBund) im Auftrag der Wasser- und
 Schifffahrtsverwaltung des Bundes (WSV) im Geschäftsbereich des
@@ -21,6 +22,7 @@ Bundesministeriums für Verkehr (BMV)
 - Hessen: **Ministerium für Landwirtschaft und Umwelt, Weinbau, Forsten, Jagd und Heimat**
 - Mecklenburg-Vorpommern: **Landesamt für Umwelt, Naturschutz und Geologie** (LUNG)
 - Nordrhein-Westfalen: **Ministerium für Umwelt, Naturschutz und Verkehr**
+- Nordrhein-Westfalen: **Kommunales Rechenzentrum Niederrhein** (KRZN; assoziiert)
 - Rheinland-Pfalz: **Ministerium für Klimaschutz, Umwelt, Energie und Mobilität**
 - Saarland: **Ministerium für Umwelt, Klima, Mobilität, Agrar und Verbraucherschutz**
 - Sachsen: **Landesamt für Umwelt, Landwirtschaft und Geologie**
