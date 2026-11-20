@@ -14,9 +14,9 @@ Komponenten zu aktualisieren.
 Der iBus wird nicht mehr weiterentwickelt und wird funktional durch die InGrid-API ersetzt, worüber die Indizes verwaltet werden können. Alle iPlugs die derzeit ihre Datensätze noch über den iBus einliefern, sollten so umgestellt werden, dass direkt nach Elasticsearch eingeliefert wird. Die betrifft folgende Komponenten:
 
 * InGrid Editor
-  * unter "Verbindungen" Elasticsearch hinzufügen und konfigurieren und diese in den Katalogen verwenden. Konfiguration in den Katalogen muss nur dann erfolgen, wenn explizit eine Verbindung unter "Indizierung" eingestellt wurde.
+    * unter "Verbindungen" Elasticsearch hinzufügen und konfigurieren und diese in den Katalogen verwenden. Konfiguration in den Katalogen muss nur dann erfolgen, wenn explizit eine Verbindung unter "Indizierung" eingestellt wurde.
 * iPlug-BLP und iPlug-SE
-  * in der config.override.properties folgenden Eintrag hinzufügen
+    * in der config.override.properties folgenden Eintrag hinzufügen
     ```properties
     elastic.communication.ibus=false
     communications.disableIBus=true
@@ -26,9 +26,9 @@ Der iBus wird nicht mehr weiterentwickelt und wird funktional durch die InGrid-A
     elastic.password=<ELASTIC_PASSWORD>
     ```
 * Interface-CSW
-  * wird durch pyCSW ersetzt
+    * wird durch pyCSW ersetzt
 * Interface-Search
-  * Funktionalität wird in 8.6.0 in InGrid-API integriert
+    * Funktionalität wird in 8.6.0 in InGrid-API integriert
 <hr>
 
 ### Hinweise für die Aktualisierung&nbsp;⚠️

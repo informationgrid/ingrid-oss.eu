@@ -167,6 +167,7 @@ Wird ein eigener Keycloak-Server verwendet, so müssen folgende Schritte getäti
     - unter `Roles` die Client-Rollen `user` und `admin` erstellen
     - unter `Service account roles` füge diese Client-Rollen hinzu
         - `view-realm`, `manage-users`, `query-clients` und `view-clients` des Clients `realm-management`
+    - unter `Client scopes` den Scope `kc-admin-api` hinzufügen (seit 26.8.2)
     - unter `Client scopes` -> `editor-dedicated`
       - die predefinied Mapper `client roles`und `realm roles` hinzufügen
           - in beiden Mappern `Add to ID token` aktivieren
