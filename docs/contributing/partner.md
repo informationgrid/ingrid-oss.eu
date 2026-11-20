@@ -16,14 +16,14 @@ Bundesministeriums für Verkehr (BMV)
 - Baden-Württemberg: **Landesanstalt für Umwelt Baden-Württemberg** (LUBW)
 - Bayern: **Staatsministerium für Umwelt und Verbraucherschutz**
 - Berlin: **Berliner Senatsverwaltung für Mobilität, Verkehr, Klimaschutz und Umwelt**
-- Brandenburg: **Ministerium für Land- und Ernährungswirtschaft, Umwelt und Verbraucherschutz** (MLEUV)
+- Brandenburg: **Ministerium für Land- und Ernährungswirtschaft, Umwelt und Verbraucherschutz**
 - Bremen: **Landesamt GeoInformation Bremen**
 - Hamburg: **Behörde für Umwelt, Klima, Energie und Agrarwirtschaft** (BUKEA)
 - Hessen: **Ministerium für Landwirtschaft und Umwelt, Weinbau, Forsten, Jagd und Heimat**
 - Mecklenburg-Vorpommern: **Landesamt für Umwelt, Naturschutz und Geologie** (LUNG)
 - Nordrhein-Westfalen: **Ministerium für Umwelt, Naturschutz und Verkehr**
 - Nordrhein-Westfalen: **Kommunales Rechenzentrum Niederrhein** (KRZN; assoziiert)
-- Rheinland-Pfalz: **Ministerium für Klimaschutz, Umwelt, Energie und Mobilität**
+- Rheinland-Pfalz: **Ministerium für Landwirtschaft, Weinbau, Umwelt und Forsten**
 - Saarland: **Ministerium für Umwelt, Klima, Mobilität, Agrar und Verbraucherschutz**
 - Sachsen: **Landesamt für Umwelt, Landwirtschaft und Geologie**
 - Sachsen-Anhalt: **Ministerium für Wissenschaft, Energie, Klimaschutz und Umwelt**
@@ -31,4 +31,3 @@ Bundesministeriums für Verkehr (BMV)
 - Thüringen: **Ministerium für Umwelt, Energie, Naturschutz und Forsten**
 
 Die Firma [wemove digital solutions GmbH](http://www.wemove.com/) betreut als Partner aus der Wirtschaft die technische Projekt-Infrastruktur.
-
