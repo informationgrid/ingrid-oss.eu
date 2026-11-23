@@ -4,7 +4,7 @@ description: Anleitung zum Anlegen eines eigenen Harvester-Profils am Beispiel u
 ---
 # Harvester Profil erstellen
 
-Dieser Leitfaden zeigt, wie ein neues Profil für den [InGrid Harvester](https://github.com/informationgrid/ingrid-harvester) angelegt wird. Als Beispiel dient ein Profil `uba`, das DCAT-AP-Kataloge harvestet und in einen eigenen Elasticsearch-Index schreibt.
+Dieser Leitfaden zeigt, wie ein neues Profil für den [InGrid Harvester](https://github.com/informationgrid/ingrid-harvester) angelegt wird. Als Beispiel dient ein Profil `uba`, das CKAN-Kataloge (z. B. [GovData](https://ckan.govdata.de)) harvestet und in einen eigenen Elasticsearch-Index schreibt.
 
 <div class="grid cards" markdown>
 
@@ -28,7 +28,7 @@ Der Harvester wird für verschiedene Einsatzzwecke verwendet, zum Beispiel für 
 
 Ein Profil legt fest:
 
-- **Datenquellen-Typen:** welche Typen (z. B. `CSW`, `DCATAP`, `WFS`) in der Oberfläche zur Auswahl stehen und welcher Importer sie verarbeitet.
+- **Datenquellen-Typen:** welche Typen (z. B. `CSW`, `CKAN`, `WFS`) in der Oberfläche zur Auswahl stehen und welcher Importer sie verarbeitet.
 - **Indexdokument:** welche Felder ein Datensatz im Zielsystem hat und wie die Werte der Quelle darauf abgebildet werden.
 - **Zielkataloge:** in welche Systeme geschrieben wird (Elasticsearch, CSW, Piveau).
 - **Deduplizierung:** welche Datensätze als Duplikate gelten, welcher davon Vorrang hat und wie sie zusammengeführt werden.
@@ -37,7 +37,7 @@ Ein Profil legt fest:
 
 Das Profil wird beim Start über die Umgebungsvariable `IMPORTER_PROFILE` gewählt und kann nur mit einem Neustart geändert werden.
 
-Der Kern stellt Importer und Format-Mapper bereit, die das Quellformat lesen. Im Beispiel sind das `DcatapImporter` und `DcatapMapper`. Sie sind profilunabhängig und werden nur wiederverwendet. Das Profil ergänzt einen eigenen Mapper, der aus den gelesenen Werten das Indexdokument erzeugt (`UbaDcatapMapper`), und einen eigenen Katalog, der Duplikate zusammenführt und in Elasticsearch schreibt (`UbaElasticsearchCatalog`). Verbesserungen am Kern, etwa an einem Importer, kommen dadurch allen Profilen zugute.
+Der Kern stellt Importer und Format-Mapper bereit, die das Quellformat lesen. Im Beispiel sind das `CkanImporter` und `CkanMapper`. Sie sind profilunabhängig und werden nur wiederverwendet. Das Profil ergänzt einen eigenen Mapper, der aus den gelesenen Werten das Indexdokument erzeugt (`UbaCkanMapper`), und einen eigenen Katalog, der Duplikate zusammenführt und in Elasticsearch schreibt (`UbaElasticsearchCatalog`). Verbesserungen am Kern, etwa an einem Importer, kommen dadurch allen Profilen zugute.
 
 !!! tip "Brauche ich ein neues Profil?"
 
@@ -50,7 +50,7 @@ Das fertige Profil besteht aus diesen Dateien unter `server/app/profiles/uba/`:
 | `profile.factory.ts` | `UbaFactory`, der Einstiegspunkt des Profils |
 | `uba.utils.ts` | `createEsId()`, für die Erzeugung der Elasticsearch-ID aus dem Dokument |
 | `model/index.document.ts` | `UbaIndexDocument` |
-| `mapper/uba.dcatap.mapper.ts` | `UbaDcatapMapper` |
+| `mapper/uba.ckan.mapper.ts` | `UbaCkanMapper` |
 | `catalog/elasticsearch.catalog.ts` | `UbaElasticsearchCatalog` |
 | `persistence/opendata-mapping.json` | Elasticsearch-Mapping |
 | `persistence/default-settings.json` | Elasticsearch-Settings |
@@ -65,8 +65,8 @@ Als Vorlage wird das Profil [`ingrid`](https://github.com/informationgrid/ingrid
 import type { CatalogSettings, ElasticsearchCatalogSettings } from '@shared/catalog.js';
 import log4js from 'log4js';
 import type { Catalog, CatalogColumnType, CatalogOperation } from '../../catalog/catalog.factory.js';
-import type { DcatapMapper } from '../../importer/dcatap/dcatap.mapper.js';
-import type { DcatapSettings } from '../../importer/dcatap/dcatap.settings.js';
+import type { CkanMapper } from '../../importer/ckan/ckan.mapper.js';
+import type { CkanSettings } from '../../importer/ckan/ckan.settings.js';
 import type { Importer } from '../../importer/importer.js';
 import type { ImporterType } from '../../importer/importer.settings.js';
 import type { DocumentFactory } from '../../model/index.document.factory.js';
@@ -74,35 +74,35 @@ import type { Summary } from '../../model/summary.js';
 import type { ElasticQueries as AbstractElasticQueries } from '../../persistence/elastic.queries.js';
 import { CatalogService } from '../../services/catalog/CatalogService.js';
 import { ProfileFactory } from '../profile.factory.js';
-import { UbaDcatapMapper } from './mapper/uba.dcatap.mapper.js';
+import { UbaCkanMapper } from './mapper/uba.ckan.mapper.js';
 import type { UbaIndexDocument } from './model/index.document.js';
 import { ElasticQueries } from './persistence/elastic.queries.js';
 
 const log = log4js.getLogger(import.meta.filename);
 
-export class UbaFactory extends ProfileFactory<DcatapSettings> {
+export class UbaFactory extends ProfileFactory<CkanSettings> {
 
     protected getSupportedTypeNames(): ImporterType[] {
-        return ['DCATAP'];
+        return ['CKAN'];
     }
 
     getElasticQueries(): AbstractElasticQueries {
         return ElasticQueries.getInstance();
     }
 
-    getDocumentFactory(mapper: DcatapMapper): DocumentFactory<UbaIndexDocument> {
+    getDocumentFactory(mapper: CkanMapper): DocumentFactory<UbaIndexDocument> {
         switch (mapper.constructor.name) {
-            case 'DcatapMapper': return new UbaDcatapMapper(mapper);
+            case 'CkanMapper': return new UbaCkanMapper(mapper);
             default: throw new Error(`No mapper "${mapper.constructor.name}" registered`);
         }
     }
 
-    async getImporter(settings: DcatapSettings): Promise<Importer<DcatapSettings>> {
-        let importer: Importer<DcatapSettings>;
+    async getImporter(settings: CkanSettings): Promise<Importer<CkanSettings>> {
+        let importer: Importer<CkanSettings>;
         switch (settings.type) {
-            case 'DCATAP':
-                const { DcatapImporter } = await import('../../importer/dcatap/dcatap.importer.js');
-                importer = new DcatapImporter(settings);
+            case 'CKAN':
+                const { CkanImporter } = await import('../../importer/ckan/ckan.importer.js');
+                importer = new CkanImporter(settings);
                 break;
             default:
                 log.error('Importer not found: ' + settings.type);
@@ -133,7 +133,7 @@ export class UbaFactory extends ProfileFactory<DcatapSettings> {
 | ------- | ----- |
 | `getProfileName()` | Name des Profils, der dem Verzeichnisnamen entsprechen muss. SQL-Abfragen sowie Elasticsearch-Mappings und -Settings werden unter `profiles/<name>/persistence/` angenommen |
 | `getSupportedTypeNames()` | Datenquellen-Typen, die die Oberfläche anbietet |
-| `getImporter()` | Importer zum Datenquellen-Typ. Für einen weiteren Typ wird dieser in `getSupportedTypeNames()` ergänzt und je ein weiterer `case` hier und in `getDocumentFactory()` hinzugefügt. Der Settings-Typ der Factory wird dann zur Union, z. B. `DcatapSettings \| CswSettings` (vgl. `ingridSettings` im Profil `ingrid`) |
+| `getImporter()` | Importer zum Datenquellen-Typ. Für einen weiteren Typ wird dieser in `getSupportedTypeNames()` ergänzt und je ein weiterer `case` hier und in `getDocumentFactory()` hinzugefügt. Der Settings-Typ der Factory wird dann zur Union, z. B. `CkanSettings \| CswSettings` (vgl. `ingridSettings` im Profil `ingrid`) |
 | `getDocumentFactory()` | Profil-Mapper zum Mapper des Importers |
 | `getCatalog()` | Katalog-Implementierung zum Katalogtyp |
 | `getElasticQueries()` | Abfragen für Historie, URL- und Index-Prüfung |
@@ -175,20 +175,20 @@ Werden keine zusätzlichen Felder verwendet, kann `IngridIndexDocument`/`IngridO
 
 ## Schritt 4: Mapper
 
-Der Profil-Mapper implementiert `DocumentFactory`. Er erbt nicht direkt von `DcatapMapper`, sondern kapselt ihn als `baseMapper` und liest die Werte über dessen Getter. Das RDF-Parsing übernimmt der `DcatapMapper`.
-Wenn ein bestimmter Profil-Mapper nur erweitert wird, kann dies aber auch direkt geschehen, wie hier im Beispiel `ingridDcatapMapper`.
+Der Profil-Mapper implementiert `DocumentFactory`. Er erbt nicht direkt von `CkanMapper`, sondern kapselt ihn als `baseMapper` und liest die Werte über dessen Getter. Das Auswerten der CKAN-Datensätze (JSON der CKAN-API) übernimmt der Basis-`CkanMapper`.
+Wenn ein bestimmter Profil-Mapper nur erweitert wird, kann dies aber auch direkt geschehen, wie hier im Beispiel `ingridCkanMapper`.
 
-```typescript title="server/app/profiles/uba/mapper/uba.dcatap.mapper.ts"
-import type { DcatapMapper } from '../../../importer/dcatap/dcatap.mapper.js';
+```typescript title="server/app/profiles/uba/mapper/uba.ckan.mapper.ts"
+import type { CkanMapper } from '../../../importer/ckan/ckan.mapper.js';
 import type { DocumentFactory } from '../../../model/index.document.factory.js';
 import type { UbaIndexDocument } from '../model/index.document.js';
 import { createEsId } from '../uba.utils.js';
-import { ingridDcatapMapper } from '../../ingrid/mapper/ingrid.dcatap.mapper.js';
+import { ingridCkanMapper } from '../../ingrid/mapper/ingrid.ckan.mapper.js';
 import type { IngridOpendataIndexDocument } from '../../ingrid/model/opendataindex.document.js';
 
-export class UbaDcatapMapper extends ingridDcatapMapper implements DocumentFactory<UbaIndexDocument> {
+export class UbaCkanMapper extends ingridCkanMapper implements DocumentFactory<UbaIndexDocument> {
 
-    constructor(baseMapper: DcatapMapper) {
+    constructor(baseMapper: CkanMapper) {
         super(baseMapper);
     }
 
@@ -234,7 +234,7 @@ export function createEsId(document: UbaIndexDocument): string {
 
 !!! info "Eingangsformate"
 
-    Der `DcatapImporter` liest RDF/XML, Turtle und JSON-LD. Das Format wird anhand der Dateiendung in der URL bzw. des Inhalts erkannt (`server/app/importer/dcatap/dcatap.rdf.ts`). Weitere verfügbare Getter wie `getContactPoints()`, `getLicenses()`, `getHvdCategories()` oder `getConformsTo()` finden Sie in [`dcatap.mapper.ts`](https://github.com/informationgrid/ingrid-harvester/blob/main/server/app/importer/dcatap/dcatap.mapper.ts).
+    Der `CkanImporter` liest die JSON-Antworten der CKAN-API; `sourceURL` ist die Basis-URL der CKAN-Instanz. Über `requestType` wird der Endpunkt gewählt: `Search` verwendet `package_search` (optional eingeschränkt über den Solr-Filter `additionalSearchFilter`, z.B. `organization:umweltbundesamt`), `ListWithResources` verwendet `current_package_list_with_resources`. Mit `filterTags` und `filterGroups` werden Datensätze ohne passende Tags bzw. Gruppen übersprungen, `markdownAsDescription` rendert das Feld `notes` als HTML (`server/app/importer/ckan/ckan.settings.ts`). Weitere verfügbare Getter wie `getPublisher()`, `getMaintainer()`, `getAuthor()`, `getThemes()`, `getTemporal()` oder `getAccrualPeriodicity()` finden Sie in [`ckan.mapper.ts`](https://github.com/informationgrid/ingrid-harvester/blob/main/server/app/importer/ckan/ckan.mapper.ts).
 
 ## Schritt 5: Elasticsearch-Katalog
 
@@ -286,7 +286,7 @@ Die Gruppierung zusammengehöriger Datensätze in Buckets erfolgt mittels `getBu
 
 - `persistence/opendata-mapping.json`: Felder des `UbaIndexDocument`
     - hierzu kann `ingrid/persistence/opendata-mapping.json` übernommen werden, ergänzt um:
-        ```javascript title="server/app/profiles/ingrid/persistence/opendata-mapping.json"
+        ```javascript title="server/app/profiles/uba/persistence/opendata-mapping.json"
         {
             ...
             "full_description": {
@@ -362,9 +362,12 @@ Katalog und Datenquelle werden in der Oberfläche angelegt. Siehe Beispiele:
 [
     { 
         "id": 1, 
-        "type": "DCATAP", 
+        "type": "CKAN", 
         "description": "UBA OpenData",
-        "sourceURL": "https://example.org/dcat/catalog.ttl", 
+        "sourceURL": "https://ckan.govdata.de", 
+        "requestType": "Search",
+        "additionalSearchFilter": "organization:umweltbundesamt",
+        "markdownAsDescription": true,
         "catalogIds": [1], 
         ...
     }
@@ -380,57 +383,48 @@ Im Log erscheint `Loaded profile: uba`. Fehlt die Registrierung, bricht der Star
 
 ## Tests
 
-Tests liegen in `server/test/`. Vorlagen für DCAT-AP aus dem InGrid-Profil: 
+Tests liegen in `server/test/`. Vorlage für CKAN aus dem InGrid-Profil: 
 
-* [`test/importer/dcatap/ingrid.dcatap.mapper.spec.ts`](https://github.com/informationgrid/ingrid-harvester/blob/main/server/test/importer/dcatap/ingrid.dcatap.mapper.spec.ts) 
-    * Test für den Mapper 
-* [`test/integration/dcatap.integration.spec.ts`](https://github.com/informationgrid/ingrid-harvester/blob/main/server/test/integration/dcatap.integration.spec.ts) 
+* [`test/integration/ckan.integration.spec.ts`](https://github.com/informationgrid/ingrid-harvester/blob/main/server/test/integration/ckan.integration.spec.ts) 
     * Integration-Test für einen kompletten Harvesting-Lauf (PostgreSQL als Testcontainer, Elasticsearch gemockt)
-    * Daten für den Test liegen unter `test/data/<type>/<source>`
+    * Daten für den Test liegen unter `test/data/<type>/<source>`, z. B. `test/data/ckan/govdata-uba`
         * `config.json`: Konfiguration der Datenquelle
-        * `./input`: Input-Daten bzw. (gemockte) Antwort des Endpunkts
+        * `./input`: Input-Daten bzw. (gemockte) Antworten der CKAN-API (`package_list.json`, `package_search.json`)
         * `./elasticsearch`, `.csw`, etc.: erwartete Output-Dokumente für verschiedene Formate
 
 ??? success "Mapper-Test"
 
-    ```typescript title="server/test/importer/dcatap/uba.dcatap.mapper.spec.ts"
+    ```typescript title="server/test/importer/ckan/uba.ckan.mapper.spec.ts"
     import { expect } from 'chai';
-    import { DataFactory } from 'n3';
-    import { DcatapMapper } from '../../../app/importer/dcatap/dcatap.mapper.js';
-    import { parseRdfPayload } from '../../../app/importer/dcatap/dcatap.rdf.js';
-    import type { DcatapSettings } from '../../../app/importer/dcatap/dcatap.settings.js';
-    import { namespaces } from '../../../app/importer/namespaces.js';
+    import { CkanMapper } from '../../../app/importer/ckan/ckan.mapper.js';
+    import type { CkanSettings } from '../../../app/importer/ckan/ckan.settings.js';
+    import { ckanDefaults } from '../../../app/importer/ckan/ckan.settings.js';
     import { Summary } from '../../../app/model/summary.js';
-    import { UbaDcatapMapper } from '../../../app/profiles/uba/mapper/uba.dcatap.mapper.js';
+    import { UbaCkanMapper } from '../../../app/profiles/uba/mapper/uba.ckan.mapper.js';
 
-    const SOURCE_URL = 'https://example.org/catalog.ttl';
-    const settings = { type: 'DCATAP', sourceURL: SOURCE_URL } as DcatapSettings;
+    const SOURCE_URL = 'https://example.org';
+    const settings = { ...ckanDefaults, type: 'CKAN', sourceURL: SOURCE_URL } as CkanSettings;
 
-    const DATASET = `
-    @prefix dcat: <http://www.w3.org/ns/dcat#> .
-    @prefix dct: <http://purl.org/dc/terms/> .
-    <https://example.org/dataset/1> a dcat:Dataset ;
-        dct:identifier "dataset-1" ;
-        dct:title "Luftqualität" ;
-        dcat:keyword "Luft" .
-    `;
+    const DATASET = {
+        id: 'dataset-1',
+        name: 'luftqualitaet',
+        title: 'Luftqualität',
+        notes: 'Messwerte zur Luftqualität',
+        metadata_modified: '2024-01-01T00:00:00',
+        tags: [{ name: 'Luft', display_name: 'Luft' }],
+        resources: []
+    };
 
-    async function createMapper(payload: string): Promise<UbaDcatapMapper> {
-        const store = await parseRdfPayload(payload, SOURCE_URL);
-        const [subject] = store.getSubjects(
-            DataFactory.namedNode(namespaces.RDF + 'type'),
-            DataFactory.namedNode(namespaces.DCAT + 'Dataset'),
-            null
-        );
-        const mapper = new DcatapMapper(settings, subject, store, payload, new Date(), new Summary('test', settings as any));
-        return new UbaDcatapMapper(mapper);
+    function createMapper(record: object): UbaCkanMapper {
+        const mapper = new CkanMapper(settings, record, new Date(), new Summary('test', settings as any));
+        return new UbaCkanMapper(mapper);
     }
 
-    describe('UbaDcatapMapper', () => {
+    describe('UbaCkanMapper', () => {
         it('maps title and keywords', async () => {
-            const doc = await (await createMapper(DATASET)).createIndexDocument();
+            const doc = await createMapper(DATASET).createIndexDocument();
             expect(doc.title).to.equal('Luftqualität');
-            expect(doc.keywords).to.include('Luft');
+            expect(doc.keywords.map(k => k.term)).to.include('Luft');
         });
     });
     ```
@@ -438,7 +432,7 @@ Tests liegen in `server/test/`. Vorlagen für DCAT-AP aus dem InGrid-Profil:
 ??? success "Integrationstest"
 
     ```typescript title="server/test/integration/uba.integration.spec.ts"
-    import type { DcatapSettings } from '../../app/importer/dcatap/dcatap.settings.js';
+    import type { CkanSettings } from '../../app/importer/ckan/ckan.settings.js';
     import settings from '../data/uba/example/config.json' with { type: 'json' };
     import { runImporterIntegrationTest, setupIntegrationTestLifecycle } from '../utils/integration-test-runner.js';
 
@@ -447,12 +441,15 @@ Tests liegen in `server/test/`. Vorlagen für DCAT-AP aus dem InGrid-Profil:
         const profile = 'uba';
         setupIntegrationTestLifecycle(profile);
 
-        it('harvests a DCAT-AP catalog', async () => {
+        it('harvests a CKAN catalog', async () => {
             await runImporterIntegrationTest({
                 profile,
                 expectedDocsDir: 'elasticsearch',
-                mocks: [{ match: { url: settings.sourceURL }, fixture: 'input/catalog.ttl' }],
-                settings: settings as DcatapSettings,
+                mocks: [
+                    { match: { url: `${settings.sourceURL}/api/3/action/package_list` }, fixture: 'input/package_list.json' },
+                    { match: { url: `${settings.sourceURL}/api/action/package_search` }, fixture: 'input/package_search.json' }
+                ],
+                settings: settings as CkanSettings,
                 baseFixture: 'test/data/uba/example'
             });
         });
