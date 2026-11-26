@@ -80,6 +80,10 @@ import { ElasticQueries } from './persistence/elastic.queries.js';
 
 const log = log4js.getLogger(import.meta.filename);
 
+export type UbaSettings = CkanSettings; // multiple settings can be defined as: CkanSettings | CswSettings; see ingrid profile factory for examples
+
+export type UbaMapperType = CkanMapper; // multiple types can be defined as: CkanMapper | CswMapper; see ingrid profile factory for examples
+
 export class UbaFactory extends ProfileFactory<CkanSettings> {
 
     protected getSupportedTypeNames(): ImporterType[] {
@@ -90,19 +94,19 @@ export class UbaFactory extends ProfileFactory<CkanSettings> {
         return ElasticQueries.getInstance();
     }
 
-    getDocumentFactory(mapper: CkanMapper): DocumentFactory<UbaIndexDocument> {
+    getDocumentFactory(mapper: UbaMapperType): DocumentFactory<UbaIndexDocument> {
         switch (mapper.constructor.name) {
-            case 'CkanMapper': return new UbaCkanMapper(mapper);
+            case 'CkanMapper': return new UbaCkanMapper(mapper as CkanMapper);
             default: throw new Error(`No mapper "${mapper.constructor.name}" registered`);
         }
     }
 
-    async getImporter(settings: CkanSettings): Promise<Importer<CkanSettings>> {
+    async getImporter(settings: UbaSettings): Promise<Importer<UbaSettings>> {
         let importer: Importer<CkanSettings>;
         switch (settings.type) {
             case 'CKAN':
                 const { CkanImporter } = await import('../../importer/ckan/ckan.importer.js');
-                importer = new CkanImporter(settings);
+                importer = new CkanImporter(settings as CkanSettings);
                 break;
             default:
                 log.error('Importer not found: ' + settings.type);
@@ -151,7 +155,7 @@ case 'uba':
     break;
 ```
 
-Für die Entwicklung kann ein Startskript in `server/package.json` hinzugefügt werden:
+Für die Entwicklung kann ein Startskript in `server/package.json` unter `scripts` hinzugefügt werden:
 
 ```json
 "start-uba": "cross-env IMPORTER_PROFILE=uba nodemon"
@@ -243,7 +247,7 @@ export function createEsId(document: UbaIndexDocument): string {
 Aus einem Bucket wird üblicherweise ein Elasticsearch-Dokument erstellt, ggf. entstehen Lösch-Operationen für existierende, im Bucket sekundäre Datensätze.
 
 ```typescript title="server/app/profiles/uba/catalog/elasticsearch.catalog.ts"
-import { ElasticsearchCatalog } from '../../../catalog/elasticsearch/elasticsearch.catalog.js';
+import { IngridElasticsearchCatalog } from '../../ingrid/catalog/elasticsearch.catalog.js';
 import type { ImporterSettings } from '../../../importer/importer.settings.js';
 import type { Bucket } from '../../../model/bucket.js';
 import type { EsOperation } from '../../../persistence/elastic.utils.js';
@@ -288,12 +292,16 @@ Die Gruppierung zusammengehöriger Datensätze in Buckets erfolgt mittels `getBu
     - hierzu kann `ingrid/persistence/opendata-mapping.json` übernommen werden, ergänzt um:
         ```javascript title="server/app/profiles/uba/persistence/opendata-mapping.json"
         {
-            ...
-            "full_description": {
-                "type": "text"
-            },
-            "has_distributions": {
-                "type": "boolean"
+            "properties": {
+
+                <!-- full_description & has_distributions unter properties hinzufügen -->
+                "full_description": {
+                    "type": "text"
+                },
+                "has_distributions": {
+                    "type": "boolean"
+                }
+
             }
         }
         ```
